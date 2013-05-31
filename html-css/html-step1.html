@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>html-step1</title>
+        <!-- width:viewport의 넓이(기본값은 980px) initial-scale:초기 배율값 maximum-scale:최대 확대 배율을 결정. minimum-scale:최소 확대 배율을 결정. user-scalable:확대, 축소 지원여부. target-densitydpi:해상도 단위인 dpi(dot per inch) 지정 -->        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+        
+        <!-- auto change url
+        <meta http-equiv="refresh" content="2; url=http://www.naver.com/" />
+        -->
+        
+        <!-- 브라우저 강제 렌더링 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        
+        <!-- document subject -->
+        <meta name="subject" content="document subject" />
+        
+        <!-- document title -->
+        <meta name="title" content="document title" />
+        
+        <!-- document description -->
+        <meta name="description" content="document description" />
+        
+        <!-- document keywords -->
+        <meta name="keywords" content="document keywords" />
+        
+        <!-- document author -->
+        <meta name="author" content="document author" />
+        
+        <!-- google translate link -->
+        <meta name="google" content="google translate link" />
+        
+        <!-- search robots : search permission all -->
+        <meta name="robots" content="all" />
+        
+        <!-- search robots : search permission none -->
+        <meta name="robots" content="none" />
+        
+        <!-- search robots : copy document and document to link -->
+        <meta name="robots" content="index,follow" />
+        
+        <!-- search robots : copy only document to link (이 문서는 긁어가지 말고 링크된 문서만 긁어간다.) -->
+        <meta name="robots" content="noindex,follow" />
+        
+        <!-- search robots : copy only document (이 문서는 긁어가되, 링크는 무시한다.) --> 
+        <meta name="robots" content="index,nofollow" />
+        
+        <!-- search robots : nothing (이 문서도 긁지 않고, 링크도 무시한다.) -->
+        <meta name="robots" content="noindex,nofollow" />
+        
+        <!-- document Representative video -->
+        <link rel="video_src" href="video url"> 
+            
+        <!-- 114x114 : Representative images of document. Facebook thumbnail. (페이스북 썸네일로 사용 가능하다. 문서의 대표 이미지가 될 수 있겠다.) -->
+        <link rel="image_src" href="#">
+        
+        <!-- 16x16 : create icon (www.favicon.com 에 접속해 아이콘 생성) -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        
+        <!-- 애플 아이콘 이미지 : 주의할 점은 png 이어야 한다. 기본 : 57px, 레티나 : 114px -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        
+        <!-- apple-touch-icon-precomposed 은 아이콘에 반짝 거리는 효과를 없앤다. 안드로이드 지원 -->
+        <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+        
+        <!-- 아이콘을 눌렀을 때 스타트 페이지가 생성된다. 아이폰은 320×460 , 아이폰4는 640×920 , 아이패드는 768×1004 로 정확히 맞춰야만 제대로 화면에 표시됩니다. -->
+        <link rel="apple-touch-startup-image" href="/images/스타트페이지이미지.png"/>
+        
+        <!-- 홈 화면에 추가했을 경우 풀 스크린으로 시작 --> 
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <!-- 풀 스크린으로 시작할 경우 상태바 조절 black, gray / default (회색) , black , black-translucent ( 반투명 )-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+        <!-- opengraphics 태그 사용(facebook 이나 twitter 에 더욱 자세하게 표현하고 싶을 때)
+        공식 홈페이지 (http://opengraphprotocol.org/, http://ogp.me/) --> 
+        <meta property="og:title" content="title.제목" />
+        <meta property="og:description" content="descripttion.페이지에 대한 요약" />
+        <meta property="og:image" content="thumbnail.썸네일 이미지 주소" />
+        <meta property="og:type" content="video" /> 
+        <meta property="og:video" content="비디오 전송주소" />
+        
+        <link rel="stylesheet" type="text/css" href="vCommon/common.css">
+    </head>
+    <body>
+        <div id="wrap">
+            <script>var titHeader = 'html-step1';</script>
+            <script src="vCommon/header.js"></script>
+            <section>
+                <article>
+                    <p>개인적으로 아래 태그는 평상시 잘 사용하지 않는 태그이긴 하나 시멘틱한 태그입니다.</p>
+                    <ul>
+                        <li>
+                            <h2>blockquote tag(block element)는 인용구에 사용</h2>
+                            <p>장애인 차별 금지 및 권리 구제 등에 관한 blah blah~ 아래와 같이 명시하고 있다.</p>
+                            <blockquote class="highlight">
+                                &lt;blockquote&gt;는 블록단위의 인용문에서 사용된다.
+                            </blockquote>
+                        </li>
+                        <li>
+                            <h2>q tag(inline element)는 인용구에 사용</h2>
+                            <p>
+                                홍길동은 <q cite="http://www.naver.com/" title="타이틀 제공" class="highlight">blah blah~</q>알고 했습니다.
+                                <br />
+                                &lt;q&gt; 인용구는 따옴표(" ")가 함께 표시된다.
+                            </p>
+                        </li>
+                        <li>
+                            <h2>abbr tag(inline element)는 축약어에 사용</h2>
+                            <p><abbr title="Apartmention" class="highlight">Apt.</abbr> : 스펠링 하나씩 발음하는 경우나 줄여서 단어를 단순하게 사용하는 경우</p>
+                        </li>
+                        <li>
+                            <h2>acronym tag(inline element)는 축약어에 사용</h2>
+                            <p><acronym title="Rich Internet Application" class="highlight">RIA</acronym> : 여러단어 조합</p>
+                        </li>
+                        <li>
+                            <h2>글자 형태</h2>
+                            <p>
+                                <b>[b] 굵은 글자 태그</b>
+                                <br />
+                                <i>[i] 기울어진 글자 태그</i>
+                                <br />
+                                <small>[small] 작은 글자 태그</small>
+                                <br />
+                                <span>test</span><sub>[sub] 아래에 붙는 글자</sub>
+                                <br />
+                                <span>test</span><sup>[sup] 위에 붙는 글자</sup>
+                                <br />
+                                <ins>[ins]  밑줄 글자 태그</ins>
+                                <br />
+                                <del>[del] 가운데 줄이 그어진 글자 태그</del>
+                            </p>
+                        </li>
+                        <li>
+                            <h2>루비 문자</h2>
+                            <dl>
+                                <dt>루비 문자</dt>
+                                <dd>루비 문자는 일본어에서 자주 사용되는 글자 형식! 한국어도 한자어가 많으므로 사용할 수 있다.</dd>
+                            </dl>
+                            <span>ruby 를 지원하는 브라우저는 <span class="impact">ie, chrome</span> 이다. <span class="impact">rp 태그는 ruby 태그를 지원하지 않는 브라우저를 위해 사용</span>된다.</span>
+                            <br />
+                            <ruby>
+                                <span>大</span>
+                                <rp>(</rp>
+                                <rt>대</rt>
+                                <rp>)</rp>
+                            </ruby>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <script src="vCommon/footer.js"></script>
+        </div>
+    </body>
+</html>
