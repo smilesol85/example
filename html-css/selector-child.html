@@ -7,13 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
         <link rel="stylesheet" type="text/css" href="../vCommon/vCommon.css">
         <style>
-        h2:first-of-type{margin:0;}
-        h2{margin-top:20px;}
-        .strSlt-a[data-role~=ab]{color:red;}
-        .strSlt-b[data-role|=ko]{color:red;}
-        .strSlt-b2[data-role*=x]{color:red;}
-        .strSlt-c[data-role^=a]{color:red;}
-        .strSlt-d[data-role$=f]{color:red;}
+        .first-child li:first-child{color:red;}
+        .first-child li:last-child{color:blue;}
+        .first-child li:nth-child(3),.first-child li:nth-last-child(3){color:orange;}
+
+        li:first-of-type{color:red;}
+        li:last-of-type{color:blue;}
+        li:nth-of-type(3),li:nth-last-of-type(3){color:orange;}
         </style>
     </head>
     <body>
@@ -22,41 +22,32 @@
             <script src="../vCommon/header.js"></script>
             <section>
                 <article class="dsc">
-                    <h2>선택자[속성~=값]</h2>
-                    속성 안의 값이 특정 값을 단어로 포함하고 있는 것 선택
-                    <div class="strSlt-a" data-role="ab abc">
-                        <p>class : strSlt-a</p>
-                        <p>data-role="ab abc"</p>
-                        <p>[data-role~=ab]{color:red;}</p>
-                    </div>
-                    <h2>선택자[속성|=값]</h2>
-                    속성 안의 값이 특정 값을 단어로 포함하고 있는 것 선택
-                    <div class="strSlt-b" data-role="ko-kr">
-                        <p>class : strSlt-b</p>
-                        <p>data-role="ko-kr"</p>
-                        <p>[data-role|=ko]{color:red;}</p>
-                    </div>
-                    <h2>선택자[속성*=값]</h2>
-                    속성 안의 값이 특정 값을 포함하고 있는 것 선택
-                    <div class="strSlt-b2" data-role="abxdfsdfwefsdf">
-                        <p>class : strSlt-b2</p>
-                        <p>data-role="abxdfsdfwefsdf"</p>
-                        <p>[data-role*=x]{color:red;}</p>
-                    </div>
-                    <h2>선택자[속성^=값]</h2>
-                    속성 안의 값이 특정 값으로 시작하는 태그를 선택
-                    <div class="strSlt-c" data-role="abcdef">
-                        <p>class : strSlt-c</p>
-                        <p>data-role="abcdef"</p>
-                        <p>[data-role^=a]{color:red;}</p>
-                    </div>
-                    <h2>선택자[속성$=값]</h2>
-                    속성 안의 값이 특정 값으로 끝나는 태그를 선택
-                    <div class="strSlt-d" data-role="abcdef">
-                        <p>class : strSlt-d</p>
-                        <p>data-role="abcdef"</p>
-                        <p>[data-role$=f]{color:red;}</p>
-                    </div>
+                    <h2>:first-child | :last-child | :nth-child(3) | :nth-last-child(3)</h2>
+                    자손 선택<br>
+                    .first-child li:first-child{color:red;}<br>
+                    .first-child li:last-child{color:blue;}<br>
+                    .first-child li:nth-child(3),.first-child li:nth-last-child(3){color:orange;}
+                    <ul class="first-child">
+                        <li>111</li>
+                        <li>222</li>
+                        <li>333</li>
+                        <li>444</li>
+                        <li>555</li>
+                        <li>666</li>
+                    </ul>
+                    <h2>:first-of-type | :last-of-type | :nth-of-type-(3) | :nth-last-of-type(3)</h2>
+                    자손 중에서 선택<br>
+                    li:first-of-type{color:red;}<br>
+                    li:last-of-type{color:blue;}<br>
+                    li:nth-of-type(3),li:nth-last-of-type(3){color:orange;}
+                    <ul>
+                        <li>111</li>
+                        <li>222</li>
+                        <li>333</li>
+                        <li>444</li>
+                        <li>555</li>
+                        <li>666</li>
+                    </ul>
                 </article>
             </section>
             <script src="../vCommon/footer.js"></script>
