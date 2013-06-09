@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>transition</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <link rel="stylesheet" type="text/css" href="../vCommon/vCommon.css">
+        <style>
+        .box{width:100px;height:100px;background:orange}
+        .box_v1:hover{
+            width:50px;height:50px;
+            -ms-transition-duration:2s;
+            -webkit-transition-duration:2s;
+            -moz-transition-duration:2s;
+            -o-transition-duration:2s;
+            transition-duratiob:2s;
+        }
+        .box_v2:hover{
+            width:50px;height:50px;
+            -ms-transition-delay:2s;
+            -webkit-transition-delay:2s;
+            -moz-transition-delay:2s;
+            -o-transition-delay:2s;
+            transition-delay:2s;
+        }
+        .box_v3:hover{
+            width:50px;height:50px;
+            -ms-transition-timing-function:linear;
+            -webkit-transition-timing-function:linear;
+            -moz-transition-timing-function:linear;
+            -o-transition-timing-function:linear;
+            transition-timing-function:linear;
+        }
+        .box_v4:hover{
+            background-color:green;
+            -ms-transition:background-color 4s 1s ease;
+            -webkit-transition:background-color 4s 1s ease;
+            -moz-transition:background-color 4s 1s ease;
+            -o-transition:background-color 4s 1s ease;
+            transition:background-color 4s 1s ease;
+        }
+        </style>
+        <script src="../vCommon/prefixfree.min.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <script>var titHeader = 'transition';</script>
+            <script src="../vCommon/header.js"></script>
+            <section>
+                <article>
+                    <h2>transition-duration</h2>
+                    <div class="box box_v1">
+                        mouseover here!
+                    </div>
+                </article>
+                <article>
+                    <h2>transition-delay</h2>
+                    <div class="box box_v2">
+                        mouseover here! transition after 2 sec!
+                    </div>
+                </article>
+                <article>
+                    <h2>transition-timing-function</h2>
+                    <div class="box box_v3">
+                        mouseover here! transition type is linear!
+                    </div>
+                    <p>
+                        another type is ease, ease-in, ease-out, ease-in-out!
+                    </p>
+                    <p>
+                        위의 5가지 형태가 마음에 안든다면, css3에서 제공하는 cubic-bezier() 함수를 사용하면 된다.<br>
+                        cubic-bezier(x0,y0,x1,y1)<br>
+                        수치 확인이 가능한 URL이 있. <a href="http://cubic-bezier.com" target="_blank">새창</a>
+                    </p>
+                </article>
+                <article>
+                    <h2>transition 속성 한 번에 입력하기</h2>
+                    <div class="box box_v4"></div>
+                    <p>transition:|transition-property|transition-duration|transition-timing-function</p>
+                </article>
+            </section>
+            <script src="../vCommon/footer.js"></script>
+        </div>
+    </body>
+</html>
