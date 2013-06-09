@@ -5,40 +5,40 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="Content-Script-Type" content="text/javascript">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-        <link rel="stylesheet" type="text/css" href="vCommon/vCommon.css">
-        <script>
-        var aFruit = [];
-        aFruit.push('apple');
-        document.write(aFruit+'<br>');  //apple
-        aFruit.push('banana');
-        document.write(aFruit+'<br>');  //apple,banana
-        aFruit.shift();
-        document.write(aFruit+'<br>');  //banana
-        aFruit.unshift('orange');
-        document.write(aFruit+'<br>');  //orange,banana
-        aFruit.pop();
-        document.write(aFruit+'<br>');  //orange
-
-        document.write(aFruit.length+'<br>');  //1
-        aFruit.push('apple', 'banana');
-        document.write(aFruit+'<br>');  //orange,apple,banana
-
-        aFruit.splice(1,2);
-        document.write(aFruit+'<br>');  //orange
-        aFruit.push('apple', 'banana');
-        aFruit.splice(1,0,'aaa','bbb');  //1:첫번째 배열 이후, 0:삭제 없음
-        document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
-        </script>
+        <link rel="stylesheet" type="text/css" href="../vCommon/vCommon.css">
     </head>
     <body>
         <div id="wrap">
             <script>var titHeader = 'array';</script>
-            <script src="vCommon/header.js"></script>
+            <script src="../vCommon/header.js"></script>
             <div id="content">
                 <section>
+                    <script>
+                    var aFruit = [];
+                    aFruit.push('apple');
+                    document.write(aFruit+'<br>');  //apple
+                    aFruit.push('banana');
+                    document.write(aFruit+'<br>');  //apple,banana
+                    aFruit.shift();
+                    document.write(aFruit+'<br>');  //banana
+                    aFruit.unshift('orange');
+                    document.write(aFruit+'<br>');  //orange,banana
+                    aFruit.pop();
+                    document.write(aFruit+'<br>');  //orange
+
+                    document.write(aFruit.length+'<br>');  //1
+                    aFruit.push('apple', 'banana');
+                    document.write(aFruit+'<br>');  //orange,apple,banana
+
+                    aFruit.splice(1,2);
+                    document.write(aFruit+'<br>');  //orange
+                    aFruit.push('apple', 'banana');
+                    aFruit.splice(1,0,'aaa','bbb');  //1:첫번째 배열 이후, 0:삭제 없음
+                    document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
+                    </script>
                 </section>
             </div>
-            <script src="vCommon/footer.js"></script>
+            <script src="../vCommon/footer.js"></script>
         </div>
     </body>
 </html>

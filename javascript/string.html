@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>string</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <link rel="stylesheet" type="text/css" href="../vCommon/vCommon.css">
+    </head>
+    <body>
+        <div id="wrap">
+            <script>var titHeader = 'string';</script>
+            <script src="../vCommon/header.js"></script>
+            <div id="content">
+                <section>
+                    <script>
+                    /* 문자열 다루기 */
+                    var sText = 'Hello, World!?'
+                    // 맨 앞 텍스트 선택
+                    var sTextCharAt = sText.charAt(0);
+                    document.write(sTextCharAt+'<br>');
+                    // 맨 뒤 텍스트 선택
+                    var sTextCharAt = sText.charAt(sText.length - 1);
+                    document.write(sTextCharAt+'<br>');
+                    // 1번째 초과 4번째 미만 선택
+                    var sTextSubstring = sText.substring(1,4);
+                    document.write(sTextSubstring+'<br>');
+                    // 1번째 초과 4번째 미만 선택
+                    var sTextSlice = sText.slice(1,4);
+                    document.write(sTextSlice+'<br>');
+                    // 끝에서 3번째까지 선택
+                    var sTextSlice = sText.slice(-3);
+                    document.write(sTextSlice+'<br>');
+                    // o 가 위치한 제일 첫번째
+                    var sTextIndexOf = sText.indexOf('o');
+                    document.write(sTextIndexOf+'<br>');
+                    // o 가 위치한 제일 마지막
+                    var sTextIndexOf = sText.lastIndexOf('o');
+                    document.write(sTextIndexOf+'<br>');
+                    // ,(콤마) 기준으로 앞 뒤가 배열로 저장
+                    var sTextSplit = sText.split(',');
+                    document.write(sTextSplit[1]+'<br>');
+                    // 앞의 텍스트가 뒤의 텍스트로 교체
+                    var sTextReplace = sText.replace('o','ooo');
+                    document.write(sTextReplace+'<br>');
+                    // 모두 대문자로 변환
+                    var sTextToUpperCase = sText.toUpperCase();
+                    document.write(sTextToUpperCase+'<br>');
+                    // 모두 소문자로 변환
+                    var sTextToLowerCase = sText.toLowerCase();
+                    document.write(sTextToLowerCase+'<br>');
+                    </script>
+                </section>
+            </div>
+            <script src="../vCommon/footer.js"></script>
+        </div>
+    </body>
+</html>
