@@ -16,9 +16,9 @@
             <div id="content">
                 <section>
                 	<div id="_spinbox">
-						<input type="text"/>
-						<input type="button" value="+"/>
-						<input type="button" value="-"/>
+						<input type="text" id="_text_input"/>
+						<input type="button" id="_plus_button" value="+"/>
+						<input type="button" id="_minus_button" value="-"/>
 					</div>
 					<!--
 					<div id="_spinbox2">
@@ -36,7 +36,7 @@
 	$(document).ready(function(){
 		var wel = $('#_spinbox');
 		var oSpinbox1 = new nts.SpinBox(wel, {
-			nDefaultValue : 250			
+			nDefaultValue : 250		
 		});
 		/*
 		wel = $('#_spinbox2');
