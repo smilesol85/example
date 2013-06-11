@@ -25,6 +25,5 @@ nts.Tester.prototype = {
 	 * @private
 	 */
 	_setEvents : function(){
-		alert('set_events');
 	}
 };
