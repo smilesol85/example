@@ -16,10 +16,18 @@
             <div id="content">
                 <section>
                 	<div id="_spinbox">
-						<input type="text" onfocusout="regTest();"/>
+						<input type="text"/>
 						<input type="button" value="+"/>
 						<input type="button" value="-"/>
 					</div>
+					<!--
+					<div id="_spinbox2">
+						<input type="text"/>
+						<input type="button" value="+"/>
+						<input type="button" value="-"/>
+					</div>
+					-->
+
                 </section>
             </div>
             <script src="../../vCommon/footer.js"></script>
@@ -27,12 +35,18 @@
     <script type="text/javascript">
 	$(document).ready(function(){
 		var wel = $('#_spinbox');
-		var oTester = new nts.Tester(wel, {
-			
+		var oSpinbox1 = new nts.SpinBox(wel, {
+			nDefaultValue : 250			
 		});
-
+		/*
+		wel = $('#_spinbox2');
+		oSpinbox2 = new nts.SpinBox(wel, {
+			nDefaultValue : 250			
+		});
+		*/
 	});
 
+/*
     var nNum = $('input[type=text]');
     var buttons = $('input[type=button]');
     function setInput(val){
@@ -65,6 +79,7 @@
             setInput(nCount);
         }
     });
+*/
 	</script>
     </body>
 </html>
