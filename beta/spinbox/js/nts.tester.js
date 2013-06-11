@@ -1,9 +1,8 @@
-
 // Name Space 설정
 var nts = nts || {};
 
 /**
- * Tester 클래스
+ * SpinBox 클래스
  */
 nts.SpinBox = function(wel, htOptions){
 	$.extend(this, htOptions || {});
@@ -23,14 +22,13 @@ nts.SpinBox.prototype = {
 	init : function(){	
 		this._setElements();
 		this._initVals();
-	
-		this._setEvents();
-
+		this.testReg();
 		this.setInput(this.nDefaultValue);
+		this._setEvents();
 	},
 
 	_setElements : function(){
-		this.welText = $('input[type=text]');
+		this.welText = $('#_text_input');
     	this.welButtons = $('input[type=button]');
 	},
 
@@ -48,15 +46,14 @@ nts.SpinBox.prototype = {
         }else{
 
         }
-
+        var nNumber = parseInt(nValue, 10);
         this.welText.val(nValue);
 	},
 
 	testReg : function(){
 		var rx = /\D/g;
-        var nInput = this.welText.val();
-        var sReplace = nInput.replace(rx,'');
-
+        var sInput = this.welText.val() + '';
+		var sReplace = sInput.replace(rx,'');
         var nNumber = parseInt(sReplace, 10);
         this.setInput(nNumber);
 	},
@@ -67,6 +64,7 @@ nts.SpinBox.prototype = {
 	 */
 	_setEvents : function(){
 		var oSelf = this;
+
 		this.welText.on('focusout', function(){
 			oSelf.testReg();
 		});
