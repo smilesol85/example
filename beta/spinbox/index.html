@@ -16,7 +16,7 @@
             <div id="content">
                 <section>
                 	<div id="_spinbox">
-						<input type="text" />
+						<input type="text" onfocusout="regTest();"/>
 						<input type="button" value="+"/>
 						<input type="button" value="-"/>
 					</div>
@@ -31,11 +31,40 @@
 			
 		});
 
-		var nNum = $('input[type=text]');
-		var nSum = 0;
-		nNum.attr('value',200);
-
 	});
+
+    var nNum = $('input[type=text]');
+    var buttons = $('input[type=button]');
+    function setInput(val){
+        if(val < 100 || val > 300){
+            alert('100 이상 또는 300 이하만 입력 가능합니다.');
+            val = 200;
+        }else{}
+        nNum.val(val);
+    }
+    setInput(200);
+
+    function regTest(){
+        var regs = /\D/g;
+        var nInput = nNum.val();
+        var sReplace = nInput.replace(regs,'');
+        setInput(sReplace);
+    }
+
+    buttons.click(function(){
+        var nCount = nNum.val();
+        if($(this).val() == '+'){
+            nCount++;
+        }else{
+            nCount--;
+        }
+
+        if(nCount < 100 || nCount > 300){
+            alert('100 이상 또는 300 이하만 입력 가능합니다.');
+        }else{
+            setInput(nCount);
+        }
+    });
 	</script>
     </body>
 </html>
