@@ -7,12 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
     <link rel="stylesheet" type="text/css" href="../../vCommon/vCommon.css">
     <style>
-    section{margin-top:20px}
+    ul{margin:0;padding:0;list-style:none}
     section,article{overflow:hidden}
-    .reset{display:boc;display:-webkit-box;}
-    .reset button{display:block;-webkit-box-flex:1}
-    textarea{display:block;-webkit-box-flex:4}
-    .lst_setting{float:left;width:33.3%}
+    .lst_setting{margin:5px;padding:5px;border:1px solid #eee;box-shadow:inset 1px 1px 1px #fff;background:#eee}
+    .lst_setting h2{padding:5px 0;font-size:14px}
+    .lst_setting ul{overflow:hidden}
+    .lst_setting ul li{float:left;margin-right:10px;font-size:12px}
+    .lst_setting ul li input{vertical-align:middle}
+    .reset{display:box;display:-webkit-box;position:relative;margin-top:10px;padding-top:16px}
+    .reset:before,.reset:after{display:block;position:absolute;top:0;font-size:14px;color:red;font-weight:bold}
+    .reset:before{left:5px;content:'원본'}
+    .reset:after{right:5px;content:'수정 후'}
+    .reset button{display:block;-webkit-box-flex:1;border:1px solid #aaa;background:#eee}
+    textarea{display:block;-webkit-box-flex:4;position:relative}
+    footer{position:fixed;bottom:0;left:0;width:100%;background:#fff}
     </style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
@@ -42,37 +50,118 @@
                     </ul>
                 </div>
                 <div class="lst_setting">
-                    <h2>제거하고 싶은 문자</h2>
-                    <ul class="user_remove_set">
+                    <h2><button type="button" class="add_rm_str">제거하고 싶은 문자 추가</button></h2>
+                    <ul class="user_rm_str">
                     </ul>
-                    <button type="button" class="add_remove">제거하고 싶은 문자 추가</button>
+                </div>
+                <div class="lst_setting">
+                    <h2><button type="button" class="add_rm_tag">제거하고 싶은 태그 추가</button></h2>
+                    <ul class="user_rm_tag">
+                    </ul>
                 </div>
             </article>
             <article class="reset">
-                <textarea class="before"></textarea>
+                <textarea class="before" rows="20">
+<a href='sdfsfdsdfsd' class="class _class" target="_blank"></a>
+<script type="text/javascript">
+alert('t');
+</script>
+<div onclick="alert('test');">
+</div>
+                </textarea>
                 <button type="button">reset</button>
-                <textarea class="after"></textarea>
+                <textarea class="after" rows="20"></textarea>
             </article>
         </section>
         <script src="../../vCommon/footer.js"></script>
     </div>
 <script>
-var nRemoveId = 0;
+/*
+var reset = reset || {};
+
+/* resetCode 클래스 *
+reset.codes = function(){
+    this.init();
+};
+
+reset.codes.prototype = {
+    nRmStr : 0,
+    nRmTag : 0,
+
+    init : {
+
+    },
+    resetHref : {
+        var sRemove = prompt('제거하고 싶은 문자 입력 : ','');
+        if(sRemove == null){
+        }else{
+            $('.user_rm_str').append('<li><input type="checkbox" id="rm_user_str'+nRmStr+'" checked="checked"><label for="rm_user_str'+nRmStr+'">'+sRemove+'</label></li>');
+        }
+        nRmStr++;
+    }
+};
+*/
+
+
+
+var nRmStr = 0, nRmTag = 0;
 
 // 제거하고 싶은 문자 추가
-$('.add_remove').on('click',function(){
+$('.add_rm_str').on('click',function(){
     var sRemove = prompt('제거하고 싶은 문자 입력 : ','');
-    $('.user_remove_set').append('<li><input type="checkbox" id="rm_user'+nRemoveId+'" checked="checked"><label for="rm_user'+nRemoveId+'">'+sRemove+'</label></li>');
-    nRemoveId++;
+    if(sRemove == null){
+    }else{
+        $('.user_rm_str').append('<li><input type="checkbox" id="rm_user_str'+nRmStr+'" checked="checked"><label for="rm_user_str'+nRmStr+'">'+sRemove+'</label></li>');
+    }
+    nRmStr++;
 });
 
-// 체크박스 체크 여부
-$('.reset button').on('click',function(){
-    var sBefore = $('.before').val();
-    var chHref = $('#reset_href').is(':checked');
+// 제거하고 싶은 태그 추가
+$('.add_rm_tag').on('click',function(){
+    var sRemove = prompt('제거하고 싶은 태그 입력 : ','');
+    if(sRemove == null){
+    }else{
+        $('.user_rm_tag').append('<li><input type="checkbox" id="rm_user_tag'+nRmTag+'" checked="checked"><label for="rm_user_tag'+nRmTag+'">'+sRemove+'</label></li>');
+    }
+    nRmTag++;
+});
 
-    if(chHref == true){
-        alert(sBefore);
+// 체크박스 체크 여부 확인 후 코드 수정
+$('.reset button').on('click',function(){
+    var sTextarea = $('.before').val();
+
+    var fHref = $('#reset_href').is(':checked');
+    var fTarget = $('#rm_target_blank').is(':checked');
+    var fOnclick = $('#rm_onclick').is(':checked');
+    // var fScript = $('#rm_script_tag').is(':checked');
+
+    var regHref = /href=["'][^"']+["']/i;
+    var regTarget = /target=["'].*["']/i;
+    var regOnclick = /onclick=["'].*["']/i;
+    //var regScript = /<script.*[\r\n].*[\r\n]<\/script>/gi;
+
+    var sReplace = '';
+
+    /*
+    if(fHref == true){
+        sReplace = sTextarea.replace(regHref,'href="#"');
+    }else{
+        $('.after').val(sTextarea);
+    }
+    */
+    /*
+    if(fTarget == true){
+        sReplace = sTextarea.replace(regTarget,'');
+        $('.after').val(sReplace);
+    }else{
+        $('.after').val(sTextarea);
+    }
+    */
+    if(fOnclick == true){
+        sReplace = sTextarea.replace(regOnclick,'');
+        $('.after').val(sReplace);
+    }else{
+        $('.after').val(sTextarea);
     }
 });
 </script>
