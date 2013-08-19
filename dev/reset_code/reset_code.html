@@ -76,72 +76,70 @@ alert('t');
         <script src="../../vCommon/footer.js"></script>
     </div>
 <script>
-/*
 var reset = reset || {};
+var nRmStr = 0, nRmTag = 0;
 
-/* resetCode 클래스 *
-reset.codes = function(){
+reset.code = function(){
     this.init();
 };
 
-reset.codes.prototype = {
-    nRmStr : 0,
-    nRmTag : 0,
-
-    init : {
+reset.code.prototype = {
+    init : function(){
+        this._setElements();
+        this._setCheck();
+        this._setReg();
+        this._setReg();
+    },
+    _setElements : function(){
+        this.sTextarea = $('.before').val();
+        this.sReplace = '';
+    },
+    _setCheck : function(){
+        this.fHref = $('#reset_href').is(':checked');
+        this.fTarget = $('#rm_target_blank').is(':checked');
+        this.fOnclick = $('#rm_onclick').is(':checked');
+        //this.fScript = $('#rm_script_tag').is(':checked');
+    },
+    _setReg : function(){
+        this.regBlank = /\s>/g;
+        this.regHref = /href=["'][^"']+["']/i;
+        this.regTarget = /target=["'].*["']/i;
+        this.regOnclick = /onclick=["'].*["']/i;
+        //this.regScript = /<script.*[\r\n].*[\r\n]<\/script>/gi;
+    },
+    _setEvents : function(){
 
     },
-    resetHref : {
-        var sRemove = prompt('제거하고 싶은 문자 입력 : ','');
-        if(sRemove == null){
+    _setEleRmStr : function(sValue){
+        if(!sValue){
         }else{
-            $('.user_rm_str').append('<li><input type="checkbox" id="rm_user_str'+nRmStr+'" checked="checked"><label for="rm_user_str'+nRmStr+'">'+sRemove+'</label></li>');
+            $('.user_rm_str').append('<li><input type="checkbox" id="rm_user_str'+nRmStr+'" checked="checked"><label for="rm_user_str'+nRmStr+'">'+sValue+'</label></li>');
+            nRmStr++;
         }
-        nRmStr++;
+    },
+    _setEleRmTag : function(sValue){
+        if(!sValue){
+        }else{
+            $('.user_rm_tag').append('<li><input type="checkbox" id="rm_user_tag'+nRmTag+'" checked="checked"><label for="rm_user_tag'+nRmTag+'">'+sValue+'</label></li>');
+            nRmTag++;
+        }
     }
 };
-*/
 
-
-
-var nRmStr = 0, nRmTag = 0;
-
-// 제거하고 싶은 문자 추가
+// 제거하고 싶은 문자 입력
 $('.add_rm_str').on('click',function(){
     var sRemove = prompt('제거하고 싶은 문자 입력 : ','');
-    if(sRemove == null){
-    }else{
-        $('.user_rm_str').append('<li><input type="checkbox" id="rm_user_str'+nRmStr+'" checked="checked"><label for="rm_user_str'+nRmStr+'">'+sRemove+'</label></li>');
-    }
-    nRmStr++;
+    reset.code.prototype._setEleRmStr(sRemove);
 });
 
-// 제거하고 싶은 태그 추가
+// 제거하고 싶은 태그 입력
 $('.add_rm_tag').on('click',function(){
     var sRemove = prompt('제거하고 싶은 태그 입력 : ','');
-    if(sRemove == null){
-    }else{
-        $('.user_rm_tag').append('<li><input type="checkbox" id="rm_user_tag'+nRmTag+'" checked="checked"><label for="rm_user_tag'+nRmTag+'">'+sRemove+'</label></li>');
-    }
-    nRmTag++;
+    reset.code.prototype._setEleRmTag(sRemove);
 });
 
 // 체크박스 체크 여부 확인 후 코드 수정
 $('.reset button').on('click',function(){
-    var sTextarea = $('.before').val();
-
-    var fHref = $('#reset_href').is(':checked');
-    var fTarget = $('#rm_target_blank').is(':checked');
-    var fOnclick = $('#rm_onclick').is(':checked');
-    // var fScript = $('#rm_script_tag').is(':checked');
-
-    var regHref = /href=["'][^"']+["']/i;
-    var regTarget = /target=["'].*["']/i;
-    var regOnclick = /onclick=["'].*["']/i;
-    //var regScript = /<script.*[\r\n].*[\r\n]<\/script>/gi;
-
-    var sReplace = '';
-
     /*
     if(fHref == true){
         sReplace = sTextarea.replace(regHref,'href="#"');
@@ -158,7 +156,7 @@ $('.reset button').on('click',function(){
     }
     */
     if(fOnclick == true){
-        sReplace = sTextarea.replace(regOnclick,'');
+        sReplace = sTextarea.replace(regOnclick,'').replace(regBlank,'>');
         $('.after').val(sReplace);
     }else{
         $('.after').val(sTextarea);
