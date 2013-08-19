@@ -85,12 +85,12 @@ reset.code = function(){
 
 reset.code.prototype = {
     init : function(){
-        this._setElements();
+        this._initVals();
         this._setCheck();
         this._setReg();
-        this._setReg();
+        this._setEvents();
     },
-    _setElements : function(){
+    _initVals : function(){
         this.sTextarea = $('.before').val();
         this.sReplace = '';
     },
