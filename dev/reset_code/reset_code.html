@@ -8,18 +8,15 @@
     <link rel="stylesheet" type="text/css" href="../../vCommon/vCommon.css">
     <style>
     ul{margin:0;padding:0;list-style:none}
-    section,article{overflow:hidden}
+    section,article{overflow:hidden;text-align:center}
     .lst_setting{margin:5px;padding:5px;border:1px solid #eee;box-shadow:inset 1px 1px 1px #fff;background:#eee}
-    .lst_setting h2{padding:5px 0;font-size:14px}
+    .lst_setting h2{padding:5px 0;font-size:14px;text-align:left}
     .lst_setting ul{overflow:hidden}
     .lst_setting ul li{float:left;margin-right:10px;font-size:12px}
     .lst_setting ul li input{vertical-align:middle}
-    .reset{display:box;display:-webkit-box;position:relative;margin-top:10px;padding-top:16px}
-    .reset:before,.reset:after{display:block;position:absolute;top:0;font-size:14px;color:red;font-weight:bold}
-    .reset:before{left:5px;content:'원본'}
-    .reset:after{right:5px;content:'수정 후'}
-    .reset button{display:block;-webkit-box-flex:1;border:1px solid #aaa;background:#eee}
-    textarea{display:block;-webkit-box-flex:4;position:relative}
+    .btn_reset{width:50%;height:40px}
+    .reset{position:relative;margin-top:5px;padding:10px}
+    textarea{width:100%}
     footer{position:fixed;bottom:0;left:0;width:100%;background:#fff}
     </style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -59,18 +56,22 @@
                     <ul class="user_rm_tag">
                     </ul>
                 </div>
+                <button type="button" class="btn_reset">reset code</button>
             </article>
             <article class="reset">
+                <div class="render"></div>
                 <textarea class="before" rows="20">
-<a href='sdfsfdsdfsd' class="class _class" target="_blank"></a>
+<a href='sdfsfdsdfsd' class="_class" target="_blank" class="test"></a>
+<a HREF="test" class="_class" target="_blank" class="test"></a>
+
 <script type="text/javascript">
 alert('t');
 </script>
-<div onclick="alert('test');">
-</div>
+<script type="text/javascript">alert('t');</script>
+
+<div onclick="alert('test');" onerror="test()" class="test"></div>
+<div onClick='alert("test");' onError='test()' class="test"></div>
                 </textarea>
-                <button type="button">reset</button>
-                <textarea class="after" rows="20"></textarea>
             </article>
         </section>
         <script src="../../vCommon/footer.js"></script>
@@ -86,29 +87,39 @@ reset.code = function(){
 reset.code.prototype = {
     init : function(){
         this._initVals();
-        this._setCheck();
-        this._setReg();
         this._setEvents();
     },
     _initVals : function(){
-        this.sTextarea = $('.before').val();
-        this.sReplace = '';
+        this.btnRmStr = $('.add_rm_str');
+        this.btnRmTag = $('.add_rm_tag');
+        this.btnReset = $('.btn_reset');
     },
     _setCheck : function(){
         this.fHref = $('#reset_href').is(':checked');
         this.fTarget = $('#rm_target_blank').is(':checked');
         this.fOnclick = $('#rm_onclick').is(':checked');
+        this.fOnerror = $('#rm_onerror').is(':checked');
+        this.fClass = $('#rm_underbar_class').is(':checked');
         //this.fScript = $('#rm_script_tag').is(':checked');
     },
     _setReg : function(){
-        this.regBlank = /\s>/g;
-        this.regHref = /href=["'][^"']+["']/i;
-        this.regTarget = /target=["'].*["']/i;
-        this.regOnclick = /onclick=["'].*["']/i;
+        
+        this.regHref = /href=["'][^"']+["']/gi;
+        this.regTarget = /target=["'][^"']+["']/gi;
+        this.regOnclick = /onclick=["'].*["']/gi;
+        this.regOnerror = /onerror=["'].*["']/gi;
+        this.regClass = /(^_.*)/i;
         //this.regScript = /<script.*[\r\n].*[\r\n]<\/script>/gi;
-    },
-    _setEvents : function(){
-
+        this.regBlank = /\s>/g;
+        
+        /*
+        this.regHref = /href=["'][^"']+["']/i;
+        this.regTarget = /target=/i;
+        this.regOnclick = /onclick=/i;
+        this.regOnerror = /onerror=/i;
+        //this.regScript = /<script.*[\r\n].*[\r\n]<\/script>/gi;
+        this.regBlank = /\s>/g;
+        */
     },
     _setEleRmStr : function(sValue){
         if(!sValue){
@@ -123,45 +134,52 @@ reset.code.prototype = {
             $('.user_rm_tag').append('<li><input type="checkbox" id="rm_user_tag'+nRmTag+'" checked="checked"><label for="rm_user_tag'+nRmTag+'">'+sValue+'</label></li>');
             nRmTag++;
         }
+    },
+    _setEvents : function(){
+        var oSelf = this;
+
+        // 제거하고 싶은 문자 입력
+        this.btnRmStr.on('click',function(){
+            var sRemove = prompt('제거하고 싶은 문자 입력 : ','');
+            oSelf._setEleRmStr(sRemove);
+        });
+
+        // 제거하고 싶은 태그 입력
+        this.btnRmTag.on('click',function(){
+            var sRemove = prompt('제거하고 싶은 태그 입력 : ','');
+            oSelf._setEleRmTag(sRemove);
+        });
+
+        // 체크 여부 확인 후 코드 수정
+        this.btnReset.on('click',function(){
+            var sReplace = '';
+            oSelf._setCheck();
+            oSelf._setReg();
+
+            oSelf.fHref ? sReplace = $('.before').val().replace(oSelf.regHref,'href="#"') : sReplace = $('.before').val();
+            $('.before').val(sReplace);
+
+            oSelf.fTarget ? sReplace = $('.before').val().replace(oSelf.regTarget,'') : sReplace = $('.before').val();
+            $('.before').val(sReplace);
+
+            oSelf.fOnclick ? sReplace = $('.before').val().replace(oSelf.regOnclick,'') : sReplace = $('.before').val();
+            $('.before').val(sReplace);
+
+            oSelf.fOnerror ? sReplace = $('.before').val().replace(oSelf.regOnerror,'') : sReplace = $('.before').val();
+            $('.before').val(sReplace);
+
+            /*
+            oSelf.fClass ? sReplace = $('.before').val().replace(oSelf.regClass,'data-rmSelf=') : sReplace = $('.before').val();
+            $('.before').val(sReplace);
+            */
+            
+            sReplace = $('.before').val().replace(oSelf.regBlank,'>');
+            $('.before').val(sReplace);
+        });
     }
 };
 
-// 제거하고 싶은 문자 입력
-$('.add_rm_str').on('click',function(){
-    var sRemove = prompt('제거하고 싶은 문자 입력 : ','');
-    reset.code.prototype._setEleRmStr(sRemove);
-});
-
-// 제거하고 싶은 태그 입력
-$('.add_rm_tag').on('click',function(){
-    var sRemove = prompt('제거하고 싶은 태그 입력 : ','');
-    reset.code.prototype._setEleRmTag(sRemove);
-});
-
-// 체크박스 체크 여부 확인 후 코드 수정
-$('.reset button').on('click',function(){
-    /*
-    if(fHref == true){
-        sReplace = sTextarea.replace(regHref,'href="#"');
-    }else{
-        $('.after').val(sTextarea);
-    }
-    */
-    /*
-    if(fTarget == true){
-        sReplace = sTextarea.replace(regTarget,'');
-        $('.after').val(sReplace);
-    }else{
-        $('.after').val(sTextarea);
-    }
-    */
-    if(fOnclick == true){
-        sReplace = sTextarea.replace(regOnclick,'').replace(regBlank,'>');
-        $('.after').val(sReplace);
-    }else{
-        $('.after').val(sTextarea);
-    }
-});
+var resetCode = new reset.code();
 </script>
 </body>
 </html>
