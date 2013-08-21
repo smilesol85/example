@@ -1,0 +1,13 @@
+ul{margin:0;padding:0;list-style:none}
+section,article{overflow:hidden;text-align:center}
+.lst_setting{margin:5px;padding:5px;border:1px solid #eee;box-shadow:inset 1px 1px 1px #fff;background:#eee}
+.lst_setting h2{padding:5px 0;font-size:14px;text-align:left}
+.lst_setting h2 span{font-size:12px;color:red}
+.lst_setting ul{overflow:hidden}
+.lst_setting ul li{float:left;margin-right:10px;font-size:12px}
+.lst_setting ul li input{vertical-align:middle}
+.btn_reset{width:50%;height:40px}
+.reset{position:relative;margin-top:5px;padding:10px}
+.render{position:absolute;top:0;left:-1000em;}
+textarea{width:100%}
+footer{position:fixed;bottom:0;left:0;width:100%;background:#fff}

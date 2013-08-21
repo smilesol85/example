@@ -6,20 +6,9 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
     <link rel="stylesheet" type="text/css" href="../../vCommon/vCommon.css">
-    <style>
-    ul{margin:0;padding:0;list-style:none}
-    section,article{overflow:hidden;text-align:center}
-    .lst_setting{margin:5px;padding:5px;border:1px solid #eee;box-shadow:inset 1px 1px 1px #fff;background:#eee}
-    .lst_setting h2{padding:5px 0;font-size:14px;text-align:left}
-    .lst_setting ul{overflow:hidden}
-    .lst_setting ul li{float:left;margin-right:10px;font-size:12px}
-    .lst_setting ul li input{vertical-align:middle}
-    .btn_reset{width:50%;height:40px}
-    .reset{position:relative;margin-top:5px;padding:10px}
-    textarea{width:100%}
-    footer{position:fixed;bottom:0;left:0;width:100%;background:#fff}
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/reset_code.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="js/reset_code.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -47,12 +36,12 @@
                     </ul>
                 </div>
                 <div class="lst_setting">
-                    <h2><button type="button" class="add_rm_str">제거하고 싶은 문자 추가</button></h2>
-                    <ul class="user_rm_str">
+                    <h2><button type="button" class="add_rm_attr">제거하고 싶은 속성 추가</button><span> 예) data-role 속성을 제거하고 싶은 경우 "data-role" 입력</span></h2>
+                    <ul class="user_rm_attr">
                     </ul>
                 </div>
                 <div class="lst_setting">
-                    <h2><button type="button" class="add_rm_tag">제거하고 싶은 태그 추가</button></h2>
+                    <h2><button type="button" class="add_rm_tag">제거하고 싶은 태그 추가</button><span> 예) em 태그를 제거하고 싶은 경우 "em" 입력</span></h2>
                     <ul class="user_rm_tag">
                     </ul>
                 </div>
@@ -61,9 +50,12 @@
             <article class="reset">
                 <div class="render"></div>
                 <textarea class="before" rows="20">
+<em>testtest</em>
 <a href='sdfsfdsdfsd' id="class _class" target="_blank" class="test" ></a>
 <a HREF="test" id="_id" target="_blank" class="_class class "></a>
 <a HREF="test" id="_class class" target="_blank" class='test '></a>
+
+<link rel="stylesheet" type="text/css" href="css/reset_code.css">
 
 <script type="text/javascript">
 alert('test');
@@ -85,134 +77,6 @@ alert('test');
         <script src="../../vCommon/footer.js"></script>
     </div>
 <script>
-var reset = reset || {};
-var nRmStr = 0, nRmTag = 0;
-
-reset.code = function(){
-    this.init();
-};
-
-reset.code.prototype = {
-    init : function(){
-        this._initVals();
-        this._setEvents();
-    },
-    _initVals : function(){
-        this.btnRmStr = $('.add_rm_str');
-        this.btnRmTag = $('.add_rm_tag');
-        this.btnReset = $('.btn_reset');
-    },
-    _setCheck : function(){
-        this.fHref = $('#reset_href').is(':checked');
-        this.fScript = $('#rm_script_tag').is(':checked');
-        this.fTarget = $('#rm_target_blank').is(':checked');
-        this.fOnclick = $('#rm_onclick').is(':checked');
-        this.fOnerror = $('#rm_onerror').is(':checked');
-        this.fOnload = $('#rm_onload').is(':checked');
-        this.fnocr = $('#rm_nocr').is(':checked');
-        this.fUnderbar = $('#rm_underbar').is(':checked');
-    },
-    _setReg : function(){
-        //this.regScript = /<script.*[\r\n].*[\r\n]<\/script>/gi;
-        //this.regTarget = /target=["'][^"']+["']/gi;
-        //this.regOnclick = /onclick=["'].*["']/gi;
-        //this.regOnerror = /onerror=["'].*["']/gi;
-        //this.regOnload = /onload=["'].*["']/gi;
-        //this.regNocr = /nocr=["'].*["']/gi;
-        this.regHref = /href=["'][^"']+["']/gi;
-        this.regScript = /<script/gi;
-        this.regScript2 = /<\/script/gi;
-        this.regTarget = /target=/gi;
-        this.regOnclick = /onclick=/gi;
-        this.regOnerror = /onerror=/gi;
-        this.regOnload = /onload=/gi;
-        this.regNocr = /nocr=/gi;
-
-        /* space */
-        this.regUnderbar = /_[^blank]\w+/gi;
-        this.regBlank = /\s[>]/gi;
-        this.regBlank2 = /\s["]/gi;
-        this.regBlank3 = /\s[']/gi;
-    },
-    _setEleRmStr : function(sValue){
-        if(!sValue){
-        }else{
-            $('.user_rm_str').append('<li><input type="checkbox" id="rm_user_str'+nRmStr+'" checked="checked"><label for="rm_user_str'+nRmStr+'">'+sValue+'</label></li>');
-            nRmStr++;
-        }
-    },
-    _setEleRmTag : function(sValue){
-        if(!sValue){
-        }else{
-            $('.user_rm_tag').append('<li><input type="checkbox" id="rm_user_tag'+nRmTag+'" checked="checked"><label for="rm_user_tag'+nRmTag+'">'+sValue+'</label></li>');
-            nRmTag++;
-        }
-    },
-    _setEvents : function(){
-        var oSelf = this;
-
-        // 제거하고 싶은 문자 입력
-        this.btnRmStr.on('click',function(){
-            var sRemove = prompt('제거하고 싶은 문자 입력 : ','');
-            oSelf._setEleRmStr(sRemove);
-        });
-
-        // 제거하고 싶은 태그 입력
-        this.btnRmTag.on('click',function(){
-            var sRemove = prompt('제거하고 싶은 태그 입력 : ','');
-            oSelf._setEleRmTag(sRemove);
-        });
-
-        // 체크 여부 확인 후 코드 수정
-        this.btnReset.on('click',function(){
-            var sReplace = '';
-            oSelf._setCheck();
-            oSelf._setReg();
-
-            oSelf.fHref ? sReplace = $('.before').val().replace(oSelf.regHref,'href="#"') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-
-            oSelf.fScript ? sReplace = $('.before').val().replace(oSelf.regScript,'<div class="rmself"').replace(oSelf.regScript2,'</div') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-            
-            oSelf.fTarget ? sReplace = $('.before').val().replace(oSelf.regTarget,'data-rmself=') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-
-            oSelf.fOnclick ? sReplace = $('.before').val().replace(oSelf.regOnclick,'data-rmself=') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-
-            oSelf.fOnerror ? sReplace = $('.before').val().replace(oSelf.regOnerror,'data-rmself=') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-
-            oSelf.fOnload ? sReplace = $('.before').val().replace(oSelf.regOnload,'data-rmself=') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-
-            oSelf.fnocr ? sReplace = $('.before').val().replace(oSelf.regNocr,'data-rmself=') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-
-            oSelf.fUnderbar ? sReplace = $('.before').val().replace(oSelf.regUnderbar,'') : sReplace = $('.before').val();
-            $('.before').val(sReplace);
-
-            sReplace = $('.before').val().replace(oSelf.regBlank,'>').replace(oSelf.regBlank2,'"').replace(oSelf.regBlank3,'\'');
-            $('.before').val(sReplace);
-
-            /*
-            var nAddStr = $('.user_rm_str li').length;
-            for(var i = 0; i < nAddStr; i++){
-                sReplace = $('.before').val().replace(/$('#rm_user_str'+i+' + label').text()/gi,'');
-                $('.before').val(sReplace);
-            }
-            */
-
-            $('.render').html(sReplace);
-            $('.render *').removeAttr('data-rmself');
-            $('.rmself').remove();
-            sReplace = $('.render').html();
-            $('.before').val(sReplace);
-        });
-    }
-};
-
 var resetCode = new reset.code();
 </script>
 </body>
