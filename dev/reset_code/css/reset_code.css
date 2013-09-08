@@ -6,8 +6,8 @@ section,article{overflow:hidden;text-align:center}
 .lst_setting ul{overflow:hidden}
 .lst_setting ul li{float:left;margin-right:10px;font-size:12px}
 .lst_setting ul li input{vertical-align:middle}
+.notice li{color:red}
 .btn_reset{width:50%;height:40px}
 .reset{position:relative;margin-top:5px;padding:10px}
 .render{position:absolute;top:0;left:-1000em;}
 textarea{width:100%}
-footer{position:fixed;bottom:0;left:0;width:100%;background:#fff}
