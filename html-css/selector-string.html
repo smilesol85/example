@@ -9,6 +9,11 @@
         <style>
         h2:first-of-type{margin:0;}
         h2{margin-top:20px;}
+
+        .sFl::first-letter{color:red;}
+        .sFln::first-line{color:red;}
+        .dh::selection{color:red;}
+
         .strSlt-a[data-role~=ab]{color:red;}
         .strSlt-b[data-role|=ko]{color:red;}
         .strSlt-b2[data-role*=x]{color:red;}
@@ -22,6 +27,18 @@
             <script src="../vCommon/header.js"></script>
             <section>
                 <article class="dsc">
+                    <h2>첫 번째 문자 선택</h2>
+                    <div>
+                        <p class="sFl">text TEXT text text</p>
+                    </div>
+                    <h2>첫 번째 라인 선택</h2>
+                    <div>
+                        <p class="sFln">text TEXT<br>text text</p>
+                    </div>
+                    <h2>selection 선택자</h2>
+                    <div>
+                        <p class="dh">text text text drag here</p>
+                    </div>
                     <h2>선택자[속성~=값]</h2>
                     속성 안의 값이 특정 값을 단어로 포함하고 있는 것 선택
                     <div class="strSlt-a" data-role="ab abc">
