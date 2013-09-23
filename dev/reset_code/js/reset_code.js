@@ -62,7 +62,7 @@ reset.Code.prototype = {
         this.rxCdata2 = /\/\/\]\]>>/gi;
 
         /* space */
-        this.rxUnderbar = /_[^blank]\w+/gi;
+        this.rxUnderbar = /_[^blank]\w*/gi;
         this.rxBlank = /\s[>]/gi;
         this.rxBlank2 = /\s["]/gi;
         this.rxBlank3 = /\s[']/gi;
@@ -100,10 +100,6 @@ reset.Code.prototype = {
         this.welScript ? sReplace = $('.before').val().replace(this.rxScript,'<div data-rm="rmself"').replace(this.rxScript2,'</div').replace(this.rxNoScript,'<div data-rm="rmself"').replace(this.rxNoScript2,'</div') : sReplace = $('.before').val();
         $('.before').val(sReplace);
         
-        // target
-        this.welTarget ? sReplace = $('.before').val().replace(this.rxTarget,'data-rmself=') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
-
         // onclick
         this.welOnclick ? sReplace = $('.before').val().replace(this.rxOnclick,'data-rmself=') : sReplace = $('.before').val();
         $('.before').val(sReplace);
@@ -118,6 +114,10 @@ reset.Code.prototype = {
 
         // nocr
         this.welNocr ? sReplace = $('.before').val().replace(this.rxNocr,'data-rmself=') : sReplace = $('.before').val();
+        $('.before').val(sReplace);
+
+        // target
+        this.welTarget ? sReplace = $('.before').val().replace(this.rxTarget,'data-rmself=') : sReplace = $('.before').val();
         $('.before').val(sReplace);
 
         // underbar class & id
