@@ -175,6 +175,21 @@ reset.Code.prototype = {
         */
         sReplace = $('.before').val().replace(this.rxHtml2,'html').replace(this.rxHead2,'head>').replace(this.rxBody2,'body').replace(this.rxLink2,'link').replace(this.rxLink3,'');
         $('.before').val(sReplace);
+
+        /*
+        $str1=$(".before").val().replace(/(\r\n|\n|\n\n)/gi,'[split]');
+        $str1=$str1.replace(/\'/g,"''");
+        $str1 = $str1.split("[split]");
+        $result="";
+        $.each(
+            $str1,function(i){
+                if($str1[i]=="")
+                    $result +="<p>&nbsp;</p>"+"\r\n";
+                else
+                    $result +=$str1[i]+"\r\n";
+            });
+        $(".before").val($result);
+        */
     },
 
     _setEvents : function(){
