@@ -16,19 +16,21 @@
         <script src="../../vCommon/header.js"></script>
         <section>
             <article>
-                <div class="lst_setting notice">
+                <!--
+                <div class="rm_setting notice">
                     <h2>Notice</h2>
                     <ul>
                         <li>문서의 DOCTYPE은 초기화 되니 사용시 주의해 주시기 바랍니다.</li>
                     </ul>
                 </div>
-                <div class="lst_setting">
+                -->
+                <div class="rm_setting">
                     <h2>초기화</h2>
                     <ul class="user_reset">
                         <li><input type="checkbox" id="reset_href" checked="checked"><label for="reset_href">a href="#"</label></li>
                     </ul>
                 </div>
-                <div class="lst_setting">
+                <div class="rm_setting">
                     <h2>제거</h2>
                     <ul class="user_remove">
                         <li><input type="checkbox" id="rm_script_tag" checked="checked" disabled="disabled"><label for="rm_script_tag">script tag</label></li>
@@ -41,17 +43,23 @@
                         <!--<li><input type="checkbox" id="rm_underbar" checked="checked"><label for="rm_underbar">_Name(언더바 클래스 및 아이디)</label></li>-->
                     </ul>
                 </div>
-                <div class="lst_setting">
-                    <h2><button type="button" class="add_rm_attr">제거하고 싶은 속성 추가</button><span> 예) data-role 속성을 제거하고 싶은 경우 "data-role" 입력</span></h2>
+                <div class="rm_setting">
+                    <h2 class="blind">속성 제거</h2>
+                    <div class="add_attr">
+                        <button type="button" class="btn_add_attr">속성 추가</button>
+                    </div>
                     <ul class="user_rm_attr">
                     </ul>
                 </div>
-                <div class="lst_setting">
-                    <h2><button type="button" class="add_rm_tag">제거하고 싶은 태그 추가</button><span> 예) em 태그를 제거하고 싶은 경우 "em" 입력</span></h2>
+                <div class="rm_setting">
+                    <h2 class="blind">태그 제거</h2>
+                    <div class="add_tag">
+                        <button type="button" class="btn_add_tag">태그 추가</button>
+                    </div>
                     <ul class="user_rm_tag">
                     </ul>
                 </div>
-                <button type="button" class="btn_reset">reset code</button>
+                <button type="button" class="btn_reset">reset!</button>
             </article>
             <article class="reset">
                 <div class="render"></div>

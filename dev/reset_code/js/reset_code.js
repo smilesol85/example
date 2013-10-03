@@ -13,8 +13,8 @@ reset.Code.prototype = {
     _initVals : function(){
         this.nRmAttr = 0;
         this.nRmTag = 0;
-        this.welBtnRmAttr = $('.add_rm_attr');
-        this.welBtnRmTag = $('.add_rm_tag');
+        this.welBtnRmAttr = $('.btn_add_attr');
+        this.welBtnRmTag = $('.btn_add_tag');
         this.welBtnReset = $('.btn_reset');
     },
     _setCheck : function(){

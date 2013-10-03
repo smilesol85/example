@@ -1,13 +1,20 @@
+@charset "utf-8";
+
+/* coommon */
+body{background-color:#e4e6e5}
 ul{margin:0;padding:0;list-style:none}
+textarea{width:100%}
 section,article{overflow:hidden;text-align:center}
-.lst_setting{margin:5px;padding:5px;border:1px solid #eee;box-shadow:inset 1px 1px 1px #fff;background:#eee}
-.lst_setting h2{padding:5px 0;font-size:14px;text-align:left}
-.lst_setting h2 span{font-size:12px;color:red}
-.lst_setting ul{overflow:hidden}
-.lst_setting ul li{float:left;margin-right:10px;font-size:12px}
-.lst_setting ul li input{vertical-align:middle}
+
+.rm_setting{padding:4px;border-bottom:1px solid #b6b8b7;box-shadow:inset 1px 1px 1px #fff;background:#eee}
+.rm_setting h2{padding:2px 0;font-size:14px;text-align:left;color:#444}
+.rm_setting .add_attr,
+.rm_setting .add_tag{font-size:12px;color:red;text-align:left}
+.rm_setting ul{overflow:hidden;font-size:11px}
+.rm_setting li{float:left;margin-right:10px}
+.rm_setting li input{vertical-align:middle}
+.rm_setting li input[disabled] + label{color:#999}
 .notice li{color:red}
-.btn_reset{width:50%;height:40px}
+.btn_reset{margin-top:5px;padding:4px;border-radius:5px;text-transform:uppercase}
 .reset{position:relative;margin-top:5px;padding:10px}
 .render{position:absolute;top:0;left:-1000em;}
-textarea{width:100%}
