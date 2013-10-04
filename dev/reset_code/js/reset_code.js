@@ -67,7 +67,7 @@ reset.Code.prototype = {
         this.rxBlank2 = /\s["]/gi;
         this.rxBlank3 = /\s[']/gi;
 
-        //this.rxLineBlank = /\r\n|\n\n/gi;
+        // this.rxLineBlank = /\r\n|\n\n/gi;
     },
 
     // 속성 추가
@@ -93,48 +93,48 @@ reset.Code.prototype = {
         /* html, head, body, link, cdata
         * 각 태그에 임시로 S 붙여서 제거되지 않게 방지
         */
-        sReplace = $('.before').val().replace(this.rxHtml,'htmlS').replace(this.rxHead,'headS>').replace(this.rxBody,'bodyS').replace(this.rxLink,'linkS').replace(this.rxCdata,'').replace(this.rxCdata2,'');
-        $('.before').val(sReplace);
+        sReplace = $('.changing').val().replace(this.rxHtml,'htmlS').replace(this.rxHead,'headS>').replace(this.rxBody,'bodyS').replace(this.rxLink,'linkS').replace(this.rxCdata,'').replace(this.rxCdata2,'');
+        $('.changing').val(sReplace);
 
         // script
-        this.welScript ? sReplace = $('.before').val().replace(this.rxScript,'<div data-rm="rmself"').replace(this.rxScript2,'</div').replace(this.rxNoScript,'<div data-rm="rmself"').replace(this.rxNoScript2,'</div') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
+        this.welScript ? sReplace = $('.changing').val().replace(this.rxScript,'<div data-rm="rmself"').replace(this.rxScript2,'</div').replace(this.rxNoScript,'<div data-rm="rmself"').replace(this.rxNoScript2,'</div') : sReplace = $('.changing').val();
+        $('.changing').val(sReplace);
         
         // onclick
-        this.welOnclick ? sReplace = $('.before').val().replace(this.rxOnclick,'data-rmself=') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
+        this.welOnclick ? sReplace = $('.changing').val().replace(this.rxOnclick,'data-rmself=') : sReplace = $('.changing').val();
+        $('.changing').val(sReplace);
 
         // onerror
-        this.welOnerror ? sReplace = $('.before').val().replace(this.rxOnerror,'data-rmself=') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
+        this.welOnerror ? sReplace = $('.changing').val().replace(this.rxOnerror,'data-rmself=') : sReplace = $('.changing').val();
+        $('.changing').val(sReplace);
 
         // onload
-        this.welOnload ? sReplace = $('.before').val().replace(this.rxOnload,'data-rmself=') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
+        this.welOnload ? sReplace = $('.changing').val().replace(this.rxOnload,'data-rmself=') : sReplace = $('.changing').val();
+        $('.changing').val(sReplace);
 
         // nocr
-        this.welNocr ? sReplace = $('.before').val().replace(this.rxNocr,'data-rmself=') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
+        this.welNocr ? sReplace = $('.changing').val().replace(this.rxNocr,'data-rmself=') : sReplace = $('.changing').val();
+        $('.changing').val(sReplace);
 
         // target
-        this.welTarget ? sReplace = $('.before').val().replace(this.rxTarget,'data-rmself=') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
+        this.welTarget ? sReplace = $('.changing').val().replace(this.rxTarget,'data-rmself=') : sReplace = $('.changing').val();
+        $('.changing').val(sReplace);
 
         // underbar class & id
-        this.welUnderbar ? sReplace = $('.before').val().replace(this.rxUnderbar,'') : sReplace = $('.before').val();
-        $('.before').val(sReplace);
+        this.welUnderbar ? sReplace = $('.changing').val().replace(this.rxUnderbar,'') : sReplace = $('.changing').val();
+        $('.changing').val(sReplace);
 
         // 공백 제거
-        sReplace = $('.before').val().replace(this.rxBlank,'>').replace(this.rxBlank2,'"').replace(this.rxBlank3,'\'');
-        $('.before').val(sReplace);
+        sReplace = $('.changing').val().replace(this.rxBlank,'>').replace(this.rxBlank2,'"').replace(this.rxBlank3,'\'');
+        $('.changing').val(sReplace);
 
         // 추가 속성 제거
         var nAttr = $('.user_rm_attr li').length;
         for(var i = 0; i < nAttr; i++){
             var sRmAttr = $('#rm_user_attr'+i+' + label').text();
             var rxRmAttr = new RegExp(sRmAttr+'=','gi');
-            sReplace = $('.before').val().replace(rxRmAttr,'data-rmself=');
-            $('.before').val(sReplace);
+            sReplace = $('.changing').val().replace(rxRmAttr,'data-rmself=');
+            $('.changing').val(sReplace);
         }
 
         // 추가 태그 제거
@@ -142,8 +142,8 @@ reset.Code.prototype = {
         for(var j = 0; j < nTag; j++){
             var sRmTag = $('#rm_user_tag'+j+' + label').text();
             var rxRmTag = new RegExp('<'+sRmTag,'gi');
-            sReplace = $('.before').val().replace(rxRmTag,'<'+sRmTag+' data-rm="rmself"');
-            $('.before').val(sReplace);
+            sReplace = $('.changing').val().replace(rxRmTag,'<'+sRmTag+' data-rm="rmself"');
+            $('.changing').val(sReplace);
         }
 
         /* 특정 영역에 삽입
@@ -157,7 +157,7 @@ reset.Code.prototype = {
         $('.render').html(sReplace);
         this.welHref ? sReplace = $('.render a').attr('href','#') : '';
         this.welIframe ? sReplace = $('iframe').remove() : '';
-        /*
+        /* ing
         if(this.welUnderbar){
             //$('.render *').attr();
             $('.render *').each(function(){
@@ -165,14 +165,15 @@ reset.Code.prototype = {
             });
         }
         */
+
         $('[data-rm]').remove();
         $('.render *').removeAttr('data-rmself');
         sReplace = $('.render').html();
-        $('.before').val(sReplace);
+        $('.changing').val(sReplace);
 
-        /*
+        /* ing
         alert(sReplace);
-        $str1=$(".before").val().replace(/(\r\n|\n|\n\n)/gi,'[split]');
+        $str1=$(".changing").val().replace(/(\r\n|\n|\n\n)/gi,'[split]');
         $str1=$str1.replace(/\'/g,"''");
         $str1 = $str1.split("[split]");
         $result="";
@@ -182,10 +183,10 @@ reset.Code.prototype = {
             else
                 $result +=$str1[i]+"\r\n";
         });
-        $(".before").val($result);
+        $(".changing").val($result);
 
-        sReplace = $(".before").val();
-        $(".before").val(sReplace);
+        sReplace = $(".changing").val();
+        $(".changing").val(sReplace);
         alert(sReplace);
         */
 
@@ -193,8 +194,8 @@ reset.Code.prototype = {
         /* html, head, body, link
         * 각 태그 원복
         */
-        sReplace = $('.before').val().replace(this.rxHtml2,'html').replace(this.rxHead2,'head>').replace(this.rxBody2,'body').replace(this.rxLink2,'link').replace(this.rxLink3,'');
-        $('.before').val(sReplace);
+        sReplace = $('.changing').val().replace(this.rxHtml2,'html').replace(this.rxHead2,'head>').replace(this.rxBody2,'body').replace(this.rxLink2,'link').replace(this.rxLink3,'');
+        $('.changing').val(sReplace);
     },
 
     _setEvents : function(){

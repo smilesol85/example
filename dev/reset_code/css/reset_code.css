@@ -15,6 +15,6 @@ button{height:30px;padding:0 4px;border:1px solid #999;border-radius:4px;backgro
 .rm_setting li input[disabled] + label{color:#999}
 .rm_setting .user_rm_attr,.rm_setting .user_rm_tag{margin-top:5px}
 .notice li{color:red}
-.btn_reset{width:100%;margin-top:5px;font-size:20px;background:#f17f49}
+.btn_reset{width:100%;margin-top:5px;font-size:20px;background:#fff}
 .reset{position:relative;margin-top:5px}
 .render{position:absolute;top:0;left:-1000em;}
