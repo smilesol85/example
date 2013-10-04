@@ -15,7 +15,7 @@ a{color:inherit;text-decoration:none}
 
 /* header */
 header{position:relative;margin-bottom:5px;padding:10px 0}
-header h1{box-shadow:inset 0 -1px 1px #fff;border-bottom:1px solid #b6b8b7;color:#444;text-transform:uppercase;font-family:verdana}
+header h1{box-shadow:0px -1px 0px 0px #fff inset;border-bottom:1px solid #b6b8b7;color:#444;text-transform:uppercase;font-family:verdana}
 
 /* footer */
 footer{padding:10px 0;border:1px solid #eee;border-left:none;border-right:none;font-size:12px;color:#aaa;text-align:center}
