@@ -1,20 +1,20 @@
 @charset "utf-8";
 
 /* coommon */
-body{background-color:#e4e6e5}
-ul{margin:0;padding:0;list-style:none}
 textarea{width:100%}
 section,article{overflow:hidden;text-align:center}
+button{height:30px;padding:0 4px;border:1px solid #999;border-radius:4px;background-color:#87d2a0;text-transform:uppercase}
 
-.rm_setting{padding:4px;border-bottom:1px solid #b6b8b7;box-shadow:inset 1px 1px 1px #fff;background:#eee}
+.rm_setting{margin-bottom:2px;padding:4px;border-bottom:1px solid #b6b8b7;box-shadow:0px -1px 0px 0px #fff inset}
 .rm_setting h2{padding:2px 0;font-size:14px;text-align:left;color:#444}
 .rm_setting .add_attr,
 .rm_setting .add_tag{font-size:12px;color:red;text-align:left}
 .rm_setting ul{overflow:hidden;font-size:11px}
-.rm_setting li{float:left;margin-right:10px}
-.rm_setting li input{vertical-align:middle}
+.rm_setting li{float:left;margin-right:10px;line-height:18px}
+.rm_setting li input{margin-right:4px;vertical-align:middle}
 .rm_setting li input[disabled] + label{color:#999}
+.rm_setting .user_rm_attr,.rm_setting .user_rm_tag{margin-top:5px}
 .notice li{color:red}
-.btn_reset{margin-top:5px;padding:4px;border-radius:5px;text-transform:uppercase}
-.reset{position:relative;margin-top:5px;padding:10px}
+.btn_reset{width:100%;margin-top:5px;font-size:20px;background:#f17f49}
+.reset{position:relative;margin-top:5px}
 .render{position:absolute;top:0;left:-1000em;}
