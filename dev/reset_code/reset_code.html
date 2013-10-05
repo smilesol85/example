@@ -27,20 +27,25 @@
                 <div class="rm_setting">
                     <h2>초기화</h2>
                     <ul class="user_reset">
+                        <li><input type="checkbox" id="reset_tab" checked="checked" disabled="disabled"><label for="reset_tab">tab(들여쓰기) 정리</label></li>
                         <li><input type="checkbox" id="reset_href" checked="checked"><label for="reset_href">a href="#"</label></li>
                     </ul>
                 </div>
                 <div class="rm_setting">
                     <h2>제거</h2>
                     <ul class="user_remove">
+                        <li><input type="checkbox" id="rm_blank" checked="checked" disabled="disabled"><label for="rm_blank">공백 및 개행된 라인 제거</label></li>
                         <li><input type="checkbox" id="rm_script_tag" checked="checked" disabled="disabled"><label for="rm_script_tag">script tag</label></li>
                         <li><input type="checkbox" id="rm_onload" checked="checked" disabled="disabled"><label for="rm_onload">onload="..."</label></li>
                         <li><input type="checkbox" id="rm_onclick" checked="checked" disabled="disabled"><label for="rm_onclick">onclick="..."</label></li>
                         <li><input type="checkbox" id="rm_onerror" checked="checked" disabled="disabled"><label for="rm_onerror">onerror="..."</label></li>
                         <li><input type="checkbox" id="rm_nocr" checked="checked" disabled="disabled"><label for="rm_nocr">nocr="..."</label></li>
-                        <li><input type="checkbox" id="rm_iframe_tag" checked="checked"><label for="rm_iframe_tag">iframe tag</label></li>
-                        <li><input type="checkbox" id="rm_target_blank" checked="checked"><label for="rm_target_blank">target="_blank"</label></li>
-                        <!--<li><input type="checkbox" id="rm_underbar" checked="checked"><label for="rm_underbar">_Name(언더바 클래스 및 아이디)</label></li>-->
+                        <!--
+                        <li><input type="checkbox" id="rm_line_blank" checked="checked"><label for="rm_line_blank">blank line</label></li>
+                        -->
+                        <li><input type="checkbox" id="rm_target_blank" checked="checked" disabled="disabled"><label for="rm_target_blank">target="_blank"</label></li>
+                        <li><input type="checkbox" id="rm_iframe" checked="checked"><label for="rm_iframe">iframe</label></li>
+                        <li><input type="checkbox" id="rm_underbar" checked="checked"><label for="rm_underbar">_Name(언더바 클래스 및 아이디)</label></li>
                     </ul>
                 </div>
                 <div class="rm_setting">
@@ -79,7 +84,7 @@
 <em>testtest</em>
 <link rel="stylesheet" type="text/css" href='css/reset_code.css'>
 <a href='sdfsfdsdfsd.html' id="class _class" target="_blank" class="test" ></a>
-<a HREF="test.html" id="_id" target="_blank" class="_class class "></a>
+<a HREF="test.html" id='_id' target="_blank" class="_class class "></a>
 <a HREF="test.html" id="_class class" target="_blank" class='test '></a>
 
 <link rel="stylesheet" type="text/css" href='css/reset_code222222222.css'>
@@ -99,6 +104,13 @@ alert('test');
 <div nocr="alert('test');" class="test"></div>
 <div nocr='alert("test");' class="test"></div>
 <div nocr='' class="test"></div>
+<div>
+    <div>
+        <div>
+            div
+        </div>
+    </div>
+</div>
 </body>
 </html>
                 </textarea>
