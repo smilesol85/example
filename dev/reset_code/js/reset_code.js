@@ -210,8 +210,8 @@ reset.Code.prototype = {
             if(elBlank[i]==''){
                 elBlankResult += '';
             }else{
-                //elBlankResult += elBlank[i]+'\r\n';
-                elBlankResult += elBlank[i];
+                elBlankResult += elBlank[i]+'\r\n';
+                //elBlankResult += elBlank[i];
             }
         });
         $('.changing').val(elBlankResult);
