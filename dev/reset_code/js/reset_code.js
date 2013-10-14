@@ -80,7 +80,7 @@ reset.Code.prototype = {
         this.rxBlankClass = /class=""/gi;
 
         // 공백 라인
-        this.rxBlank4 = /[^\w'">;,]\s+/gi;  // /\s+</gi;
+        this.rxBlankLine4 = /[^\wㄱ-ㅎ가-힣'">:;.,=(){}]\s+/gi;  // /\s+</gi;  // /[^\wㄱ-ㅎ가-힣'">:;.,=(){}]\s+/gi  // [^\w'">;,]\s+/gi
 
         // this.rxLineBlank = /\r\n|\n\n/gi;
     },
@@ -201,7 +201,7 @@ reset.Code.prototype = {
 
     // 공백 라인 제거
     _setRmBlankLine : function(){
-        this.sReplace = $('.changing').val().replace(this.rxBlank4,'\r');
+        this.sReplace = $('.changing').val().replace(this.rxBlankLine4,'\r');
         $('.changing').val(this.sReplace);
         var elBlank=$('.changing').val().replace(/(\r\n|\n|\n\n)/gi,'[split]');
         var elBlankResult='';
@@ -216,8 +216,8 @@ reset.Code.prototype = {
         });
         $('.changing').val(elBlankResult);
 
-        this.sReplace = $('.changing').val();
-        $('.changing').val(this.sReplace);
+        //this.sReplace = $('.changing').val();
+        //$('.changing').val(this.sReplace);
 
         /* test
         $str1=$(".changing").val().replace(/(\r\n|\n|\n\n)/gi,'[split]');
