@@ -68,6 +68,41 @@
                 <input type="submit">
                 </form>
 
+                <hr>
+
+                <?php
+                echo strrev('abcd');  // 문자열 반전
+                echo '<br>';
+                echo str_repeat('abcdefg,',3);  // 문자열 반복
+                echo '<br>';
+                echo strtoupper('abcd');  // 대문자로 변환
+                echo '<br>';
+                ?>
+
+                <?php
+                echo fix_name('abc','def','ghi');
+                function fix_name($name1, $name2, $name3){
+                    $name1 = ucfirst(strtolower($name1));
+                    return $name1;
+                }
+                echo '<br>';
+                ?>
+
+                <?php
+                $a = 'abc';
+                $b = 'def';
+                $c = 'ggg';
+                echo $a . $b . $c.'<br>';
+
+                fix_name2($a, $b, $c);
+                function fix_name2(&$n1, &$n2, &$n3){
+                    $n1 = ucfirst(strtolower($n1));
+                    $n2 = ucfirst(strtolower($n2));
+                    $n3 = ucfirst(strtolower($n3));
+                }
+                echo $a . $b . $c.'<br>';
+                ?>
+
             </section>
             <script src="../vCommon/footer.js"></script>
         </div>
