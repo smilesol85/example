@@ -69,6 +69,51 @@
                     }
                 }
                 User5::pwd_string();  // 정적 메소드 접근시 '::' 사용한다.
+                echo '<br>';
+
+                // 상수 선언
+                class Translate{
+                    // 상수는 한 번 정의되면 바꿀 수 없다.
+                    const ENG = 0;
+                    const SPANISH = 1;
+                    const KOREAN = 2;
+
+                    static function lookup(){
+                        echo self::SPANISH;  // 1, 상수는 self 키워드와 더블콜론을 사용해 직접 참조한다.
+                    }
+                }
+                Translate::lookup();
+                echo '<br>';
+
+                // 속성과 메소드
+                // public : 클래스 내외부 모두 접근 가능하다. 기본값으로 지정된다.
+                // protected : 클래스 내부, 상속된 하위 클래스에서 접근 가능하다.
+                // private : 클래스 내부에서 접근 가능하다. 상송된 하위 클래스에서는 접근 불가능
+                class MyClass{
+                    private $vars;
+                    protected $protectedVar;
+                     
+                    public function __construct($pram){
+                        $this -> vars = $pram;
+                    }
+                    public function __destruct(){
+                    }
+                    public function __get($name){
+                        return $this -> $name;
+                    }
+                    public function __set($name, $value){
+                        $this -> $name = $value;
+                    }
+                    public function myMethod($param){
+                        echo 'Parameter: '.$param.'<br />';
+                    }
+                }
+                 
+                $a = new MyClass('myString');   // __construct() 자동호출(생성자)
+                echo $a -> vars.'<br />';          // __get() 자동호출
+                $a -> vars = 'newString';          // __set() 자동호출
+                echo $a -> vars.'<br />';          // __get() 자동호출
+                $a -> myMethod('myParam');        // myMethod() 호출
                 ?>
             </section>
             <script src="../vCommon/footer.js"></script>
