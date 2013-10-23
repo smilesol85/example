@@ -40,13 +40,17 @@ reset.Code.prototype = {
         //this.rxNocr = /nocr=["'].*["']/gi;
 
         this.rxHtml = /html/gi;
-        this.rxHead = /head>/gi;
-        this.rxBody = /body/gi;
+        this.rxHead = /<head>/gi;
+        this.rxHeadEnd = /<\/head>/gi;
+        this.rxBody = /<body>/gi;
+        this.rxBodyEnd = /<\/body>/gi;
         this.rxLink = /link/gi;
 
         this.rxHtml2 = /htmlS/gi;
-        this.rxHead2 = /headS>/gi;
-        this.rxBody2 = /bodyS/gi;
+        this.rxHead2 = /<headS>/gi;
+        this.rxHead2End = /<\/headS>/gi;
+        this.rxBody2 = /<bodyS>/gi;
+        this.rxBody2End = /<\/bodyS>/gi;
         this.rxLink2 = /LinkS/gi;
         
         this.rxLink3 = /<\/link>/gi;
@@ -80,7 +84,7 @@ reset.Code.prototype = {
         this.rxBlankClass = /class=""/gi;
 
         // 공백 라인
-        this.rxBlankLine4 = /[^\wㄱ-ㅎ가-힣'">:;.,=(){}]\s+/gi;  // /\s+</gi;  // /[^\wㄱ-ㅎ가-힣'">:;.,=(){}]\s+/gi  // [^\w'">;,]\s+/gi
+        this.rxBlankLine4 = /[^\wㄱ-ㅎ가-힣'"->:;.,=(){}]\s+/gi;  // /\s+</gi;  // /[^\wㄱ-ㅎ가-힣'">:;.,=(){}]\s+/gi  // [^\w'">;,]\s+/gi
 
         // this.rxLineBlank = /\r\n|\n\n/gi;
     },
@@ -107,7 +111,7 @@ reset.Code.prototype = {
             * html, head, body, link, cdata
             * 각 태그에 임시로 S 붙여서 제거되지 않게 방지
         */
-        this.sReplace = $('.changing').val().replace(this.rxHtml,'htmlS').replace(this.rxHead,'headS>').replace(this.rxBody,'bodyS').replace(this.rxLink,'linkS').replace(this.rxCdata,'').replace(this.rxCdata2,'');
+        this.sReplace = $('.changing').val().replace(this.rxHtml,'htmlS').replace(this.rxHead,'<headS>').replace(this.rxHeadEnd,'</headS>').replace(this.rxBody,'<bodyS>').replace(this.rxBodyEnd,'</bodyS>').replace(this.rxLink,'linkS').replace(this.rxCdata,'').replace(this.rxCdata2,'');
         $('.changing').val(this.sReplace);
 
         // script
@@ -248,7 +252,7 @@ reset.Code.prototype = {
             * html, head, body, link
             * 각 태그 원복
         */
-        this.sReplace = $('.changing').val().replace(this.rxHtml2,'html').replace(this.rxHead2,'head>').replace(this.rxBody2,'body').replace(this.rxLink2,'link').replace(this.rxLink3,'');
+        this.sReplace = $('.changing').val().replace(this.rxHtml2,'html').replace(this.rxHead2,'<head>').replace(this.rxHead2End,'</head>').replace(this.rxBody2,'<body>').replace(this.rxBody2End,'</body>').replace(this.rxLink2,'link').replace(this.rxLink3,'');
         $('.changing').val(this.sReplace);
 
         this._setRmBlankLine();
