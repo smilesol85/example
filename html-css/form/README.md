@@ -102,8 +102,13 @@
 ## <a href="#" name="placeholder">placeholder</a>
 **[github.io](http://smilesol85.github.io/html-css/form/placeholder.html "placeholder")**
 
+> placeholder는 HTML5 DTD 에서 표준으로 추가되어 사용 가능하다.
+> 이렇게 되면 자바스크립트에서 입력폼에 포커스가 오면
+> value를 초기화 하는 일은 불필요하게 된다.
+
+
 > placeholder는 android 하위 버전에서 text 정렬이 되지 않는 bug가 있다.
-	font-size 및 color는 사용 가능하다.
+> font-size 및 color는 사용 가능하다.
 
 	<style>
 	input::-webkit-input-placeholder{font-size:18px;color:red}

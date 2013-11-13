@@ -80,8 +80,8 @@
 
 ## <a href="#" name="page-break">page-break</a>
 > 인쇄시 강제로 다음 페이지로 넘길 수 있다.
-	영역이 끝나면 페이지를 나눈다.
-	`block level`만 적용 되며, inline level에는 적용되지 안된다.
+> 영역이 끝나면 페이지를 나눈다.
+> `block level`만 적용 되며, inline level에는 적용되지 안된다.
 
 	<div style="page-break-after:always"></div> 
 	<!--

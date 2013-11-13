@@ -83,6 +83,9 @@
 ## <a href="#" name="tablebox">tablebox</a>
 **[github.io](http://smilesol85.github.io/html-css/box/tablebox.html "tablebox")**
 
+> display:table-header-group, display:table-footer-group 은
+> inline으로 height값이 적용되지 않으며, line-height로 사용한다.
+
 	<style>        
 	.boxes{display:table}
 	.box4{background:gray}
