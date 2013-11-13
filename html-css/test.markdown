@@ -7,6 +7,17 @@
     code
     code
 
+#### javascript code ####
+
+    ```javascript
+    var sText = 1;
+
+    // function
+    function f(){
+        alert();
+    }
+    ```
+
 #### description ####
 descriptin `test test`, `test` test
 *italic*
