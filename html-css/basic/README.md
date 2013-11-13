@@ -101,7 +101,7 @@
 
 	<nav role="navigation"></nav>
 
-~~nav 요소는 반드시 navigation 으로 작동 하지만, screen reader 중 일부는 인식하지 못하는 리더기가 있다.~~
+*nav 요소는 반드시 navigation 으로 작동 하지만, screen reader 중 일부는 인식하지 못하는 리더기가 있다.*
 
 ## <a href="#" name="webkit">webkit</a>
 > webkit은 safari, chrome 등이 탑재하고 있으며,
@@ -206,7 +206,7 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인
 
 			<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png"/>
 
-		~~이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다. size는 48×48 입니다.~~
+		*이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다. size는 48×48 입니다.*
 
 
 	* link rel="apple-touch-startup-image" href="/startup.png"
@@ -286,7 +286,7 @@ CSS optimization manual
 ## <a href="#" name="css_unit">CSS unit</a>
 많은 사람들이 em단위를 쓰면 해상도에 따라서 크기가 달라진다고 오해하는 경우가 많다.
 
-~~em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browser의 font size option을 조절했을 때 동작하게 하기 위함이다.~~
+*em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browser의 font size option을 조절했을 때 동작하게 하기 위함이다.*
 
 최근의 브라우저들이 모두 zoom 기능을 지원하고 있어 em대신 px을 사용해도 상관 없다.
 하지만 Responsive Web Design을 추구하는 작업을 하시거나, 화면 크기에 따라서 동적으로 body의 font-size를 조절하는 특수한 작업을 하실 경우에는 em을 활용하여 scaleable한 UI를 구성할 수도 있습니다.
@@ -452,7 +452,7 @@ rem 지원 여부 : http://caniuse.com/#search=rem
 * .svg : opera만 지원
 * .woff : ie, chorme, firefox만 지원
 
-~~따라서 .eof 와 .ttf 포맷을 사용하면 모든 browser를 지원한다.~~
+*따라서 .eof 와 .ttf 포맷을 사용하면 모든 browser를 지원한다.*
 
 ## <a href="#" name="scrollbar">scrollbar</a>
 
