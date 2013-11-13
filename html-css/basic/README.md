@@ -190,45 +190,45 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인
 
 	* link rel="apple-touch-icon" href="/apple-touch-icon.png"
 
-	> 등록되는 document의 icon을 지정할 수 있다.
+		> 등록되는 document의 icon을 지정할 수 있다.
 
-	일반적으로 iPhone에서 document icon을 추가 하게되면 document 화면을 capture한 내용을 icon으로 사용하는데 apple-touch-icon이라는 link를 추가하여 내가 지정한 icon으로 사용할 수 있다. favicon의 iPhone version이라고 생각하면 됩니다.
+		일반적으로 iPhone에서 document icon을 추가 하게되면 document 화면을 capture한 내용을 icon으로 사용하는데 apple-touch-icon이라는 link를 추가하여 내가 지정한 icon으로 사용할 수 있다. favicon의 iPhone version이라고 생각하면 됩니다.
 
-		* iPhone : 57×57 png 이미지 사용
-		* iPad : 72×72 png 이미지 사용
-		* iPhone4 : 114×114 png 이미지 사용
+			* iPhone : 57×57 png 이미지 사용
+			* iPad : 72×72 png 이미지 사용
+			* iPhone4 : 114×114 png 이미지 사용
 
-	가능하면 114×114 이미지로 제작하여 사용하면 iPhone에서 자동으로 resize 한다.
+		가능하면 114×114 이미지로 제작하여 사용하면 iPhone에서 자동으로 resize 한다.
 
-	기본적으로 iPhone이 제공하는 UI 처리된다.
-	(모서리를 둥글게 하고 반원형의 밝은 부분을 추가해 주는 것)
-	원하지 않을 때는 rel 속성의 값을 apple-touch-icon-precomposed 라는 이름으로 지정하여 사용하면 된다.
+		기본적으로 iPhone이 제공하는 UI 처리된다.
+		(모서리를 둥글게 하고 반원형의 밝은 부분을 추가해 주는 것)
+		원하지 않을 때는 rel 속성의 값을 apple-touch-icon-precomposed 라는 이름으로 지정하여 사용하면 된다.
 
-		<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png"/>
+			<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png"/>
 
-	~~이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다. size는 48×48 입니다.~~
-
-
-	* link rel="apple-touch-startup-image" href="/startup.png"
-	화면이 loading될 때 startup image를 지정할 수 있다. Web App이지만 app 처음 loading시 logo화면 같이 노출할 수 있다. iPhone 기본 app에 들어있는 Default.png 와 비슷한 역할이다.
-
-	단, image의 크기가 정확히 맞아야 한다.
-
-		* iPhone : 320×460
-		* iPhone4 : 640×920
-		* iPad : 768×1004
+		~~이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다. size는 48×48 입니다.~~
 
 
-	* meta name="apple-mobile-web-app-capable" content="yes"
-	Web App으로 선언하여 browser의 URL bar를 보이지 않게 할 수 있다.
+		* link rel="apple-touch-startup-image" href="/startup.png"
+		화면이 loading될 때 startup image를 지정할 수 있다. Web App이지만 app 처음 loading시 logo화면 같이 노출할 수 있다. iPhone 기본 app에 들어있는 Default.png 와 비슷한 역할이다.
 
-	즉, Web App 이 마치 일반 Native App 처럼 화면 전체(최상단 상태바 20px 제)를 활용할 수 있도록 한다.
+		단, image의 크기가 정확히 맞아야 한다.
 
-	* meta name="apple-mobile-web-app-status-bar-style" content="black"
-	status bar의 색상을 지정할수 있다.
-	바탕화면이 검정색인 app의 경우 status bar만 회색인 이질감을 줄이기 위해 사용합니다.
+			* iPhone : 320×460
+			* iPhone4 : 640×920
+			* iPad : 768×1004
 
-	3가지 스타일 : default (회색) , black , black-translucent ( 반투명 )
+
+		* meta name="apple-mobile-web-app-capable" content="yes"
+		Web App으로 선언하여 browser의 URL bar를 보이지 않게 할 수 있다.
+
+		즉, Web App 이 마치 일반 Native App 처럼 화면 전체(최상단 상태바 20px 제)를 활용할 수 있도록 한다.
+
+		* meta name="apple-mobile-web-app-status-bar-style" content="black"
+		status bar의 색상을 지정할수 있다.
+		바탕화면이 검정색인 app의 경우 status bar만 회색인 이질감을 줄이기 위해 사용합니다.
+
+		3가지 스타일 : default (회색) , black , black-translucent ( 반투명 )
 
 
 ---
