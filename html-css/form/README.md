@@ -4,7 +4,7 @@
 1. [placeholder](#placeholder)
 1. [a11y_form](#a11y_form)
 
-## <a name="form">form</a>
+## <a href="#" name="form">form</a>
 **[github.io](http://smilesol85.github.io/html-css/form/form.html "form")**
 
 	<!-- form method : get || post -->
@@ -72,7 +72,7 @@
         </fieldset>
 	</form>
 
-## <a name="textarea">textarea</a>
+## <a href="#" name="textarea">textarea</a>
 * name : 요소 이름 지정
 * cols : 가로로 쓰여지는 텍스트 수
 * rows : 세로로 쓰여지는 텍스트 수
@@ -81,37 +81,37 @@
 
 **readonly="readonly" disabled="disabled"**
 
-		<textarea name="textarea_name" cols="30" rows="5" readonly="readonly" disabled="disabled" onclick="this.value=''">
-		텍스트를 입력하세요.
-		</textarea>
+	<textarea name="textarea_name" cols="30" rows="5" readonly="readonly" disabled="disabled" onclick="this.value=''">
+	텍스트를 입력하세요.
+	</textarea>
 
 
 **readonly="readonly"**
 
-		<textarea name="textarea_name" cols="30" rows="5" readonly="readonly" onclick="this.value=''">
-		텍스트를 입력하세요.
-		</textarea>
+	<textarea name="textarea_name" cols="30" rows="5" readonly="readonly" onclick="this.value=''">
+	텍스트를 입력하세요.
+	</textarea>
 
 **useable**
 
-		<textarea name="textarea_name" cols="30" rows="5" onclick="this.value=''">
-		텍스트를 입력하세요.
-		</textarea>
+	<textarea name="textarea_name" cols="30" rows="5" onclick="this.value=''">
+	텍스트를 입력하세요.
+	</textarea>
 
 
-## <a name="placeholder">placeholder</a>
+## <a href="#" name="placeholder">placeholder</a>
 **[github.io](http://smilesol85.github.io/html-css/form/placeholder.html "placeholder")**
 
 > placeholder는 android 하위 버전에서 text 정렬이 되지 않는 bug가 있다.
 	font-size 및 color는 사용 가능하다.
 
 	<style>
-	.placeholder::-webkit-input-placeholder{font-size:18px;color:red}
+	input::-webkit-input-placeholder{font-size:18px;color:red}
 	</style>
 
 	<input type="text" placeholder="텍스트를 입력">
 
-## <a name="a11y_form">a11y_form</a>
+## <a href="#" name="a11y_form">a11y_form</a>
 
 	<form>
 		<fieldset>
