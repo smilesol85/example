@@ -85,7 +85,12 @@ CSS optimization manual
 	* link tag를 여러번 사용할 경우 병행 즉 동시 download가 보장되어 속서면에서 좋다.
 
 * 모니터, 프린트, 소형기기를 위한 css를 분류한다.
+		
+		<link type="text/css" rel="stylesheet" href="print.css" media="print">
+		/* print.css */
+		#header, #footer, .navWrap {display:none}
 
+		
 * !important 사용은 피하자! 렌더링 이슈가 발생할 수 있다.
 
 * image 표현을 위해 sprite 기법 사용을 사용하자.
@@ -101,8 +106,8 @@ CSS optimization manual
 
 * css 속성은 가능하면 축약형 사용하자.
 
-	padding:5px 0 2px 0;
-		
+		padding:5px 0 2px 0;
+	
 * 최소한의 id 와 class를 사용하자.
 
 ## etc
