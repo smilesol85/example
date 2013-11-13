@@ -8,7 +8,7 @@
 	<form action="#" method="get">
 		<fieldset>
 			<legend>HTML input type</legend>
-			<label for="fhidden">""hidden""</label><input type="hidden" id="fhidden"><br>
+			<label for="fhidden"><strong>hidden</strong></label><input type="hidden" id="fhidden"><br>
             <label for="fbutton">""button""</label><input type="button" id="fbutton"><br>
             <label for="fimage">image</label><input type="image" id="fimage"><br>
             <label for="fcheckbox">checkbox</label><input type="checkbox" id="fcheckbox"><br>
