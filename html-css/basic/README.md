@@ -188,7 +188,8 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인
 		< meta name="apple-mobile-web-app-status-bar-style" content="black" / >
 
 
-	* <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+	* link rel="apple-touch-icon" href="/apple-touch-icon.png"
+
 	> 등록되는 document의 icon을 지정할 수 있다.
 
 	일반적으로 iPhone에서 document icon을 추가 하게되면 document 화면을 capture한 내용을 icon으로 사용하는데 apple-touch-icon이라는 link를 추가하여 내가 지정한 icon으로 사용할 수 있다. favicon의 iPhone version이라고 생각하면 됩니다.
