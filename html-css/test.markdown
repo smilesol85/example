@@ -5,14 +5,20 @@
 ##### H5
 ###### H6
 
-###### description
+# description
 descriptin `test test`, `test` test
 *italic*
 **bold**
 _underscores_**
 ~~Scratch~~
 
-###### list
+# horizontal rule
+---
+
+***
+
+
+# list
 * list
 
     * list
@@ -26,34 +32,40 @@ _underscores_**
 
     *
 
-###### link
+# link
 [Link Test](http://www.google.com)
+
 [Link Test](http://www.google.com "google")
+
 [Link Test - use numbers][1]
+
 [Link Test - use empty]
+
 
 [1] : http://www.google.com
 [Link Test - use empty] : http://www.google.com
 
-###### images
+# images
 ![alt text](../images/images.jpg "logo")
+
 ![alt text][logo]
 
 [logo] : ../images/images.jpg "logo"
 
-###### tables
+# tables
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
+| zebra stripes | are neat      |    $1 |
 
-###### code
+# code
 
     code
     code
 
-###### javascript code
+# javascript code
     ```javascript
     var sText = 1;
 
@@ -62,3 +74,8 @@ _underscores_**
         alert();
     }
     ```
+
+# youtube videos
+<a href="#" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+[![IMAGE ALT TEXT HERE](*.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
