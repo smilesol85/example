@@ -101,6 +101,8 @@ CSS optimization manual
 
 * css 속성은 가능하면 축약형 사용하자.
 
+	padding:5px 0 2px 0;
+	
 * 최소한의 id 와 class를 사용하자.
 
 ## etc
