@@ -121,7 +121,7 @@
 ## <a href="#" name="mobile_meta_link">mobile_meta_link</a>
 * 해상도를 고려한 레이아웃
 
-> 가로 길이를 가변폭(%)의 레이아웃으로 기획하고 개발 및 design 해야 한다. mobile의 해상도가 다양하기 때문이다.
+	> 가로 길이를 가변폭(%)의 레이아웃으로 기획하고 개발 및 design 해야 한다. mobile의 해상도가 다양하기 때문이다.
 
 * 사용자를 편하게! 터치 오류를 줄여라
 
@@ -189,7 +189,6 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인
 
 
 	* <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-
 	> 등록되는 document의 icon을 지정할 수 있다.
 
 	일반적으로 iPhone에서 document icon을 추가 하게되면 document 화면을 capture한 내용을 icon으로 사용하는데 apple-touch-icon이라는 link를 추가하여 내가 지정한 icon으로 사용할 수 있다. favicon의 iPhone version이라고 생각하면 됩니다.
@@ -206,7 +205,9 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인
 
 		<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png"/>
 
-~~이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다. size는 48×48 입니다.~~
+	~~이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다. size는 48×48 입니다.~~
+
+
 	* link rel="apple-touch-startup-image" href="/startup.png"
 	화면이 loading될 때 startup image를 지정할 수 있다. Web App이지만 app 처음 loading시 logo화면 같이 노출할 수 있다. iPhone 기본 app에 들어있는 Default.png 와 비슷한 역할이다.
 
@@ -228,7 +229,10 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인
 
 	3가지 스타일 : default (회색) , black , black-translucent ( 반투명 )
 
+
 ---
+---
+
 
 ## <a href="#" name="css_optimization">CSS optimization</a>
 CSS란 `Cascading Style Sheets`의 약자이다.
