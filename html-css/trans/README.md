@@ -68,3 +68,5 @@
 **animation 속성 한 줄로 입력하기**
 
     animation:|animation-name|animation-duration|animation-timing-function|animation-delay|animation-iteration-count|animation-play-state
+    
+
