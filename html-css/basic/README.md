@@ -77,6 +77,7 @@ style은 크게 4가지 방법으로 사용 가능합니다.
 CSS optimization manual
 
 1. inline, internal 보다 external stylesheet를 권장한다.
+	* 유지보수가 좋을 뿐만 아니라, browser에 cashe되어 추가적인 HTTP 요청이 발생하지 않는다.
 2. 속도 향상을 위해서 @import는 지양한다.
 3. 모니터, 프린트, 소형기기를 위한 css를 분류한다.
 4. !important 사용은 피하자! 렌더링 이슈가 발생할 수 있다.
