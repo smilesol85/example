@@ -82,16 +82,11 @@ CSS optimization manual
 	* 페이지 내에서 link tag와 @import를 병행해서 사용하거나 여러 @import만을 사용할 경우 순차적으로 loading하기 때문에 page speed에 영향을 미친다.
 	* link tag를 여러번 사용할 경우 병행 즉 동시 download가 보장되어 속서면에서 좋다.
 * 모니터, 프린트, 소형기기를 위한 css를 분류한다.
-
-
-	<link type="text/css" rel="stylesheet" href="print.css" media="print">
-
-	/* print.css */
-	#header, #footer, .navWrap {display:none}
-
-
 * !important 사용은 피하자! 렌더링 이슈가 발생할 수 있다.
 * image 표현을 위해 sprite 기법 사용을 사용하자.
+	* 정사각형의 sprite image 사용시 속도면에서 더 빠르다는 것을 알 수 있다.
+	* img tag에서 src 경로는 display:none 이지만 request를 발생한다.
+	CSS background-image로 지정되고 display:none을 지정하면 request를 발생하지 않는다. 단, inline style로 적용될 경우 FF를 제외한 browser에서 request를 발생한다.
 * 숫자 0 이외의 숫자에는 단위 붙이자.
 * 색 지정에는 RGB 값 사용 권장한다.
 * 전체 사이즈 및 폰트 사이즈에서는 em 사용, 절대 사이즈에는 px 사용, 상대 사이즈에는 % 사용하자.
