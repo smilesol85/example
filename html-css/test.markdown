@@ -9,9 +9,7 @@
 
 code
 
-    ```javascript
     var sText = 'string';
-    ```
 
 #### description ####
 descriptin `test test`, `test` test
