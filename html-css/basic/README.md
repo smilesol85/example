@@ -1,71 +1,15 @@
 # basic
 1. [meta](#meta)
+1. [css_optimization](#css_optimization)
+1. [string](#string)
 1. [list](#list)
 1. [shadow](#shadow)
-1. [string](#string)
 1. [table](#table)
-1. [css_optimization](#css_optimization)
 
 ## <a name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
 
 meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등의 문서들의 정보들을 명시할 수 있다.
-
-## <a name="list">list</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/list.html "list")**
-
-	/* list style
-		list-style:disc;
-		list-style:circle;
-		list-style:square;
-		list-style:decimal;
-		list-style:lower-roman;
-		list-style:upper-roman;
-		list-style:lower-alpha;
-		list-style:upper-alpha;
-	*/
-	ul {list-style:square url("test.jpg");}
-
-## <a name="shadow">shadow</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/shadow.html "shadow")**
-
-## <a name="string">string</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/string.html "string")**
-
-	<!-- blockquote : block element 인용구 -->
-	<blockquote>
-        <blockquote>는 block element의 인용문에서 사용된다.
-    </blockquote>
-
-    <!-- q : inline element 인용구 -->
-    홍길동은 <q cite="http://www.naver.com/" title="title">blah blah~</q>알고 했습니다.
-    <br />
-    <q> 인용구는 따옴표(" ")가 함께 표시된다.
-
-    <!-- abbr : inline element 축약어 -->
-    <abbr title="Apartmention">Apt.</abbr> : 스펠링 하나씩 발음하는 경우나 줄여서 단어를 단순하게 사용하는 경우
-
-    <!-- acronym : inline element 축약어 -->
-    <acronym title="Rich Internet Application">RIA</acronym> : 여러단어 조합
-
-    <!-- font 
-    	<b> 굵은 글자 tag </b>
-    	<i> 기울어진 글자 tag </i>
-    	<small> 작은 글자 tag </small>
-    	<sub> 아래에 붙는 글자 </sub>
-    	<sup> 위에 붙는 글자 </sup>
-    	<ins>  밑줄 글자 tag </ins>
-    	<del> 가운데 줄이 그어진 글자 tag </del>
-    -->
-
-## <a name="table">table</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/table.html "table")**
-* summary : table 내용 요약
-* caption : table 제목 및 설명문
-* th : table 제목 cell
-* td : table 데이터 cell
-* colgroup : 열 전체를 그룹 지정
-* col : 열 각각의 속성 지정
 
 ## <a name="css_optimization">CSS optimization</a>
 CSS란 `Cascading Style Sheets`의 약자이다.
@@ -81,7 +25,6 @@ style은 크게 4가지 방법으로 사용 가능합니다.
 4. Inline Style (각 tag에 style=""이라는 속성을 이용해 정의됩니다.)
 
 CSS optimization manual
-
 
 * inline, internal 보다 external stylesheet를 권장한다.
 	* 유지보수가 좋을 뿐만 아니라, browser에 cashe되어 추가적인 HTTP 요청이 발생하지 않는다.
@@ -115,5 +58,61 @@ CSS optimization manual
 		padding:5px 0 2px 0;
 	
 * 최소한의 id 와 class를 사용하자.
+
+## <a name="string">string</a>
+**[github.io](http://smilesol85.github.io/html-css/basic/string.html "string")**
+
+	<!-- blockquote : block element 인용구 -->
+	<blockquote>
+        <blockquote>는 block element의 인용문에서 사용된다.
+    </blockquote>
+
+    <!-- q : inline element 인용구 -->
+    홍길동은 <q cite="http://www.naver.com/" title="title">blah blah~</q>알고 했습니다.
+    <br />
+    <q> 인용구는 따옴표(" ")가 함께 표시된다.
+
+    <!-- abbr : inline element 축약어 -->
+    <abbr title="Apartmention">Apt.</abbr> : 스펠링 하나씩 발음하는 경우나 줄여서 단어를 단순하게 사용하는 경우
+
+    <!-- acronym : inline element 축약어 -->
+    <acronym title="Rich Internet Application">RIA</acronym> : 여러단어 조합
+
+    <!-- font 
+    	<b> 굵은 글자 tag </b>
+    	<i> 기울어진 글자 tag </i>
+    	<small> 작은 글자 tag </small>
+    	<sub> 아래에 붙는 글자 </sub>
+    	<sup> 위에 붙는 글자 </sup>
+    	<ins>  밑줄 글자 tag </ins>
+    	<del> 가운데 줄이 그어진 글자 tag </del>
+    -->
+
+## <a name="list">list</a>
+**[github.io](http://smilesol85.github.io/html-css/basic/list.html "list")**
+
+	/* list style
+		list-style:disc;
+		list-style:circle;
+		list-style:square;
+		list-style:decimal;
+		list-style:lower-roman;
+		list-style:upper-roman;
+		list-style:lower-alpha;
+		list-style:upper-alpha;
+	*/
+	ul {list-style:square url("test.jpg");}
+
+## <a name="shadow">shadow</a>
+**[github.io](http://smilesol85.github.io/html-css/basic/shadow.html "shadow")**
+
+## <a name="table">table</a>
+**[github.io](http://smilesol85.github.io/html-css/basic/table.html "table")**
+* summary : table 내용 요약
+* caption : table 제목 및 설명문
+* th : table 제목 cell
+* td : table 데이터 cell
+* colgroup : 열 전체를 그룹 지정
+* col : 열 각각의 속성 지정
 
 ## etc
