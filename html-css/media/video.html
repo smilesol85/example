@@ -1,49 +1,66 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <title>html-video</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="Content-Script-Type" content="text/javascript">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-        <link rel="stylesheet" type="text/css" href="../vCommon/vCommon.css">
-    </head>
-    <body>
-        <div id="wrap">
-            <script>var titHeader = 'html-video';</script>
-            <script src="../vCommon/header.js"></script>
-            <section>
-                <article>
-                    <h2>video 태그</h2>
-                    <video id="demoVideo" preload loop poster="" width="300" height="150">
-                        <source src="http://takeswf.imbc.com/wwwflv/Content/20128/0817.mp4" type="video/mp4" />
-                    </video>
-                    <button onclick="play()">재생</button>
-                    <button onclick="pause()">일시정지</button> 
-                    <button onclick="mute()">음소거</button>
-                    볼륨:<input id="volumecontrol" type="range" max="1" step="any" onchange="updateVolume()">
-                </article>
-            </section>
-            <script src="../vCommon/footer.js"></script>
-        </div>
-        <script>
-        var mediaVideo = document.getElementById("demoVideo");
-        //비디오 재생  
-        function play(){
-            mediaVideo.play();
-            mediaVideo.volume = volumecontrol.value;
-        }  
-        //비디오 일시정지
-        function pause(){
-            mediaVideo.pause();
-        }     
-        //음소거
-        function mute(){
-            mediaVideo.muted = !mediaVideo.muted;
-        }  
-        //볼륨조절        
-        function updateVolume() {
-            mediaVideo.volume = volumecontrol.value;
-        }  
-        </script>
-    </body>
+<head>
+<title>video</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
+<script src="http://smilesol85.github.io/common/jquery.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <script>var titHeader = 'video';</script>
+    <script src="http://smilesol85.github.io/common/header.js"></script>
+    <section>
+        <article>
+            <h2>video</h2>
+            <video id="demoVideo" preload loop poster="" width="300" height="150">
+                <source src="http://takeswf.imbc.com/wwwflv/Content/20128/0817.mp4" type="video/mp4" />
+            </video>
+            <button class="play">재생</button>
+            <button class="pause">일시정지</button> 
+            <button class="mute">음소거</button>
+            볼륨:<input id="volumecontrol" type="range" max="1" step="any">
+        </article>
+    </section>
+    <script src="http://smilesol85.github.io/common/footer.js"></script>
+</div>
+<script>
+var mediaVideo = document.getElementById("demoVideo");
+
+//비디오 재생  
+function play(){
+    mediaVideo.play();
+    mediaVideo.volume = volumecontrol.value;
+}
+$('.play').click(function(){
+    play();
+});
+
+//비디오 일시정지
+function pause(){
+    mediaVideo.pause();
+}
+$('.pause').click(function(){
+    pause();
+});
+
+//음소거
+function mute(){
+    mediaVideo.muted = !mediaVideo.muted;
+}
+$('.mute').click(function(){
+    mute();
+});  
+
+//볼륨조절        
+function updateVolume() {
+    mediaVideo.volume = volumecontrol.value;
+}
+$('#volumecontrol').change(function(){
+    updateVolume();
+});
+</script>
+</body>
 </html>
