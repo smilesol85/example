@@ -1,7 +1,7 @@
 # performance
-1. [image](#image)
+1. [image_request](#image_request)
 
-## <a href="#" name="image">image</a>
+## <a href="#" name="image_request">image_request</a>
 
 * image  
     이미지 태그에 지정된 src의 파일은 display:none 이더라도 `request 발생한다.`
