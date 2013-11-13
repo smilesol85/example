@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <title>before after selector width data</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="Content-Script-Type" content="text/javascript">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-        <link rel="stylesheet" type="text/css" href="../vCommon/vCommon.css">
-        <style>
-        span::before{content:'Before section';color:red;}
-        span::after{content:'After section';color:blue;}
-        p{counter-increment:nSmilesol;}
-        p::before{content:counter(nSmilesol)'. ';}
-        p::after{content:' -' attr(data-page) "page";}
-        </style>
-    </head>
-    <body>
-        <div id="wrap">
-            <script>var titHeader = 'before after selector width data';</script>
-            <script src="../vCommon/header.js"></script>
-            <section>
-                <span>view style</span>
-                <p data-page="100">texttexttexttexttexttexttexttexttexttexttexttexttext</p>
-                <p data-page="200">countercountercountercounter</p>
-                <article class="dsc">
-                    <h2>data 속성</h2>
-                    웹 표준에 준수하기 위해서는 태그에 지정된 속성 이외에는 사용할 수 없다. 하지만 data-를 사용하면 <em class="highlight">사용자 지정 속성</em>으로 인정해 준다.
-                </article>
-            </section>
-            <script src="../vCommon/footer.js"></script>
-        </div>
-    </body>
+<head>
+<title>before after selector width data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
+<style>
+span::before{content:'Before section';color:red;}
+span::after{content:'After section';color:blue;}
+p{counter-increment:nSmilesol;}
+p::before{content:counter(nSmilesol)'. ';}
+p::after{content:' -' attr(data-page) "page";}
+</style>
+</head>
+<body>
+<div id="wrap">
+    <script>var titHeader = 'before after selector width data';</script>
+    <script src="http://smilesol85.github.io/common/header.js"></script>
+    <section>
+        <span>view style</span>
+        <p data-page="100">texttexttexttexttexttexttexttexttexttexttexttexttext</p>
+        <p data-page="200">countercountercountercounter</p>
+        <article class="dsc">
+            <h2>data 속성</h2>
+            웹 표준에 준수하기 위해서는 태그에 지정된 속성 이외에는 사용할 수 없다. 하지만 data-를 사용하면 <em class="highlight">사용자 지정 속성</em>으로 인정해 준다.
+        </article>
+    </section>
+    <script src="http://smilesol85.github.io/common/footer.js"></script>
+</div>
+</body>
 </html>
