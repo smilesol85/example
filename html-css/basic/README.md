@@ -1,9 +1,10 @@
 # basic
-	1. [meta](#meta)
-	1. [list](#list)
-	1. [shadow](#shadow)
-	1. [string](#string)
-	1. [table](#table)
+1. [meta](#meta)
+1. [list](#list)
+1. [shadow](#shadow)
+1. [string](#string)
+1. [table](#table)
+1. [css_optimization](#css_optimization)
 
 ## <a name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
@@ -66,7 +67,7 @@ meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등
 * colgroup : 열 전체를 그룹 지정
 * col : 열 각각의 속성 지정
 
-## CSS optimization
+## <a name="css_optimization">CSS optimization</a>
 CSS란 `Cascading Style Sheets`의 약자이다.
 HTML 4.0 이후부터 style을 사용하므로써 HTML 문서와 design을 분리시키는 것이 가능해졌습니다.
 style이란 HTML 요소들이 어떻게 display 될 것인가에 대한 정의를 말합니다.
