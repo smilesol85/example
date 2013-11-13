@@ -8,8 +8,8 @@
 
 현재(2013.02.27) transition 속성은 Vender prefix를 사용한다.
 
-> Transition-duration : 재생할 시간 지정
-> Transition-delay : 지정 시간 후 재생
+> transition-duration : 재생할 시간 지정  
+> transition-delay : 지정 시간 후 재생  
 > transition-property : 변경할 속성 지정
 > transition-timing-function : 수치 변형 함수 지정
 > (수치 변형 함수 : ease, ease-in, ease-out, ease-in-out 기타 등등)
