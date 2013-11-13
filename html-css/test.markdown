@@ -7,11 +7,15 @@
     code
     code
 
-code
+code test
 
     ```javascript
-    var sText = string;
-    var nNum = 1;
+    var foo = 1,
+        bar = foo;
+
+    bar = 9;
+
+    console.log(foo, bar); // => 1, 9
     ```
 
 #### description ####
