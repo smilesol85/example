@@ -19,5 +19,5 @@ if(isie8 || isie7 || isie6){
 }
 
 document.write('<header>');
-document.write('<h1>'+titHeader+'</h1>');
+document.write('<h1>:) '+titHeader+'</h1>');
 document.write('</header>');
