@@ -126,6 +126,7 @@
 	음성 browser의 경우 form control이 label과 인접하지 않는 경우에도 인식할 수 있도록 지원한다.
 
 **웹 접근성을 고려한 select**
+
 전송 button없이 javascript의 onchange event를 사용한 select는 접근성을 고려하지 않은 방법이다.
 전송 button이 없는 경우 keyboard 사용자나 javascript를 사용할 수 없는 사용자를 고려하여 noscript tag를 사용하면 되겠지.. 하겠지만, 그러한 방법은 반쪽짜리 접근성이다.
 전송 button을 생성하여 접근성을 지키는 방법을 습관화 하자.
