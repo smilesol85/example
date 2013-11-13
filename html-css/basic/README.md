@@ -519,9 +519,9 @@ rem 지원 여부 : http://caniuse.com/#search=rem
 @media only all and (조건문) {실행문}  
 > @media: 미디어쿼리 시작 선언  
 > only : 생략 가능하며, 생략시 기본값은 only 이다.  
-> all : all, aural, braille, embossed, handheld, print, projection, screen, speech, tty, tv 의 미디어 타입을 선택할 수 있다.
+> all : all, aural, braille, embossed, handheld, print, projection, screen, speech, tty, tv 의 미디어 타입을 선택할 수 있다.  
 > and : 앞과 뒤의 조건을 만족해야 한다. / or : 앞과 뒤중 하나만 만족하면 된다.  
-	
+
 	/* 0 ~ 500px */
 	@media screen and (max-width:500px){
 	h1{color:red}
