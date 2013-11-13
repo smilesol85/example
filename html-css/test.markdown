@@ -25,9 +25,9 @@ descriptin `test test`, `test` test
 #### list ####
 * list
 
-    ** list
+    * list
 
 - **bold** : test
 
-    +test
-    +`test`
+    + test
+    + `test`
