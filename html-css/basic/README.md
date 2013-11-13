@@ -10,7 +10,7 @@
 ## <a name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
 
-meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등의 문서들의 정보들을 명시할 수 있다.
+> meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등의 문서들의 정보들을 명시할 수 있다.
 
 ## <a name="string">string</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/string.html "string")**
@@ -119,7 +119,7 @@ CSS optimization manual
 ## <a name="css-unit">CSS unit</a>
 많은 사람들이 em단위를 쓰면 해상도에 따라서 크기가 달라진다고 오해하는 경우가 많다.
 
-_em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browser의 font size option을 조절했을 때 동작하게 하기 위함이다._
+~~em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browser의 font size option을 조절했을 때 동작하게 하기 위함이다.~~
 
 최근의 브라우저들이 모두 zoom 기능을 지원하고 있어 em대신 px을 사용해도 상관 없다.
 하지만 Responsive Web Design을 추구하는 작업을 하시거나, 화면 크기에 따라서 동적으로 body의 font-size를 조절하는 특수한 작업을 하실 경우에는 em을 활용하여 scaleable한 UI를 구성할 수도 있습니다.

@@ -35,7 +35,7 @@
 ## <a name="flexbox">flexbox</a>
 **[github.io](http://smilesol85.github.io/html-css/box/flexbox.html "flexbox")**
 
-flexbox 사용은 box안의 요소들은 `block` 요소라는 조건이 있다.
+> flexbox 사용은 box안의 요소들은 `block` 요소라는 조건이 있다.
 	
 	/* 부모 요소에 box 선언 */
 	.box{display:box;display:-webkit-box}
