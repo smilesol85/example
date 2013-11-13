@@ -4,8 +4,17 @@
 1. [list](#list)
 1. [shadow](#shadow)
 1. [table](#table)
+1. [page-break](#page-break)
+1. [roll](#roll)
+1. [webkit](#webkit)
 1. [css_optimization](#css_optimization)
-1. [css-unit](#css-unit)
+1. [css_unit](#css_unit)
+1. [background](#background)
+1. [CSS_link](#CSS_link)
+1. [opacity](#opacity)
+1. [web_font](#web_font)
+1. [scrollbar](#scrollbar)
+1. [ff_btn](#ff_btn)
 
 ## <a href="#" name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
@@ -68,6 +77,46 @@
 * colgroup : 열 전체를 그룹 지정
 * col : 열 각각의 속성 지정
 
+## <a href="#" name="page-break">page-break</a>
+> 인쇄시 강제로 다음 페이지로 넘길 수 있다.
+	영역이 끝나면 페이지를 나눈다.
+	`block level`만 적용 되며, inline level에는 적용되지 안된다.
+
+	<div style="page-break-after:always"></div> 
+	<!--
+	page-break-after:always;  // 항상 페이지 넘김
+	page-break-after:auto;  // 기본값
+	page-break-after:avoid;  // 페이지를 강제로 넘기지 못하게 한다.
+	-->
+
+## <a href="#" name="roll">roll</a>
+* 표지판 역할을 한다고 볼 수 있겠다. (application, banner, main, navigation, search 등)
+* 문서에서 구조를 형성하는 요소에 부여한다. (section, navigation, note, heading 등)
+* 문서에서 어플리케이션 구조를 형성하는 요소에 부여한다. (alert, alertdialog, progressbar, status)
+* 사용자 인터페이스 역할을 한다. (treegrid, toolbar, menuitem 등)
+* 사용자 입력수신 역할을 한다. (checkbox, slider, option 등)
+
+**nav tag 예로 들어보면 아래와 같다.**
+
+	<nav role="navigation"></nav>
+
+~~nav 요소는 반드시 navigation 으로 작동 하지만, screen reader 중 일부는 인식하지 못하는 리더기가 있다.~~
+
+## <a href="#" name="webkit">webkit</a>
+> webkit은 safari, chrome 등이 탑재하고 있으며,
+	web browser를 만드는 데 기반을 제공하는 open source 응용 program framework이다.
+
+[-webkit 속성](https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance "-webkit 속성")
+
+	/* webkit 기반의 브라우저에서 텍스트사이즈가 들쑥날쑥 하지 않게 조절한다. */
+	* {-webkit-text-size-adjust:none;}
+
+	/* font size 조절 */
+	-webkit-text-size-adjust:8px;
+
+	/* 그림자 등이 깨끗이 사라진다. */
+	-webkit-appearance:none;
+
 ## <a href="#" name="css_optimization">CSS optimization</a>
 CSS란 `Cascading Style Sheets`의 약자이다.
 HTML 4.0 이후부터 style을 사용하므로써 HTML 문서와 design을 분리시키는 것이 가능해졌습니다.
@@ -116,7 +165,7 @@ CSS optimization manual
 	
 * 최소한의 id 와 class를 사용하자.
 
-## <a href="#" name="css-unit">CSS unit</a>
+## <a href="#" name="css_unit">CSS unit</a>
 많은 사람들이 em단위를 쓰면 해상도에 따라서 크기가 달라진다고 오해하는 경우가 많다.
 
 ~~em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browser의 font size option을 조절했을 때 동작하게 하기 위함이다.~~
@@ -177,3 +226,144 @@ rem 지원 여부 : http://caniuse.com/#search=rem
 자식 요소인 span tag에 부모에 종속되지 않은 1.2rem을 선언할 수 있다.
 	
 	p { font-size: 1.4rem; } p span { font-size: 1.2rem; }
+
+## <a href="#" name="background">background</a>
+
+	/* 배경색 지정 */
+	div{background-color:#ffffff}
+
+	/* 배경에 image 삽입 */
+	div{background-image:url('이미지경로')}
+
+	/* 배경 반복 설정 no-repeat , repeat-x , repeat-y */
+	div{background-repeat:no-repeat}
+
+	/* scroll : 스크롤하도록 지정 , fixed : 고정되도록 지정 , inherit : 부모 요소의 값 상속하도록 지정 */
+	div{background-attachment:scroll}
+
+	/* left , right , center , top , bottom , 100px */
+	div{background-position:10px 10px}
+
+	/* 하나로 사용할 때 */
+	div{background:#fff url('../images/test.jpg') no-repeat 0 150px}
+
+	/* background 여러개 사용 */
+	div{background:url(), linear-gradient(), url()}
+	div{background-repeat:no-repeat, no-repeat, repeat}
+	div{background-position:bottom right, left, right}
+
+## <a href="#" name="CSS_link">CSS_link</a>
+> link style 선언 순서 (LoVe HAte)
+
+	a:link{color:blue}
+	a:visited{color:red}
+	a:hover{color:green}
+	a:active{color:yellow}
+
+## <a href="#" name="opacity">opacity</a>
+
+**background:#000; opacity:없음**
+	
+	<!-- background:#000; opacity:없음 -->
+	<div style="background:#000; color:#fff;">
+	background:#000; opacity:없음
+	</div>
+
+**(for all browsers) background:#000; opacity:0.5;**
+
+	<!-- (for all browsers) background:#000; opacity:0.5; -->
+	<div style="background:#000; color:#fff; opacity:0.5;">
+	(for all other browsers) background:#000; opacity:0.5;
+	</div>
+
+**(for IE5~7) background:#000; filter:alpha(opacity:50);**
+
+
+	<!-- (for IE5~7) background:#000; filter:alpha(opacity:50); -->
+	<div style="background:#000; color:#fff; filter:alpha(opacity:50);">
+	(for IE5~7) background:#000;  filter:alpha(opacity:50);
+	</div>
+
+**(for IE8) background:#000; -ms-filter:alpha(opacity:50);**
+
+
+	<!-- (for IE8) background:#000; -ms-filter:alpha(opacity:50); -->
+	<div style="background:#000; color:#fff; -ms-filter:alpha(opacity:50);">
+	(for IE8) background:#000;  -ms-filter:alpha(opacity:50);
+	</div>
+
+**(for all IE version) background:#000; -ms-filter:alpha(opacity:50); filter:alpha(opacity:50);**
+
+	<!-- (for all IE version) background:#000; -ms-filter:alpha(opacity:50); filter:alpha(opacity:50); -->
+	<div style="background:#000; color:#fff; -ms-filter:alpha(opacity:50); filter:alpha(opacity:50);">
+	(for all IE version) background:#000;  -ms-filter:alpha(opacity:50); filter:alpha(opacity:50);
+	</div>
+
+**background:#000; opacity:0.5; -ms-opacity:0.5; -ms-filter:alpha(opacity:50); filter:alpha(opacity:50);**
+
+	<!-- background:#000; opacity:0.5; -ms-opacity:0.5; -ms-filter:alpha(opacity:50); filter:alpha(opacity:50); -->
+	<div style="background:#000; color:#fff; opacity:0.5; -ms-opacity:0.5; -ms-filter:alpha(opacity:50); filter:alpha(opacity:50);">
+	background:#000;  opacity:0.5; -ms-opacity:0.5; -ms-filter:alpha(opacity:50); filter:alpha(opacity:50);
+	</div>
+
+## <a href="#" name="web_font">web_font</a>
+> web browser는 사용자의 컴퓨터에 설치된 폰트만 사용할 수 있다.
+	개발할 당시의 computer에는 font가 설치되어 있지만, 사용자의 computer에 설치되어 있지 않은 font를 사용하고 싶은 경우 web font를 사용한다.
+
+> web font는 사용자가 web page에 접속하는 순간 font를 자동으로 내려 받는다.
+
+[google web font - free](http://www.google.com/webfonts "google web font")
+
+>IE9 version에서는 server에서 실행할 경우 web font가 적용되며,
+	local에서 실행할 경우 보안 문제 때문에 web font가 적용되지 않는다.
+
+	@font-face {
+	font-family:NanumGothic;  /* font name 마음대로 지정 */
+	src:local('NanumGothic'),  /* 사용자 컴퓨터에 있는 폰트 사용 */
+	     url('NanumGothic.eof'),  /* web font down */
+	     url('NanumGothic.ttf'),
+	     url('NanumGothic.woff');
+	} 
+	/* 위에서 생성한 font 사용 */
+	*{font-family:’<strong>NanumGothic</strong>’;}
+
+**각 format별 사용 가능한 browser**
+
+* .eof : ie만 지원
+* .ttf / .otf : ie 를 제외한 browser 지원
+* .svg : opera만 지원
+* .woff : ie, chorme, firefox만 지원
+
+~~따라서 .eof 와 .ttf 포맷을 사용하면 모든 browser를 지원한다.~~
+
+## <a href="#" name="scrollbar">scrollbar</a>
+
+	<!-- ie 적용 -->
+	html {
+	scrollbar-face :움직이는 바 전체색
+	scrollbar-shadow :바의 오른쪽과 밑쪽 그림자색
+	scrollbar-highlight :바의 왼쪽과 위쪽의 얇은 선색
+	scrollbar-3dlight :바의 왼쪽위쪽에 진하게 드러가는 선:
+	scrollbar-darkshadow :바의 오른쪽과 밑쪽에 들어가는 얇은 색
+	scrollbar-track :바가 없는 아래부분의 색
+	scrollbar-arrow :위 아래 화살표 색
+	}
+
+	<!-- webkit 적용 -->
+	*{overflow-y:scroll;-webkit-overflow-scrolling:touch}
+	*::-webkit-scrollbar {width:8px;height:8px;border:3px solid #fff}
+	*::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display:block;height:10px;background:url('./images/bg.png') #efefef}
+	*::-webkit-scrollbar-track {background:#efefef;-webkit-border-radius:10px;border-radius:10px;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,.2)}
+	*::-webkit-scrollbar-thumb {height:50px;width:50px;background:rgba(0,0,0,.2);-webkit-border-radius:8px;border-radius:8px;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,.1)}
+
+## <a href="#" name="ff_btn">ff_btn</a>
+> button tag에 design 요소를 추가하기 위해서
+	padding, background, border 등을 재정의 하는 경우가 있다.
+	그러나 firefox에서는 padding 값과 border 값이 적용되지 않고 여백이 발생한다.
+	firefox가 버튼 내부에 focus가 갔을때 사용하기 위한 내부 여백이라고 한다.
+
+	firefox에서도 padding, border가 style 적용한 값으로 노출하고자 할때는
+	::-moz-focus-inner 라는 선택자를 사용한다.
+
+	button{padding:0;border:0;background:none}
+	button::-moz-focus-inner{padding:0;border:0}
