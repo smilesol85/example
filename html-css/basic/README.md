@@ -8,9 +8,7 @@ meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등
 ## list
 **[github.io](http://smilesol85.github.io/html-css/basic/list.html "list")**
 
-	/* list style css*/
-	ul {list-style:square url("test.jpg");}
-	/*
+	/* list style
 	list-style:disc;
 	list-style:circle;
 	list-style:square;
@@ -20,5 +18,9 @@ meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등
 	list-style:lower-alpha;
 	list-style:upper-alpha;
 	*/
+	ul {list-style:square url("test.jpg");}
 
-## etc
+## shadow
+**[github.io](http://smilesol85.github.io/html-css/basic/shadow.html "shadow")**
+
+##etc
