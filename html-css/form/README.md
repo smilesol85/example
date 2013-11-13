@@ -1,6 +1,8 @@
 # form
 1. [form](#form)
+1. [textarea](#textarea)
 1. [placeholder](#placeholder)
+1. [a11y_form](#a11y_form)
 
 ## <a name="form">form</a>
 **[github.io](http://smilesol85.github.io/html-css/form/form.html "form")**
@@ -70,6 +72,33 @@
         </fieldset>
 	</form>
 
+## <a name="textarea">textarea</a>
+* name : 요소 이름 지정
+* cols : 가로로 쓰여지는 텍스트 수
+* rows : 세로로 쓰여지는 텍스트 수
+* readonly : 클릭은 되나 택스트를 입력할 수 없습니다.
+* disabled : 클릭조차 되지 않으며 사용하지 않는 경우입니다.
+
+**readonly="readonly" disabled="disabled"**
+
+		<textarea name="textarea_name" cols="30" rows="5" readonly="readonly" disabled="disabled" onclick="this.value=''">
+		텍스트를 입력하세요.
+		</textarea>
+
+
+**readonly="readonly"**
+
+		<textarea name="textarea_name" cols="30" rows="5" readonly="readonly" onclick="this.value=''">
+		텍스트를 입력하세요.
+		</textarea>
+
+**useable**
+
+		<textarea name="textarea_name" cols="30" rows="5" onclick="this.value=''">
+		텍스트를 입력하세요.
+		</textarea>
+
+
 ## <a name="placeholder">placeholder</a>
 **[github.io](http://smilesol85.github.io/html-css/form/placeholder.html "placeholder")**
 
@@ -82,3 +111,29 @@
 
 	<input type="text" placeholder="텍스트를 입력">
 
+## <a name="a11y_form">a11y_form</a>
+
+	<form>
+		<fieldset>
+			<legend>title</legend>
+			<p><label for="userid">아이디</label><input type="text" id="userid"></input></p>
+			<p><label for="userpw">비밀번호</label><input type="text" id="userpw"></input></p>
+		</fieldset> 
+	</form>
+
+> label은 form을 구조화하고 접근성을 높일 수 있다.
+	web 표준을 지원하는 browser의 경우 label만 선택해도 form control을 선택할 수 있으며,
+	음성 browser의 경우 form control이 label과 인접하지 않는 경우에도 인식할 수 있도록 지원한다.
+
+**웹 접근성을 고려한 select**
+전송 button없이 javascript의 onchange event를 사용한 select는 접근성을 고려하지 않은 방법이다.
+전송 button이 없는 경우 keyboard 사용자나 javascript를 사용할 수 없는 사용자를 고려하여 noscript tag를 사용하면 되겠지.. 하겠지만, 그러한 방법은 반쪽짜리 접근성이다.
+전송 button을 생성하여 접근성을 지키는 방법을 습관화 하자.
+
+	<select>
+		<option>웹 접근성을 고려한 select tag</option>
+		<option>웹 접근성을 고려한 select tag</option>
+		<option>웹 접근성을 고려한 select tag</option>
+		<option>웹 접근성을 고려한 select tag</option>
+	</select>
+	<input type="submit">
