@@ -11,9 +11,7 @@
         <source src="#" type="video/ogv" />
     </video>
 
-audio tag와 비슷하다.
 > 속성 : preload, controls, autoplay, loop, poster, width, height
-
 > source tag는 브라우저마다 지원하는 확장자 형식이 다르기 때문에 사용한다.
 
 모든 browser를 지원하지 않기 때문에 source tag로 `mp4`, `ogv` 확장자 또는 `mp4`, `WebM` 확장 파일을 사용한다.
@@ -35,7 +33,6 @@ head tag에 아래 2줄을 추가해야 한다.
     </audio>
 
 > audio tag의 속성중 controls 및 autoplay 등의 속성은 줄여서 `controls autoplay`와 같이 사용 가능하다.
-
 > source tag는 브라우저마다 지원하는 확장자 형식이 다르기 때문에 사용한다.
 
 보통 `mp3`와 `ogg` 확장자이면 거의 모든 browser는 지원 가능하다.
