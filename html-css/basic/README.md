@@ -114,5 +114,3 @@ CSS optimization manual
 * td : table 데이터 cell
 * colgroup : 열 전체를 그룹 지정
 * col : 열 각각의 속성 지정
-
-## etc
