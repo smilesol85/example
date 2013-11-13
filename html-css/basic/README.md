@@ -7,12 +7,12 @@
 1. [css_optimization](#css_optimization)
 1. [css-unit](#css-unit)
 
-## <a name="meta">meta</a>
+## <a href="#" name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
 
 > meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등의 문서들의 정보들을 명시할 수 있다.
 
-## <a name="string">string</a>
+## <a href="#" name="string">string</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/string.html "string")**
 
 	<!-- blockquote : block element 인용구 -->
@@ -41,7 +41,7 @@
     	<del> 가운데 줄이 그어진 글자 tag </del>
     -->
 
-## <a name="list">list</a>
+## <a href="#" name="list">list</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/list.html "list")**
 
 	/* list style
@@ -56,10 +56,10 @@
 	*/
 	ul {list-style:square url("test.jpg");}
 
-## <a name="shadow">shadow</a>
+## <a href="#" name="shadow">shadow</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/shadow.html "shadow")**
 
-## <a name="table">table</a>
+## <a href="#" name="table">table</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/table.html "table")**
 * summary : table 내용 요약
 * caption : table 제목 및 설명문
@@ -68,7 +68,7 @@
 * colgroup : 열 전체를 그룹 지정
 * col : 열 각각의 속성 지정
 
-## <a name="css_optimization">CSS optimization</a>
+## <a href="#" name="css_optimization">CSS optimization</a>
 CSS란 `Cascading Style Sheets`의 약자이다.
 HTML 4.0 이후부터 style을 사용하므로써 HTML 문서와 design을 분리시키는 것이 가능해졌습니다.
 style이란 HTML 요소들이 어떻게 display 될 것인가에 대한 정의를 말합니다.
@@ -116,7 +116,7 @@ CSS optimization manual
 	
 * 최소한의 id 와 class를 사용하자.
 
-## <a name="css-unit">CSS unit</a>
+## <a href="#" name="css-unit">CSS unit</a>
 많은 사람들이 em단위를 쓰면 해상도에 따라서 크기가 달라진다고 오해하는 경우가 많다.
 
 ~~em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browser의 font size option을 조절했을 때 동작하게 하기 위함이다.~~

@@ -4,7 +4,7 @@
 1. [flexbox](#flexbox)
 1. [tablebox](#tablebox)
 
-## <a name="border">border</a>
+## <a href="#" name="border">border</a>
 **[github.io](http://smilesol85.github.io/html-css/box/border.html "border")**
 	
 	/* border-radius */
@@ -23,7 +23,7 @@
 	*{border-color:red}
 	div{border-bottom-color:red}
 
-## <a name="box-sizing">box-sizing</a>
+## <a href="#" name="box-sizing">box-sizing</a>
 **[github.io](http://smilesol85.github.io/html-css/box/box-sizing.html "box-sizing")**
 
 	/* border를 포함 */
@@ -32,7 +32,7 @@
 	/* border를 포함하지 않음 */
 	.box3{box-sizing:content-box}
 
-## <a name="flexbox">flexbox</a>
+## <a href="#" name="flexbox">flexbox</a>
 **[github.io](http://smilesol85.github.io/html-css/box/flexbox.html "flexbox")**
 
 > flexbox 사용은 box안의 요소들은 `block` 요소라는 조건이 있다.
@@ -80,7 +80,7 @@
 	.box .oBoxE2{-webkit-box-ordinal-group:1}
 	.box .oBoxE3{-webkit-box-ordinal-group:3}
 
-## <a name="tablebox">tablebox</a>
+## <a href="#" name="tablebox">tablebox</a>
 **[github.io](http://smilesol85.github.io/html-css/box/tablebox.html "tablebox")**
 
 	<style>        
