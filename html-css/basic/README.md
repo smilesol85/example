@@ -52,4 +52,12 @@ meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등
     	<del> 가운데 줄이 그어진 글자 태그 </del>
     -->
 
+## table
+* summary : table 내용 요약
+* caption : table 제목 및 설명문
+* th : table 제목 cell
+* td : table 데이터 cell
+* colgroup : 열 전체를 그룹 지정
+* col : 열 각각의 속성 지정
+
 ## etc
