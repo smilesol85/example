@@ -10,7 +10,7 @@
 code
 
     ```javascript
-    var sText = "string";
+    var sText = string;
     var nNum = 1;
     ```
 
