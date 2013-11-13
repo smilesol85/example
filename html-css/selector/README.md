@@ -7,7 +7,7 @@
 ## <a href="#" name="selector">selector</a>
 **[github.io](http://smilesol85.github.io/html-css/selector/selector.html "selector")**
 
-> * : 전체 선택자
+> `*` : 전체 선택자
     tag : tag 선택자
     #id : 아이디 선택자
     .class : 클래스 선택자
