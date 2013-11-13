@@ -10,6 +10,7 @@
 code
 
     var sText = 'string';
+    var nNum = 1;
 
 #### description ####
 descriptin `test test`, `test` test
