@@ -2,7 +2,7 @@
 1. [border](#border)
 1. [box-sizing](#box-sizing)
 1. [flexbox](#flexbox)
-1. [table-box](#table-box)
+1. [tablebox](#tablebox)
 
 ## <a name="border">border</a>
 **[github.io](http://smilesol85.github.io/html-css/box/border.html "border")**
@@ -80,8 +80,8 @@ flexbox 사용은 box안의 요소들은 `block` 요소라는 조건이 있다.
 	.box .oBoxE2{-webkit-box-ordinal-group:1}
 	.box .oBoxE3{-webkit-box-ordinal-group:3}
 
-## <a name="table-box">table-box</a>
-**[github.io](http://smilesol85.github.io/html-css/box/table-box.html "table-box")**
+## <a name="tablebox">tablebox</a>
+**[github.io](http://smilesol85.github.io/html-css/box/tablebox.html "tablebox")**
 
 	<style>        
 	.boxes{display:table}
