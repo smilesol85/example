@@ -7,29 +7,29 @@
 ## <a href="#" name="selector">selector</a>
 **[github.io](http://smilesol85.github.io/html-css/selector/selector.html "selector")**
 
-> `*` : 전체 선택자
-    tag : tag 선택자
-    #id : 아이디 선택자
-    .class : 클래스 선택자
-    ul li : 후손 선택자
-    ul > li : 자손 선택자
-    span + span : 동위 선택자
-    span ~ em : 동위 선택자
-    :active : 반응 선택자
-    :hover : 반응 선택자
-    :checked : 상태 선택자
-    :focus : focus 선택자
-    [type=text]:enabled : enabled 선택자
-    [type=text]:disabled : disabled 선택자
-    :not(.not) : 부정 선택자
+> `*` : 전체 선택자 /
+    tag : tag 선택자 / 
+    #id : 아이디 선택자 /
+    .class : 클래스 선택자 /
+    ul li : 후손 선택자 /
+    ul > li : 자손 선택자 /
+    span + span : 동위 선택자 /
+    span ~ em : 동위 선택자 /
+    :active : 반응 선택자 /
+    :hover : 반응 선택자 /
+    :checked : 상태 선택자 /
+    :focus : focus 선택자 /
+    [type=text]:enabled : enabled 선택자 /
+    [type=text]:disabled : disabled 선택자 /
+    :not(.not) : 부정 선택자 /
 
 ## <a href="#" name="selector-before-after-data">selector-before-after-data</a>
 **[github.io](http://smilesol85.github.io/html-css/selector/selector-before-after-data.html "selector-before-after-data")**
 
 **counter도 할 수 있다**
 
-> p{counter-increment:nSmilesol;}
-    p::before{content:counter(nSmilesol)'. ';}
+> p{counter-increment:nSmilesol;} /
+    p::before{content:counter(nSmilesol)'. ';} /
     p::after{content:' -' attr(data-page) "page";}
 
     <style>
