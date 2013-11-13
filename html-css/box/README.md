@@ -2,6 +2,7 @@
 1. [border](#border)
 1. [box-sizing](#box-sizing)
 1. [flexbox](#flexbox)
+1. [table-box](#table-box)
 
 ## <a name="border">border</a>
 **[github.io](http://smilesol85.github.io/html-css/box/border.html "border")**
@@ -79,4 +80,27 @@ flexbox 사용은 box안의 요소들은 `block` 요소라는 조건이 있다.
 	.box .oBoxE2{-webkit-box-ordinal-group:1}
 	.box .oBoxE3{-webkit-box-ordinal-group:3}
 
-## etc
+## <a name="table-box">table-box</a>
+**[github.io](http://smilesol85.github.io/html-css/box/table-box.html "table-box")**
+
+	<style>        
+	.boxes{display:table}
+	.box4{background:gray}
+
+	/* footer */
+	.box1{background:red;display:table-footer-group;line-height:40px}
+
+	/* caption */
+	.box2{background:green;display:table-caption}
+
+	/* header */
+	.box3{background:white;display:table-header-group;line-height:40px}
+	</style>
+
+	<div class="boxes">
+        <div class="box1">one => display:table-footer-group<p>table-footer-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+        <div class="box2">two => display:table-caption</div>
+        <div class="box3">three => display:table-header-group<p>table-header-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+        <div class="box4">four</div>
+    </div>
+	
