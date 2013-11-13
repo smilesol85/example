@@ -10,8 +10,7 @@
 code
 
     ```javascript
-    var sText = 'test',
-        sText2 = 'test';
+    var sText = 'string';
     ```
 
 #### description ####
