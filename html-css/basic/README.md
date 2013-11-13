@@ -1,11 +1,16 @@
 # basic
+	1. [meta](#meta)
+	1. [list](#list)
+	1. [shadow](#shadow)
+	1. [string](#string)
+	1. [table](#table)
 
-## meta
+## <a name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
 
 meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등의 문서들의 정보들을 명시할 수 있다.
 
-## list
+## <a name="list">list</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/list.html "list")**
 
 	/* list style
@@ -20,10 +25,10 @@ meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등
 	*/
 	ul {list-style:square url("test.jpg");}
 
-## shadow
+## <a name="shadow">shadow</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/shadow.html "shadow")**
 
-## string
+## <a name="string">string</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/string.html "string")**
 
 	<!-- blockquote : block element 인용구 -->
@@ -52,7 +57,7 @@ meta tag 사용으로 해당 html 문서의 제목, 설명, 제작자 정보 등
     	<del> 가운데 줄이 그어진 글자 tag </del>
     -->
 
-## table
+## <a name="table">table</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/table.html "table")**
 * summary : table 내용 요약
 * caption : table 제목 및 설명문
