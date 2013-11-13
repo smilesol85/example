@@ -20,16 +20,13 @@ _underscores_**
 
 # list
 * list
-
     * list
 
 - **bold** : test
-
     + test
     + `test`
 
 1. number
-
     *
 
 # link
