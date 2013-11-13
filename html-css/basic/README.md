@@ -91,10 +91,10 @@ CSS optimization manual
 * 색 지정에는 RGB 값 사용 권장한다.
 * 전체 사이즈 및 폰트 사이즈에서는 em 사용, 절대 사이즈에는 px 사용, 상대 사이즈에는 % 사용하자.
 * css 속성은 가능하면 축약형 사용하자.
-	
-	
+
+
 	padding:5px 0 2px 0;
-	
+
 
 * 최소한의 id 와 class를 사용하자.
 
