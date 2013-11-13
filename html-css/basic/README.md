@@ -70,8 +70,8 @@ style은 크게 4가지 방법으로 사용 가능합니다.
 우선 순위는 숫자가 높을 수록 높습니다.
 
 1. broser default
-2. External Style Sheet (`head`안에 `link` tag로 외부에서 link됩니다.)
-3. Internal Style Sheet(`style`이라는 tag를 써서 문서안에서 정의됩니다.)
+2. External Style Sheet (head tag안에 link tag로 외부에서 link됩니다.)
+3. Internal Style Sheet(style이라는 tag를 써서 문서안에서 정의됩니다.)
 4. Inline Style (각 tag에 style=""이라는 속성을 이용해 정의됩니다.)
 
 CSS optimization manual
@@ -79,7 +79,16 @@ CSS optimization manual
 * inline, internal 보다 external stylesheet를 권장한다.
 	* 유지보수가 좋을 뿐만 아니라, browser에 cashe되어 추가적인 HTTP 요청이 발생하지 않는다.
 * 속도 향상을 위해서 @import는 지양한다.
+	* 페이지 내에서 link tag와 @import를 병행해서 사용하거나 여러 @import만을 사용할 경우 순차적으로 loading하기 때문에 page speed에 영향을 미친다.
+	* link tag를 여러번 사용할 경우 병행 즉 동시 download가 보장되어 속서면에서 좋다.
 * 모니터, 프린트, 소형기기를 위한 css를 분류한다.
+
+	<link type="text/css" rel="stylesheet" href="print.css" media="print">
+
+	/* print.css */
+	#header, #footer, .navWrap {display:none}
+
+	
 * !important 사용은 피하자! 렌더링 이슈가 발생할 수 있다.
 * image 표현을 위해 sprite 기법 사용을 사용하자.
 * 숫자 0 이외의 숫자에는 단위 붙이자.
