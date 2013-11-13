@@ -10,7 +10,7 @@ descriptin `test test`, `test` test
 *italic*
 **bold**
 _underscores_**
-~~Scratch~~
+*Scratch*
 
 > des
 
