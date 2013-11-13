@@ -5,6 +5,7 @@
 1. [shadow](#shadow)
 1. [table](#table)
 1. [css_optimization](#css_optimization)
+1. [css-unit](#css-unit)
 
 ## <a name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
@@ -124,7 +125,7 @@ _em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browse
 하지만 Responsive Web Design을 추구하는 작업을 하시거나, 화면 크기에 따라서 동적으로 body의 font-size를 조절하는 특수한 작업을 하실 경우에는 em을 활용하여 scaleable한 UI를 구성할 수도 있습니다.
 또한 해외 웹사이트의 대부분이 em 을 사용하며, 유동성 부분 때문에 em이 표준으로 자리잡아가고 있습니다.
 
-*편리한 작업을 위한 CSS 단위별 폰트크기(px, em, %, pt)*
+**편리한 작업을 위한 CSS 단위별 폰트크기(px, em, %, pt)**
 
 | Pixels      | EMs         | Percent | Points |
 |:-----------:|:-----------:|:-------:|:------:|
@@ -148,13 +149,13 @@ _em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browse
 | 23px        | 1.438em     | 143.8%  | 17pt   |
 | 24px        | 1.5em       | 150%    | 18pt   |
 
-*단위별 폰트의 특징*
+**단위별 폰트의 특징**
 
 * pt : points(포인트) - 1포인트는 0.72인치
 * px : pixels(픽셀) - 화면 해상도에 대한 상대크기
 * %, em : 지정되거나 상속받은 (또는 상위 엘리먼트)에 대한 백분율 상대 크기
 
-*em 사용 예*
+**em 사용 예**
 em은 부모의 요소에 영향을 받아 매번 계산해 보고 눈으로 확인해 봐야 하는 단점이 있다.
 
 	body { font-size:62.5%; }
@@ -163,7 +164,7 @@ em은 부모의 요소에 영향을 받아 매번 계산해 보고 눈으로 확
 	li { font-size: 1.4em; } /* =14px */
 
 
-rem 사용 예
+**rem 사용 예**
 em의 단점인 부모 요소의 영향을 받는 단점을 보안하기 위해서 
 CSS3에서 갠찮은 단위를 소개 했는데 그 중 rem(root em) 단위는 꽤 유용하게 쓰일 것 같다. 
 rem 단위는 대부분의 browser를 지원하나 아직 전부 지원하지는 않는다. 
