@@ -15,7 +15,7 @@
 1. [opacity](#opacity)
 1. [web_font](#web_font)
 1. [scrollbar](#scrollbar)
-1. [ff_btn](#ff_btn)
+1. [firefox_button](#firefox_button)
 
 ## <a href="#" name="meta">meta</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta tag")**
@@ -474,7 +474,7 @@ rem 지원 여부 : http://caniuse.com/#search=rem
 	*::-webkit-scrollbar-track {background:#efefef;-webkit-border-radius:10px;border-radius:10px;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,.2)}
 	*::-webkit-scrollbar-thumb {height:50px;width:50px;background:rgba(0,0,0,.2);-webkit-border-radius:8px;border-radius:8px;-webkit-box-shadow:inset 0 0 4px rgba(0,0,0,.1)}
 
-## <a href="#" name="ff_btn">ff_btn</a>
+## <a href="#" name="firefox_button">firefox_button</a>
 > button tag에 design 요소를 추가하기 위해서
 	padding, background, border 등을 재정의 하는 경우가 있다.
 	그러나 firefox에서는 padding 값과 border 값이 적용되지 않고 여백이 발생한다.
