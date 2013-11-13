@@ -52,6 +52,9 @@ _underscores_**
 
     code
     code
+    <div>
+        code
+    </div>
 
 # javascript code
 ```javascript
