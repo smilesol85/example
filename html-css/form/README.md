@@ -1,5 +1,6 @@
 # box
 1. [form](#form)
+1. [placeholder](#placeholder)
 
 ## <a name="form">form</a>
 **[github.io](http://smilesol85.github.io/html-css/form/form.html "form")**
@@ -8,8 +9,8 @@
 	<form action="#" method="get">
 		<fieldset>
 			<legend>HTML input type</legend>
-			<label for="fhidden"><strong>hidden</strong></label><input type="hidden" id="fhidden"><br>
-            <label for="fbutton">""button""</label><input type="button" id="fbutton"><br>
+			<label for="fhidden">hidden</label><input type="hidden" id="fhidden"><br>
+            <label for="fbutton">button</label><input type="button" id="fbutton"><br>
             <label for="fimage">image</label><input type="image" id="fimage"><br>
             <label for="fcheckbox">checkbox</label><input type="checkbox" id="fcheckbox"><br>
             <label for="fradio">radio</label><input type="radio" id="fradio"><br>
@@ -69,4 +70,15 @@
         </fieldset>
 	</form>
 
-## etc
+## <a name="placeholder">placeholder</a>
+**[github.io](http://smilesol85.github.io/html-css/form/placeholder.html "placeholder")**
+
+> placeholder는 android 하위 버전에서 text 정렬이 되지 않는 bug가 있다.
+	font-size 및 color는 사용 가능하다.
+
+	<style>
+	.placeholder::-webkit-input-placeholder{font-size:18px;color:red}
+	</style>
+
+	<input type="text" placeholder="텍스트를 입력">
+
