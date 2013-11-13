@@ -70,8 +70,8 @@ style은 크게 4가지 방법으로 사용 가능합니다.
 우선 순위는 숫자가 높을 수록 높습니다.
 
 1. broser default
-2. External Style Sheet (<head>안에 <link> tag로 외부에서 link됩니다.)
-3. Internal Style Sheet(<style>이라는 tag를 써서 문서안에서 정의됩니다.)
+2. External Style Sheet (`head`안에 `link` tag로 외부에서 link됩니다.)
+3. Internal Style Sheet(`style`이라는 tag를 써서 문서안에서 정의됩니다.)
 4. Inline Style (각 tag에 style=""이라는 속성을 이용해 정의됩니다.)
 
 CSS optimization manual
