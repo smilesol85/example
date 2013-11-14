@@ -4,7 +4,8 @@
 1. [Function 생성자 사용](#new_function)  
 1. [Function](#Function)  
 1. [자기 호출 함수](#self-invoking)  
-1. [콜백 함수](#callback)
+1. [콜백 함수](#callback)  
+1. [클로저](#closer)
 
 ---
 ---
@@ -196,3 +197,6 @@ function LibrayFunction(arg, callback){
 	callback(data);
 }
 ```
+
+## <a href="#" name="closer">클로저</a>
+* jQuery와 같은 대형 라이브러리에서 흔히 채용되는 패턴이다.  
