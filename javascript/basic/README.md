@@ -10,6 +10,7 @@
 1. [null](#null)  
 1. [연산자](#operator)  
 1. [조건문 if](#if)  
+1. [조건문 switch](#switch)  
 
 ---
 ---
@@ -334,4 +335,22 @@ var sURL = nAge > 20 ? (
 	'oooops.html'
 );
 location.assign(sURL);
+```
+
+## <a href="#" name="switch">조건문 switch</a>
+> 너무 많은 else if문을 사용하게 된다면 switch 문으로 코드를 줄일 수 있을 것이다.
+		
+```javascript
+var nNum = '', nAge = '20';
+switch(nAge){
+	case a > 10 :
+		nNum = 'a는 10살 보다 많다';
+		break;
+	case a > 20 :
+		nNum = 'a는 20살 보다 많다';
+		break;
+	default :
+		nNum = 'a는 몇살이야?';
+		break;
+}
 ```
