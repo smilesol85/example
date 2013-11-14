@@ -6,6 +6,8 @@
 1. [숫자](#number)  
 1. [문자열](#string)  
 1. [불리언](#boolean)  
+1. [undefined](#undefined)  
+1. [null](#null)  
 
 ---
 ---
@@ -238,4 +240,24 @@ console.log(c);  // null
 		
 ```javascript
 console.log(true > false);  // true
+```
+
+## <a href="#" name="undefined">undefined</a>
+> 값이 할당되지 않음을 나타낸다.  
+		
+```javascript
+var foo;  // undefined
+
+console.log(null == undefined)  // true
+console.log(null === undefined)  // false
+```
+
+## <a href="#" name="null">null</a>
+* 객체가 없음을 나타낸다.  
+* 아무런 값도 나타내지 않는다.  
+* 어떠한 유효한 값도 아니다. (값 자체가 없다는 의미는 아니다.)  
+		
+```javascript
+var foo = null;  // null
+var foo2 = null + 6;  // 6
 ```
