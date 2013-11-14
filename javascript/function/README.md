@@ -39,6 +39,14 @@ add(1,2);
 // 함수를 다른 변수에 할당할 수 있다.
 var f2 = add;
 var r = f2(3,3);  // 6
+
+// 렉시컬 특성
+var x = 'global';
+function f(){
+	alert(x);  // undefined
+	var x = 'local';
+	alert(x);  // local
+}
 ```
 
 ### arguments
