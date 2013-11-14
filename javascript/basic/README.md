@@ -265,7 +265,38 @@ var foo2 = null + 6;  // 6
 
 ## <a href="#" name="operator">연산자</a>
 ### 증가, 감소 연산자
+* ++변수 이면 먼저 증가 후 최종값으로 평가한다.  
+* 변수++ 이면 평가 끝난 후 증가한다.
+		
+```javascript
+i = 1;
+j = ++i;  // 2
+
+i = 1;
+j = i++;
+console.log(j);  // 1
+console.log(i);  // 2
+```
+
 ### 비교 연산자
+* '=='(equal)은 타입이 다른 경우 타입을 일치 시킨 후 비교한다.  
+* '==='(identical)은 타입 비교까지 한다.  
+		
+```javascript
+console.log(1 == '1');  // true
+console.log(1 === '1');  // false
+console.log(1 != '1');  // false
+console.log(1 !== '1');  // true
+
+// 피연산가 둘 다 객체라면 두 객체의 참조값을 비교한다.
+// 즉, 두 참조값이 가리키는 메모리 위치가 다르므로 false이다.
+var o1 = new String('hello');
+var o2 = new Object('world');
+console.log(o1 == o2);  // false
+
+console.log(undefined == null);  // true
+```
+
 ### 논리 연산자
 ### OR 연산자(||)
 ### AND 연산자(&&)
