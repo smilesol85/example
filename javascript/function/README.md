@@ -200,3 +200,46 @@ function LibrayFunction(arg, callback){
 
 ## <a href="#" name="closer">클로저</a>
 * jQuery와 같은 대형 라이브러리에서 흔히 채용되는 패턴이다.  
+* 내부 함수에서 외부 함수의 변수에 접근할 수 있는 것을 클로저라고 한다.  
+* 내부 함수가 외부 함수의 메모리를 참조하고 있기 때문에 가비지 컬렉터는 외부 함수 생명 주기가 다 되었음에도 메모리를 해제하지 않는다. 따라서 클로저에로 인한 메모리 누수가 생길 수 있다.  
+		
+```javascript
+function out(){
+	var x = 0;
+	return function (){
+		return ++x;
+	}
+}
+
+var x = -1;
+var f = out();
+f();  // 1
+f();  // 2
+f();  // 3
+f();  // 4
+```
+
+**Function으로 생성한 함수는 클로저를 만들지 못한다. 전역 영역에 생선된 것처럼 컴파일 되기 때문이다.**  
+		
+```javascript
+var x = 'g';
+function f(){
+	var x = '1';
+	return new Function('return x');
+}
+var global = f();
+alert(global());  // g
+```
+
+### 클로저 인스턴스
+* 클로저를 호출하는 것은 `클로저 인스턴스를 생성`하는 것이다.
+		
+```javascript
+var f = out();  // out의 인스턴스 생성
+f();  // 1
+f();  // 2
+
+var g = out();
+g();  // 3
+g();  // 4
+```
