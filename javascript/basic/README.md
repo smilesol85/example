@@ -8,6 +8,7 @@
 1. [불리언](#boolean)  
 1. [undefined](#undefined)  
 1. [null](#null)  
+1. [연산자](#operator)  
 
 ---
 ---
@@ -123,7 +124,7 @@ console.log(NaN == NaN);  // false
 isNaN(NaN);  // true
 ```
 
-### <a href="#" name="Math">Math</a>
+### Math
 > 복잡한 수학 연산을 위해 제공되는 객체이다.  
 > [w3schools](#http://www.w3schools.com/jsref/jsref_obj_math.asp, "Math")  
 		
@@ -138,7 +139,7 @@ var g = Math.random() * 10;  // 0초과 10미만의 숫자를 랜덤으로 생�
 var h = Math.floor(Math.random() * 10);  // 0초과 10미만의 숫자중 소수점 버리고 랜덤으로 생성
 ```
 
-### <a href="#" name="Number">Number</a>
+### Number
 > 데이터 타입의 숫자를 객체로 만들 수 있다.  
 > [w3schools](#http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")
 		
@@ -261,3 +262,11 @@ console.log(null === undefined)  // false
 var foo = null;  // null
 var foo2 = null + 6;  // 6
 ```
+
+## <a href="#" name="operator">연산자</a>
+### 증가, 감소 연산자
+### 비교 연산자
+### 논리 연산자
+### OR 연산자(||)
+### AND 연산자(&&)
+### 부정 연산자(!)
