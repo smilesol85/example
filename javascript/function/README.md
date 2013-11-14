@@ -82,7 +82,9 @@ var f = new Function('x','y','return x+y');
 ```
 
 ## <a href="#" name="Function">Function</a>
-> Function 이라는 함수는 `함수 인스턴스(instance)`를 생성하는 함수이다.  
+* Function 이라는 함수는 `함수 인스턴스(instance)`를 생성하는 함수이다.  
+* Object, Array도 Function의 인스턴스이다.  
+* 모든 함수는 Function 멤버를 공유한다.  
 
 
 *인스턴스(instance) - 현재 바로 생성된 그 객체*  
@@ -100,3 +102,5 @@ function f(x,y){
 	return x+y;
 }
 ```
+
+> Function ->(생성) Object(Function 인스턴스) ->(생성) Object 객체(Object 인스턴스)  
