@@ -1,10 +1,13 @@
 # 자바스크립트 기본 문법
-1. [리터럴](#literal)
-1. [변수](#variable)
-1. [프로그램 실행 단계](#program_process)
-1. [데이터 타입](#data-type)
-1. [숫자](#number)
+1. [리터럴](#literal)  
+1. [변수](#variable)  
+1. [프로그램 실행 단계](#program_process)  
+1. [데이터 타입](#data-type)  
+1. [숫자](#number)  
 
+---
+---
+---
 
 * 공백은 문자를 구분하는 형태이다.  
 * 주석도 공백으로 취급한다.  
