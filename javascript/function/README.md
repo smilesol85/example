@@ -3,7 +3,8 @@
 1. [함수 리터럴 이용](#function_literal)  
 1. [Function 생성자 사용](#new_function)  
 1. [Function](#Function)  
-1. [self-invoking](#self-invoking)  
+1. [자기 호출 함수](#self-invoking)  
+1. [콜백 함수](#callback)
 
 ---
 ---
@@ -148,3 +149,4 @@ function f(x,y){
 }();
 ```
 
+## <a href="#" name="callback">콜백 함수</a>
