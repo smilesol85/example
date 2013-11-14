@@ -2,6 +2,7 @@
 1. [함수 정의](#function)  
 1. [함수 리터럴 이용](#function_literal)  
 1. [Function 생성자 사용](#new_function)  
+1. [Function](#Function)
 
 ---
 ---
@@ -79,3 +80,7 @@ var f = function(x,y){
 ```javascript
 var f = new Function('x','y','return x+y');
 ```
+
+## <a href="#" name="Function">Function</a>
+> Function 이라는 함수는 `함수 인스턴스(instance)`를 생성하는 함수이다.  
+*인스턴스(instance) - 현재 바로 생성된 그 객체*  
