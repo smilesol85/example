@@ -5,6 +5,7 @@
 1. [데이터 타입](#data-type)  
 1. [숫자](#number)  
 1. [문자열](#string)  
+1. [불리언](#boolean)  
 
 ---
 ---
@@ -228,4 +229,13 @@ console.log(c);  // null
 정규 표현식에서 괄호로 묶인 부분 표현식은 왼쪽에서 오른쪽으로 번호가 매겨지고,
 각 부분 표현식과 매치된 텍스트를 기억한다.
 */
+```
+
+## <a href="#" name="boolean">불리언</a>
+> true(참), false(거짓) 로 값을 표현할 때 사용한다.  
+> true는 1, false는 0을 반환한다.  
+> 0, null, ""(빈 문자열), false, undefined, NaN 외의 값으로 평가되면 항상 true이다.  
+		
+```javascript
+console.log(true > false);  // true
 ```
