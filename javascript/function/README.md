@@ -21,6 +21,24 @@ f.prop = 'property';
 f.method = function(){};
 ```
 
+#### 함수 인자 arguments, callee
+* 함수를 호출할 때 정희된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 다른 경우가 있다.  
+* 매개변수(oarameter) 개수보다 넘어온 인자(argument)의 개수가 적으면 차례로 값이 채워지고 나머지는 `undefined`가 된다.  
+* arguments 타입의 객체는 함수가 호출되면 자바스크립에서 자동으로 생성하는 객체이다.  
+* arguments 객체는 배열이 아니지만, 배열과 유사하다.  
+		
+```javascript
+function f(){
+	var total = 0;
+	for(var i = 0; i < arguments.length; i++){
+		total += arguments[i];
+	}
+	return total;
+}
+// f(2,3,4);  // 9
+// f(8,7);  // 15
+```
+
 ### 함수 리터럴 이용
 * 인자로 전달  
 * 변수에 할당  
