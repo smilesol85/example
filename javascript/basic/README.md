@@ -16,6 +16,7 @@
 1. [예외 처리 try / catch / finally / throw](#try)  
 1. [break](#break)  
 1. [continue](#continue)  
+1. [배열](#array)  
 
 ---
 ---
@@ -469,4 +470,37 @@ for(var i = 0; i < 10; i++){
 	output += i;
 }
 alert(output);
+```
+
+## <a href="#" name="array">배열</a>
+		
+```javascript
+/*
+push() 배열 맨 뒤 요소 추가
+pop() 배열 맨 뒤 요소 제거
+unshift() 배열 앞 요소 추가 
+shift() 배열 앞 요소 제거
+*/
+
+var aFruit = [];
+aFruit.push('apple');
+document.write(aFruit+'<br>');  //apple
+aFruit.push('banana');
+document.write(aFruit+'<br>');  //apple,banana
+aFruit.shift();
+document.write(aFruit+'<br>');  //banana
+aFruit.unshift('orange');
+document.write(aFruit+'<br>');  //orange,banana
+aFruit.pop();
+document.write(aFruit+'<br>');  //orange
+
+document.write(aFruit.length+'<br>');  //1
+aFruit.push('apple', 'banana');
+document.write(aFruit+'<br>');  //orange,apple,banana
+
+aFruit.splice(1,2);
+document.write(aFruit+'<br>');  //orange
+aFruit.push('apple', 'banana');
+aFruit.splice(1,0,'aaa','bbb');  //1:첫번째 배열 이후, 0:삭제 없음
+document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
 ```
