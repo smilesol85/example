@@ -130,6 +130,10 @@ console.log(typeof NaN);  // Number
 console.log(3 * '3');  // NaN
 console.log(NaN == NaN);  // false
 isNaN(NaN);  // true
+
+// parseInt()
+var a = '5a';
+console.log(parseInt(a, 10));  // 5 - 10진수로 반환
 ```
 
 ### Math
@@ -160,6 +164,23 @@ a.toString(16);  // f (16진수로 출력)
 
 var b = '9';
 Number(b);  // 9 숫자로 변환
+
+// Number
+var testNum = new Number('10.8842');
+
+document.write(Number.MAX_VALUE);  //표현 가능한 가장 큰 수
+document.write('<br/>');
+document.write(Number.MIN_VALUE);  //표현 가능한 가장 작은 수
+document.write('<br/>');
+document.write(Number.NEGATIVE_INFINITY);
+document.write('<br/>');
+document.write(Number.POSITIVE_INFINITY);
+document.write('<br/>');
+document.write(testNum.toExponential(3));
+document.write('<br/>');
+document.write(testNum.toPrecision(3));  //총 세 자리 표시! 이하의 자리수에서 반올림
+document.write('<br/>');
+document.write(testNum.toFixed(3));  //소수점 이하 세 자리까지 표시하고 그 이하의 자리수에서 반올림
 ```
 
 ## <a href="#" name="string">문자열</a>
@@ -179,6 +200,45 @@ String(1);  // '1' 반환
 var sString2 = 'world';
 
 console.log('i\'m...');  // i'm...
+
+// String
+var a = new String('This is abcdefg');
+var test = "test";
+
+document.write(a);  //This is abcdefg
+document.write('<br/>'); 
+document.write(a.charAt(0));  //T
+document.write(a.charAt(1));  //h
+document.write('<br/>');
+document.write(a.concat(test));  //This is abcdefgtest
+document.write('<br/>');
+document.write(a.indexOf('i'));  //2
+document.write('<br/>');
+document.write(a.lastIndexOf('i'));  //5
+document.write('<br/>');
+document.write(a.slice(2));  //is is abcdefg
+document.write('<br/>');
+document.write(a.slice(2,10));  //is is ab
+document.write('<br/>');
+document.write(a.substr(2));  //is is abcdefg
+document.write('<br/>');
+document.write(a.substr(2,10));  //is is abcd
+document.write('<br/>');
+document.write(a.substring(2,10));  //is is ab
+document.write('<br/>');
+document.write(a.toUpperCase());  //THIS IS ABCDEFG
+document.write('<br/>');
+document.write(a.toLowerCase());  //this is abcdefg
+document.write('<br/>');
+document.write(a.replace('a','aa'));  //This is aabcdefg
+document.write('<br/>');
+
+var strSplit = a.split(" ");
+document.write(strSplit[0]); //This
+document.write('<br/>');
+document.write(strSplit[1]);  //is
+document.write('<br/>');
+document.write(strSplit[2]);  //abcdefg
 
 // substring()
 // substring(x,y) => x : 0부터 x번째 부터, y : 0부터 y번째 이전의 값
