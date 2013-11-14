@@ -59,6 +59,7 @@ var sString1 = 'string1', sString2 = 'string2';
 
 console.log(window.nNum);  // 1
 console.log(nNum);  // 1 - window 생략 가능
+console.log(this === window);  // true
 ```
 
 > 파싱 단계에서 var로 선언된 변수는 호이스팅(제일 상단으로 올라간다.)이 되어 undefined 상태에서  
