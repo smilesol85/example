@@ -13,6 +13,9 @@
 1. [조건문 switch](#switch)  
 1. [반복문 for / for in](#for)  
 1. [반복문 while / do while](#while)  
+1. [예외 처리 try / catch / finally / throw](#try)  
+1. [break](#break)  
+1. [continue](#continue)  
 
 ---
 ---
@@ -391,3 +394,79 @@ for(arrAge[i++] in oAge);  // arrAge = ['a', 'b'];
 ```
 
 ## <a href="#" name="while">반복문 while / do while</a>
+		
+```javascript
+// while
+var i = 0;
+while(i < 10){
+	i++;
+}
+
+// do while
+var i = 0;
+do {
+	i++;
+}while(i < 10);
+```
+
+## <a href="#" name="try">예외 처리 try / catch / finally / throw</a>
+		
+```javascript
+try{
+	// 실행 코드
+}catch(err){  // (생략 가능)
+	// 예외 처리
+}finally{  // (생략 가능)
+	// try 블록에서 예외가 발생하든 안하든 실행되는 코드
+	// try 블록에서 return 이 사용 되어도 반드시 실행된다.
+}
+
+var txt = '';
+function message(){
+	try{
+		aalert('try');
+	}  // try문 에러나면 catch 문에서 에러 체크
+	catch(err){
+		txt += 'error message : ' + err.message +'';
+		alert(txt);
+	}
+}
+message();
+
+// throw (예외 발생)
+var a = 5;
+try{
+	if(a == 5){
+		throw 'a1';  // catch 문에 전달
+	}
+}catch(err){
+	if(err == 'a1'){
+		alert('a1');
+	}
+}
+// => al alert 창이 실행된다.
+```
+
+## <a href="#" name="break">break</a>
+> `조건문`, `반복문`에서 벗어날 때 사용한다.  
+
+## <a href="#" name="continue">continue</a>
+> `반복문`에서 현재 반복을 중지하고 다음 반복을 수행한다.  
+
+		
+```javascript
+for(var i = 0; i < 10; i++){
+	continue;
+	alert(i);  // 경고창이 출력되지 않는다.
+}
+
+// 짝수의 합만 구한다.
+var output = 0;
+for(var i = 0; i < 10; i++){
+	if(i % 2 == 1){
+		continue;
+	}
+	output += i;
+}
+alert(output);
+```
