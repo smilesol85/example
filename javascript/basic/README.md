@@ -11,6 +11,8 @@
 1. [연산자](#operator)  
 1. [조건문 if](#if)  
 1. [조건문 switch](#switch)  
+1. [반복문 for / for in](#for)  
+1. [반복문 while / do while](#while)  
 
 ---
 ---
@@ -354,3 +356,38 @@ switch(nAge){
 		break;
 }
 ```
+
+## <a href="#" name="for">반복문 for / for in</a>
+> for문 안에서 사용된 변수 i는 for 밖에서도 사용 가능하다.  
+> 변수 스코프는 함수 단위로 결정된다.
+		
+```javascript
+for(var i = 0; i < 10; i++){
+	
+}
+
+// 배열 초기화
+for(i = 0; i < a.length; a[i++] = 0);
+
+// for in
+var oAge = {a : '10', b : '20'};
+var result = '\n';
+for(var prop in oAge){
+	result += '속성명 : '+ prop +', 값 : '+ oAge[prop] +'\n';
+}
+
+// for in
+var oAge = ['1', '2'];
+var result = '\n';
+for(var prop in oAge){
+	result += '인덱스 : '+ prop +', 값 : '+ oAge[prop] +'\n';
+}
+
+// for in
+var oAge = {a : '10', b : '20'};
+var arrAge = [];
+var i = 0;
+for(arrAge[i++] in oAge);  // arrAge = ['a', 'b'];
+```
+
+## <a href="#" name="while">반복문 while / do while</a>
