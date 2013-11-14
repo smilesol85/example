@@ -83,4 +83,6 @@ var f = new Function('x','y','return x+y');
 
 ## <a href="#" name="Function">Function</a>
 > Function 이라는 함수는 `함수 인스턴스(instance)`를 생성하는 함수이다.  
+
+
 *인스턴스(instance) - 현재 바로 생성된 그 객체*  
