@@ -122,6 +122,27 @@
 ## <a href="#" name="list">list</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/list.html "list")**
 
+> list 표현을 위해 ul, ol, dl 3가지 tag가 있다.  
+> ul (Unordered List)  
+> ol (Ordered List)  
+> dl (Definition List)
+
+	<ul>
+	<li></li>
+	<li></li>
+	</ul>
+
+	<ol>
+	<li></li>
+	<li></li>
+	</ol>
+
+	<dl>
+	<dt></dt>
+	<dd></dd>
+	</dl>
+
+	<style>
 	/* list style
 		list-style:disc;
 		list-style:circle;
@@ -133,12 +154,51 @@
 		list-style:upper-alpha;
 	*/
 	ul {list-style:square url("test.jpg");}
+	</style>
 
 ## <a href="#" name="shadow">shadow</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/shadow.html "shadow")**
 
+> text, box 영역에 shadow 효과를 적용할 수 있다.
+
 ## <a href="#" name="table">table</a>
 **[github.io](http://smilesol85.github.io/html-css/basic/table.html "table")**
+
+	<table border="1" summary="2학년 9반 개인별 성적입니다.">
+	    <caption>2학년 9반 개인별 성적 목록</caption>
+	    <colgroup>
+	        <col width="100">
+	      <col width="100">
+	    	<col width="100">
+	    </colgroup>
+	    <thead>
+	        <tr>
+	            <th scope="col">홍길동</th>
+	            <th scope="col">박한솔</th>
+	            <th scope="col">이진권</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <td>수학 0점</td>
+	            <td>수학 0점</td>
+	            <td>수학 0점</td>
+	        </tr>
+	        <tr>
+	            <td>영어 0점</td>
+	            <td>영어 0점</td>
+	            <td>영어 0점</td>
+	        </tr>
+	    </tbody>
+	    <tfoot>
+	        <tr>
+	            <td>평균 0점</td>
+	            <td>평균 0점</td>
+	            <td>평균 0점</td>
+	        </tr>
+	    </tfoot>
+	</table>
+
 * summary : table 내용 요약
 * caption : table 제목 및 설명문
 * th : table 제목 cell
@@ -149,7 +209,7 @@
 ## <a href="#" name="page-break">page-break</a>
 > 인쇄시 강제로 다음 페이지로 넘길 수 있다.  
 > 영역이 끝나면 페이지를 나눈다.  
-> `block level`만 적용 되며, inline level에는 적용되지 안된다.  
+> `block level만 적용` 되며, inline level에는 적용되지 안된다.  
 
 	<div style="page-break-after:always"></div> 
 	<!--
@@ -169,7 +229,7 @@
 
 	<nav role="navigation"></nav>
 
-*nav 요소는 반드시 navigation 으로 작동 하지만, screen reader 중 일부는 인식하지 못하는 리더기가 있다.*
+> nav 요소는 반드시 navigation 으로 작동 하지만, screen reader 중 일부는 인식하지 못하는 리더기가 있다.  
 
 ## <a href="#" name="webkit">webkit</a>
 > webkit은 safari, chrome 등이 탑재하고 있으며,  
@@ -197,37 +257,37 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-위와 같은 meta tag는 화면 확대 비율을 기기 size에 맞게 조정하는 부분이다.
+	위와 같은 meta tag는 화면 확대 비율을 기기 size에 맞게 조정하는 부분이다.
 
-	* initail-scale : 기본적인 확대 배율 결정. 0.5로 설정하면 원래 사이즈의 0.5배 크기로 보인다.
-	* maximum-scale : 최대 확대 배율을 결정.
-	* minimum-scale : 최소 확대 배율을 결정.
-	* user-scalable : 화면의 확대/축소 가능 여부를 결정한다. 0이면 불가능, 1이면 가능.
+	> initail-scale : 기본적인 확대 배율 결정. 0.5로 설정하면 원래 사이즈의 0.5배 크기로 보인다.  
+	> maximum-scale : 최대 확대 배율을 결정한다.  
+	> minimum-scale : 최소 확대 배율을 결정한다.  
+	> user-scalable : 화면의 확대/축소 가능 여부를 결정한다. 0이면 불가능, 1이면 가능하다.  
 
-단, initial-scale값과 maximum-scale 값이 같다면, 최대 확대 배율이 100% 이므로 1로 설정해도 확대되지 않는다.  
-예를 들어 initial-scale=1.0, maximum-scale=2.0 으로 설정했다면 최대 2배까지 확대할 수 있다.
+	단, initial-scale값과 maximum-scale 값이 같다면, 최대 확대 배율이 100% 이므로 1로 설정해도 확대되지 않는다.  
+	예를 들어 initial-scale=1.0, maximum-scale=2.0 으로 설정했다면 최대 2배까지 확대할 수 있다.
 
 * 사이트 아이콘 제공
-아이폰에서는 website 바로가기 icon을 홈화면에 넣울 수 있다.
+iPhone에서는 website 바로가기 icon을 홈화면에 넣울 수 있다.
 
-	* 아이폰 3g, 아이폰 3gs
+	* iPhone3g, iPhone3gs
 
 			<link rel="apple-touch-icon-precomposed" media="screen and (resolution:163dpi)" href="이미지 경로" />
 			<link rel="apple-touch-icon-precomposed" media="screen and (resolution:132dpi)" href="이미지 경로" />
 
-	* 아이패드
+	* iPad
 
 			<link rel="apple-touch-icon-precomposed" media="screen and (resolution:163dpi)" href="이미지 경로" />
 
-	* 아이폰4
+	* iPhone4
 
 			<link rel="apple-touch-icon-precomposed" media="screen and (resolution:326dpi)" href="이미지 경로" />
 
 * javascript 최소화  
-jQuery 는 훌륭한 javascript framework이지만 mobile에서는 부담스러울 수 있다.
+jQuery는 훌륭한 javascript framework이지만 mobile에서는 부담스러울 수 있다.
 
-* over event는 소용이 없습니다.  
-touch로 작동하는 기기에서는 over event 사용은 무의미하다.
+* hover event는 mobile에서 소용이 없다.  
+touch로 작동하는 device에서는 hover event 사용은 무의미하다.
 
 * Retina Display  
 Retina Display를 위해서 30px x 30px image라면 2배 크기인 60px x 60px 로 작업을 해야한다.
@@ -276,7 +336,8 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인 60px x 60px �
 
 			<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png"/>
 
-		*이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다. size는 48×48 입니다.*
+		> 이렇게 지정한 precomposed icon image는 android의 Add to Home Screen 기능에서도 지원된다.  
+		> size는 48×48 입니다.
 
 
 	* link rel="apple-touch-startup-image" href="/startup.png"
@@ -303,6 +364,7 @@ Retina Display를 위해서 30px x 30px image라면 2배 크기인 60px x 60px �
 		3가지 style : default (회색) , black , black-translucent ( 반투명 )
 
 
+---
 ---
 ---
 
@@ -360,7 +422,8 @@ CSS optimization manual
 ## <a href="#" name="css_unit">CSS unit</a>
 많은 사람들이 em단위를 쓰면 해상도에 따라서 크기가 달라진다고 오해하는 경우가 많다.
 
-*em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서 browser의 font size option을 조절했을 때 동작하게 하기 위함이다.*
+> em을 쓰는 이유는 IE6과 같이 zoom 기능이 없는 browser에서  
+> browser의 font size option을 조절했을 때 동작하게 하기 위함이다.
 
 최근의 브라우저들이 모두 zoom 기능을 지원하고 있어 em대신 px을 사용해도 상관 없다.  
 하지만 Responsive Web Design을 추구하는 작업을 하시거나,  
@@ -529,7 +592,7 @@ rem 지원 여부 : http://caniuse.com/#search=rem
 * .svg : opera만 지원
 * .woff : ie, chorme, firefox만 지원
 
-*따라서 .eof 와 .ttf 포맷을 사용하면 모든 browser를 지원한다.*
+> 따라서 .eof 와 .ttf 포맷을 사용하면 모든 browser를 지원한다.  
 
 ## <a href="#" name="scrollbar">scrollbar</a>
 
