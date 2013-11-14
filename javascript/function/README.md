@@ -86,3 +86,17 @@ var f = new Function('x','y','return x+y');
 
 
 *인스턴스(instance) - 현재 바로 생성된 그 객체*  
+*인스턴스(instance)를 생성하는 데 사용된 함수를 생성자(constructor)라고 한다.*  
+
+		
+```javascript
+// f라는 함수 인스턴스를 생성하는 표현이다.
+// 마지막을 제외한 앞의 인자는 함수를 호출하는데 사용되는 인자다.
+var f = new Function('x','y','return x+y');
+
+// 위의 코드와 동일하다.
+// f라는 인스턴스가 생성된다.
+function f(x,y){
+	return x+y;
+}
+```
