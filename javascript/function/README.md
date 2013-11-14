@@ -150,3 +150,41 @@ function f(x,y){
 ```
 
 ## <a href="#" name="callback">콜백 함수</a>
+> 호출 함수 ->(호출) 라이브러리 함수 ->(콜백 호출) 콜백 함수  
+		
+```javascript
+// 메인 함수
+function Main(){
+	var arg;
+	LibrayFunction(arg, CallbackFunction);
+}
+
+// 콜백 함수
+function CallbackFunction(result){
+	
+}
+
+// 라이브러리 함수
+function LibrayFunction(arg, callback){
+	var data;
+	callback(data)
+}
+```
+
+**위의 코드를 익명 함수를 이용하여 표현할 수 있다**
+		
+```javascript
+// 메인 함수
+function Main(){
+	var arg;
+	LibrayFunction(arg, function(result){
+
+	});
+}
+
+// 라이브러리 함수
+function LibrayFunction(arg, callback){
+	var data;
+	callback(data);
+}
+```
