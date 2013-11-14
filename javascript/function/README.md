@@ -26,7 +26,7 @@ f.prop = 'property';
 f.method = function(){};
 ```
 
-### 함수 인자 arguments, callee
+### arguments
 * 함수를 호출할 때 정희된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 다른 경우가 있다.  
 * 매개변수(oarameter) 개수보다 넘어온 인자(argument)의 개수가 적으면 차례로 값이 채워지고 나머지는 `undefined`가 된다.  
 * arguments 타입의 객체는 함수가 호출되면 자바스크립에서 자동으로 생성하는 객체이다.  
@@ -42,6 +42,22 @@ function f(){
 }
 // f(2,3,4);  // 9
 // f(8,7);  // 15
+```
+### arguments.callee
+* this와 유사하나 arguments.callee는 함수를 가르키고, this는 객체를 가르킨다.  
+* 재귀 호출 함수와 같이 구현할 때 유용하다.  
+		
+```javascript
+function f(){
+	return function(x){
+		if(x <= 1){
+			return 1;
+		}
+		return x * arguments.callee(x - 1);  // return function(x)를 가르킨다.
+	}
+}
+
+var result = f()(5);  // 5*4*3*2*1 = 120
 ```
 
 ## <a href="#" name="function_literal">함수 리터럴 이용</a>
