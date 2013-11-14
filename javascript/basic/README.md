@@ -444,7 +444,7 @@ try{
 		alert('a1');
 	}
 }
-// => al alert 창이 실행된다.
+// => a1 경고창이 실행된다.
 ```
 
 ## <a href="#" name="break">break</a>
