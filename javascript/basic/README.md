@@ -9,6 +9,7 @@
 1. [undefined](#undefined)  
 1. [null](#null)  
 1. [연산자](#operator)  
+1. [조건문 if](#if)  
 
 ---
 ---
@@ -305,3 +306,32 @@ console.log(undefined == null);  // true
 > 좌측이 참이면 우측 값을 반환한다.  
 
 ### 부정 연산자(!)
+> 항상 true, false만 반환된다.  
+		
+```javascript
+var booleans != false;  // true
+```
+
+## <a href="#" name="if">조건문 if</a>
+		
+```javascript
+if(a > 2){
+	alert('a');
+}else{
+	alert('else');
+}
+
+// 삼항 연산자
+nNum > 0 ? alert('plue') : alert('minus');
+
+// 삼항 연산자를 콤마로 분리하여 사용 가능하다.
+var nAge = 30;
+var sURL = nAge > 20 ? (
+	alert('ok'),
+	'ok.html'
+) : (
+	alert('oooops'),
+	'oooops.html'
+);
+location.assign(sURL);
+```
