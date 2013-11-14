@@ -4,6 +4,7 @@
 1. [프로그램 실행 단계](#program_process)  
 1. [데이터 타입](#data-type)  
 1. [숫자](#number)  
+1. [문자열](#string)  
 
 ---
 ---
@@ -147,4 +148,23 @@ a.toString(16);  // f (16진수로 출력)
 
 var b = '9';
 Number(b);  // 9 숫자로 변환
+```
+
+## <a href="#" name="string">문자열</a>
+* 작은 따옴표(' '), 큰 따옴표(" ")로 묶어서 표현한다.  
+* 자바스크립트 내에서 모든 문자는 16비트 유니코드(UTF-16) 이다.  
+* 자신의 길이를 나타내는 length라는 속성을 갖는다.  
+* 이스케이프로는 백슬러쉬를 사용한다.  
+* 문자열은 +를 사용해서 결합 할 수 있다.  
+		
+```javascript
+// new String()으로 반환된 값은 문자열이 아니라 객체이다.
+// new 없이 String()만 사용하면 toString()과 같이 문자열로 변환하는데 사용된다.
+var sString = new String('hello');
+String(1);  // '1' 반환
+
+// 문자열 리터럴
+var sString2 = 'world';
+
+console.log('i\'m...');  // i'm...
 ```
