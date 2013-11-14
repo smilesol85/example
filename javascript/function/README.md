@@ -2,7 +2,8 @@
 1. [함수 정의](#function)  
 1. [함수 리터럴 이용](#function_literal)  
 1. [Function 생성자 사용](#new_function)  
-1. [Function](#Function)
+1. [Function](#Function)  
+1. [self-invoking](#self-invoking)  
 
 ---
 ---
@@ -18,6 +19,7 @@
 * 일반 객체와 같이 동적으로 멤버를 가질 수 있다.
 * 파싱 단계에서는 함수명인 add가 정의된다.  
 * 함수를 호출하면 런타임에 함수 내부가 실행된다.  
+* 함수를 다른 변수에 할당할 수 있다.  
 		
 ```javascript
 function f(){
@@ -25,6 +27,17 @@ function f(){
 }
 f.prop = 'property';
 f.method = function(){};
+
+function add(x,y){
+	alert(add.Des);  // Hello
+	return x + y;
+}
+add.Des = 'Hello';
+add(1,2);
+
+// 함수를 다른 변수에 할당할 수 있다.
+var f2 = add;
+var r = f2(3,3);  // 6
 ```
 
 ### arguments
@@ -104,3 +117,34 @@ function f(x,y){
 ```
 
 > Function ->(생성) Object(Function 인스턴스) ->(생성) Object 객체(Object 인스턴스)  
+
+
+## <a href="#" name="self-invoking">자기 호출 함수</a>
+		
+```javascript
+// 자기 호출 함수
+/*
+    자기 호출 함수는 재귀 함수와 다른 개념이다.
+    재귀 함수는 함수 내에서 자신을 한번 더 호출 하는 것이다.
+*/
+(function(){
+    alert('function');
+}();
+
+!function(){  // ! 대신 +, - 붙여도 상관없음.
+    alert('function');
+}();
+
+0,function(){
+    alert('function');
+}();
+
+1&function(){
+    alert('function');
+}();
+
+2*function(){
+    alert('function');
+}();
+```
+
