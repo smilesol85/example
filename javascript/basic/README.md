@@ -167,4 +167,65 @@ String(1);  // '1' 반환
 var sString2 = 'world';
 
 console.log('i\'m...');  // i'm...
+
+// substring()
+// substring(x,y) => x : 0부터 x번째 부터, y : 0부터 y번째 이전의 값
+var a = ‘1234567890’;
+a.substring(0,4);  // 1234
+a.substring(4,6);  // 56
+a.substring(6,8);  // 78
+
+// substr()
+// substr(x,y) => x : 0부터 x번째 부터, y : x번째 부터 y번째 이전의 값
+var b = ‘1234567890’;
+b.substr(0,4);  // 1234
+b.substr(4,6);  // 56789
+b.substr(6,8);  // 7890
+
+// concat()
+var a = 'aaa';
+var b = 'bbb';
+console.log(a.concat(b));  // aaabbb
+console.log(a+b);  // aaabbb
+
+// concat()
+// 2개 이상의 배열을 결합하는데 사용 될 수 있다.
+var arrA = ['a','b'];
+var arrB = ['c','d'];
+console.log(arrA.concat(arrB));  // ['a','b','c','d']
+console.log(arrA);  // ['a','b']
+console.log(arrB);  // ['c','d']
+
+// join()
+// 문자열로 배열 요소를 결합하고 문자열을 반환한다.
+var fruits = ['apple','banana','orange']
+var arrFruits = fruits.join('*');
+console.log(arrFruits);  // apple*banana*orange
+
+// search()
+// 정규 표현식을 전달 인자로 받아서 가장 처음에 매칭되는 부분의 문자열의 위치를 반환하고,
+// 매칭되는 문자열이 없다면 -1을 반환한다. (정규 표현식에서 g 플래그가 있다면 무시한다.)
+var a = 'abc abc';
+var b = a.search('b');
+var c = a.search('e');
+console.log(b);  // 1
+console.log(c);  // -1
+
+// match()
+// 정규 표현식을 유일한 전달 인자로 받고 매칭된 결과를 배열로 만들어 반환한다.
+// 매칭되는 문자열이 없다면 null을 반환한다.
+var a = 'abc abc';
+var b = a.match(/a/g);
+var c = a.match(/e/g);
+console.log(b);  // ['a','a'] 
+console.log(c);  // null
+
+// replace()
+/*
+찾아서 바꾸기 작업을 수행한다.
+정규 표현식에 g 플래그가 설정되어 있으면 문자열 내에서
+패턴에 매치되는 모든 부분 문자열을 교체할 문자열로 바꾼다.
+정규 표현식에서 괄호로 묶인 부분 표현식은 왼쪽에서 오른쪽으로 번호가 매겨지고,
+각 부분 표현식과 매치된 텍스트를 기억한다.
+*/
 ```
