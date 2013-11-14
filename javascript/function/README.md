@@ -1,12 +1,17 @@
 # 함수
-1. [함수?](#function)
+1. [함수 정의](#function)  
+1. [함수 리터럴 이용](#function_literal)  
+1. [Function 생성자 사용](#new_function)  
 
-## <a href="#" name="function">함수?</a>
+---
+---
+---
+
 * 자바스크립트에서 함수는 객체이다.  
 * 변수에 할당될 수 있고, 다른 함수의 인자로 전달 되거나 함수의 결과로써 반환될 수도 있는 일급 객체(first-class object)로서의 특징을 가지고 있다.  
 * 함수를 정의하면 모든 함수에는 프로토타입 객체라는 것이 함께 정의된다.  
 
-### 함수 정의
+## <a href="#" name="function">함수 정의</a>
 * 함수를 정의하는 것만으로 함수 객체가 생성된다.  
 * 일반 객체와 다르게 `실행 코드 블록`을 가지고 있다.  
 * 일반 객체와 같이 동적으로 멤버를 가질 수 있다.
@@ -21,7 +26,7 @@ f.prop = 'property';
 f.method = function(){};
 ```
 
-#### 함수 인자 arguments, callee
+### 함수 인자 arguments, callee
 * 함수를 호출할 때 정희된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 다른 경우가 있다.  
 * 매개변수(oarameter) 개수보다 넘어온 인자(argument)의 개수가 적으면 차례로 값이 채워지고 나머지는 `undefined`가 된다.  
 * arguments 타입의 객체는 함수가 호출되면 자바스크립에서 자동으로 생성하는 객체이다.  
@@ -39,7 +44,7 @@ function f(){
 // f(8,7);  // 15
 ```
 
-### 함수 리터럴 이용
+## <a href="#" name="function_literal">함수 리터럴 이용</a>
 * 인자로 전달  
 * 변수에 할당  
 * 다른 함수의 반환값으로 사용
@@ -50,7 +55,7 @@ var f = function(x,y){
 };
 ```
 
-### Function 생성자 사용
+## <a href="#" name="new_function">Function 생성자 사용</a>
 * new와 함께 사용된다.  
 * 다른 인스턴스를 생성할 수 있는 요소  
 * 메모리 사용이 비효율 적이다.  
