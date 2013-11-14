@@ -71,3 +71,31 @@
 	**backwards** : animation-delay에 정의된 기간 중 애니메이션을 표시하기 전에 첫 번째 키 프레임에 정의된 시작 속성 값이 적용됩니다.  
 	**both** : 앞으로 및 뒤로 채우기 모드가 모두 적용됩니다.  
 
+## <a href="#" name="mobile">mobile</a>
+
+* 한글 text 사용시 우측 끝에 의문의 공백이 발생 한다면 아래와 같이 적용해 보자.  
+	
+	* 텍스트 양쪽 끝에 공백을 추가해 주면 말끔히 해결된다.
+
+			<!-- 텍스트 양쪽 끝에 공백 추가 -->
+			<span> 가나다라마바사 </span>
+
+## <a href="#" name="pc">pc</a>
+
+* CSS에서 zoom 요소는 각종 요소들을 돋보기처럼 사용할 수 있다.
+		
+		/* 2, 3, 4 ~ */
+		zoom:1;
+
+	> 비표준 속성이어서 잘 사용하지 않지만, ie7버그 잡을때 주로 사용한다.  
+	> ie7에서 자식 요소들이 float:left일 경우 부모 요소가 깨진다.  
+	> 또한 ie7은 display:inline-block 이 적용되지 않기 때문에 zoom 속성으로 해당 버그도 잡을 수 있다.  
+	> zoom:1을 적용하면 display:inline-block 과 같이 되며,  
+	> float:left 때문에 깨진 부모 요소도 바로 잡을 수 있다.
+
+* min-height 속성은 ie6에서 적용되지 않는다.  
+	
+	> 해결하기
+
+		div{{min-height:500px; height:auto !important; height:500px}
+
