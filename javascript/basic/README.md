@@ -170,14 +170,14 @@ console.log('i\'m...');  // i'm...
 
 // substring()
 // substring(x,y) => x : 0부터 x번째 부터, y : 0부터 y번째 이전의 값
-var a = ‘1234567890’;
+var a = '1234567890';
 a.substring(0,4);  // 1234
 a.substring(4,6);  // 56
 a.substring(6,8);  // 78
 
 // substr()
 // substr(x,y) => x : 0부터 x번째 부터, y : x번째 부터 y번째 이전의 값
-var b = ‘1234567890’;
+var b = '1234567890';
 b.substr(0,4);  // 1234
 b.substr(4,6);  // 56789
 b.substr(6,8);  // 7890
