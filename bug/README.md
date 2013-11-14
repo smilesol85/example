@@ -8,10 +8,10 @@
 1. [pc](#pc)
 
 ## <a href="#" name="firefox">firefox</a>
-* background-position-x / background-position-y 속성은 firefox에서 rendering 되지 않는다.
+* background-position-x / background-position-y 속성은 firefox에서 렌더링 되지 않는다.
 
 ## <a href="#" name="ios">ios</a>
-* 가로 전환시 font가 bold style이 적용된 것 처럼 rendering 되면 아래와 같이 적용해 보자.  
+* 가로 전환시 폰트가 bold 스타일이 적용된 것 처럼 렌더링 되면 아래와 같이 적용해 보자.  
 	
 		div{-webkit-text-size-adjust:none || auto || n%}
 		div{-webkit-backface-visibility:hidden || visibility}
@@ -28,28 +28,28 @@
 
 **-webkit-transform:translateZ(0)**  
 
-> 3D rendering 할때 Z축을 표현하기 위해 사용한다.
+> 3D 렌더링 할때 Z축을 표현하기 위해 사용한다.
 
 ## <a href="#" name="android">android</a>
 
-* animation, transtion 적용시 image가 흐리게 rendering되는 현상이 있다면 아래와 같이 적용해 보자.    
+* animation, transtion 적용시 이미지가 흐리게 렌더링되는 현상이 있다면 아래와 같이 적용해 보자.    
 	* 빈 요소에 공백 문자 추가
 
 			<span>&nbsp;</span>
 			:before{content:'\00a0'}
 
-	* 빈 요소가 생기지 않게 text에 color:transparent 적용
+	* 빈 요소가 생기지 않게 텍스트에 color:transparent 적용
 
-* image에 text-indent 사용시 image quality 저하되는 현상이 있다.  
-* column 속성 사용시 정상 노출 되지 않고 redering이 잘 못 되는 현상이 있다.  
+* 이미지에 text-indent 사용시 이미지 퀄리티가 저하되는 현상이 있다.  
+* column 속성 사용시 정상 노출 되지 않고 렌더링이 잘 못 되는 현상이 있다.  
 * placeholder 사용시 line-height, text-align 적용 되지 않는다.  
 	(font color 및 font size만 적용된다.)  
 
 ## <a href="#" name="android_2_x">android_2_x</a>
 
-* 영어 외의 다른 언어 사용시 jQuery keyup, keydown bug가 있다.
+* 영어 외의 다른 언어 사용시 jQuery keyup, keydown 버그가 있다.
 	영어가 아닌 타 언어를 사용하게 되면,  
-	jQuery keyup, keydown event가 발생하지 않는다.  
+	jQuery keyup, keydown 이벤트가 발생하지 않는다.  
 
 * overflow 사용한 scroll이 적용되지 않는다.
 
@@ -73,7 +73,7 @@
 
 ## <a href="#" name="mobile">mobile</a>
 
-* 한글 text 사용시 우측 끝에 의문의 공백이 발생 한다면 아래와 같이 적용해 보자.  
+* 한글 텍스트 사용시 우측 끝에 의문의 공백이 발생 한다면 아래와 같이 적용해 보자.  
 	
 	* 텍스트 양쪽 끝에 공백을 추가해 주면 말끔히 해결된다.
 

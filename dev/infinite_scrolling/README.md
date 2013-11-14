@@ -1,10 +1,10 @@
 # infinite scrolling
 **[github.io](http://smilesol85.github.io/dev/infinite_scrolling/infinite_scrolling.html "infinite_scrolling")**
 
-> 사용 목적은 scroll을 무제한으로 적용하고 싶은 경우를 위함이다.  
-> scroll이 최하단에 도착했을 때 반응하는 구조이다.
+> 사용 목적은 스크롤을 무제한으로 적용하고 싶은 경우를 위함이다.  
+> 스크롤이 최하단에 도착했을 때 반응하는 구조이다.
 
-추가로 개발시 적용한 browser의 높이값을 check하는 방법을 알아보자.
+추가로 개발시 적용한 브라우저의 높이값을 확인하는 방법을 알아보자.
 
 * TYPE A - jQuery  
 

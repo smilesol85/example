@@ -35,7 +35,7 @@
 ## <a href="#" name="flexbox">flexbox</a>
 **[github.io](http://smilesol85.github.io/html-css/box/flexbox.html "flexbox")**
 
-> flexbox 사용은 box안의 요소들은 `block` 요소라는 조건이 있다.
+> flexbox 사용은 box안의 요소들은 `블록 요소`라는 조건이 있다.
 	
 	/* 부모 요소에 box 선언 */
 	.box{display:box;display:-webkit-box}
@@ -84,7 +84,7 @@
 **[github.io](http://smilesol85.github.io/html-css/box/tablebox.html "tablebox")**
 
 > display:table-header-group, display:table-footer-group 은
-> inline으로 height값이 적용되지 않으며, line-height로 사용한다.
+> 인라인으로 height값이 적용되지 않으며, line-height로 사용한다.
 
 	<style>        
 	.boxes{display:table}
@@ -101,9 +101,9 @@
 	</style>
 
 	<div class="boxes">
-        <div class="box1">one => display:table-footer-group<p>table-footer-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+        <div class="box1">one => display:table-footer-group<p>table-footer-group은 i인라인으로 height값이 적용되지 않으며, line-height로 사용</p></div>
         <div class="box2">two => display:table-caption</div>
-        <div class="box3">three => display:table-header-group<p>table-header-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+        <div class="box3">three => display:table-header-group<p>table-header-group은 인라인으로 height값이 적용되지 않으며, line-height로 사용</p></div>
         <div class="box4">four</div>
     </div>
 	

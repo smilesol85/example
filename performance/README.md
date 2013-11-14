@@ -8,7 +8,7 @@
 
 * background-image  
     CSS의 background-image가 지정되고 display:none 이라면 `request 발생하지 않는다.`  
-    하지만, inline style로 지정했을 경우 FF(파이어폭스)를 제외한 browser에서 `request 발생한다.`
+    하지만, inline style로 지정했을 경우 FF(파이어폭스)를 제외한 브라우저에서 `request 발생한다.`
 
 * iframe src=""  
     iframe만으로는 `request가 발생하지 않는다.`  

@@ -107,7 +107,7 @@
 > value를 초기화 하는 일은 불필요하게 된다.
 
 
-> placeholder는 android 하위 버전에서 text 정렬이 되지 않는 bug가 있다.
+> placeholder는 android 하위 버전에서 텍스트 정렬이 되지 않는 버그가 있다.
 > font-size 및 color는 사용 가능하다.
 
 	<style>

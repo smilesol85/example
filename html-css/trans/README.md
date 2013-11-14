@@ -6,7 +6,7 @@
 ## <a href="#" name="transition">transition</a>
 **[github.io](http://smilesol85.github.io/html-css/trans/transition.html "transition")**
 
-현재(2013.02.27) transition 속성은 Vender prefix를 사용한다.
+현재(2013.02.27) transition 속성은 벤더프리픽스를 사용한다.
 
 > transition-duration : 재생할 시간 지정  
 > transition-delay : 지정 시간 후 재생  
@@ -23,8 +23,8 @@ HTML5에서 3차원을 구현하는 방법에는 크게 2가지가 있다.
 * CSS3를 사용한 3차원 변환
 
 
-대표적인 CSS3 변환을 사용하는 javascript plug-in중 HTML을 활용하여 ppt를 만들 수 있는 [Impress.js](http://bartaz.github.io/impress.js/ "Impress.js")가 있다.  
-현재(2013/02/29) transform속성도 transition속성과 animation속성과 같이 Vender prefix를 사용해야 한다.
+대표적인 CSS3 변환을 사용하는 자바스크립트 플러그인중 HTML을 활용하여 ppt를 만들 수 있는 [Impress.js](http://bartaz.github.io/impress.js/ "Impress.js")가 있다.  
+현재(2013/02/29) transform속성도 transition속성과 animation속성과 같이 벤더프리픽스를 사용해야 한다.
 
 transform 속성은 아래와 같다.
 > translate(X,Y) : 특정 크기 이동  
