@@ -232,9 +232,9 @@ console.log(c);  // null
 ```
 
 ## <a href="#" name="boolean">불리언</a>
-> true(참), false(거짓) 로 값을 표현할 때 사용한다.  
-> true는 1, false는 0을 반환한다.  
-> 0, null, ""(빈 문자열), false, undefined, NaN 외의 값으로 평가되면 항상 true이다.  
+* true(참), false(거짓) 로 값을 표현할 때 사용한다.  
+* true는 1, false는 0을 반환한다.  
+* 0, null, ""(빈 문자열), false, undefined, NaN 외의 값으로 평가되면 항상 true이다.  
 		
 ```javascript
 console.log(true > false);  // true
