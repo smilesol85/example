@@ -19,7 +19,7 @@
 1. [media_query](#media_query)
 
 ## <a href="#" name="meta">meta</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/meta.html "meta 태그")**
+**[github.io](http://smilesol85.github.io/+html-css/basic/meta.html "meta 태그")**
 
 > meta 태그 사용으로 해당 문서의 제목, 설명, 제작자 정보 등을 명시할 수 있다.
 
@@ -91,7 +91,7 @@
 	<!-- // META 태그 LIST -->
 
 ## <a href="#" name="string">string</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/string.html "string")**
+**[github.io](http://smilesol85.github.io/+html-css/basic/string.html "string")**
 
 	<!-- blockquote : 블록 요소 인용구 -->
 	<blockquote>
@@ -120,7 +120,7 @@
     -->
 
 ## <a href="#" name="list">list</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/list.html "list")**
+**[github.io](http://smilesol85.github.io/+html-css/basic/list.html "list")**
 
 > 리스트 표현을 위해 ul, ol, dl 3가지 태그가 있다.  
 > ul (Unordered List)  
@@ -157,12 +157,12 @@
 	</style>
 
 ## <a href="#" name="shadow">shadow</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/shadow.html "shadow")**
+**[github.io](http://smilesol85.github.io/+html-css/basic/shadow.html "shadow")**
 
 > 텍스트, 박스 영역에 그림자 효과를 적용할 수 있다.
 
 ## <a href="#" name="table">table</a>
-**[github.io](http://smilesol85.github.io/html-css/basic/table.html "table")**
+**[github.io](http://smilesol85.github.io/+html-css/basic/table.html "table")**
 
 	<table border="1" summary="2학년 9반 개인별 성적입니다.">
 	    <caption>2학년 9반 개인별 성적 목록</caption>

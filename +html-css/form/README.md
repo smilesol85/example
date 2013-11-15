@@ -5,7 +5,7 @@
 1. [a11y_form](#a11y_form)
 
 ## <a href="#" name="form">form</a>
-**[github.io](http://smilesol85.github.io/html-css/form/form.html "form")**
+**[github.io](http://smilesol85.github.io/+html-css/form/form.html "form")**
 
 	<!-- form method : get || post -->
 	<form action="#" method="get">
@@ -100,7 +100,7 @@
 
 
 ## <a href="#" name="placeholder">placeholder</a>
-**[github.io](http://smilesol85.github.io/html-css/form/placeholder.html "placeholder")**
+**[github.io](http://smilesol85.github.io/+html-css/form/placeholder.html "placeholder")**
 
 > placeholder는 HTML5 DTD 에서 표준으로 추가되어 사용 가능하다.
 > 이렇게 되면 자바스크립트에서 입력폼에 포커스가 오면

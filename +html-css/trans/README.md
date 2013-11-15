@@ -4,7 +4,7 @@
 1. [animation](#animation)
 
 ## <a href="#" name="transition">transition</a>
-**[github.io](http://smilesol85.github.io/html-css/trans/transition.html "transition")**
+**[github.io](http://smilesol85.github.io/+html-css/trans/transition.html "transition")**
 
 현재(2013.02.27) transition 속성은 벤더프리픽스를 사용한다.
 
@@ -16,7 +16,7 @@
 
 
 ## <a href="#" name="transform">transform</a>
-**[github.io](http://smilesol85.github.io/html-css/trans/transform.html "transform")**
+**[github.io](http://smilesol85.github.io/+html-css/trans/transform.html "transform")**
 
 HTML5에서 3차원을 구현하는 방법에는 크게 2가지가 있다.
 * 자바스크립트를 사용한 WebGL
@@ -65,7 +65,7 @@ backface-visibility 속성은 3차원에서 후면을 보이게 하거나, 보�
     backface-visibility:visible /* 후면을 보이게 */
 
 ## <a href="#" name="animation">animation</a>
-**[github.io](http://smilesol85.github.io/html-css/trans/animation.html "animation")**
+**[github.io](http://smilesol85.github.io/+html-css/trans/animation.html "animation")**
 
 [HTML5 animation](http://animateyourhtml5.appspot.com/pres/index.html?lang=en#1 "HTML5 animation")
 
