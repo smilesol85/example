@@ -1,5 +1,5 @@
 # check device and browser
-**[github.io](http://smilesol85.github.io/javascript/+DEV/check_device_browser/check_device_browser.html "check_device_browser")**
+**[github.io](http://smilesol85.github.io/++DEV/javascript/check_device_browser/check_device_browser.html "check_device_browser")**
 
 		
 ```javascript

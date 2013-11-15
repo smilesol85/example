@@ -1,5 +1,5 @@
 # document location
-**[github.io](http://smilesol85.github.io/javascript/+DEV/document_location/document_location.html "document location")**
+**[github.io](http://smilesol85.github.io/javascript/++DEV/javascript/document_location/document_location.html "document location")**
 		
 ```javascript
 // 문서의 전체 url 주소
