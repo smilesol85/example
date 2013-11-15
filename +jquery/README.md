@@ -39,10 +39,7 @@ $(document).ready(function(){
 });
 ```
 
-## jQuery DOM 선택 - not(), contains(), has(), animated(), :lt(), :gt(), :even(), :odd()
-
-jQuery를 한번이라도 사용한 경험이 있다면 기본적인 내용이니 넘어가도 좋다.  
-
+## jQuery DOM 선택
 		
 ```javascript
 $('a').length;  // a 요소 선택 후 count
@@ -50,23 +47,35 @@ $('#a').length;  // id 가 a 요소 선택 후 count
 $('.a').length;  // class 가 a 요소 선택 후 count
 $('.a, .b, .c').length;  // class 가 a, b, c 인 요소 선택 후 count
 $('a',$('div')).length;  // div 안에서 a 요소 선택 후 count;
+```
 
-// .not()
+### .not()
+		
+```javascript
 // a 요소 중 blogger class가 아닌 것 선택
 $('a').not('.blogger');
 $('a:not(.blogger)');
+```
 
-// .contains() - text 찾을 때, .has() - tag 찾을 때
+### .has() - tag 찾을 때 / .contains() - text 찾을 때
+		
+```javascript
 /*
 <p>test p tag</p>
 <p>test p tag</p>
 <p><span>test</span></p>
 */
 
-$('p:contains("p")').css('color','red');  // p 요소에서  'p' 라는 텍스트가 있는 p 요소 선택하여 텍스트 색을 빨간색으로 적용해 준다.
-$('p:has(span)').length;  // p 요소에서 span 요소를 가지고 있는 모든 요소 선택! 즉, 결과값은 1 이다.
+// p 요소에서 span 요소를 가지고 있는 모든 요소 선택! 즉, 결과값은 1 이다.
+$('p:has(span)').length;
 
-// .animated()
+// p 요소에서  'p' 라는 텍스트가 있는 p 요소 선택하여 텍스트 색을 빨간색으로 적용해 준다.
+$('p:contains("p")').css('color','red');
+```
+
+### .animated() / .is()
+		
+```javascripty
 $('div:animated');  // div 요소 중 animation 중인 요소 선택
 $('div:not(div:animated)');  // div 요소 중 animation 동작 하지 않는 요소 선택
 
@@ -75,8 +84,11 @@ var welAni = $('.animation');
 if(welAni.is(':animated')){
     // animation 적용될 경우 true 반환하여 if문 실행
 }
+```
 
-// :lt() - less than, :gt() - great than
+### :lt() - less than / :gt() - great than
+		
+```javascript
 /*
 <table>
   <tr><td>index 0</td></tr>
@@ -88,8 +100,11 @@ if(welAni.is(':animated')){
 
 $('tr:lt(1)').css('color','red');  // 1보다 작은 index 선택, 즉 index 0 color red
 $('tr:gt(2)').css('color','red');  // 2보다 큰 index 선택, 즉 index 3 color red
+```
 
-// :even() - 짝수, :odd() - 홀수
+### :even() - 짝수, :odd() - 홀수
+		
+```javascript
 /*
 <div>test index 0</div>  // red
 <div>test index 1</div>  // blue
@@ -99,36 +114,47 @@ $('tr:gt(2)').css('color','red');  // 2보다 큰 index 선택, 즉 index 3 colo
 
 $('div:even').css('color','red');
 $('div:odd').css('color','blue');
+```
 
-// 제거 - remove(), detach()
-
+### 제거 - remove(), detach()
+		
+```javascript
 $('a').remove();  // a 요소 제거
 $('a').remove('.remove');  // a 요소 중 remove class만 제거
+```
 
-/*
-remove() method는 요소를 제거할 뿐 아니라, 내부적으로 가지고 있는 캐시 테이터 및 모든 이벤트 처리기까지 제거한다.
-그러나, wrapper 집합에서는 제거되지 않는며, 계속해서 조작이 가능하다.
+> remove() 메소드는 요소를 제거할 뿐 아니라, 내부적으로 가지고 있는 캐시 테이터 및 모든 이벤트 처리기까지 제거한다.  
+> 그러나, wrapper 집합에서는 제거되지 않는며, 계속해서 조작이 가능하다.  
 
-detach() method는 remove() 메소드와 동일하게 제거 하지만,
-해당 요소 데이터(이벤트 등)는 제거하지 않는다.
-*/
 
-// 교체 - replaceWith(), replaceAll()
+> detach() 메소드는 remove() 메소드와 동일하게 제거 하지만,  
+> 해당 요소 데이터(이벤트 등)는 제거하지 않는다.  
+
+
+### 교체 - replaceWith(), replaceAll()
+		
+```javascript
 /*
 <div class="text">jquery</div>
 */
 
-$('.test').replaceWith('<div class="sText">Hello World</div>');
+$('.text').replaceWith('<div class="sText">Hello World</div>');
+```
 
-// replaceAll() method는 replaceWith() method와 비슷하다.
+* replaceAll() 메소드는 replaceWith() 메소드와 비슷하다.  
+		
+```javascript
 /*
 <div>jquery</div>
 */
 
 $('<div class="sText">Hello World</div>').replaceAll('div');
+```
 
-// 걸러내거나 찾기 - filter(), find()
-// filter() method와 find() method 사소하나 큰 차이가 있으니 주의깊게 숙지 후 사용해야 한다.
+### 걸러내거나 찾기 - filter(), find()
+> filter() method와 find() method 사소하나 큰 차이가 있으니 주의깊게 숙지 후 사용해야 한다.  
+		
+```javascript
 /*
 <ul>
     <li></li>
@@ -143,15 +169,20 @@ $('li').find('list').length;  // 0, li 요소의 자식 요소 중 list 클래�
 
 $('ul').filter('list').length;  // 0, ul 요소 중 list 클래스만 filter
 $('ul').find('list').length;  // 2, ul 요소의 자식 요소 중 list 클래스만 find
+```
 
-// 속성 제어 - attr()
-
+### 속성 제어 - attr()
+		
+```javascript
 $('a').attr('href','http://www.google.co.kr/');  // a 요소 href를 설정
 $('a').attr({'href':'http://www.google.co.kr/','title':'google'});  // a 요소 href와 title 설정
 $('a').removeAttr('title');  // a 요소 title 제거
 $('a').attr('style','color:red');  // a 요소 style 생성
+```
 
-// 부모 요소 생성, 부모 요소 제거 - wrap(), wrapAll(), wrapInner(), unwrap()
+### 부모 요소 생성, 부모 요소 제거 - wrap(), wrapAll(), wrapInner(), unwrap()
+		
+```javascript
 /*
 <div class="test_div">test</div>
 <div class="test_div">test</div>
@@ -190,16 +221,22 @@ $('.test_div').wrapInner('<div id="wrap"></div>');
 */
 
 $('span').unwrap();  // <span>test</span>
+```
 
-// 요소 및 text 값 - html(), text()
+### 요소 및 text 값 - html(), text()
+		
+```javascript
 /*
 <div><span>text</span></div>
 */
 
 $('div').html();  // <span>text</span>
 $('div').text();  // text
+```
 
-// 요소 복제하기 - clone()
+### 요소 복제하기 - clone()
+		
+```javascript
 /*
 <ul class="default_ul">
  <li>test_li</li>
@@ -228,19 +265,21 @@ $('.default_ul li').clone().appendTo('.clone_ul');
  <li>test_li</li>
 </ul>
 */
+```
 
-// 선택자 연결 - andSelf()
-/*
-두개의 선택자 동시에 선택하고자 할때 andSlef() method를 사용한다.
-말로 설명하려니 어려움이....^^;
-아래 코드를 확인해 보도록 하겠다.
-*/
-
+### 선택자 연결 - andSelf()
+> 두개의 선택자 동시에 선택하고자 할때 andSlef() 메소드를 사용한다.  
+> 말로 설명하려니 어려움이....^^;  
+		
+```javascript
 $('a')'.find('span').addClass('andself');  // a 요소 내의 span 요소를 찾아 andself 클래스를 추가해 준다.
 $('a')'.find('span').andSelf().addClass('andself');  // a 요소와 span 요소 둘다 andself 클래스를 추가해 준다.
+```
 
-// method 종료 - end()
-// end() method 사용시 미리 선언된 method들을 제거한다.
+### method 종료 - end()
+> end() method 사용시 미리 선언된 method들을 제거한다.  
+		
+```javascript
 /*
 <p>text</p>
 <p class="text2">text2<span>test</span></p>
@@ -250,17 +289,17 @@ $('a')'.find('span').andSelf().addClass('andself');  // a 요소와 span 요소 
 $('p').filter('.text2').length;  // 1
 $('p').filter('.text2').end().length;  // 3
 $('p').filter('.text2').find('span').end().end().length;  // 3
+```
 
-// 요소 배열로 반환 - get(), toArray(), reverse()
-/*
-요소를 배열로 반환하는 방법을 알아보도록 하자.
-요소를 배열로 얻어내기 위한 두가지 방법이 있다.
-get() method 와 toArray() method 이다.
+### 요소 배열로 반환 - get(), toArray(), reverse()
+> 요소를 배열로 반환하는 방법을 알아보도록 하자.  
+> 요소를 배열로 얻어내기 위한 두가지 방법이 있다.  
+> get() 메소드와 toArray() 메소드 이다.  
 
-get() method : 숫자를 인자로 사용할 수 있으며,
-toArray() method : 숫자를 인자로 사용할 수 없다는 것이다.
-*/
-
+* get() 메소드 : 숫자를 인자로 사용할 수 있다.  
+* toArray() 메소드 : 숫자를 인자로 사용할 수 없다는 것이다.  
+		
+```javascript
 /*
 <ul>
     <li>1</li>
@@ -271,29 +310,31 @@ toArray() method : 숫자를 인자로 사용할 수 없다는 것이다.
 
 $('ul').find('li').get(0);  // <li>1</li> 을 선택할 것이다.
 $('ul').find('li').toArray().reverse();  // <li>3</li><li>2</li><li>1</li> 순으로 바뀔 것이다.
+```
 
-
-// iframe 접근
-iframe 내부 요소에 접근하는 방법을 알아보자.
-
+### iframe 접근
+		
+```javascript
 /*
 <iframe id="test"></iframe>
 */
 
 $('#test').contents().find('div').css('background','#000');
+```
 
-// 기본 action 취소 - preventDefault()
-/*
-기본적인 action을 취소하는 방법을 알아보자.
-예를들면, 아래와 같이 a tag의 href 기능을 막는 방법이 있겠다.
-*/
-
-jQuery('a').click(function(event){
- event.preventDefault();  // preventDefault() 사용 외에 return false를 사용하여도 된다.
+### 기본 action 취소 - preventDefault()
+		
+```javascript
+$('a').click(function(event){
+	event.preventDefault();  // preventDefault() 사용 외에 return false를 사용하여도 된다.
 });
+```
 
-// 외부 file 불러오기 - load()
-
+### 외부 file 불러오기 - load()
+		
+```javascript
 $('div').load('test.html');  // 전체 코드를 가져온다.
 $('div').load('test.html .selector2');  // selector2 class로 매치된 부분만 가져온다.
 $.getScript('script.js');  // 전체 코드를 가져온다. 
+```
+
