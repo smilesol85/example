@@ -126,7 +126,7 @@ function f(x,y){
 }
 ```
 
-![Alt text](https://github.com/smilesol85/smilesol85.github.com/blob/master/image/Function_prototype.png "Function prototype")
+![Alt text](http://smilesol85.github.io/image/Function_prototype.png "Function prototype")
 
 
 > Function ->(생성) Object(Function 인스턴스) ->(생성) Object 객체(Object 인스턴스)  
