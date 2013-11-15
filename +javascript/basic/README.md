@@ -111,13 +111,16 @@ alert(f);  // 0
 ```javascript
 var n1 = 255;  // 정수 표현
 var n2 = 255.0;  // 실수 표현
-var n3 = 0377;  // 8진수 표현, 3x64 + 7x8 + 7 = 255(10진수)
-var n4 = 0xff;  // 16진수 표현, 15x16 + 15 = 255(10진수)
+var n3 = 0377;  // 8진수 표현, 3x64 + 7x8 + 7 = 255(10진수) - 0으로 시작
+var n4 = 0xff;  // 16진수 표현, 15x16 + 15 = 255(10진수) - 0x로 시작
 var n5 = 0377 * 2;  // 510
 
 console.log(n3);  // 255
 console.log(n4);  // 255
 console.log(n5);  // 510
+
+console.log(0327);  // 8진수로 215
+console.log(0328);  // 8이 들어갔으니 10진수로 328
 
 console.log(1 == 1.0);  // true
 console.log(1 === 1.0);  // true
