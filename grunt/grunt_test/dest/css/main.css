@@ -1,9 +1,0 @@
-.box {
-  color: #fe33ab;
-  border-color: #fdcde9;
-}
-.box div {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
