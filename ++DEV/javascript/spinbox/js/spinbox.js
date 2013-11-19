@@ -2,7 +2,9 @@
 var spinbox = spinbox || {};
 
 // spinbox class
+// TODO spinbox = function(){}; 변경해야 함.
 spinbox.act = function(){
+	// this.init.apply(this, arguments);
 	this.init();
 };
 
@@ -14,7 +16,8 @@ spinbox.act.prototype = {
 	elDown : null,
 	elInterval : null,
 
-	init : function(){
+	init : function(options){
+		// this.nSpin = options.nSpin || null;
 		this._setElement();
 		this._setNumber();
 		this._setUp();
@@ -32,25 +35,25 @@ spinbox.act.prototype = {
 		this.elSpin.attr('value', this.nDefault);
 	},
 
-	_counter : function(nSpin){
-		if(nSpin === 300 || nSpin > 300){
-			this.elUp.hide();
-		}else if(nSpin === 100 || nSpin < 100){
-			this.elDown.hide();
-		}else{
-			this.elUp.show();
-			this.elDown.show();
+	_counter : function(){
+		if(300 === this.nDefault || this.nDefault > 300){
+			this.nDefault = 300;
+		}else if(100 === this.nDefault || this.nDefault < 100){
+			this.nDefault = 100;
+		}else if(isNaN(this.nDefault) === true){
+			this.nDefault = 200;
 		}
-		this.elSpin.attr('value', nSpin);
-		alert(nSpin);
+
+		this.elSpin.attr('value', this.nDefault);
+		this.elSpin.val(this.nDefault);
 	},
 
 	_blur : function(){
 		var oSelf = this;
 		this.elSpin.on('blur', function(){
-			var nSpin = parseInt(oSelf.elSpin.val());
-			oSelf.nDefault = nSpin;
-			oSelf._counter(oSelf.nDefault);
+			// TODO 1a1b1b 입력시 정상작동 안함.
+			oSelf.nDefault = parseInt(oSelf.elSpin.val(), 10);
+			oSelf._counter();
 		});
 	},
 
@@ -59,13 +62,14 @@ spinbox.act.prototype = {
 		this.elUp.on('mousedown', function(){
 			oSelf.elInterval = setInterval(function(){
 				oSelf.nDefault++;
-				oSelf._counter(oSelf.nDefault);
+				oSelf._counter();
 			}, 500);
 		});
+		// TODO document 기준으로 변경
 		this.elUp.on('mouseup', function(){
 			clearInterval(oSelf.elInterval);
 			oSelf.nDefault++;
-			oSelf._counter(oSelf.nDefault);
+			oSelf._counter();
 		});
 	},
 
@@ -74,13 +78,13 @@ spinbox.act.prototype = {
 		this.elDown.on('mousedown', function(){
 			oSelf.elInterval = setInterval(function(){
 				oSelf.nDefault--;
-				oSelf._counter(oSelf.nDefault);
+				oSelf._counter();
 			}, 500);
 		});
 		this.elDown.on('mouseup', function(){
 			clearInterval(oSelf.elInterval);
 			oSelf.nDefault--;
-			oSelf._counter(oSelf.nDefault);
+			oSelf._counter();
 		});
 	}
 };

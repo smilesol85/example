@@ -1,5 +1,5 @@
 # 셀렉트 박스
-**[github.io](http://smilesol85.github.io/javascript/++DEV/javascript/selectbox/selectbox.html "selectbox")**
+**[github.io](http://smilesol85.github.io/++DEV/javascript/selectbox/selectbox.html "selectbox")**
 
 > 셀렉트 박스 option 선택시 액션  
 
