@@ -2,7 +2,6 @@
 var spinbox = spinbox || {};
 
 // spinbox class
-// TODO spinbox = function(){}; 변경해야 함.
 spinbox.act = function(){
 	// this.init.apply(this, arguments);
 	this.init();
@@ -10,14 +9,17 @@ spinbox.act = function(){
 
 spinbox.act.prototype = {
 	nDefault : 200,
-	nSpin : null,
-	elSpin : null,
-	elUp : null,
-	elDown : null,
-	elInterval : null,
+	nMax : 300,
+	nMin : 100,
 
 	init : function(options){
 		// this.nSpin = options.nSpin || null;
+		this.nSpin = null;
+		this.elSpin = null;
+		this.elUp = null;
+		this.elDown = null;
+		this.elInterval = null;
+
 		this._setElement();
 		this._setNumber();
 		this._setUp();
@@ -36,10 +38,10 @@ spinbox.act.prototype = {
 	},
 
 	_counter : function(){
-		if(300 === this.nDefault || this.nDefault > 300){
-			this.nDefault = 300;
-		}else if(100 === this.nDefault || this.nDefault < 100){
-			this.nDefault = 100;
+		if(this.nMax === this.nDefault || this.nDefault > this.nMax){
+			this.nDefault = this.nMax;
+		}else if(this.nMin === this.nDefault || this.nDefault < this.nMin){
+			this.nDefault = this.nMin;
 		}else if(isNaN(this.nDefault) === true){
 			this.nDefault = 200;
 		}
