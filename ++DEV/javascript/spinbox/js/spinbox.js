@@ -2,29 +2,28 @@
 var spinbox = spinbox || {};
 
 // spinbox class
-spinbox.act = function(){
+spinbox = function(){
 	// this.init.apply(this, arguments);
 	this.init();
 };
 
-spinbox.act.prototype = {
+spinbox.prototype = {
 	nDefault : 200,
 	nMax : 300,
 	nMin : 100,
+	nDelaySpin : 500,
 
 	init : function(options){
 		// this.nSpin = options.nSpin || null;
+		
 		this.nSpin = null;
-		this.elSpin = null;
-		this.elUp = null;
-		this.elDown = null;
 		this.elInterval = null;
+		this.sGetValue = null;
+		this.regInput = null;
 
 		this._setElement();
 		this._setNumber();
-		this._setUp();
-		this._setDown();
-		this._blur();
+		this._setEvent();
 	},
 
 	_setElement : function(){
@@ -35,6 +34,17 @@ spinbox.act.prototype = {
 
 	_setNumber : function(){
 		this.elSpin.attr('value', this.nDefault);
+	},
+
+	_blur : function(){
+		this.sGetValue = this.elSpin.val();
+		this._regGetNum(this.sGetValue);
+	},
+
+	_regGetNum : function(getValue){
+		this.regValue = /[^0-9]/gi;
+		this.nDefault = parseInt(getValue.replace(this.regValue,''), 10);
+		this._counter();
 	},
 
 	_counter : function(){
@@ -50,47 +60,46 @@ spinbox.act.prototype = {
 		this.elSpin.val(this.nDefault);
 	},
 
-	_blur : function(){
-		var oSelf = this;
-		this.elSpin.on('blur', function(){
-			// TODO 1a1b1b 입력시 정상작동 안함.
-			oSelf.nDefault = parseInt(oSelf.elSpin.val(), 10);
-			oSelf._counter();
-		});
-	},
-
 	_setUp : function(){
 		var oSelf = this;
-		this.elUp.on('mousedown', function(){
-			oSelf.elInterval = setInterval(function(){
-				oSelf.nDefault++;
-				oSelf._counter();
-			}, 500);
-		});
-		// TODO document 기준으로 변경
-		this.elUp.on('mouseup', function(){
-			clearInterval(oSelf.elInterval);
-			oSelf.nDefault++;
-			oSelf._counter();
-		});
+
+		this._startSpin('up');
+		this.elInterval = setInterval(function(){
+			oSelf._startSpin('up');
+		}, this.nDelaySpin);
 	},
 
 	_setDown : function(){
 		var oSelf = this;
-		this.elDown.on('mousedown', function(){
-			oSelf.elInterval = setInterval(function(){
-				oSelf.nDefault--;
-				oSelf._counter();
-			}, 500);
-		});
-		this.elDown.on('mouseup', function(){
-			clearInterval(oSelf.elInterval);
-			oSelf.nDefault--;
-			oSelf._counter();
-		});
+
+		this._startSpin('down');
+		this.elInterval = setInterval(function(){
+			oSelf._startSpin('down');
+		}, this.nDelaySpin);
+	},
+
+	_startSpin : function(statusSpin){
+		if(statusSpin == 'up'){
+			this.nDefault++;
+			this._counter();
+		}else if(statusSpin == 'down'){
+			this.nDefault--;
+			this._counter();
+		}
+	},
+
+	_stopSpin : function(){
+		clearInterval(this.elInterval);
+	},
+
+	_setEvent : function(){
+		this.elSpin.on('blur', $.proxy(this._blur, this));
+		this.elUp.on('mousedown', $.proxy(this._setUp, this));
+		this.elDown.on('mousedown', $.proxy(this._setDown, this));
+		$(document).on('mouseup', $.proxy(this._stopSpin, this));
 	}
 };
 
 $(document).ready(function(){
-	var oSpinbox = new spinbox.act();
+	var oSpinbox = new spinbox();
 });
