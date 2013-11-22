@@ -41,7 +41,7 @@
 * 문자, 숫자, $, _ 만 포함할 수 있다.  
 * 대소문자를 구분한다.  
   
-  
+
 1. [리터럴](#literal)  
 1. [변수](#variable)  
 1. [프로그램 실행 단계](#program_process)  
@@ -838,7 +838,7 @@ var f = new Function('x','y','return x+y');
 ```
 
 ###<a href="#" name="Function">Function</a>
-* Function 이라는 함수는 `함수 인스턴스(instance)`를 생성하는 함수이다.  
+* Function 이라는 함수는 `함수 인스턴스(instance)를 생성하는 함수`이다.  
 * Object, Array도 Function의 인스턴스이다.  
 * 모든 함수는 Function 멤버를 공유한다.  
 
@@ -858,6 +858,7 @@ function f(x,y){
 	return x+y;
 }
 ```
+
 > Function ->(생성) Object(Function 인스턴스) ->(생성) Object 객체(Object 인스턴스)  
 
 ![Alt text](http://smilesol85.github.io/image/Function_prototype.png "Function prototype")
