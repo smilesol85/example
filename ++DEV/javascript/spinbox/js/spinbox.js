@@ -42,6 +42,7 @@ spinbox.prototype = {
 	},
 
 	_regGetNum : function(getValue){
+		// TODO 음수값 처리
 		this.regValue = /[^0-9]/gi;
 		this.nDefault = parseInt(getValue.replace(this.regValue,''), 10);
 		this._counter();
