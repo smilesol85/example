@@ -97,6 +97,7 @@ spinbox.prototype = {
 		this.elSpin.on('blur', $.proxy(this._blur, this));
 		this.elUp.on('mousedown', $.proxy(this._setUp, this));
 		this.elDown.on('mousedown', $.proxy(this._setDown, this));
+		// TODO 특정 요소에서만 적용
 		$(document).on('mouseup', $.proxy(this._stopSpin, this));
 	}
 };
