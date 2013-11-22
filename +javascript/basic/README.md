@@ -1,4 +1,4 @@
-# 자바스크립트 기본 문법
+#자바스크립트 기본 문법
 1. [리터럴](#literal)  
 1. [변수](#variable)  
 1. [프로그램 실행 단계](#program_process)  
@@ -29,7 +29,7 @@
 * 문자, 숫자, $, _ 만 포함할 수 있다.  
 * 대소문자를 구분한다.  
 
-## <a href="#" name="literal">리터럴</a>
+##<a href="#" name="literal">리터럴</a>
 > 특별한 생성자 없이 코드 상에서 데이터 값을 표햔하는 방식
 
 ```javascript
@@ -46,7 +46,7 @@ function(){}  // 함수 리터럴
 */
 ```
 
-## <a href="#" name="variable">변수</a>
+##<a href="#" name="variable">변수</a>
 * 특정 값을 임시로 저장할 수 있는 공간이다.  
 * 메모리에 공간 차지 - 테이터 타입에 따라 차지하는 공간이 결정된다.  
 * 변수 선언시 var를 사용한다.  
@@ -71,7 +71,7 @@ var nNum = 1;
 alert(nNum);  // 1
 ```
 
-## <a href="#" name="program_process">프로그램 실행 단계</a>
+##<a href="#" name="program_process">프로그램 실행 단계</a>
 > 프로그램 -> 파싱 -> 변수, 함수 정의 -> 실행 -> 함수 코드 파싱 -> 실행  
 
 어떤 함수에도 포함하지 않은 변수, 어떤 함수에도 포함하지 않는 이름 있는 함수에 대해  
@@ -93,12 +93,12 @@ alert(f);  // 0
 > 저장될 때 앞에서 선언된 변수 메모리에 덮어쓰게 된다.  
 > 따라서 네임스페이스가 필요하다.  
 
-## <a href="#" name="data-type">데이터 타입</a>
+##<a href="#" name="data-type">데이터 타입</a>
 * 데이터 타입으로는 number, string, boolean, null, undefined 가 있다.  
 * 객체, 배열 함수 테이터 타입을 지원한다.  
 * 날짜, 정규식 등의 데이터 타입을 지원한다.  
 
-## <a href="#" name="number">숫자</a>
+##<a href="#" name="number">숫자</a>
 * 모든 숫자는 실수 값으로 해석된다.  
 * 자바스크립트 해석기는 우선 실제 값으로 계산한 다음 변수에 저장한다.  
 * 표현 가능 범위 : 최대 ±1.7976931348623157 x 10308 / 최소 ±5 x 10-324  
@@ -143,7 +143,7 @@ var a = '5a';
 console.log(parseInt(a, 10));  // 5 - 10진수로 반환
 ```
 
-### Math
+###Math
 > 복잡한 수학 연산을 위해 제공되는 객체이다.  
 > [w3schools](#http://www.w3schools.com/jsref/jsref_obj_math.asp, "Math")  
 		
@@ -158,7 +158,7 @@ var g = Math.random() * 10;  // 0초과 10미만의 숫자를 랜덤으로 생�
 var h = Math.floor(Math.random() * 10);  // 0초과 10미만의 숫자중 소수점 버리고 랜덤으로 생성
 ```
 
-### Number
+###Number
 > 데이터 타입의 숫자를 객체로 만들 수 있다.  
 > [w3schools](#http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")
 		
@@ -190,7 +190,7 @@ document.write('<br/>');
 document.write(testNum.toFixed(3));  //소수점 이하 세 자리까지 표시하고 그 이하의 자리수에서 반올림
 ```
 
-## <a href="#" name="string">문자열</a>
+##<a href="#" name="string">문자열</a>
 * 작은 따옴표(' '), 큰 따옴표(" ")로 묶어서 표현한다.  
 * 자바스크립트 내에서 모든 문자는 16비트 유니코드(UTF-16) 이다.  
 * 자신의 길이를 나타내는 length라는 속성을 갖는다.  
@@ -309,7 +309,7 @@ console.log(c);  // null
 */
 ```
 
-## <a href="#" name="boolean">불리언</a>
+##<a href="#" name="boolean">불리언</a>
 * true(참), false(거짓) 로 값을 표현할 때 사용한다.  
 * true는 1, false는 0을 반환한다.  
 * 0, null, ""(빈 문자열), false, undefined, NaN 외의 값으로 평가되면 항상 true이다.  
@@ -318,7 +318,7 @@ console.log(c);  // null
 console.log(true > false);  // true
 ```
 
-## <a href="#" name="undefined">undefined</a>
+##<a href="#" name="undefined">undefined</a>
 > 값이 할당되지 않음을 나타낸다.  
 		
 ```javascript
@@ -328,7 +328,7 @@ console.log(null == undefined)  // true
 console.log(null === undefined)  // false
 ```
 
-## <a href="#" name="null">null</a>
+##<a href="#" name="null">null</a>
 * 객체가 없음을 나타낸다.  
 * 아무런 값도 나타내지 않는다.  
 * 어떠한 유효한 값도 아니다. (값 자체가 없다는 의미는 아니다.)  
@@ -338,8 +338,8 @@ var foo = null;  // null
 var foo2 = null + 6;  // 6
 ```
 
-## <a href="#" name="operator">연산자</a>
-### 증가, 감소 연산자
+##<a href="#" name="operator">연산자</a>
+###증가, 감소 연산자
 * ++변수 이면 먼저 증가 후 최종값으로 평가한다.  
 * 변수++ 이면 평가 끝난 후 증가한다.
 		
@@ -353,7 +353,7 @@ console.log(j);  // 1
 console.log(i);  // 2
 ```
 
-### 비교 연산자
+###비교 연산자
 * '=='(equal)은 타입이 다른 경우 타입을 일치 시킨 후 비교한다.  
 * '==='(identical)은 타입 비교까지 한다.  
 		
@@ -372,21 +372,21 @@ console.log(o1 == o2);  // false
 console.log(undefined == null);  // true
 ```
 
-### OR 연산자(||)
+###OR 연산자(||)
 > 좌측 || 우측 연산시 좌측이 참이면 우측은 평가하지 않는다. 즉, 좌측 값만 반환한다.  
 
-### AND 연산자(&&)
+###AND 연산자(&&)
 > 좌측 && 우측 연산시 좌측이 거짓이면 우측은 평가하지 않고 좌측 값만 반환한다.  
 > 좌측이 참이면 우측 값을 반환한다.  
 
-### 부정 연산자(!)
+###부정 연산자(!)
 > 항상 true, false만 반환된다.  
 		
 ```javascript
 var booleans != false;  // true
 ```
 
-## <a href="#" name="if">조건문 if</a>
+##<a href="#" name="if">조건문 if</a>
 		
 ```javascript
 if(a > 2){
@@ -410,7 +410,7 @@ var sURL = nAge > 20 ? (
 location.assign(sURL);
 ```
 
-## <a href="#" name="switch">조건문 switch</a>
+##<a href="#" name="switch">조건문 switch</a>
 > 너무 많은 else if문을 사용하게 된다면 switch 문으로 코드를 줄일 수 있을 것이다.
 		
 ```javascript
@@ -428,7 +428,7 @@ switch(nAge){
 }
 ```
 
-## <a href="#" name="for">반복문 for / for in</a>
+##<a href="#" name="for">반복문 for / for in</a>
 > for문 안에서 사용된 변수 i는 for 밖에서도 사용 가능하다.  
 > 변수 스코프는 함수 단위로 결정된다.
 		
@@ -461,7 +461,7 @@ var i = 0;
 for(arrAge[i++] in oAge);  // arrAge = ['a', 'b'];
 ```
 
-## <a href="#" name="while">반복문 while / do while</a>
+##<a href="#" name="while">반복문 while / do while</a>
 		
 ```javascript
 // while
@@ -477,7 +477,7 @@ do {
 }while(i < 10);
 ```
 
-## <a href="#" name="try">예외 처리 try / catch / finally / throw</a>
+##<a href="#" name="try">예외 처리 try / catch / finally / throw</a>
 		
 ```javascript
 try{
@@ -515,10 +515,10 @@ try{
 // => a1 경고창이 실행된다.
 ```
 
-## <a href="#" name="break">break</a>
+##<a href="#" name="break">break</a>
 > `조건문`, `반복문`에서 벗어날 때 사용한다.  
 
-## <a href="#" name="continue">continue</a>
+##<a href="#" name="continue">continue</a>
 > `반복문`에서 현재 반복을 중지하고 다음 반복을 수행한다.  
 
 		
@@ -539,7 +539,7 @@ for(var i = 0; i < 10; i++){
 alert(output);
 ```
 
-## <a href="#" name="array">배열</a>
+##<a href="#" name="array">배열</a>
 		
 ```javascript
 /*
