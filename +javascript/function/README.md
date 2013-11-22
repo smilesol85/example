@@ -1,4 +1,4 @@
-# 함수
+#함수
 1. [함수 정의](#function)  
 1. [함수의 prototype](#prototype)  
 1. [함수 리터럴 이용](#function_literal)  
@@ -23,7 +23,7 @@
 * 할당에 사용된 변수명과 과계없이 고유한 구별이 가능하다.  
 * 비동기적인 처리 등의 구현이 간편하다.  
 
-## <a href="#" name="function">함수 정의</a>
+##<a href="#" name="function">함수 정의</a>
 * 함수를 정의하는 것만으로 함수 객체가 생성된다.  
 * 일반 객체와 다르게 `실행 코드 블록`을 가지고 있다.  
 * 일반 객체와 같이 동적으로 멤버를 가질 수 있다.
@@ -58,11 +58,12 @@ function f(){
 }
 ```
 
-### arguments
-* 함수를 호출할 때 정희된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 다른 경우가 있다.  
-* 매개변수(oarameter) 개수보다 넘어온 인자(argument)의 개수가 적으면 차례로 값이 채워지고 나머지는 `undefined`가 된다.  
-* arguments 타입의 객체는 함수가 호출되면 자바스크립에서 자동으로 생성하는 객체이다.  
+###arguments
+> 함수를 호출할 때 정의된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 달라도 된다.  
+> 매개변수(oarameter) 개수보다 넘어온 인자(argument)의 개수가 적으면 차례로 값이 채워지고 나머지는 `undefined`가 된다.  
+* arguments 타입의 객체는 함수가 호출되면 자바스크립에서 `자동으로 생성하는 객체`이다.  
 * arguments 객체는 배열이 아니지만, 배열과 유사하다.  
+* arguments는 `length`, `callee` 라는 속성 사용이 가능하다.  
 		
 ```javascript
 function f(){
@@ -75,7 +76,7 @@ function f(){
 // f(2,3,4);  // 9
 // f(8,7);  // 15
 ```
-### arguments.callee
+###arguments.callee
 * this와 유사하나 arguments.callee는 함수를 가르키고, this는 객체를 가르킨다.  
 * 재귀 호출 함수와 같이 구현할 때 유용하다.  
 		
@@ -92,15 +93,15 @@ function f(){
 var result = f()(5);  // 5*4*3*2*1 = 120
 ```
 
-## <a href="#" name="prototype">prototype</a>
+##<a href="#" name="prototype">prototype</a>
 * 모든 함수는 prototype 속성을 갖는다.  
 * 프로토타입 연결은 값의 갱신에 영향을 받지 않는다. 즉, 객체를 변경하더라도 객체의 프로토타입에는 영향을 미치지 않는다.  
 * 함수는 new 연산자와 함께 쓰이면 생성자가 된다.  
 * 생성중인 인스턴스 객체에 생성자 함수의 prototype이 참조된다.  
 * 모든 객체는 속성을 참조할 때 해당 객체에서 우선 검색하고, 존재하지 않는다면 참조하고 있는 prototype에서 찾는다.  
 
-## <a href="#" name="function_literal">함수 리터럴 이용</a>
-* 인자로 전달  
+##<a href="#" name="function_literal">함수 리터럴 이용</a>
+* 인자로 전달 가능  
 * 변수에 할당  
 * 다른 함수의 반환값으로 사용
 		
@@ -110,16 +111,16 @@ var f = function(x,y){
 };
 ```
 
-## <a href="#" name="new_function">Function 생성자 사용</a>
+##<a href="#" name="new_function">Function 생성자 사용</a>
 * new와 함께 사용된다.  
 * 다른 인스턴스를 생성할 수 있는 요소  
-* 메모리 사용이 비효율 적이다.  
+* `메모리 사용이 비효율적`이다.  
 		
 ```javascript
 var f = new Function('x','y','return x+y');
 ```
 
-## <a href="#" name="Function">Function</a>
+##<a href="#" name="Function">Function</a>
 * Function 이라는 함수는 `함수 인스턴스(instance)`를 생성하는 함수이다.  
 * Object, Array도 Function의 인스턴스이다.  
 * 모든 함수는 Function 멤버를 공유한다.  
@@ -144,7 +145,7 @@ function f(x,y){
 
 ![Alt text](http://smilesol85.github.io/image/Function_prototype.png "Function prototype")
 
-## <a href="#" name="self-invoking">자기 호출 함수</a>
+##<a href="#" name="self-invoking">자기 호출 함수</a>
 		
 ```javascript
 // 자기 호출 함수
@@ -173,7 +174,7 @@ function f(x,y){
 }();
 ```
 
-## <a href="#" name="callback">콜백 함수</a>
+##<a href="#" name="callback">콜백 함수</a>
 > 호출 함수 ->(호출) 라이브러리 함수 ->(콜백 호출) 콜백 함수  
 		
 ```javascript
@@ -213,7 +214,7 @@ function LibrayFunction(arg, callback){
 }
 ```
 
-## <a href="#" name="closer">클로저</a>
+##<a href="#" name="closer">클로저</a>
 * jQuery와 같은 대형 라이브러리에서 흔히 채용되는 패턴이다.  
 * 내부 함수에서 외부 함수의 변수에 접근할 수 있는 것을 클로저라고 한다.  
 * 내부 함수가 외부 함수의 메모리를 참조하고 있기 때문에 가비지 컬렉터는 외부 함수 생명 주기가 다 되었음에도 메모리를 해제하지 않는다. 따라서 클로저에로 인한 메모리 누수가 생길 수 있다.  
@@ -246,7 +247,7 @@ var global = f();
 alert(global());  // g
 ```
 
-### 클로저 인스턴스
+###클로저 인스턴스
 * 클로저를 호출하는 것은 `클로저 인스턴스를 생성`하는 것이다.
 		
 ```javascript
