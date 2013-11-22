@@ -61,6 +61,7 @@ function f(){
 ###arguments
 > 함수를 호출할 때 정의된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 달라도 된다.  
 > 매개변수(oarameter) 개수보다 넘어온 인자(argument)의 개수가 적으면 차례로 값이 채워지고 나머지는 `undefined`가 된다.  
+
 * arguments 타입의 객체는 함수가 호출되면 자바스크립에서 `자동으로 생성하는 객체`이다.  
 * arguments 객체는 배열이 아니지만, 배열과 유사하다.  
 * arguments는 `length`, `callee` 라는 속성 사용이 가능하다.  
