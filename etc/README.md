@@ -17,7 +17,7 @@
 
 
 ##<a href="#" name="DOM">문서 객체 모델(DOM - Document Object Model)</a>  
-HTML과 XML 문서를 조작하고 나타내는 API이다.  
+HTML과 XML 문서를 조작하고 나타내는 문서이다.  
 노드(부모, 자식, 형제 등)별로 계층을 이루고 있다.  
 
 ##<a href="#" name="BOM">브라우저 객체 모델(BOM - Browser Object Model)</a>  
