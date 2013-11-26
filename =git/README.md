@@ -161,9 +161,9 @@
 *아래 revert는 push 이후에 사용된다.*  
 
 1. `> git revert HEAD`  
-	마지막 commit 상태로 돌아간다.  
+	마지막 commit 상태로 돌아가면서 commit한다.  
 1. `> git revert $id`  
-	지정한 id의 commit 상태로 돌아간다.  
+	지정한 id의 commit 상태로 돌아가면서 commit한다.  
 
 *현재까지는 branch를 생성하지 않고 master에서 직접 작업한 내용입니다.  
 	master에서는 작업하지 않고 branch를 생성하여 작업 하는 것이 안정적으로 유지보수 할 수 있겠죠?*  
