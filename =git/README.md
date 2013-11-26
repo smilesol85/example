@@ -7,6 +7,8 @@
 1. [git 설치 후 사용하려면?](#use)  
 1. [로컬 저장소에서 작업 완료 후 원격 저장소에 반영하기](#local)  
 1. [로컬에서 새로운 branch 생성 후 작업하기](#branch)  
+1. [소셜 코딩을 위한 github에 빠져 볼까요??](#github)  
+1. [github를 활용한 정적인 페이지 만들기](#githubio)
 
 > git은 `분산 버전 관리 시스템(Distributed Version Control System, DVCS)`이다.  
 
@@ -121,6 +123,8 @@
 // -m 옵션으로 로그 메세지를 남길 수 있다.
 > git commit -m '로그 메세지'
 
+// 특정 파일을 연속적으로 commit하고 싶지 않은 경우 .gitignore라는 파일에 디렉터리명을 입력 후 저장하면 된다.
+
 // 최종 commit 로그를 수정할 수 있다.
 > git commit --amend -m '수정할 내용'
 
@@ -139,6 +143,13 @@
 // 로그 확인시 상세 내용 및 특정 개수만 알고 싶다면..
 > git log -p -2
 
+// 여러 commit을 하나로 합칠 수 있다.
+// 최근 5개의 commit 내용을 합쳐라!
+> git rebase -i HEAD~5
+
+// 누가 생성했고, 누가 수정했는지 확인 가능하다.
+> git blame 파일명
+
 // 이전 버전과 diff 내용을 확인하고자 한다면..
 > git diff $id
 
@@ -149,6 +160,9 @@
 
 // 특정 파일의 파일명을 변경하고자 할 때가 있다.
 > git mv 현재파일명 변경파일명
+
+// 문제가 되는 부분을 찾아주고 해당 commit에 diff를 통해서 어떤 코드가 변경되어서 생긴 문제인지 알려준다.
+> git bisect
 
 // 로컬 저장소에서 더이상 수정할 내용이 없으며, 원격 저장소에 반영하고자 한다면 한가지 작업만이 남았다.
 > git pull origin master
@@ -184,4 +198,35 @@ master라는 branch에서 작업시 원본 파일을 훼손할 우려가 있다.
 // 병합이 끝나고 new 라는 branch를 더이상 사용하지 않는다면 branch를 삭제한다.
 > git branch -d new
 
+// 하나의 branch를 다른 branch로 병합할 수도 있다.
+// merge와 비슷하나 merge는 두개의 branch의 결과를 병합하지만,
+// rebase는 하나의 branch를 다른 하나의 branch로 차례대로 적용시킨다.
+// 공동 작업시 히스토리를 깔끔하게 관리할 수 있다.
+
 ```
+
+##<a href="#" name="github">소셜 코딩을 위한 github에 빠져 볼까요??</a>  
+github는 git으로 작업된 파일을 서버에서 호스팅 해주는 서비스이다.  
+github의 무료 사용자는 public한 레파지토리를 만들어 전체공개로 사용할 수 있으며,  
+유료 사용자는 private한 레파지토리를 만들어 공개 여부를 설정할 수 있다.  
+
+github.com에서 레파지토리를 생성하게 되면 그 다음에 어떠한 일을 해야 하는지 친절하게 안내해 준다.  
+		
+	touch README.md
+	git init
+	git add README.md
+	git commit -m 'first commit'
+	git remote add origin https://github.com/~~.git
+	git push -u origin master
+
+이렇게 하면 github의 원격 저장소로 커밋된 내용이 반영된다.  
+
+##<a href="#" name="githubio">github를 활용한 정적인 페이지 만들기</a>  
+gh-pages는 github에서 지원하는 서비스이다.  
+서버 호스팅 없이 사용 가능하도록 지원해 준다.  
+예를 들어 test라는 저장소를 github에 생성하고 git branch gh-pages라는 커멘드로 branch를 생성하고  
+html을 푸시하면 http://{account}.github.com/test로 접속할 경우 gh-pages의 branch로 푸시한 html이 보여지게 된다. 
+
+gh-pages를 사용하지 않고 정적 페이지 생성 방법  
+{account}.github.com 저장소를 생성해 gh-pages를 사용하지 않아도 github 시스템이 자동으로  
+{account}.github.com 이라는 도메인으로 해당 저장소에 있는 정적 html을 웹페이지 서비스를 제공해 준다.  
