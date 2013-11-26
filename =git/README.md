@@ -154,6 +154,9 @@
 	작업트리, 스테이징에서 모두 해지된다.  
 1. `> git reset HEAD 파일명`  
 	작업트리에서는 유지되고, 스테이징에서는 해지된다.  
+
+*아래 revert는 push 이후에 사용된다.*  
+
 1. `> git revert HEAD`  
 	마지막 commit 상태로 돌아간다.  
 1. `> git revert $id`  
