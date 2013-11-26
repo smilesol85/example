@@ -6,7 +6,7 @@
 1. [윈도우에 GIT 설치](#setup)  
 1. [git 설치 후 사용하려면?](#use)  
 1. [로컬 저장소에서 작업 완료 후 원격 저장소에 반영하기](#local)  
-1. [로컬에서 새로운 branch 생성 후 작업하기](#branch)
+1. [로컬에서 새로운 branch 생성 후 작업하기](#branch)  
 
 > git은 `분산 버전 관리 시스템(Distributed Version Control System, DVCS)`이다.  
 
@@ -154,7 +154,7 @@
 > git pull origin master
 ```
 
-##<a href="#" name="branch">로컬에서 새로운 branch 생성 후 작업하기</a>
+##<a href="#" name="branch">로컬에서 새로운 branch 생성 후 작업하기</a>  
 master branch에서 작업시 원본 파일을 훼손할 우려가 있다.  
 따라서, master branch는 유지하고 상황에 따라 branch를 새로 생성하여 작업하는 것을 습득해 보자.  
 		
