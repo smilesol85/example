@@ -13,7 +13,7 @@
 
 
 ##git  
-> git은 C언어로 구현되어 있으며, 분산 버전 관리 시스템(Distributed Version Control System, DVCS)이다.  
+> git은 C언어로 구현되어 있으며, `분산 버전 관리 시스템(Distributed Version Control System, DVCS)`이다.  
 	오픈소스이며, OS 제한없이 사용 가능하다.  
 
 
