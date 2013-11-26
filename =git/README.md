@@ -155,7 +155,7 @@
 ```
 
 ##<a href="#" name="branch">로컬에서 새로운 branch 생성 후 작업하기</a>  
-master branch에서 작업시 원본 파일을 훼손할 우려가 있다.  
+master라는 branch에서 작업시 원본 파일을 훼손할 우려가 있다.  
 따라서, master branch는 유지하고 상황에 따라 branch를 새로 생성하여 작업하는 것을 습득해 보자.  
 		
 ```javascript
