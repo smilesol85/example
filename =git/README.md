@@ -55,7 +55,7 @@
 	윈도우 탐색기에서 클릭만으로 편리하게 사용 가능하다.  
 
 ##<a href="#" name="use">git 설치 후 사용하려면?</a>  
-* GUI Clients 사용([GUI Clients로 이동](http://git-scm.com/downloads/guis "GUI Clients로 이동"))  
+* GUI Clients 사용([GUI Clients 리스트](http://git-scm.com/downloads/guis "GUI Clients로 이동"))  
 	특정 OS에서만 사용 가능한 GUI이므로 OS에 제한이 있다.  
 * console환경에서 사용  
 	명령어들을 외워야 하는 불편함이 있으나 OS 제한 없이 사용 가능하다.  
