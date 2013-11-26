@@ -123,26 +123,41 @@
 
 1. `> git diff 해시코드`  
 	이전 파일 버전과 현재 파일 버전의 수정 내용을 확인할 수 있다.  
+
 1. `> git rm 파일명`  
 	파일 삭제 후 추적하지 않는 상태로 만든다.  
 	탐색기에서 삭제할 경우 해당 명령으로 삭제 되었다고 알려 주어야 한다.  
-1. `> git checkout -- 파일명`  
-	파일을 잘못 경우 삭제한 파일을 복구할 수 있다.  
+1. `> git rm --cached 파일명`  
+	파일을 untracked 상태로 변경한다.  
+	즉, commit하고 싶지 않은 경우 사용한다.  
+
 1. `> git mv 파일명 변경파일명`  
-	파일명을 변경하고 싶을 때 사용한다.  
+	파일명을 변경하고 히스토리는 유지하고 싶을 때 사용한다.  
+
 1. `> git add *`  
 	git의 특징으로 바로 commit하지 않고 스테이지에 등록하는 과정이 필요하다.  
 	add 명령으로 파일의 변경을 등록한다.  
 	`> git add *` - 전체선택 하여 등록  
 	`> git add test.html`  - 특정 파일 선택하여 등록  
 	`> git add *.js` - js 파일 전체 선택하여 등록  
-1. `> git rm --cached 파일명`  
-	commit 하고 싶지 않은 경우 즉, 작업 트리로 돌아가게 된다.  
+
 1. `> git commit -m 'commit 로그'  
 	m 옵션으로 commit 로그를 포함하여 commit할 수 있다.  
 	commit 이전에 add 과정이 없었다면 경고가 나타난다.  
 	add 과정을 거치지 않고 commit 명령에서 add 과정을 포함할 수 있다.  
 	`> git commit -am 'commit 로그'` => 대신 추가된 파일에 대해서는 자동으로 추가해 주지는 않는다.  
+1. `git commit --amend -m '수정할 내용'`  
+	마지막 commit 메세지 수정  
+1. `> git checkout -- 파일명`  
+	작업트리에서는 해지되고 스테이징에서는 유지된다.  
+1. `> git checkout 파일명`  
+	작업트리, 스테이징에서 모두 해지된다.  
+1. `> git reset HEAD 파일명`  
+	작업트리에서는 유지되고, 스테이징에서는 해지된다.  
+1. `> git revert HEAD`  
+	마지막 commit 상태로 돌아간다.  
+1. `> git revert $id`  
+	지정한 id의 commit 상태로 돌아간다.  
 
 *현재까지는 branch를 생성하지 않고 master에서 직접 작업한 내용입니다.  
 	master에서는 작업하지 않고 branch를 생성하여 작업 하는 것이 안정적으로 유지보수 할 수 있겠죠?*  
@@ -210,28 +225,9 @@ github.com에서 레파지토리를 생성하게 되면 그 다음에 어떠한 
 	// commit 할때 특정 파일은 무시하고 commit 할 수 있다.  
 	// .gitignore 파일에 특정 폴더명을 입력 후 저장하면 된다.  
 
-	// 파일 이름 변경하고 히스토리를 유지한다.
-	git mv file.html file_name.html
-
-	// 파일을 untracked 상태로 변경(ignore를 빼먹은 경우 사용)
-	git rm --cached file_name
-
-	// 마지막 commit 메세지 수정
-	git commit --amend -m '수정할 내용'
-
 	// 파일 삭제시 git add * 명령은 파일을 제거할 수 없다.
 	// -a 옵션을 사용해야 파일 제거가 적용된다.
 	git add -a
-
-	// 파일을 수정하고 아직 add, commit 하지 않았으며 이전 버전으로 돌리고 싶다면...
-	git checkout file_name
-
-	// 파일을 수정하고 add, commit 한 상태일 때 이전 버전으로 돌아가고 싶다면...
-	git reset HEAD file_name
-	git checkout file_name
-
-	// rever 명령으로 commit을 되돌릴 수 있다.
-	git revert file_name
 
 	// branch 2개 생성되 있어 branch1에서 file.html을 생성 후 수정하였고,
 	// branch2에서 file.html을 생성 후 수정한 뒤 master 저장소로 push 한 후,
