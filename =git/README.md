@@ -1,66 +1,45 @@
 #git?
 
-##버전 관리 시스템(Version Control System, VCS)  
-버전 관리 시스템(Version Control System, VCS)을 사용하는 이유 중 하나는  
-어떤 파일에 대한 `히스토리를 생성하고 관리하기 위해서이다`.  
-사용자는 변경 내용의 로그 메시지를 남기고 저장소에 commit 한다.  
-우리가 흔히 사용하고 있는 svn은 중앙 집중식 저장소이다.  
+1. [SVN과 GIT의 차이](#svn_git)  
+1. [GIT의 로컬에서는 무슨 일이?](#local_computer)  
+1. [용어](#word)  
+1. [윈도우에 GIT 설치](#setup)  
+1. [git 설치 후 사용하려면?](#use)  
+1. [console에서 GIT 사용하기](#console)  
 
-**중앙 집중식 저장소의 한계**  
-* 사용자는 최신 버전의 코드만 가지고 있다.  
-* 수정 내용 확인을 위해 저장소에 정보를 요청해야 한다.  
-	즉, 네트워크를 이용하여 원격 저장소로 접근이 필요하다.  
+> git은 `분산 버전 관리 시스템(Distributed Version Control System, DVCS)`이다.  
 
+*SVN과 같은 버전 관리 시스템(Version Control System, VCS)을 사용하는 이유 중 하나는  
+	특정 파일에 대한 `히스토리를 생성하고 관리하기 위해서이다`.*  
 
-##git  
-> git은 C언어로 구현되어 있으며, `분산 버전 관리 시스템(Distributed Version Control System, DVCS)`이다.  
-	오픈소스이며, OS 제한없이 사용 가능하다.  
+##<a href="#" name="svn_git">SVN과 GIT의 차이</a>  
+*SVN - 네트워크 영향을 받기 때문에 느리다.*  
+`GIT - 로컬에서 작업되기 때문에 훨씬 빠르다.`  
+*SVN - 네트워크가 끊기면 원격 저장소 접근이 어려워 히스토리 관리가 안된다.*  
+`GIT - 네트워크가 끊겨도 로컬 저장소로 버전 관리가 가능하다.(원격 저장소에 대한 의존성이 없어진다.)`  
+*SVN - commit에 부담을 갖는다.*  
+`GIT - 로컬에서만 작업이 이루어지기 때문에 commit에 부담이 없다.`  
+*SVN - 원격 저장소가 폭발해 버리면 복원이 어렵다.*  
+`GIT - 원격 저장소가 폭발해 버려도 로컬 저장소 사본 유지로 작업에 지장이 없다.(모든 사용자는 완벽한 복사본을 가지게 된다.)`  
 
-
-###git 작업 공간? 
-* 원격 저장소(서버)에 원본 파일이 있다.  
-* 직접 작업하는 작업트리(working dir)  
+##<a href="#" name="local_computer">GIT의 로컬에서는 무슨 일이?</a>  
+* 작업트리(working dir)  
 	작업트리는 저장소를 바라보는 자신의 현재 시점을 말하며,  
-	모든 변경은 작업트리에서 이루어진다. 즉, 모든 파일을 가지고 있다.  
-	git에서 작업트리는 로컬 컴퓨터의 디렉토리에 있는 .git/ 디렉토리에 존재한다.
-	즉, .git/ 폴더 내에 모든 히스토리가 저장된다.    
-	이 작업트리로 인해 저장소의 수정 내용을 서버의 저장소와 통신 없이 확인 가능하다.  
-* 스테이징이라는 인덱스 공간(index - stage)  
+	모든 변경은 작업트리에서 이루어진다. 즉, 우리가 작업하는 위치이며, 모든 파일을 가지고 있다.  
+	로컬 컴푸터의 작업트리에는 .git/ 이라는 디렉토리에 존재한다.  
+	.git/ 디렉토리에서는 모든 히스토리를 저장한다.      
+	이로 인해 저장소의 수정 내용을 서버의 저장소와 통신 없이 확인 가능한 것이다.  
+* 스테이지 또는 인덱스 공간  
+	로컬 저장소에 저장하기 전 꼭 거쳐야 하는 공간이다.  
 * 로컬 저장소. 즉, 최종 코드 저장소(HEAD)  
 
-###git의 단점
-* 혼자 단순하게 git을 사용할 경우 svn과의 차이를 느낄 수 없다.  
-* svn보다 개념적인 이해가 어려워 많은 조직들이 여전히 svn과 같이 접근이 쉬운 툴로 소스 관리를 한다.  
-
-> 많은 개발사들이 조금씩 git을 활용하는 범위가 커지고 있으며, 그 이유는 git의 장점을 정확히 알고 나면  
-	최적의 방법으로 코드를 관리하게 될 것이기 때문이다.  
-
-
-###git의 장점 
-* 중앙 저장소에 대한 의존성이 없어진다.  
-	수정된 내용을 매번 master 저장소에 commit해서 올리는 대신 로컬 저장소를 이용한다.  
-	즉, 개발에 따른 잦은 commit에 유연성을 확보할 수 있다.  
-	따라서, 보다 안정적인 협업이 이루어 진다.  
-* 모든 사용자는 완벽한 복사본을 가지고 있다.  
-* 원격 저장소 뿐만이 아닌 로컬 저장소를 복사해 올 수도 있다.  
-
-> svn 작업시 중앙 저장소(서버)에 commit 하기 이전에 완전한 코드를 개발하고 commit하는 방식이다.  
-	svn의 commit은 중장 저장소에 내가 개발한 코드를 반영하겠다라는 뜻이다.  
-	commit 후 의도치 않은 곳에서 오류가 발생하게 된다면 바로 다른 개발자에게 영향을 미치게 된다.  
-
-
-> git은 개발자 만의 히스토리를 생성하게 되며,
-	원격 저장소(서버)와 로컬 저장소(내 컴퓨터)의 독립된 공간으로  
-	코드 관리가 가능하다.  
-
-
-###용어
+##<a href="#" name="word">용어</a>  
 * 저장소(repository)  
 	사용자가 변경한 모든 내용을 추적 가능한 공간이다.  
-	저장소는 히스토리에 따른 다른 버전을 모두 가지고 있다.  
+	저장소는 히스토리에 따른 모든 버전을 모두 가지고 있다.  
 	저장소를 다른 곳으로 복사하여도 히스토리도 같이 복사되어 완벽한 저장소를 유지한다.  
 * 분기(branch)  
-	모든 분기는 master에서 이루어 진다.  
+	모든 분기는 master branch에서 이루어 진다.  
 	branch가 만들어진 시점부터 적용된 commit만 추적한다.  
 * 커밋(commit)  
 	모든 히스토리를 로컬 저장소로 commit 할 수 있다.  
@@ -68,217 +47,68 @@
 	git이 복사해 온 저장소를 가리키기 위해 기본적으로 사용하는 이름이다.  
 	서버의 별명 정도로 기억하면 되겠다.  
 
-
-###git 사용하려면?
-* GUI Clients 상용  
-	[GUI Clients로 이동](http://git-scm.com/downloads/guis "GUI Clients로 이동")  
-	window 또는 mac 같이 OS 제한이 있다.  
-* console환경에서 사용  
-	난이도가 있으나 console환경에서 작업하게 되면 OS 제한 없이 사용 가능하다.  
-
-###git 윈도우 설치
+##<a href="#" name="setup">윈도우에 git 설치</a>  
 1. [msysgit 설치](https://code.google.com/p/msysgit/downloads/list "msysgit 설치")  
+	이제 git을 사용할 수 있다.  
+	조금 더 편리하고 익숙한 UI이로 사용하기 위해 아래 tortoiseGIT을 설치해 보자.  
 1. [tortoiseGit 설치 - window 탐색기 존재 필수](https://code.google.com/p/tortoisegit/ "tortoiseGit 설치")  
+	윈도우 탐색기에서 클릭만으로 편리하게 사용 가능하다.  
 
-###<a href="#" name="get_setting">console 작업</a>
-1. `> git init`  
-	git 로컬 저장소 생성하기  
-	git 로컬 저장소로 사용할 폴더 생성 후 폴더로 이동 후 init!    
-	해당 폴더에는 .git 이라는 디렉토리가 만들어지게 된다.  
-	.git에는 작업 내역이 저장되는 디렉토리이다.  
-1. `> git clone git://github.com/저장소/경로`  
-	저장소를 생성했다면 원격 저장소 및 모든 히스토리를 복사해 온다.  
-	`git init`의 과정을 거치지 않아도 된다.  
-1. '` rm -rf .git`  
-	git 저장소를 삭제하고 싶은 경우 ./git 폴더 삭제  
-	탐색기에서 폴더를 휴지통에 버려도 된다.  
-1. `> git congig`  
-	git을 설치가 끝났다면 사용자 정보 설정해야 한다.  
-	commit할 때 해당 정보로 로그가 남게 된다.  
+##<a href="#" name="use">git 설치 후 사용하려면?</a>  
+* GUI Clients 사용([GUI Clients로 이동](http://git-scm.com/downloads/guis "GUI Clients로 이동"))  
+	특정 OS에서만 사용 가능한 GUI이므로 OS에 제한이 있다.  
+* console환경에서 사용  
+	명령어들을 외워야 하는 불편함이 있으나 OS 제한 없이 사용 가능하다.  
 
-		git config --global user.name 'name'
-		git config --global user.email 'email'
-
-1. `> git config --list`  
-	git의 사용자 설정 사항을 확인할 수 있다.  
-1. `> git status`  
-	저장소에 대한 정보를 확인할 수 있다. (수정 내용 등)  
-1. `> git remote`  
-	원경 저장소 등록하기  
-
-		git remote add origin ssh 주소 입력  
-		git remote -v
-
-	fetch : 원격 저장소에 있는 내용을 가지고 온다.  
-	pull : 원격 저장소에 있는 내용을 가지고 오는 동시에 merge까지 한다.  
-
-1. `> git pull origin master`  
-	master 브랜치와 로컬에 있는 브랜치를 합치겠다라는 의미이다.  
-	
-1. `> git log`  
-	commit 로그을 확인 할 수 있다.  
-	로그를 최근 5개 까지만 확인 하고 싶을 경우 아래와 같이 사용한다.  
-
-		git log -p -5
-
-1. `> git diff 해시코드`  
-	이전 파일 버전과 현재 파일 버전의 수정 내용을 확인할 수 있다.  
-
-1. `> git rm 파일명`  
-	파일 삭제 후 추적하지 않는 상태로 만든다.  
-	탐색기에서 삭제할 경우 해당 명령으로 삭제 되었다고 알려 주어야 한다.  
-1. `> git rm --cached 파일명`  
-	파일을 untracked 상태로 변경한다.  
-	즉, commit하고 싶지 않은 경우 사용한다.  
-
-1. `> git mv 파일명 변경파일명`  
-	파일명을 변경하고 히스토리는 유지하고 싶을 때 사용한다.  
-
-1. `> git add *`  
-	git의 특징으로 바로 commit하지 않고 스테이지에 등록하는 과정이 필요하다.  
-	add 명령으로 파일의 변경을 등록한다.  
-	`> git add *` - 전체선택 하여 등록  
-	`> git add test.html`  - 특정 파일 선택하여 등록  
-	`> git add *.js` - js 파일 전체 선택하여 등록  
-
-1. `> git commit -m 'commit 로그'  
-	m 옵션으로 commit 로그를 포함하여 commit할 수 있다.  
-	commit 이전에 add 과정이 없었다면 경고가 나타난다.  
-	add 과정을 거치지 않고 commit 명령에서 add 과정을 포함할 수 있다.  
-	`> git commit -am 'commit 로그'` => 대신 추가된 파일에 대해서는 자동으로 추가해 주지는 않는다.  
-1. `git commit --amend -m '수정할 내용'`  
-	마지막 commit 메세지 수정  
-1. `> git checkout -- 파일명`  
-	작업트리에서는 해지되고 스테이징에서는 유지된다.  
-1. `> git checkout 파일명`  
-	작업트리, 스테이징에서 모두 해지된다.  
-1. `> git reset HEAD 파일명`  
-	작업트리에서는 유지되고, 스테이징에서는 해지된다.  
-1. `> git reset $id`  
-	원하는 $id로 돌아간다.  
-	물론 작업트리에서는 유지되고, 스테이징에서는 해지된다.  
-
-*아래 revert는 push 이후에 사용된다.*  
-
-1. `> git revert HEAD`  
-	마지막 commit 상태로 돌아가면서 commit한다.  
-1. `> git revert $id`  
-	지정한 id의 commit 상태로 돌아가면서 commit한다.  
-
-*현재까지는 branch를 생성하지 않고 master에서 직접 작업한 내용입니다.  
-	master에서는 작업하지 않고 branch를 생성하여 작업 하는 것이 안정적으로 유지보수 할 수 있겠죠?*  
-
-1. `> git branch`  
-	해당 명령어로 현재의 모든 branch를 확인할 수 있다.  
-1. `> git branch new`  
-	new라는 branch가 생성된다.  
-1. `> git checkout new`  
-	생성된 new 라는 branch로 이동할 수 있다.  
-	new 라는 branch에서는 어떠한 작업을 하여도 master에는 전혀 영향을 끼치지 않는다.  
-1. `> git checkout -b branch_name`  
-	해당 명령은 branch 생성 후 바로 checkout도 한다.  
-1. `> git checkout file_name`  
-	checkout 명령으로 또 다른 일을 할 수 있다.  
-	해당 파일의 가장 마지막 commit 버전을 가져온다.  
-
-*이제 새로 생성된 branch에서 master에 병합하고 싶을 것이다!*  
-
-1. `> git checkout master` -> `> git merge new`  
-	master에 new의 내용이 병합된다.  
-1. `> git branch -d new'  
-	이제 필요 없어진 branch를 삭제해도 된다.  
-
-*위의 모든 내용은 내 로컬 저장소에만 저장되 있는 상태입니다.  
-	원격 저장소에 반영을 위해 무언가의 작업을 해줘야 한다.*  
-
-1. `> git remote add origin git://github.com/저장소/경로`  
-	원격 저장소 등록!  
-1. `> git remote`  
-	현재 등록된 원격 저장소를 확인할 수 있다.  
-1. `> git remote rm 원격저장소`  
-	해당 원격저장소를 삭제할 수 있다.  
-1. `> git push origin master`  
-	origin 이름을 가지고 있는 원격저장소에 변경된 파일을 반영한다.  
-
-*내 로컬 저장소를 원격 저장소에 맞춰 최신으로 업데이트 하는 일도 있다.*  
-
-1. `> git pull`  
-	원격 저장소에 최종적으로 commit된 파일이 내 로컬 컴퓨터에 적용된다.  
-
-*이제 소셜 코딩을 위한 github에 빠져 볼까요??*  
-
-> github의 무료 사용자는 public한 레파지토리를 만들어 전체공개로 사용할 수 있으며,  
-> 유료 사용자는 private한 레파지토리를 만들어 공개 여부를 설정할 수 있다.  
-
-github.com에서 레파지토리를 생성하게 되면 그 다음에 어떠한 일을 해야 하는지 친절하게 안내해 준다.  
+##<a href="#" name="console">console에서 GIT 사용하기</a>  
 		
-	touch README.md
-	git init
-	git add README.md
-	git commit -m 'first commit'
-	git remote add origin https://github.com/~~.git
-	git push -u origin master
+	// 저장소로 사용하고자 하는 디렉토리를 생성한다.
+	// 탐색기에서 직접 디렉토리를 생성해 줘도 된다.
+	> mkdir 디렉토리명
 
-이렇게 하면 github의 원격 저장소로 커밋된 내용이 반영된다.  
+	// 로컬 저장소로 사용하기 위해 생성한 디렉토리로 이동 후 해당 디렉토리를 로컬 저장소로 사용하겠다고 선언한다!
+	// 로컬 저장소로 설정되면 비밀디렉토리로 모든 히스토리가 저장되는 ./git 이라는 디렉토리가 생성된다.  
+	> git init
 
----
----
----
+	// 로컬 저장소에서 작업이 완료되면 원격 저장소로 push해 줘야 한다.
+	// 저장하고자 하는 원격 저장소의 등록이 필요하며, 해당 저장소로 push되게 된다.
+	> git remote add origin ssh 주소 입력
+	> git remote -v
 
-**기타 명령어 및 사용법(update 중)**  
-		
-	
-	// commit 할때 특정 파일은 무시하고 commit 할 수 있다.  
-	// .gitignore 파일에 특정 폴더명을 입력 후 저장하면 된다.  
+	// init 과 remote 작업을 한번에 처리하는 방법이 있다.
+	// 원격 저장소의 모든 파일 및 히스토리를 복사해 온다.
+	> git clone git://github.com/저장소/경로
 
-	// 파일 삭제시 git add * 명령은 파일을 제거할 수 없다.
-	// -a 옵션을 사용해야 파일 제거가 적용된다.
-	git add -a
+	// 원격 저장소에 있는 파일을 복사해 올 때 pull 명령을 사용하게 된다.
+	// pull 명령은 fetch, merge 작업을 한다다.
+	// fetch는 원격 저장소에 있는 내용을 가지고만 온다.  
+	// pull 원격 저장소에 있는 내용을 가지고 오는 동시에 merge까지 한다.  
+	> git pull origin master
 
-	// branch 2개 생성되 있어 branch1에서 file.html을 생성 후 수정하였고,
-	// branch2에서 file.html을 생성 후 수정한 뒤 master 저장소로 push 한 후,
-	// branch1에서 file.html을 push 하려고 하면 거절한다는 에러가 발생한다.
-	// 변경 사항을 master로 받아야 한다.
-	git pull origin master
+	// 사용자 정보를 등록 해야한다! 등록한 사용자로 로그가 남게 된다.
+	> git config --global user.name '사용자 이름'
+	> git config --global user.email '사용자 이메일'
 
-	// 필요없는 commit을 하나의 commit으로 만들 수 있다.
-	// 숫자는 5개의 commit을 의미한다.
-	// rebase 이후에 git log를 명령해도 commit 메세지는 남아 있어 확인이 가능하다.
-	git rebase -i HEAD~5
+	// 등록한 사용자 정보 확인이 가능하다.
+	> git config --list
 
-	// 2개의 branch를 rebase 명령을 이용해 merge할 수 있다.
-	// master로 rebase 하기
-	git rebase master
+	// 생성한 로컬 저장소를 삭제하고 싶은 경우 ./git 디렉토리를 삭제한다.
+	> rm -rf .git
 
-	// 누가 생성하고 수정했는지 확인 가능
-	git blame file_name
+	// 로컬 저장소 파일의 상태가 어떤지 확인이 가능하다.
+	> git status
 
-	// 히스토리 통계를 보여준다.
-	git log --stat 
+	// 원하는 작업을 한다.
+	// 파일 추가 및 삭제, 수정 등
+	// 작업트리에서 작업이 완료되었다면 스테이지에 추가 후 최종 로컬 저장소에 저장해 주면 된다.
 
-	// 문제가 되는 부분을 찾아주고 해당 commit에 diff를 통해서 어떤 코드가 변경되어서 생긴 문제인지 알려준다.
-	git bisect
+	// 작업트리에서 스테이지로 가라!
+	> git add 파일명
 
----
----
----
+	// 어랏 파일이 잘못 수정되었네!ㅠㅠ
+	// 잘못된 파일을 스테이지 상태로 보냈다면 다시 수정하기 위해 작업트리로 데리고 와야한다.
+	// 이전 파일로 돌아오면서 스테이지 상태에서 해지되며, 작업트리로 돌아온다.
+	> git reset HEAD 파일명
 
-*원격 저장소 활용*  
-인터넷이 연결된 다른 컴퓨터에 원격 저장소가 있다면  
-여러 사용자가 해당 컴퓨터의 하나의 파일 및 기타 파일 수정 및 작업이 가능하다.  
-하나의 파일에서 여러 사용자의 수정 내용을 자동으로 합쳐주며,  
-같은 내용을 수정하게 되면 마지막에 저장하려는 사용자에게 강제로 충돌을 일으키고  
-충돌 상황을 해결하라는 메세지를 제공하게 된다.  
-
-*gh-pages는 github에서 지원하는 서비스이다.*  
-서버 호스팅 없이 사용 가능하도록 지원해 준다.  
-예를 들어 test라는 저장소를 github에 생성하고 git branch gh-pages라는 커멘드로 branch를 생성하고  
-html을 푸시하면 http://{account}.github.com/test로 접속할 경우 gh-pages의 branch로 푸시한 html이 보여지게 된다.   
-
-*gh-pages를 사용하지 않고 정적 페이지 생성 방법*  
-{account}.github.com 저장소를 생성해 gh-pages를 사용하지 않아도 github 시스템이 자동으로  
-{account}.github.com 이라는 도메인으로 해당 저장소에 있는 정적 html을 웹페이지 서비스를 제공해 준다.  
-
----
----
----
+	// 특정 $id로 되돌릴 수 있다.
+	> git reset $id
