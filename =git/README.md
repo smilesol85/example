@@ -121,7 +121,13 @@
 > git commit -m '로그 메세지'
 
 // 최종 commit 로그를 수정할 수 있다.
-git commit --amend -m '수정할 내용'
+> git commit --amend -m '수정할 내용'
+
+// commit 이후에 이전 commit 상태로 돌아가고 싶을때가 있다.
+// 이전 commit 상태로 돌아간 후 재 commit 한다.
+> git revert HEAD
+// 지정한 $id로 commit 상태로 돌아간 후 재 commit 한다.
+> git revert $id
 
 // commit한 로그을 확인이 필요할 때가 있다.
 > git log
