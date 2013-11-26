@@ -222,11 +222,12 @@ github.com에서 레파지토리를 생성하게 되면 그 다음에 어떠한 
 이렇게 하면 github의 원격 저장소로 커밋된 내용이 반영된다.  
 
 ##<a href="#" name="githubio">github를 활용한 정적인 페이지 만들기</a>  
+**프로젝트 페이지 만들기** 
 gh-pages는 github에서 지원하는 서비스이다.  
 서버 호스팅 없이 사용 가능하도록 지원해 준다.  
 예를 들어 test라는 저장소를 github에 생성하고 git branch gh-pages라는 커멘드로 branch를 생성하고  
 html을 푸시하면 http://{account}.github.com/test로 접속할 경우 gh-pages의 branch로 푸시한 html이 보여지게 된다. 
 
-gh-pages를 사용하지 않고 정적 페이지 생성 방법  
+**사용자 페이지 만들기**  
 {account}.github.com 저장소를 생성해 gh-pages를 사용하지 않아도 github 시스템이 자동으로  
 {account}.github.com 이라는 도메인으로 해당 저장소에 있는 정적 html을 웹페이지 서비스를 제공해 준다.  
