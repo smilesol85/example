@@ -5,7 +5,8 @@
 1. [용어](#word)  
 1. [윈도우에 GIT 설치](#setup)  
 1. [git 설치 후 사용하려면?](#use)  
-1. [console에서 GIT 사용하기](#console)  
+1. [로컬 저장소에서 작업 완료 후 원격 저장소에 반영하기](#local)  
+1. [로컬에서 새로운 branch 생성 후 작업하기](#branch)
 
 > git은 `분산 버전 관리 시스템(Distributed Version Control System, DVCS)`이다.  
 
@@ -60,7 +61,7 @@
 * console환경에서 사용  
 	명령어들을 외워야 하는 불편함이 있으나 OS 제한 없이 사용 가능하다.  
 
-##<a href="#" name="console">console에서 GIT 사용하기</a>  
+##<a href="#" name="local">로컬 저장소에서 작업 완료 후 원격 저장소에 반영하기</a>  
 		
 ```javascript
 // 저장소로 사용하고자 하는 디렉토리를 생성한다.
@@ -151,4 +152,36 @@
 
 // 로컬 저장소에서 더이상 수정할 내용이 없으며, 원격 저장소에 반영하고자 한다면 한가지 작업만이 남았다.
 > git pull origin master
+```
+
+##<a href="#" name="branch">로컬에서 새로운 branch 생성 후 작업하기</a>
+master branch에서 작업시 원본 파일을 훼손할 우려가 있다.  
+따라서, master branch는 유지하고 상황에 따라 branch를 새로 생성하여 작업하는 것을 습득해 보자.  
+		
+```javascript
+// 현재 branch 리스트를 확인할 수 있다.
+> git branch
+
+// new 라는 branch를 생성해 보자.
+> git branch new
+
+// 생성된 new branch로 이동해 보자.
+> git checkout new
+
+// 이제 new라는 branch에서 작업한 내용은 master branch와 별도로 작업이 가능하다.
+// 여러 작업 후 작업된 내용을 로컬 저장소에 commit까지 한다.
+
+// new라는 branch에서 작업이 끝나고 원격 저장소에 반영하고자 한다면..
+// 다시 원본이 있는 master라는 branch로 이동한다.
+> git checkout master
+
+// new라는 branch에서 수정된 내용을 master라는 branch로 병합한다.
+> git merge new
+
+// master라는 branch에 병합이 되었다면 원격 저장소에 반영할 차례다.
+> git pull origin master
+
+// 병합이 끝나고 new 라는 branch를 더이상 사용하지 않는다면 branch를 삭제한다.
+> git branch -d new
+
 ```
