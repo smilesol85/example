@@ -222,7 +222,7 @@ github.com에서 레파지토리를 생성하게 되면 그 다음에 어떠한 
 이렇게 하면 github의 원격 저장소로 커밋된 내용이 반영된다.  
 
 ##<a href="#" name="githubio">github를 활용한 정적인 페이지 만들기</a>  
-**프로젝트 페이지 만들기** 
+**프로젝트 페이지 만들기**  
 gh-pages는 github에서 지원하는 서비스이다.  
 서버 호스팅 없이 사용 가능하도록 지원해 준다.  
 예를 들어 test라는 저장소를 github에 생성하고 git branch gh-pages라는 커멘드로 branch를 생성하고  
