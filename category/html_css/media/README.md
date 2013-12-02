@@ -1,10 +1,10 @@
-# media
-1. [video](#video)
-1. [audio](#audio)
-1. [track](#track)
+#media
+1. [video](#video)  
+1. [audio](#audio)  
+1. [track](#track)  
 
-## <a href="#" name="video">video</a>
-**[github.io](http://smilesol85.github.io/+html-css/media/video.html "video")**
+##<a href="#" name="video">video</a>
+**[github.io](http://smilesol85.github.io/category/html_css/media/video.html "video")**
 
     <video preload controls autoplay loop poster="" width="300" height="150">
         <source src="#" type="video/mp4" />
@@ -24,8 +24,8 @@ head 태그에 아래 2줄을 추가해야 한다.
     <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
     <script src="http://vjs.zencdn.net/c/video.js"></script>
 
-## <a href="#" name="audio">audio</a>
-**[github.io](http://smilesol85.github.io/+html-css/media/audio.html "audio")**
+##<a href="#" name="audio">audio</a>
+**[github.io](http://smilesol85.github.io/category/html_css/media/audio.html "audio")**
 
     <audio preload controls="controls" autoplay="autoplay" loop>
         <source src="#" type="audio/mp3" />
@@ -45,8 +45,8 @@ head 태그에 아래 2줄을 추가해야 한다.
 
 > MP3 라이센스 때문에 5000번 이상 재생한 MP3 파일은 2500달러를 내야 한다.  
 
-## <a href="#" name="track">track</a>
-**[github.io](http://smilesol85.github.io/+html-css/media/track.html "track")**
+##<a href="#" name="track">track</a>
+**[github.io](http://smilesol85.github.io/category/html_css/media/track.html "track")**
 
 > track 태그는 video 태그에 자막을 표시할 때 사용한다.
 

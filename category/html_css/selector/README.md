@@ -1,11 +1,11 @@
-# media
-1. [selector](#selector)
-1. [selector-before-after-data](#selector-before-after-data)
-1. [selector-child](#selector-child)
-1. [selector-string](#selector-string)
+#media
+1. [selector](#selector)  
+1. [selector-before-after-data](#selector-before-after-data)  
+1. [selector-child](#selector-child)  
+1. [selector-string](#selector-string)  
 
-## <a href="#" name="selector">selector</a>
-**[github.io](http://smilesol85.github.io/+html-css/selector/selector.html "selector")**
+##<a href="#" name="selector">selector</a>
+**[github.io](http://smilesol85.github.io/category/html_css/selector/selector.html "selector")**
 
 > `*` : 전체 선택자 /
     tag : tag 선택자 / 
@@ -23,8 +23,8 @@
     [type=text]:disabled : disabled 선택자 /
     :not(.not) : 부정 선택자 /
 
-## <a href="#" name="selector-before-after-data">selector-before-after-data</a>
-**[github.io](http://smilesol85.github.io/+html-css/selector/selector-before-after-data.html "selector-before-after-data")**
+##<a href="#" name="selector-before-after-data">selector-before-after-data</a>
+**[github.io](http://smilesol85.github.io/category/html_css/selector/selector-before-after-data.html "selector-before-after-data")**
 
 **counter도 할 수 있다**
 
@@ -46,8 +46,8 @@
 
 웹 표준에 준수하기 위해서는 태그에 지정된 속성 이외에는 사용할 수 없다. 하지만 data-를 `사용하면 사용자 지정 속성`으로 인정해 준다.
 
-## <a href="#" name="selector-child">selector-child</a>
-**[github.io](http://smilesol85.github.io/+html-css/selector/selector-child.html "selector-child")**
+##<a href="#" name="selector-child">selector-child</a>
+**[github.io](http://smilesol85.github.io/category/html_css/selector/selector-child.html "selector-child")**
 
     .first-child li:first-child{color:red;} /* 첫 번째 자식 요소 선택 */
     li:first-of-type{color:red;} /* li 요소 중 첫번째 li 선택 */
@@ -58,8 +58,8 @@
     .first-child li:nth-child(3),.first-child li:nth-last-child(3){color:orange;}
     li:nth-of-type(3),li:nth-last-of-type(3){color:orange;}
 
-## <a href="#" name="selector-string">selector-string</a>
-**[github.io](http://smilesol85.github.io/+html-css/selector/selector-string.html "selector-string")**
+##<a href="#" name="selector-string">selector-string</a>
+**[github.io](http://smilesol85.github.io/category/html_css/selector/selector-string.html "selector-string")**
 
     /* 첫 번째 문자 선택 */
     .sFl::first-letter{color:red;}

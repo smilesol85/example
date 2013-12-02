@@ -1,11 +1,11 @@
-# box
-1. [border](#border)
-1. [box-sizing](#box-sizing)
-1. [flexbox](#flexbox)
-1. [tablebox](#tablebox)
+#box
+1. [border](#border)  
+1. [box-sizing](#box-sizing)  
+1. [flexbox](#flexbox)  
+1. [tablebox](#tablebox)  
 
-## <a href="#" name="border">border</a>
-**[github.io](http://smilesol85.github.io/+html-css/box/border.html "border")**
+##<a href="#" name="border">border</a>
+**[github.io](http://smilesol85.github.io/category/html_css/box/border.html "border")**
 	
 	/* border-radius */
 	*{border-radius:10px}
@@ -23,8 +23,8 @@
 	*{border-color:red}
 	div{border-bottom-color:red}
 
-## <a href="#" name="box-sizing">box-sizing</a>
-**[github.io](http://smilesol85.github.io/+html-css/box/box-sizing.html "box-sizing")**
+##<a href="#" name="box-sizing">box-sizing</a>
+**[github.io](http://smilesol85.github.io/category/html_css/box/box-sizing.html "box-sizing")**
 
 	/* border를 포함 */
 	.box2{box-sizing:border-box}
@@ -32,8 +32,8 @@
 	/* border를 포함하지 않음 */
 	.box3{box-sizing:content-box}
 
-## <a href="#" name="flexbox">flexbox</a>
-**[github.io](http://smilesol85.github.io/+html-css/box/flexbox.html "flexbox")**
+##<a href="#" name="flexbox">flexbox</a>
+**[github.io](http://smilesol85.github.io/category/html_css/box/flexbox.html "flexbox")**
 
 > flexbox 사용은 box안의 요소들은 `블록 요소`라는 조건이 있다.
 	
@@ -80,8 +80,8 @@
 	.box .oBoxE2{-webkit-box-ordinal-group:1}
 	.box .oBoxE3{-webkit-box-ordinal-group:3}
 
-## <a href="#" name="tablebox">tablebox</a>
-**[github.io](http://smilesol85.github.io/+html-css/box/tablebox.html "tablebox")**
+##<a href="#" name="tablebox">tablebox</a>
+**[github.io](http://smilesol85.github.io/category/html_css/box/tablebox.html "tablebox")**
 
 > display:table-header-group, display:table-footer-group 은
 > 인라인으로 height값이 적용되지 않으며, line-height로 사용한다.
