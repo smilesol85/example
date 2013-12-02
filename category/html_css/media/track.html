@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>track</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
+</head>
+<body>
+<div id="wrap">
+    <script>var titHeader = 'track';</script>
+    <script src="http://smilesol85.github.io/common/header.js"></script>
+    <section>
+        <article>
+            <h2>track</h2>
+            <p>
+                track 태그는 video 태그에 자막을 표시할 때 사용.
+                <br />
+                확장자는 .srt 로 저장 형식을 모든 파일로 선택 후 강제 지정해야 한다.
+                <br />
+                1 <br />
+                00:00:00,000 --> 00:00:03,000<br />
+                &lt;h1&gt;동영상 입니다.&lt;/h1&gt;<br />
+                &lt;p&gt;자막 자막 자&lt;/p&gt;<br />
+                <br />
+                2 <br />
+                00:00:03,000 --> 00:00:10,000<br />
+                &lt;p&gt;자막 자막 자&lt;/p&gt;<br />
+                <span class="impact">반드시 빈줄 다음에 다음 자막 파일을 만들어야 한다.</span>
+            </p>
+            &lt;video width="400" height="100" controls="controls"&gt; <br />
+                &lt;source src="test.mp4" type="video/mp4" /&gt; <br />
+                &lt;source src="test.webm" type="video/webm" /&gt; <br />
+                 <br />
+                &lt;track kind="subtitles" src="track.srt" srclang="ko" label="Korean" /&gt; <br />
+                &lt;track kind="subtitles" src="track.srt" srclang="en" label="English" /&gt; <br />
+                &lt;track kind="subtitles" src="track.srt" srclang="jp" label="Japanese" /&gt; <br />
+                &lt;track kind="subtitles" src="track.srt" srclang="ch" label="Chinese" /&gt; <br />
+            &lt;/video&gt;
+            <p>
+                <span class="impact">현재 사용 가능한 웹브라우저는 없으며  위에서 설명한 <a href="http://videojs.com/">video.js 플러그인</a> 을 이용하면 되겠다.</span>
+            </p>
+        </article>
+    </section>
+    <script src="http://smilesol85.github.io/common/footer.js"></script>
+</div>
+</body>
+</html>
