@@ -6,8 +6,8 @@
 1. [이벤트](#event)  
 
 ##<a href="#" name="javascript">자바스크립트 특징</a>
-* 절차적 프로그래밍(producedural programing) - function 중심  
-* 객체 지향 프로그래밍(object-oriented programing)) - object 중심  
+* function 중심의 절차적 프로그래밍(producedural programing)이다.  
+* object 중심의 객체 지향 프로그래밍(object-oriented programing)이다.  
 * 느슨한 타입 체크 - 타입 캐스팅을 고려하지 않아도 된다.  
 	강력한 타입의 언어에서는 변수를 선언할 때 변수 타입을 선언한다.  
 	값의 타입과 선언된 타입이 일치해야 한다.  
@@ -21,7 +21,6 @@
 * 변수나 데이터 구조안에 담을 수 있다.  
 * 파라미터로 전달 할 수 있다.  
 * 반환값이 될 수 있다.  
-* 할당에 사용된 변수명과 과계없이 고유한 구별이 가능하다.  
 * 비동기적인 처리 등의 구현이 간편하다.  
 
 ---
