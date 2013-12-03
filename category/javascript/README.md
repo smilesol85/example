@@ -61,132 +61,6 @@
 1. [continue](#continue)  
 1. [배열](#array)  
 
----
-
-##<a href="#" name="function_object">함수, 객체</a>  
-
-* 자바스크립트에서 함수는 객체이다.  
-* 변수에 할당될 수 있고, 다른 함수의 인자로 전달 되거나 함수의 결과로써 반환될 수도 있는 `일급 객체(first-class object)`로서의 특징을 가지고 있다.  
-* 함수를 정의하면 모든 함수에는 프로토타입 객체라는 것이 함께 정의된다.  
-
-**일급 객체란?**  
-* 변수나 데이터 구조안에 담을 수 있다.  
-* 파라미터로 전달 할 수 있다.  
-* 반환값이 될 수 있다.  
-* 할당에 사용된 변수명과 과계없이 고유한 구별이 가능하다.  
-* 비동기적인 처리 등의 구현이 간편하다.  
-  
-
-1. [함수 정의](#function)  
-1. [함수 리터럴 이용](#function_literal)  
-1. [프로토타입](#prototype)  
-1. [Function 생성자 사용](#new_function)  
-1. [Function](#Function)  
-1. [자기 호출 함수](#self-invoking)  
-1. [콜백 함수](#callback)  
-1. [클로저](#closer)  
-1. [객체 구성](#object_constructor)  
-1. [객체 생성하기](#create_object)  
-
----
-
-##<a href="#" name="event">이벤트</a>  
-
-###이벤트 핸들러 등록 방법
-		
-* html에 직접 작성  
-* 간단하지만 화면을 구성하는 마크업과 분리되지 않아 권장하지 않는다.  
-		
-```javascript
-/*
-<div onclick="f();">클릭!</div>
-*/
-```
-
-* 프로퍼티 지정을 통해 작성  
-* 다른 곳에서 등록한 이벤트 핸들러를 덮어 쓸 수 있기 때문에 잘 사용하지 않는다.  
-		
-```javascript	
-/*
-<div id="event">클릭!</div>
-*/
-$('.event').onclick = function(){};
-```
-
-* 이벤트 핸들러를 목록에 추가하고 제거하는 방법  
-* 여러가지 이벤트를 등록할 수 있어 가장 많이 사용된다.  
-		
-```javascript
-/*
-<div id="event">클릭!</div>
-*/
-
-$('.event').addEventListener('click', function(){});
-$('.event').addEventListener('click', function(){});
-$('.event').addEventListener('click', function(){});
-$('.event').addEventListener('click', function(){});
-```
-
-###이벤트
-		
-	<body onload="console.log('one');">
-		<script>
-			window.onload = function(){
-				console.log('two');
-			};
-
-			window.addEventListener('load',functiob(){
-				console.log('three');
-			});
-		</script>
-	</body>
-
-	<!-- one은 출력되지 않는다. window.onload 가 덮어쓰기 때문이다. 덮어쓰지 않도록 하기 위해서는 addEventListener를 이용하면 된다.  
-	two
-	three
-	-->
-
----
-
-##<a href="#" name="inheritance">상속</a>  
-		
-```javascript
-function human(name, age){
-	this.name = name;
-	this.age = age;
-}
-
-human.prototype.speak = function(contents){
-	console.log(this.name + ': ' + contents);
-}
-
-player.prototype = new human();
-function player(name, age, salary, record){
-	human.call(this, name, age);
-
-	this.salary = salary;
-	this.record = record;
-}
-
-player.prototype.run = function(){
-	console.log(this.name + ': run!');
-}
-
-var sol = new player('Sol', 30, 999999999999, {win:6, lose:3});
-sol.speak('YEAH~~');  // Sol: YEAH~~
-sol.run();
-
-var boy = new human('boy', 33);
-boy.run();  // Syntax Error
-
-console.log(boy.__proto__);
-console.log(sol.__proto__);
-```
-
----
----
----
-
 ###<a href="#" name="literal">리터럴</a>
 > 특별한 생성자 없이 코드 상에서 데이터 값을 표햔하는 방식
 
@@ -650,7 +524,7 @@ try{
 var txt = '';
 function message(){
 	try{
-		aalert('try');
+		alert('try');
 	}  // try문 에러나면 catch 문에서 에러 체크
 	catch(err){
 		txt += 'error message : ' + err.message +'';
@@ -729,6 +603,34 @@ aFruit.push('apple', 'banana');
 aFruit.splice(1,0,'aaa','bbb');  //1:첫번째 배열 이후, 0:삭제 없음
 document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
 ```
+
+---
+
+##<a href="#" name="function_object">함수, 객체</a>  
+
+* 자바스크립트에서 함수는 객체이다.  
+* 변수에 할당될 수 있고, 다른 함수의 인자로 전달 되거나 함수의 결과로써 반환될 수도 있는 `일급 객체(first-class object)`로서의 특징을 가지고 있다.  
+* 함수를 정의하면 모든 함수에는 프로토타입 객체라는 것이 함께 정의된다.  
+
+**일급 객체란?**  
+* 변수나 데이터 구조안에 담을 수 있다.  
+* 파라미터로 전달 할 수 있다.  
+* 반환값이 될 수 있다.  
+* 할당에 사용된 변수명과 과계없이 고유한 구별이 가능하다.  
+* 비동기적인 처리 등의 구현이 간편하다.  
+  
+
+1. [함수 정의](#function)  
+1. [함수 리터럴 이용](#function_literal)  
+1. [프로토타입](#prototype)  
+1. [Function 생성자 사용](#new_function)  
+1. [Function](#Function)  
+1. [자기 호출 함수](#self-invoking)  
+1. [콜백 함수](#callback)  
+1. [클로저](#closer)  
+1. [객체 구성](#object_constructor)  
+1. [객체 생성하기](#create_object)  
+
 
 ###<a href="#" name="function">함수 정의</a>
 * 함수를 정의하는 것만으로 함수 객체가 생성된다.  
@@ -1012,4 +914,99 @@ var oObject = {
 var oObject = new object();
 oObject.name = 'sol';
 delete oObject.name;
+```
+
+---
+
+##<a href="#" name="event">이벤트</a>  
+
+###이벤트 핸들러 등록 방법
+		
+* html에 직접 작성  
+* 간단하지만 화면을 구성하는 마크업과 분리되지 않아 권장하지 않는다.  
+		
+```javascript
+/*
+<div onclick="f();">클릭!</div>
+*/
+```
+
+* 프로퍼티 지정을 통해 작성  
+* 다른 곳에서 등록한 이벤트 핸들러를 덮어 쓸 수 있기 때문에 잘 사용하지 않는다.  
+		
+```javascript	
+/*
+<div id="event">클릭!</div>
+*/
+$('.event').onclick = function(){};
+```
+
+* 이벤트 핸들러를 목록에 추가하고 제거하는 방법  
+* 여러가지 이벤트를 등록할 수 있어 가장 많이 사용된다.  
+		
+```javascript
+/*
+<div id="event">클릭!</div>
+*/
+
+$('.event').addEventListener('click', function(){});
+$('.event').addEventListener('click', function(){});
+$('.event').addEventListener('click', function(){});
+$('.event').addEventListener('click', function(){});
+```
+
+###이벤트
+		
+	<body onload="console.log('one');">
+		<script>
+			window.onload = function(){
+				console.log('two');
+			};
+
+			window.addEventListener('load',functiob(){
+				console.log('three');
+			});
+		</script>
+	</body>
+
+	<!-- one은 출력되지 않는다. window.onload 가 덮어쓰기 때문이다. 덮어쓰지 않도록 하기 위해서는 addEventListener를 이용하면 된다.  
+	two
+	three
+	-->
+
+---
+
+##<a href="#" name="inheritance">상속</a>  
+		
+```javascript
+function human(name, age){
+	this.name = name;
+	this.age = age;
+}
+
+human.prototype.speak = function(contents){
+	console.log(this.name + ': ' + contents);
+}
+
+player.prototype = new human();
+function player(name, age, salary, record){
+	human.call(this, name, age);
+
+	this.salary = salary;
+	this.record = record;
+}
+
+player.prototype.run = function(){
+	console.log(this.name + ': run!');
+}
+
+var sol = new player('Sol', 30, 999999999999, {win:6, lose:3});
+sol.speak('YEAH~~');  // Sol: YEAH~~
+sol.run();
+
+var boy = new human('boy', 33);
+boy.run();  // Syntax Error
+
+console.log(boy.__proto__);
+console.log(sol.__proto__);
 ```
