@@ -1,22 +1,11 @@
 #자바스크립트  
-1. [자바스크립트?](#what_is_javascript)  
+1. [자바스크립트 특징](#javascript)  
 1. [기본문법](#basic)  
 1. [함수, 객체](#function_object)  
 1. [상속](#inheritance)
 1. [이벤트](#event)  
 
-##<a href="#" name="what_is_javascript">자바스크립트?</a>
-아래와 같은 이유들 때문에 자바스크립트를 낮게 평가한 개발자들이 많았다.  
-
-* 객체를 직접 설계하거나 구현할 필요가 없었다.  
-* 복사해서 붙여넣기만 잘하면 그만이었다.  
-* 자바스크립트를 잘 설명한 표준 문서 또는 심도 있는 도서가 부족하다.  
-* 자바스크립트는 웹 어플리케이션 개발에 있어 보조적인 언어라는 편견이 있었다.  
-
-하지만 통식 방식의 많은 변화로 자바스크립트가 하는 일들이 많아지고,  
-모듈화를 위해 객체지향 기법을 적극 활용하게 되었다.
-
-###자바스크립트 특징  
+##<a href="#" name="javascript">자바스크립트 특징</a>
 * 절차적 프로그래밍(producedural programing) - function 중심  
 * 객체 지향 프로그래밍(object-oriented programing)) - object 중심  
 * 느슨한 타입 체크 - 타입 캐스팅을 고려하지 않아도 된다.  
@@ -24,9 +13,16 @@
 	값의 타입과 선언된 타입이 일치해야 한다.  
 * 다른 언어에 비해 습득하기 쉽다.  
 * 웹 브라우저 스크립트 언어이다.  
-* 제약에 자유로운 first-class object(일급 객체) 이다.  
-* 람다(lamda) 언어이다. 람다 - 익명함수, 클로저 등을 정의하기 위한 표현식  
+* 람다(lamda) 언어이다. 람다는 익명함수, 클로저 등을 정의하기 위한 표현식이다.  
 * ECMAScript 표준을 따른다.  
+* 제약에 자유로운 first-class object(일급 객체) 이다.  
+
+**일급 객체란?**  
+* 변수나 데이터 구조안에 담을 수 있다.  
+* 파라미터로 전달 할 수 있다.  
+* 반환값이 될 수 있다.  
+* 할당에 사용된 변수명과 과계없이 고유한 구별이 가능하다.  
+* 비동기적인 처리 등의 구현이 간편하다.  
 
 ---
 ---
@@ -605,19 +601,14 @@ document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
 ```
 
 ---
+---
+---
 
 ##<a href="#" name="function_object">함수, 객체</a>  
 
 * 자바스크립트에서 함수는 객체이다.  
 * 변수에 할당될 수 있고, 다른 함수의 인자로 전달 되거나 함수의 결과로써 반환될 수도 있는 `일급 객체(first-class object)`로서의 특징을 가지고 있다.  
 * 함수를 정의하면 모든 함수에는 프로토타입 객체라는 것이 함께 정의된다.  
-
-**일급 객체란?**  
-* 변수나 데이터 구조안에 담을 수 있다.  
-* 파라미터로 전달 할 수 있다.  
-* 반환값이 될 수 있다.  
-* 할당에 사용된 변수명과 과계없이 고유한 구별이 가능하다.  
-* 비동기적인 처리 등의 구현이 간편하다.  
   
 
 1. [함수 정의](#function)  
@@ -917,6 +908,47 @@ delete oObject.name;
 ```
 
 ---
+---
+---
+
+##<a href="#" name="inheritance">상속</a>  
+		
+```javascript
+function human(name, age){
+	this.name = name;
+	this.age = age;
+}
+
+human.prototype.speak = function(contents){
+	console.log(this.name + ': ' + contents);
+}
+
+player.prototype = new human();
+function player(name, age, salary, record){
+	human.call(this, name, age);
+
+	this.salary = salary;
+	this.record = record;
+}
+
+player.prototype.run = function(){
+	console.log(this.name + ': run!');
+}
+
+var sol = new player('Sol', 30, 999999999999, {win:6, lose:3});
+sol.speak('YEAH~~');  // Sol: YEAH~~
+sol.run();
+
+var boy = new human('boy', 33);
+boy.run();  // Syntax Error
+
+console.log(boy.__proto__);
+console.log(sol.__proto__);
+```
+
+---
+---
+---
 
 ##<a href="#" name="event">이벤트</a>  
 
@@ -975,38 +1007,5 @@ $('.event').addEventListener('click', function(){});
 	-->
 
 ---
-
-##<a href="#" name="inheritance">상속</a>  
-		
-```javascript
-function human(name, age){
-	this.name = name;
-	this.age = age;
-}
-
-human.prototype.speak = function(contents){
-	console.log(this.name + ': ' + contents);
-}
-
-player.prototype = new human();
-function player(name, age, salary, record){
-	human.call(this, name, age);
-
-	this.salary = salary;
-	this.record = record;
-}
-
-player.prototype.run = function(){
-	console.log(this.name + ': run!');
-}
-
-var sol = new player('Sol', 30, 999999999999, {win:6, lose:3});
-sol.speak('YEAH~~');  // Sol: YEAH~~
-sol.run();
-
-var boy = new human('boy', 33);
-boy.run();  // Syntax Error
-
-console.log(boy.__proto__);
-console.log(sol.__proto__);
-```
+---
+---
