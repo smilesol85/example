@@ -172,7 +172,7 @@ console.log(parseInt(a, 10));  // 5 - 10진수로 반환
 
 ####Math
 > 복잡한 수학 연산을 위해 제공되는 객체이다.  
-> [w3schools](http://www.w3schools.com/jsref/jsref_obj_math.asp, "Math")  
+> [w3schools](http://www.w3schools.com/jsref/jsref_obj_math.asp "Math")  
 		
 ```javascript
 var a = Math.PI;  // 3.141592653589793 (원주율값 : 약 3.14)
