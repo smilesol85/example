@@ -702,6 +702,31 @@ var result = f()(5);  // 5*4*3*2*1 = 120
 var f = function(x,y){
 	return x + y;
 };
+
+//
+var cont = function(){
+	this.a = 10;
+	this.b = 20;
+}
+
+cont.prototype = {
+	Plus : function(){
+		return this.a + this.b;
+	}
+}
+
+var Cont = new cont();
+
+cont.a;  // undefined
+Cont.a;  // 10
+Cont.Plus();  // 30
+
+Cont.Plus = function(){
+	return 50;
+}
+
+Cont.Plus();  // 50
+
 ```
 
 ###<a href="#" name="prototype">프로토타입</a>  
