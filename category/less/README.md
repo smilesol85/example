@@ -1,8 +1,8 @@
 #less
 
 정의 방법
-> <link rel="stylesheet/`less`" type="text/css" href="styles.`less`">  
-	<script src="less.js" type="text/javascript"></script>  
+> `<link rel="stylesheet/`less`" type="text/css" href="styles.`less`">`  
+	`<script src="less.js" type="text/javascript"></script>`  
 	
 
 1. [변수](#var)  
