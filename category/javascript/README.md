@@ -35,7 +35,7 @@
 * 숫자, 문장 부호, 예약어(키워드)로 시작할 수 없다.  
 * 문자, 숫자, $, _ 만 포함할 수 있다.  
 * 대소문자를 구분한다.  
-	
+
 
 1. [리터럴](#literal)  
 1. [변수](#variable)  
@@ -89,7 +89,7 @@ console.log(nNum);  // 1 - window 생략 가능
 console.log(this === window);  // true
 ```
 
-> 파싱 단계에서 var로 선언된 변수는 호이스팅(제일 상단으로 올라간다.)이 되어 undefined 상태에서  
+> 파싱 단계에서 var로 선언된 변수는 호이스팅(제일 상단으로 올라가는 undefined로 되는것을 말한다.) 되어 undefined 상태에서  
 > 변수 선언된 곳을 만나게 되면 그 때 초기값이 할당된다.
 	
 ```javascript
@@ -118,7 +118,7 @@ alert(f);  // 0
 
 > 파싱 단계에서 변수와 함수명의 이름이 같은 경우 동일한 메모리에 저장되는데  
 > 저장될 때 앞에서 선언된 변수 메모리에 덮어쓰게 된다.  
-> 따라서 네임스페이스가 필요하다.  
+> 따라서 `네임스페이스`가 필요하다.  
 
 ###<a href="#" name="data-type">데이터 타입</a>
 * 데이터 타입으로는 number, string, boolean, null, undefined 가 있다.  
@@ -172,7 +172,7 @@ console.log(parseInt(a, 10));  // 5 - 10진수로 반환
 
 ####Math
 > 복잡한 수학 연산을 위해 제공되는 객체이다.  
-> [w3schools](#http://www.w3schools.com/jsref/jsref_obj_math.asp, "Math")  
+> [w3schools](http://www.w3schools.com/jsref/jsref_obj_math.asp, "Math")  
 		
 ```javascript
 var a = Math.PI;  // 3.141592653589793 (원주율값 : 약 3.14)
@@ -187,7 +187,7 @@ var h = Math.floor(Math.random() * 10);  // 0초과 10미만의 숫자중 소수
 
 ####Number
 > 데이터 타입의 숫자를 객체로 만들 수 있다.  
-> [w3schools](#http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")
+> [w3schools](http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")
 		
 ```javascript
 var a = new Number(15);
