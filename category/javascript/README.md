@@ -727,6 +727,20 @@ Cont.Plus = function(){
 
 Cont.Plus();  // 50
 
+// arguments 활용하는 방법
+var cont = function(){this.init.apply(this, arguments)};
+cont.prototype = {
+	init : function(a, b){
+		this.a = a;
+		this.b = b;
+	},
+
+	Plus : function(){
+		return this.a + this.b;
+	}
+};
+
+var Cont = new cont(10, 20);
 ```
 
 ###<a href="#" name="prototype">프로토타입</a>  
