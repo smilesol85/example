@@ -618,6 +618,7 @@ document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
 1. [자기 호출 함수](#self-invoking)  
 1. [콜백 함수](#callback)  
 1. [클로저](#closer)  
+1. [클래스 기반의 객체지향](#class_object)  
 1. [객체 구성](#object_constructor)  
 1. [객체 생성하기](#create_object)  
 
@@ -917,6 +918,10 @@ g();  // 3
 g();  // 4
 ```
 
+###<a href="#" name="class_object">클래스 기반의 객체지향</a>
+객체 : 세상의 모든 것은 객체로 객체지향 언어느는 이러한 객체를 표현할 수 있다.  
+클래스 : 비슷한 객체끼리 그룹핑 한 것을 말한다.  
+
 ###<a href="#" name="object_constructor">객체 구성</a>  
 * 자바스크립트 내장 객체(Built-in Object)  
 	자바스크립트 엔진이 구동되는 시점에 제공된다.  
@@ -933,6 +938,15 @@ g();  // 4
 * constructor 이용 - 동일한 구성을 가진 여러 객체 생성 가능  
 		
 ```javascript
+// new와 Object 생성자 이용
+new Object();
+
+// 객체 리터럴 이용
+{};
+
+// new와 사용자 정의 생성자 이용
+new Person();
+
 var oObject = new function();
 oObject.name = 'smilesol';
 ```  
