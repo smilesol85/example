@@ -519,7 +519,7 @@ try{
 var txt = '';
 function message(){
 	try{
-		alert('try');
+		aalert('try');
 	}  // try문 에러나면 catch 문에서 에러 체크
 	catch(err){
 		txt += 'error message : ' + err.message +'';
@@ -626,7 +626,7 @@ document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
 * 함수를 정의하는 것만으로 함수 객체가 생성된다.  
 * 일반 객체와 다르게 `실행 코드 블록`을 가지고 있다.  
 * 일반 객체와 같이 동적으로 멤버를 가질 수 있다.
-* 파싱 단계에서는 함수명인 add가 정의된다.  
+* 파싱 단계에서는 함수명이 정의된다.  
 * 함수를 호출하면 런타임에 함수 내부가 실행된다.  
 * 함수를 다른 변수에 할당할 수 있다.  
 		
@@ -722,7 +722,7 @@ var f = function(x,y){
 
 ###<a href="#" name="new_function">Function 생성자 사용</a>
 * new와 함께 사용된다.  
-* 다른 인스턴스를 생성할 수 있는 요소  
+* 다른 인스턴스를 생성할 수 있는 요소이다.  
 * `메모리 사용이 비효율적`이다.  
 		
 ```javascript
@@ -861,6 +861,13 @@ alert(global());  // g
 * 클로저를 호출하는 것은 `클로저 인스턴스를 생성`하는 것이다.
 		
 ```javascript
+function out(){
+	var x = 0;
+	return function (){
+		return ++x;
+	}
+}
+
 var f = out();  // out의 인스턴스 생성
 f();  // 1
 f();  // 2
