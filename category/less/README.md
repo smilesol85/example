@@ -1,7 +1,7 @@
 #less
 
 정의 방법
-> `<link rel="stylesheet/`less`" type="text/css" href="styles.`less`">`  
+> `<link rel="stylesheet/less" type="text/css" href="styles.less">`  
 	`<script src="less.js" type="text/javascript"></script>`  
 	
 
