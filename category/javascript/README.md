@@ -1034,23 +1034,15 @@ var sum = new f();
 sum.sum2();  // 30
 ```
 
-####생성자 멤버
+####생성자 멤버  
 		
 ```javascript
 function f(){
-	
+		
 }
 
-var add = new f();
-
-add.a = 10;
-add.b = 20;
-add.c = function(){
-	return this.a + this.b;
-}
-
-add.a;  // 10
-add.c();  // 30
+f.a = 10;
+f.c = function(){};
 ```
 
 ---
