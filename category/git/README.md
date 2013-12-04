@@ -3,7 +3,8 @@
 1. [SVN과 GIT의 차이](#svn_git)  
 1. [GIT의 로컬에서는 무슨 일이?](#local_computer)  
 1. [용어](#word)  
-1. [윈도우에 GIT 설치](#setup)  
+1. [윈도우에 GIT 설치](#setup_window)  
+1. [맥에 GIT 설치](#setup_mac)  
 1. [git 설치 후 사용하려면?](#use)  
 1. [로컬 저장소에서 작업 완료 후 원격 저장소에 반영하기](#local)  
 1. [로컬에서 새로운 branch 생성 후 작업하기](#branch)  
@@ -28,7 +29,7 @@ SVN - 원격 저장소가 폭발해 버리면 복원이 어렵다. / `GIT - 원�
 	로컬 컴푸터의 작업트리에는 .git/ 이라는 디렉토리에 존재한다.  
 	.git/ 디렉토리에서는 모든 히스토리를 저장한다.      
 	이로 인해 저장소의 수정 내용을 서버의 저장소와 통신 없이 확인 가능한 것이다.  
-* 스테이지 또는 인덱스 공간  
+* 스테이지  
 	로컬 저장소에 저장하기 전 꼭 거쳐야 하는 공간이다.  
 * 로컬 저장소. 즉, 최종 코드 저장소(HEAD)  
 
@@ -46,12 +47,15 @@ SVN - 원격 저장소가 폭발해 버리면 복원이 어렵다. / `GIT - 원�
 	git이 복사해 온 저장소를 가리키기 위해 기본적으로 사용하는 이름이다.  
 	서버의 별명 정도로 기억하면 되겠다.  
 
-##<a href="#" name="setup">윈도우에 git 설치</a>  
-1. [msysgit 설치](https://code.google.com/p/msysgit/downloads/list "msysgit 설치")  
-	이제 git을 사용할 수 있다.  
-	조금 더 편리하고 익숙한 UI이로 사용하기 위해 아래 tortoiseGIT을 설치해 보자.  
-1. [tortoiseGit 설치 - window 탐색기 존재 필수](https://code.google.com/p/tortoisegit/ "tortoiseGit 설치")  
-	윈도우 탐색기에서 클릭만으로 편리하게 사용 가능하다.  
+##<a href="#" name="setup_window">윈도우에 git 설치</a>  
+[다운로드](http://git-scm.com/download/win "윈도우용 git 다운로드")  
+다운로드 후 설치 했다면 git을 사용할 수 있다.  
+조금 더 편리하고 익숙한 UI이로 git을 작업하기 위해 아래 tortoiseGIT을 설치해 보자.  
+[tortoiseGit 설치 - window 탐색기 존재 필수](https://code.google.com/p/tortoisegit/ "tortoiseGit 설치")  
+윈도우 탐색기에서 클릭만으로 편리하게 사용 가능하다.  
+
+##<a href="#" name="setup_mac">맥에 git 설치</a>  
+[다운로드](http://git-scm.com/download/mac "맥용 git 다운로드")  
 
 ##<a href="#" name="use">git 설치 후 사용하려면?</a>  
 * GUI Clients 사용([GUI Clients 리스트](http://git-scm.com/downloads/guis "GUI Clients로 이동"))  
