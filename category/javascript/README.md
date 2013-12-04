@@ -969,7 +969,35 @@ oObject.name = 'sol';
 delete oObject.name;
 ```
 
-###<a href="#" name="member_object">객체 멤버 관리</a>
+###<a href="#" name="member_object">객체 멤버 관리</a>  
+
+####hasOwnProperty 메서드  
+Object 객체에 멤버가 있는지 확인할 수 있다.  
+단, toString과 같이 원래 멤버에 대해서는 작동하지 않는다.  
+		
+```javascript
+var food = {
+	apple : 5
+};
+hasProperty = food.hasOwnProperty('apple');  // true
+hasProperty2 = food.hasOwnProperty('toString');  // false
+```
+
+###in 연산자  
+Object 객체에 멤버가 있는지 확인할 수 있다.  
+단, toString과 같이 원래 멤버에 대해서는 작동한다.  
+		
+```javascript
+var food = {
+	banana : 10
+}
+
+'banana' in food;  // true
+// 숫자는 인덱스로 판단하여 인덱스에 해당 요소를 검사한다.
+0 in food;  // true
+1 in food;  // false
+'toString' in food;  // true
+```
 
 ####비공개 멤버
 		
