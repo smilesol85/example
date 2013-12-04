@@ -621,6 +621,7 @@ document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
 1. [클래스 기반의 객체지향](#class_object)  
 1. [객체 구성](#object_constructor)  
 1. [객체 생성하기](#create_object)  
+1. [객체 멤버 관리](#member_object)  
 
 
 ###<a href="#" name="function">함수 정의</a>
@@ -934,7 +935,7 @@ g();  // 4
 
 > 모든 객체는 내장 객체의 최상위 레벨인 Object 객체에서 파생된 것이다.  
 
-##<a href="#" name="create_object">객체 생성하기</a>  
+###<a href="#" name="create_object">객체 생성하기</a>  
 * constructor 이용 - 동일한 구성을 가진 여러 객체 생성 가능  
 		
 ```javascript
@@ -949,6 +950,7 @@ new Person();
 
 var oObject = new function();
 oObject.name = 'smilesol';
+oObject['name'] = 'smilesol';
 ```  
 
 * 객체 리터럴 이용 - 단일 객체로만 활용  
@@ -965,6 +967,90 @@ var oObject = {
 var oObject = new object();
 oObject.name = 'sol';
 delete oObject.name;
+```
+
+###<a href="#" name="member_object">객체 멤버 관리</a>
+
+####<a href="#" name="private">비공개 멤버</a>
+		
+```javascript
+function f(){
+	// 비공개 속성
+	var nNum = 0;
+
+	// 비공개 메소드
+	function getProfile(){}
+}
+```
+
+####<a href="#" name="instance">인스턴스 멤버</a>
+		
+```javascript
+function f(name, age){
+	// 인스턴스 속성
+	this.name = name;
+	this.age = age;
+
+	// 인스턴스 메소드
+	this.profile = function(){
+		return this.name + this.age;
+	};
+}
+
+var F = new f('sol', '30');
+
+// F.name = 'smilesol85';
+// F.age = '29';
+F.profile();
+```
+
+####<a href="#" name="prototype">프로토타입 멤버</a>
+		
+```javascript
+function f(a, b){
+	this.a = 10;
+	this.b = 20;
+}
+
+f.prototype = {
+	// 프로토타입 속성
+	c : 40,
+
+	// 프로토타입 멤버
+	sum : function(){
+		return this.c;
+	},
+
+	sum2 : function(){
+		return this.a + this.b;
+	}
+};
+
+f.prototype.c;  // 40
+f.prototype.sum();  // 40
+
+var sum = new f();
+
+sum.sum2();  // 30
+```
+
+####<a href="#" name="constructor">생성자 멤버</a>
+		
+```javascript
+function f(){
+	
+}
+
+var add = new f();
+
+add.a = 10;
+add.b = 20;
+add.c = function(){
+	return this.a + this.b;
+}
+
+add.a;  // 10
+add.c();  // 30
 ```
 
 ---
