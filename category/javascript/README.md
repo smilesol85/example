@@ -971,7 +971,7 @@ delete oObject.name;
 
 ###<a href="#" name="member_object">객체 멤버 관리</a>
 
-####<a href="#" name="private">비공개 멤버</a>
+####비공개 멤버
 		
 ```javascript
 function f(){
@@ -983,7 +983,7 @@ function f(){
 }
 ```
 
-####<a href="#" name="instance">인스턴스 멤버</a>
+####인스턴스 멤버
 		
 ```javascript
 function f(name, age){
@@ -1004,7 +1004,7 @@ var F = new f('sol', '30');
 F.profile();
 ```
 
-####<a href="#" name="prototype">프로토타입 멤버</a>
+####프로토타입 멤버
 		
 ```javascript
 function f(a, b){
@@ -1034,7 +1034,7 @@ var sum = new f();
 sum.sum2();  // 30
 ```
 
-####<a href="#" name="constructor">생성자 멤버</a>
+####생성자 멤버
 		
 ```javascript
 function f(){
