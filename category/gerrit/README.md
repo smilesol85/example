@@ -16,7 +16,8 @@ gerrit 설치 진행시 데이터를 저장할 database와 인증방법을 선�
 * Database 셋팅 : H2(gerrit 내장), MySQL, PostgreSQL  
 
 ##<a href="#" name="setup_gerrit">gerrit 설치</a>  
-[gerrit 설치](https://code.google.com/p/gerrit/downloads/list "gerrit 설치")  
+1. [gerrit 다운로드](http://gerrit-releases.storage.googleapis.com/index.html "gerrit 다운로드")  
+1. `> java -jar 다운받은gerrit.war경로 init -d 설치경로`  
 
 ##<a href="#" name="software">코드 리뷰 소프트웨어</a>  
 * [mondrian](https://code.google.com/p/rietveld/downloads/detail?name=Mondrian2006.pdf "mondrian")  
