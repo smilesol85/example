@@ -1,4 +1,5 @@
 #git?
+[http://git-scm.com/](http://git-scm.com/)
 
 1. [SVN과 GIT의 차이](#svn_git)  
 1. [GIT의 로컬에서는 무슨 일이?](#local_computer)  
