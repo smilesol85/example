@@ -951,6 +951,16 @@ new Person();
 var oObject = new function();
 oObject.name = 'smilesol';
 oObject['name'] = 'smilesol';
+
+// new 선언시 일어나는 일들
+// 첫번째
+var oObject = {};
+
+// 두번째
+oObject.__proto__ = function.prototype;
+
+// 세번째
+function.call(oObject);
 ```  
 
 * 객체 리터럴 이용 - 단일 객체로만 활용  
@@ -1060,6 +1070,9 @@ f.prototype.sum();  // 40
 var sum = new f();
 
 sum.sum2();  // 30
+
+// 프로토타입 체인 끊기
+A.prototype = null;
 ```
 
 ####생성자 멤버  
