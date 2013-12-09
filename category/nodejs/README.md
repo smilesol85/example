@@ -37,5 +37,5 @@ nodejs 특징
 		});
 		```
 
-	웹브라우저에서 `http://127.0.0.1:52273` 입력 후 Hello World2 출력된 것 확인  
+	콘솔창에서 `> node node.server.js` 입력 후 웹브라우저에서 `http://127.0.0.1:52273` 입력 후 Hello World2 출력된 것 확인  
 
