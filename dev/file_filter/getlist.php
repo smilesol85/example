@@ -1,4 +1,10 @@
 <?php
+// TO DO
+/*
+- branches가 있는지 || trunk
+- css json
+*/
+
 $pathRoot = './';  // root 경로
 
 class GetFile{
