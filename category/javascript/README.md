@@ -930,12 +930,12 @@ g();  // 4
 * 브라우저 내장 객체(Native Object)  
 	브라우저 자바스크립트 엔진을 구동하는 곳에서 제공하는 객체이다.  
 	`브라우저객체모델(BOM)`, `문서객체모델(DOM)`이 있다.  
-		* 문서 객체 모델(DOM - Document Object Model)  
-			HTML과 XML 문서를 조작하고 나타내는 문서이다.  
-			노드(부모, 자식, 형제 등)별로 계층을 이루고 있다.  
-		* 브라우저 객체 모델(BOM - Browser Object Model)  
-			브라우저에서 제공하는 객체의 집합이다.  
-			window. location, navigator, history, screen, docuemnt 등이 있다.  
+	* 문서 객체 모델(DOM - Document Object Model)  
+		HTML과 XML 문서를 조작하고 나타내는 문서이다.  
+		노드(부모, 자식, 형제 등)별로 계층을 이루고 있다.  
+	* 브라우저 객체 모델(BOM - Browser Object Model)  
+		브라우저에서 제공하는 객체의 집합이다.  
+		window. location, navigator, history, screen, docuemnt 등이 있다.  
 * 사용자 정의 객체(Host Object)  
 	사용자가 객체를 정의하고 확장시킨 객체이다.  
 
