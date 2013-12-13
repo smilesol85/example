@@ -1,7 +1,8 @@
 #Word
 
-1. [객체 지향 프로그래밍](#OOP)
-1. [타입 캐스팅](#type-casting)
+1. [객체 지향 프로그래밍](#OOP)  
+1. [타입 캐스팅](#type-casting)  
+1. [테스트 주도 개발(TDD, Test Driven Development)](#tdd)  
 
 ##<a href="#" name="OOP">객체 지향 프로그래밍</a>  
 # 사물 추상화(Abstraction)  
@@ -15,9 +16,5 @@
 ##<a href="#" name="type-casting">타입 캐스팅</a>  
 타입 캐스팅이란 특정 데이터타입을 다른 데이터타입으로 변환하는 것이다.  
 
----
----
----
-
-##테스트 주도 개발(TDD, Test Driven Development)  
-	문제를 정의(사용자 중심의 스펙)하고 해답을 찾아가는 과정이다.  
+##<a href="#" name="tdd">테스트 주도 개발(TDD, Test Driven Development)</a>  
+문제를 정의(사용자 중심의 스펙)하고 해답을 찾아가는 과정이다.  
