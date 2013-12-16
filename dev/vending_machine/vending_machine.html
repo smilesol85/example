@@ -10,8 +10,8 @@
 <script src="http://smilesol85.github.io/common/jquery.js"></script>
 <script type="text/javascript" src="js/vending_machine.js"></script>
 <script type="text/javascript" src="js/models.js"></script>
-<script type="text/javascript" src="js/controllers.js"></script>
 <script type="text/javascript" src="js/views.js"></script>
+<script type="text/javascript" src="js/controllers.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -22,9 +22,9 @@
             <div class="vending_machine">
                 <div><label for="balance">잔액</label> <input type="text" id="balance" disabled="disabled"> won</div>
                 <ul class="snack">
-                <li class="snack_300">candy) 300won <button type="button" data-won="300" class="btn_get">GET!</button></li>
-                <li class="snack_700">chocolate) 700won <button type="button" data-won="700" class="btn_get">GET!</button></li>
-                <li class="snack_1,500">milk) 1,500won <button type="button" data-won="1,500" class="btn_get">GET!</button></li>
+                <li class="snack_300">candy) 300won <button type="button" data-won="300" data-snack="candy" class="btn_get">GET!</button></li>
+                <li class="snack_700">chocolate) 700won <button type="button" data-won="700" data-snack="chocolate" class="btn_get">GET!</button></li>
+                <li class="snack_1500">milk) 1,500won <button type="button" data-won="1500" data-snack="milk" class="btn_get">GET!</button></li>
                 </ul>
                 <div class="output"></div>
             </div>
