@@ -7,11 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
 <link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
 <link rel="stylesheet" type="text/css" href="css/vending_machine.css">
-<script src="http://smilesol85.github.io/common/jquery.js"></script>
-<script type="text/javascript" src="js/vending_machine.js"></script>
-<script type="text/javascript" src="js/models.js"></script>
-<script type="text/javascript" src="js/views.js"></script>
-<script type="text/javascript" src="js/controllers.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -20,33 +15,28 @@
     <div id="content">
         <section>
             <div class="vending_machine">
-                <div><label for="balance">잔액</label> <input type="text" id="balance" disabled="disabled"> won</div>
-                <ul class="snack">
-                <li class="snack_300">candy) 300won <button type="button" data-won="300" data-snack="candy" class="btn_get">GET!</button></li>
-                <li class="snack_700">chocolate) 700won <button type="button" data-won="700" data-snack="chocolate" class="btn_get">GET!</button></li>
-                <li class="snack_1500">milk) 1,500won <button type="button" data-won="1500" data-snack="milk" class="btn_get">GET!</button></li>
-                </ul>
-                <div class="output"></div>
+                <div><label for="balance">잔액</label> <input type="text" id="balance" disabled="disabled"> ￦</div>
+                <ul class="product"></ul>
+                <div class="console"></div>
             </div>
             <div class="person">
                 <div class="message">
                     <div class="name">Steve Jobs :)</div>
                     <strong>I am rich! Eat freely!</strong>
                 </div>
-                <div class="wallet">
-                    <button type="button" data-won="100" class="won_100">100won</button>
-                    <button type="button" data-won="500" class="won_500">500won</button>
-                    <button type="button" data-won="1000" class="won_1000">1,000won</button>
-                </div>
+                <div class="wallet"></div>
             </div>
         </section>
     </div>
     <script src="http://smilesol85.github.io/common/footer.js"></script>
 </div>
+<script src="http://smilesol85.github.io/common/jquery.js"></script>
+<script type="text/javascript" src="js/namespace.js"></script>
+<script type="text/javascript" src="js/model.Operate.js"></script>
+<script type="text/javascript" src="js/view.Items.js"></script>
+<script type="text/javascript" src="js/controller.VendingMachine.js"></script>
 <script>
-var oVendingModels = new vending.models();
-var oVendingControlls = new vending.controlls();
-var oVendingViews = new vending.views();
+var oVendingMachine = new controller.VendingMachine();
 </script>
 </body>
 </html>

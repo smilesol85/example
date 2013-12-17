@@ -2,7 +2,6 @@
 
 .vending_machine{
 	position:relative;
-	width:300px;
 	padding:10px;
 	border:1px solid rgba(0,0,0,0.5);
 	background-color:rgba(241,241,241,1);
@@ -14,26 +13,31 @@
 	font-size:18px;
 }
 
-.vending_machine .output{
+.vending_machine .console{
 	overflow-y:scroll;
 	width:100%;
 	height:200px;
+	border:1px solid rgba(0,0,0,0.5);
 	background-color:rgba(0,0,0,0.1);
 	font-size:12px;
 }
 
-.vending_machine .snack{
+.vending_machine .product{
 	padding:5px;
 	text-align:center;
 }
 
-.vending_machine .snack li{
-	margin:5px 0;
-	padding:10px;
+.vending_machine .product li{
+	float:left;
+	width:100px;
+	margin:5px;
+	padding:5px;
 	border:1px solid rgba(0,0,0,0.5);
+	border-radius:4px;
 }
 
-.vending_machine .snack .btn_get{
+.vending_machine .product .btn_get{
+	margin-top:2px;
 	padding:2px 5px;
 	border:1px solid rgba(0,0,0,0.5);
 	background-color:rgba(247,57,58,1);

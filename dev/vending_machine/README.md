@@ -1,7 +1,7 @@
 #vending_machine
 **[github.io](http://smilesol85.github.io/dev/vending_machine/vending_machine.html "vending_machine")**
 
-아래의 목적을 충족해야 한다.
+##명세  
 1. 현재 금액 상태를 볼 수 있다.  
 1. 100원, 500원, 1,000원을 넣을 수 있다.  
 1. 동전을 넣으면 현재 금액 상태가 바뀐다.  
