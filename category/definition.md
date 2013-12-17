@@ -6,6 +6,7 @@
 1. [MVC](#mvc)  
 1. [web MVC](#web_mvc)  
 1. [MVP](#mvp)  
+1. [MVVM](#mvvm)  
 
 ##<a href="#" name="OOP">객체 지향 프로그래밍</a>  
 # 사물 추상화(Abstraction)  
@@ -35,3 +36,8 @@ Model(data), View, Controller
 Mpdel, View, Precenter  
 
 > input -> V -> P -> M -> P -> V -> P  
+
+##<a href="#" name="mvvm">MVVM</a>  
+
+> input -> V -> VM -> M -> VM  
+
