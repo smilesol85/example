@@ -13,7 +13,8 @@ vending.models.prototype = {
 		sDeadline = '5만원 까지만 넣을 수 있어요 :)';
 		sWantMoney = '돈을 더 넣어야 먹지~!';
 	},
-
+	
+	// TODO : controll
 	getElements : function(){
 		welBalance = $('#balance');
 		welOutput = $('.output');
@@ -23,7 +24,8 @@ vending.models.prototype = {
 		welWon1000 = $('.won_1000');
 		welButtonSnak = $('.snack button');
 	},
-
+	
+	// TODO : view
 	setVending : function(nCoin, sOutput){
 		welBalance.attr('value', nCoin);
 		welOutput.prepend('<p>'+sOutput+'</p>');
