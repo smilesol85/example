@@ -9,15 +9,3 @@
 1. 음료를 뽑을 시 잔액 확인 및 잔액 부족을 확인할 수 있다.  
 1. 음료 금액보다 현재 금액이 클때 음료를 뽑을 수 있다.  
 1. 돈은 5만원까지 넣을 수 있다.  
-
-##MVC  
-Model(data), View, Controller  
-
-##wev MVC  
-* spring (java)  
-* codeigniter (php)  
-
-> C -> M -> C -> V -> C  
-
-##MVP
-Mpdel, View, Precenter

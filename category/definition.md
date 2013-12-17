@@ -3,6 +3,9 @@
 1. [객체 지향 프로그래밍](#OOP)  
 1. [타입 캐스팅](#type-casting)  
 1. [테스트 주도 개발(TDD, Test Driven Development)](#tdd)  
+1. [MVC](#mvc)  
+1. [web MVC](#web_mvc)  
+1. [MVP](#mvp)  
 
 ##<a href="#" name="OOP">객체 지향 프로그래밍</a>  
 # 사물 추상화(Abstraction)  
@@ -18,3 +21,15 @@
 
 ##<a href="#" name="tdd">테스트 주도 개발(TDD, Test Driven Development)</a>  
 문제를 정의(사용자 중심의 스펙)하고 해답을 찾아가는 과정이다.  
+
+##<a href="#" name="mvc">MVC</a>  
+Model(data), View, Controller  
+
+##<a href="#" name="web_mvc">web MVC</a>  
+* spring (java)  
+* codeigniter (php)  
+
+> C -> M -> C -> V -> C  
+
+##<a href="#" name="mvp">MVP</a>  
+Mpdel, View, Precenter  
