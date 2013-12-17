@@ -29,7 +29,9 @@ Model(data), View, Controller
 * spring (java)  
 * codeigniter (php)  
 
-> C -> M -> C -> V -> C  
+> input -> C / C -> V / C -> M / M -> V
 
 ##<a href="#" name="mvp">MVP</a>  
 Mpdel, View, Precenter  
+
+> input -> V -> P -> M -> P -> V -> P  
