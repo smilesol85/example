@@ -1,21 +1,21 @@
 vending.views.prototype = {
 	init : function(){
-		this._inputWon();
+		this._inputCoin();
 		this._pushGet();
 	},
 
-	_inputWon : function(){
+	_inputCoin : function(){
 		welButtonWalet.on('click', function(){
 			var addWon = $(this).attr('data-won');
 			var nAddWon = parseInt(addWon, 10);
-			nWon += nAddWon;
-			if(nWon > nMaxWon){
+			nCoin += nAddWon;
+			if(nCoin > nMaxCoin){
 				sResult = sDeadline;
-				nWon -= nAddWon;
+				nCoin -= nAddWon;
 			}else{
 				sResult = ' 넣었군요';
 			}
-			oVendingControlls._addWon(nAddWon, nWon, sResult);
+			oVendingControlls.addCoin(nAddWon, nCoin, sResult);
 		});
 	},
 
@@ -24,14 +24,14 @@ vending.views.prototype = {
 			var getSnack = $(this).attr('data-won');
 			var nameSnack = $(this).attr('data-snack');
 			var nGetSnack = parseInt(getSnack, 10);
-			nWon -= nGetSnack;
-			if(nWon < 0){
+			nCoin -= nGetSnack;
+			if(nCoin < 0){
 				sResult = sWantMoney;
-				nWon += nGetSnack;
+				nCoin += nGetSnack;
 			}else{
 				sResult = nameSnack+' 나왔다!';
 			}
-			oVendingControlls._getSnack(getSnack, nWon, sResult);	
+			oVendingControlls.buy(getSnack, nCoin, sResult);	
 		});
 	}
 };

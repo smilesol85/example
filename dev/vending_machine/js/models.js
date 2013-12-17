@@ -2,12 +2,12 @@ vending.models.prototype = {
 	init : function(){
 		this._defaultValue();
 		this.getElements();
-		this._setVending(nWon, sOutput);
+		this.setVending(nCoin, sOutput);
 	},
 
 	_defaultValue : function(){
-		nWon = 0;
-		nMaxWon = 50000;
+		nCoin = 0;
+		nMaxCoin = 50000;
 		sResult = null;
 		sOutput = '돈 넣으면 먹을 수 있지롱~!';
 		sDeadline = '5만원 까지만 넣을 수 있어요 :)';
@@ -24,8 +24,8 @@ vending.models.prototype = {
 		welButtonSnak = $('.snack button');
 	},
 
-	_setVending : function(nWon, sOutput){
-		welBalance.attr('value', nWon);
+	setVending : function(nCoin, sOutput){
+		welBalance.attr('value', nCoin);
 		welOutput.prepend('<p>'+sOutput+'</p>');
 	}
 };

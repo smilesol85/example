@@ -1,9 +1,9 @@
 vending.controlls.prototype = {
-	_addWon : function(changeWon, nWon, sResult){
-		oVendingModels._setVending(nWon, changeWon+'won '+sResult);
+	addCoin : function(changeWon, nCoin, sResult){
+		oVendingModels.setVending(nCoin, changeWon+'won '+sResult);
 	},
 
-	_getSnack : function(changeWon, nWon, sResult){
-		oVendingModels._setVending(nWon, sResult);	
+	buy : function(changeWon, nCoin, sResult){
+		oVendingModels.setVending(nCoin, sResult);	
 	}
 };
