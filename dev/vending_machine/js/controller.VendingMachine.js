@@ -4,6 +4,7 @@ controller.VendingMachine = function(){
 
 controller.VendingMachine.prototype = {
 	init : function(){
+		this.unit = '원';
 		this.nCoin = 0;
 		this.nMinCoin = 0;
 		this.nMaxCoin = 50000;
@@ -12,13 +13,18 @@ controller.VendingMachine.prototype = {
 
 		this.getElements();
 
-		this.oOperate = new model.Operate(this.nCoin, this.nMinCoin, this.nMaxCoin, this.sShortage, this.sDeadline);
+		this.oOperate = new model.Operate(this.unit, this.nCoin, this.nMinCoin, this.nMaxCoin, this.sShortage, this.sDeadline);
 		this.oItems = new view.Items();
+
+		this.getUnit = this.oOperate.getUnit();
+		this.getCoin = this.oOperate.getCoin();
+		this.getMessage = this.oOperate.getMessage();
 
 		this.listProduct();
 		this.listMoney();
+		this._setEvents();
 
-		this.oItems.setVendingMachine(this.oOperate.getCoin(), this.oOperate.getMessage());
+		this.oItems.setVendingMachine(this.getCoin, this.getMessage);
 	},
 
 	getElements : function(){
@@ -35,7 +41,7 @@ controller.VendingMachine.prototype = {
 			milk : 1500
 		};
 
-		this.oItems._setProduct(product);
+		this.oItems._setProduct(this.getUnit, product);
 	},
 
 	listMoney : function(){
@@ -45,7 +51,17 @@ controller.VendingMachine.prototype = {
 			money_1000 : 1000
 		};
 
-		this.oItems._setMoney(money);
+		this.oItems._setMoney(this.getUnit, money);
+	},
+
+	_setEvents : function(){
+		oSelf = this;
+		$(document).ready(function(){
+			welWalet.find('button').on('click', function(){
+				this.inputMoney = $(this).attr('data-Price');
+				oSelf.oOperate.addCoin(this.inputMoney);
+			});
+		});
 	}
 };
 

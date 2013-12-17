@@ -1,14 +1,19 @@
-model.Operate = function(nCoin, nMinCoin, nMaxCoin, sShortage, sDeadline){
-	this.init(nCoin, nMinCoin, nMaxCoin, sShortage, sDeadline);
+model.Operate = function(unit, nCoin, nMinCoin, nMaxCoin, sShortage, sDeadline){
+	this.init(unit, nCoin, nMinCoin, nMaxCoin, sShortage, sDeadline);
 };
 
 model.Operate.prototype = {
-	init : function(nCoin, nMinCoin, nMaxCoin, sShortage, sDeadline){
+	init : function(unit, nCoin, nMinCoin, nMaxCoin, sShortage, sDeadline){
+		this.unit = unit;
 		this.nCoin = nCoin;
 		this.nMinCoin = nMinCoin;
 		this.nMaxCoin = nMaxCoin;
 		this.sShortage = sShortage;
 		this.sDeadline = sDeadline;
+	},
+
+	getUnit : function(){
+		return this.unit;
 	},
 
 	getCoin : function(){
@@ -17,6 +22,11 @@ model.Operate.prototype = {
 
 	getMessage : function(){
 		return this.sDeadline;
+	},
+
+	addCoin : function(inputMoney){
+		this.nCoin += parseInt(inputMoney, 10);
+		return this.nCoin;
 	}
 };
 
