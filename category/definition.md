@@ -25,6 +25,9 @@
 
 ##<a href="#" name="mvc">MVC</a>  
 Model(data), View, Controller  
+* Model : 데이터 구조를 표현한다. 데이터를 추출, 입력, 갱신 등의 일을 한다.  
+* View : 사용자에게 보여질 부분을 표현한다.  
+* Controller : Model과 View 중간에서 동작을 수행한다.  
 
 ##<a href="#" name="web_mvc">web MVC</a>  
 * spring (java)  
