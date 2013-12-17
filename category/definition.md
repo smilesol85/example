@@ -33,7 +33,7 @@ Model(data), View, Controller
 > input -> C / C -> V / C -> M / M -> V
 
 ##<a href="#" name="mvp">MVP</a>  
-Mpdel, View, Precenter  
+Mpdel, View, Presenter  
 
 > input -> V -> P -> M -> P -> V -> P  
 
