@@ -68,7 +68,7 @@ a + b는 a.+(b)와 동일하다.
 
 ##연습문제  
 1. 스칼라 REPL에서 3을 입력하고 탭 키를 눌러라. 어떤 메소드를 부를 수 있나?  
-::, AbstractMethodError, BigDecimal, BigInt 등  
+	::, AbstractMethodError, BigDecimal, BigInt 등  
 
 2. 스칼라 REPL에서 3의 제곱근을 계산하고 그 값을 제곱하라.  
 	결과가 3과 얼마나 차이가 나는가? (힌트: res 변수를 활용하라.)  
@@ -82,7 +82,7 @@ a + b는 a.+(b)와 동일하다.
 	res2: Double = 0.4159767946163848
 
 3. res 변수들은 val인가? var인가?  
-val이다. 값을 변경할 수 없다.  
+	val이다. 값을 변경할 수 없다.  
 
 4. 스칼라에서는 문자열을 숫자로 곱할 수 있다. "crazy" * 3 을 REPL에서 해보라.  
 	이 연산은 무엇을 하나? 스칼라독 어디에서 이를 찾을 수 있나?  
@@ -90,15 +90,15 @@ val이다. 값을 변경할 수 없다.
 	scala> "crazy" * 3
 	res0: String = crazycrazycrazy
 
-[StringOps 에서 확인할 수 있다.](#http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.StringOps)  
+	[StringOps 에서 확인할 수 있다.](#http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.StringOps)  
 
 5. 10 max 2는 무엇을 의미하나? max 메소드는 어느 클래스에 정의되어 있나?  
 	
 	scala> 10 max 2
 	res 0: Int = 10
 
-둘 중에 큰 값을 리턴한다.  
-[RichInt에 정의되어 있다.](#http://www.scala-lang.org/api/current/#scala.runtime.RichInt)
+	둘 중에 큰 값을 리턴한다.  
+	[RichInt에 정의되어 있다.](#http://www.scala-lang.org/api/current/#scala.runtime.RichInt)
 
 6. BigInt를 사용하여 2^1024를 계산하라.  
 	
@@ -111,7 +111,7 @@ val이다. 값을 변경할 수 없다.
 	scala> import scala.BigInt._
 	scala> import scala.util.Random
 
-probablePrime 메소드는 지정된 비트로 BigInt를 반환한다?  
+	probablePrime 메소드는 지정된 비트로 BigInt를 반환한다?  
 
 8. 임의의 파일 혹은 디렉토리  이름을 생성하는 방법 중 하나는 임의의 BigInt를 생성하고  
 	이를 36진법으로 변환하여 "qsnvbevtomcj38o06kul" 같은 문자열을 얻는 것이다.  
