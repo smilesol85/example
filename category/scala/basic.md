@@ -72,14 +72,14 @@ a + b는 a.+(b)와 동일하다.
 
 2. 스칼라 REPL에서 3의 제곱근을 계산하고 그 값을 제곱하라.  
 	결과가 3과 얼마나 차이가 나는가? (힌트: res 변수를 활용하라.)  
-
-	scala> import scala.math._
-	scala> sqrt(3)
-	res0: Double = 1.7320508075688772
-	scala> sqrt(res0)
-	res1: Double = 1.3160740129524924
-	scala> res1 - res0
-	res2: Double = 0.4159767946163848
+		
+		scala> import scala.math._
+		scala> sqrt(3)
+		res0: Double = 1.7320508075688772
+		scala> sqrt(res0)
+		res1: Double = 1.3160740129524924
+		scala> res1 - res0
+		res2: Double = 0.4159767946163848
 
 3. res 변수들은 val인가? var인가?  
 	val이다. 값을 변경할 수 없다.  
@@ -87,29 +87,29 @@ a + b는 a.+(b)와 동일하다.
 4. 스칼라에서는 문자열을 숫자로 곱할 수 있다. "crazy" * 3 을 REPL에서 해보라.  
 	이 연산은 무엇을 하나? 스칼라독 어디에서 이를 찾을 수 있나?  
 
-	scala> "crazy" * 3
-	res0: String = crazycrazycrazy
+		scala> "crazy" * 3
+		res0: String = crazycrazycrazy
 
 	[StringOps 에서 확인할 수 있다.](#http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.StringOps)  
 
 5. 10 max 2는 무엇을 의미하나? max 메소드는 어느 클래스에 정의되어 있나?  
 	
-	scala> 10 max 2
-	res 0: Int = 10
+		scala> 10 max 2
+		res 0: Int = 10
 
 	둘 중에 큰 값을 리턴한다.  
 	[RichInt에 정의되어 있다.](#http://www.scala-lang.org/api/current/#scala.runtime.RichInt)
 
 6. BigInt를 사용하여 2^1024를 계산하라.  
 	
-	scala> BigInt(2).pow(1024)
-	res0: scala.math.BigInt = ...
+		scala> BigInt(2).pow(1024)
+		res0: scala.math.BigInt = ...
 
 7. probablePrime과 Random에 아무런 식별자 없이 probablePrime(100, Random)으로  
 	임의의 소수를 얻으려면 무엇을 임포트해야 하나?  
 
-	scala> import scala.BigInt._
-	scala> import scala.util.Random
+		scala> import scala.BigInt._
+		scala> import scala.util.Random
 
 	probablePrime 메소드는 지정된 비트로 BigInt를 반환한다?  
 
@@ -117,27 +117,27 @@ a + b는 a.+(b)와 동일하다.
 	이를 36진법으로 변환하여 "qsnvbevtomcj38o06kul" 같은 문자열을 얻는 것이다.  
 	스칼라독을 뒤져 scala에서 이를 할 방법을 찾아라.  
 
-	scala> BigInt.probablePrime(128, Random).toString(32)
-	res 0: String = ...
+		scala> BigInt.probablePrime(128, Random).toString(32)
+		res 0: String = ...
 
 9. 스칼라에서 문자열의 첫 문자를 어떻게 얻는가? 마지막 문자는 어떻게 얻는가?  
 	
-	scala> val str = "abcde"
-	str: String = abcde
-	scala> str(0)
-	res 0: Char = a
-	scala> str.last
-	res 1: Char = e
+		scala> val str = "abcde"
+		str: String = abcde
+		scala> str(0)
+		res 0: Char = a
+		scala> str.last
+		res 1: Char = e
 
 10. 문자열 함수 take, drop, takeRight, dropRight는 무엇을 하나?  
 	substring을 사용하는 것에 비해 장wja과 단점은 무엇인가?  
 
-	scala> val str = "abcde"
-	str: String = abcde
-	scala> str.drop(1)
-	res 0: bcde
-	scala> str.dropRight(2)
-	res 1: abc
-	scala> str.substring(1,2)
-	res 2: b
+		scala> val str = "abcde"
+		str: String = abcde
+		scala> str.drop(1)
+		res 0: bcde
+		scala> str.dropRight(2)
+		res 1: abc
+		scala> str.substring(1,2)
+		res 2: b
 
