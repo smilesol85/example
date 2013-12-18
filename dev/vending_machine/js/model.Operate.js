@@ -12,72 +12,41 @@ model.Operate.prototype = {
 		this.sDeadline = sDeadline;
 	},
 
-	getUnit : function(){
-		return this.unit;
+	setUnit : function(unit){
+		if(unit == undefined){
+			return this.unit;
+		}else{
+			return unit;
+		}
 	},
 
-	getCoin : function(){
+	setCoin : function(nCoin){
+		if(nCoin == undefined){
+			return this.nCoin;
+		}else{
+			return nCoin;
+		}
+	},
+
+	addCoin : function(addCoin){
+		addCoin = parseInt(addCoin, 10);
+		this.nCoin += addCoin;
+		if(this.nCoin > this.nMaxCoin){
+			this.nCoin -= addCoin;
+		}else{
+		}
+
 		return this.nCoin;
 	},
 
-	getMessage : function(){
-		return this.sDeadline;
-	},
+	enterCoin : function(enterCoin){
+		enterCoin = parseInt(enterCoin, 10);
+		this.nCoin -= enterCoin;
+		if(this.nCoin < this.nMinCoin){
+			this.nCoin += enterCoin;
+		}else{
+		}
 
-	addCoin : function(inputMoney){
-		this.nCoin += parseInt(inputMoney, 10);
 		return this.nCoin;
 	}
 };
-
-// vending.model.prototype = {
-
-// 	init : function(){
-// 		this._nCoin = 0;
-// 		this.nMaxCoin = 50000;
-// 	}
-
-
-
-// 	// init : function(){
-// 	// 	this.defaultValue();
-// 	// 	this.listProduct();
-// 	// 	this.listMoney();
-// 	// },
-
-// 	// defaultValue : function(){
-// 	// 	nDefaultCoin = 0;
-// 	// 	nMinCoin = 0;
-// 	// 	nMaxCoin = 50000;
-// 	// 	sShortage = '잔액이 부족하네요.ㅠㅠ';
-// 	// 	sDeadline = nMaxCoin+'원 까지만 넣을 수 있어요 :)';
-// 	// },
-
-// 	// listProduct : function(){
-// 	// 	product = {
-// 	// 		candy : 300,
-// 	// 		chololate : 700,
-// 	// 		milk : 1500
-// 	// 	};
-// 	// },
-
-// 	// listMoney : function(){
-// 	// 	money = {
-// 	// 		money_100 : 100,
-// 	// 		money_500 : 500,
-// 	// 		money_1000 : 1000
-// 	// 	};
-// 	// },
-
-// 	// resultCoin : function(nAddCoin){
-// 	// 	alert(nAddCoin);
-// 	// 	// nDefaultCoin += nAddCoin;
-// 	// 	// if(nCoin > nMaxCoin){
-// 	// 	// 	sResult = sDeadline;
-// 	// 	// 	nCoin -= nAddWon;
-// 	// 	// }else{
-// 	// 	// 	sResult = ' 넣었군요';
-// 	// 	// }
-// 	// 	// oVendingControlls.addCoin(nAddWon, nCoin, sResult);
-// 	// }
-// };
