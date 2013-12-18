@@ -41,7 +41,7 @@ val로 선언된 값은 상수며, 내용을 변경할 수 없다.
 	scala> var greeting, message: String = null
 
 ##자주 사용되는 타입  
-Byte, Char, Short, Int, Long, Float, Double 7개의 숫자 타입과 Boolean 타입을 가진다.  
+Byte(8비트 정수형), Short(16비트 정수형), Char(16비트 문자형), Int(32비트 정수형), Long, Float(32비트 부동소수점형), Double(64비트) 7개의 숫자 타입과 Boolean 타입을 가진다.  
 이 타입들은 `클래스`다.  
 
 ##산술과 연산자 오버로딩  
