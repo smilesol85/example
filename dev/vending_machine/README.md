@@ -1,4 +1,4 @@
-#vending_machine
+#MVC 패턴으로 vending_machine 개발하기!
 **[github.io](http://smilesol85.github.io/dev/vending_machine/vending_machine.html "vending_machine")**
 
 ##명세  
