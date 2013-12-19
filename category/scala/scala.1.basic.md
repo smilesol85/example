@@ -66,10 +66,15 @@ a + b는 a.+(b)와 동일하다.
 스칼라독 입문 팁  
 [http://www.scala-lang.org/api/current/#package](#http://www.scala-lang.org/api/current/#package)  
 
+> BigInt, BigDecimal 클래스는 임의의 유한한 자리 숫자를 계산하기 위해 사용된다.  
+
 ##연습문제  
 1. 스칼라 REPL에서 3을 입력하고 탭 키를 눌러라. 어떤 메소드를 부를 수 있나?  
-	::, AbstractMethodError, BigDecimal, BigInt 등  
-	BigInt, BigDecimal 클래스는 임의의 유한한 자리 숫자를 계산하기 위해 사용된다.  
+		
+		scala> 3.
+		%	&	*	+	-	/	>	>=	>>	>>>	^
+		asInstanceOf	isInstanceOf	toByte	toChar	toDouble	toFloat	toInt
+		toLong	toShort	toString	unary_+	unary_-	unary_~
 
 2. 스칼라 REPL에서 3의 제곱근을 계산하고 그 값을 제곱하라.  
 	결과가 3과 얼마나 차이가 나는가? (힌트: res 변수를 활용하라.)  
