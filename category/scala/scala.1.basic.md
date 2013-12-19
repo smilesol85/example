@@ -64,7 +64,7 @@ a + b는 a.+(b)와 동일하다.
 스칼라에서는 스칼라독을 사용한다.  
 
 스칼라독 입문 팁  
-[http://www.scala-lang.org/api/current/#package](#http://www.scala-lang.org/api/current/#package)  
+[http://www.scala-lang.org/api/current/#package](http://www.scala-lang.org/api/current/#package)  
 
 > BigInt, BigDecimal 클래스는 임의의 유한한 자리 숫자를 계산하기 위해 사용된다.  
 
@@ -96,7 +96,7 @@ a + b는 a.+(b)와 동일하다.
 		scala> "crazy" * 3
 		res0: String = crazycrazycrazy
 
-	[StringOps 에서 확인할 수 있다.](#http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.StringOps)  
+	[StringOps 에서 확인할 수 있다.](http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.StringOps)  
 
 5. 10 max 2는 무엇을 의미하나? max 메소드는 어느 클래스에 정의되어 있나?  
 	
@@ -104,7 +104,7 @@ a + b는 a.+(b)와 동일하다.
 		res 0: Int = 10
 
 	둘 중에 큰 값을 리턴한다.  
-	[RichInt에 정의되어 있다.](#http://www.scala-lang.org/api/current/#scala.runtime.RichInt)
+	[RichInt에 정의되어 있다.](http://www.scala-lang.org/api/current/#scala.runtime.RichInt)
 
 6. BigInt를 사용하여 2^1024를 계산하라.  
 	
