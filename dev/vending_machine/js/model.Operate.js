@@ -14,18 +14,22 @@ model.Operate.prototype = {
 
 	setUnit : function(unit){
 		if(unit == undefined){
-			return this.unit;
+			this.unit = this.unit;
 		}else{
-			return unit;
+			this.unit = unit;
 		}
+
+		return this.unit;
 	},
 
 	setCoin : function(nCoin){
 		if(nCoin == undefined){
-			return this.nCoin;
+			this.nCoin = this.nCoin;
 		}else{
-			return nCoin;
+			this.nCoin = nCoin;
 		}
+
+		return this.nCoin;
 	},
 
 	addCoin : function(addCoin){
@@ -33,9 +37,11 @@ model.Operate.prototype = {
 		this.nCoin += addCoin;
 		if(this.nCoin > this.nMaxCoin){
 			this.nCoin -= addCoin;
+			this.sMessage = this.sDeadline;
 		}else{
+			this.sMessage = addCoin+'원 넣었네?!';
 		}
-
+		alert(this.sMessage);
 		return this.nCoin;
 	},
 
@@ -44,9 +50,11 @@ model.Operate.prototype = {
 		this.nCoin -= enterCoin;
 		if(this.nCoin < this.nMinCoin){
 			this.nCoin += enterCoin;
+			this.sMessage = this.sShortage;
 		}else{
+			this.sMessage = enterCoin+'원 짜리 뽑았네요?!';
 		}
-
+		alert(this.sMessage);
 		return this.nCoin;
 	}
 };
