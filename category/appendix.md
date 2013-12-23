@@ -1,5 +1,8 @@
-#Word
+#appendix
 
+1. [인터넷](#internet)  
+1. [웹](#web)  
+1. [DTD - Document Type Definition](#dtd)  
 1. [객체 지향 프로그래밍](#OOP)  
 1. [타입 캐스팅](#type-casting)  
 1. [테스트 주도 개발(TDD, Test Driven Development)](#tdd)  
@@ -7,6 +10,37 @@
 1. [web MVC](#web_mvc)  
 1. [MVP](#mvp)  
 1. [MVVM](#mvvm)  
+
+##<a href="#" name="internet">인터넷</a>  
+인터넷 : 전 세계의 컴퓨터가 연결되어 정보를 주고 받는 컴퓨터 네트워크이다.  
+
+##<a href="#" name="web">웹</a>  
+웹 : World Wid Web의 약자로 1991년에 처음 등장했다.  
+	인터넷 위에서 서비스되며 정보를 주고 받는 공간이다.  
+
+##<a href="#" name="dtd">DTD - Document Type Definition</a>  
+* HTML 3.2  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">  
+* HTML 4.01  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">  
+* HTML 4.01 Transitional  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"    "http://www.w3.org/TR/html4/loose.dtd">  
+* HTML 4.01 Frameset  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"    "http://www.w3.org/TR/html4/frameset.dtd">  
+* HTML 1.0 Strict  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  
+* XHTML 1.0 Transitional  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+* XHTML 1.0 Frameset  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">  
+* XHTML 1.1  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">  
+* XHTML Basic 1.0  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN"  "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">  
+* XHTML Basic 1.1  
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN">  
+* HTML5  
+	<!DOCTYPE html>  
 
 ##<a href="#" name="OOP">객체 지향 프로그래밍</a>  
 # 사물 추상화(Abstraction)  
