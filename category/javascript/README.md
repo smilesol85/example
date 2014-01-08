@@ -9,10 +9,8 @@
 * function 중심의 절차적 프로그래밍(producedural programing)이다.  
 * object 중심의 객체 지향 프로그래밍(object-oriented programing)이다.  
 * 느슨한 타입 체크 - 타입 캐스팅을 고려하지 않아도 된다.  
-	강력한 타입의 언어에서는 변수를 선언할 때 변수 타입을 선언한다.  
-	값의 타입과 선언된 타입이 일치해야 한다.  
-* 다른 언어에 비해 습득하기 쉽다.  
-* 웹 브라우저 스크립트 언어이다.  
+	(강력한 타입의 언어에서는 변수를 선언할 때 변수 타입을 선언하며,  
+	값의 타입과 선언된 타입이 일치해야 한다.)  
 * 람다(lamda) 언어이다. 람다는 익명함수, 클로저 등을 정의하기 위한 표현식이다.  
 * ECMAScript 표준을 따른다.  
 * 제약에 자유로운 first-class object(일급 객체) 이다.  
@@ -22,10 +20,6 @@
 * 파라미터로 전달 할 수 있다.  
 * 반환값이 될 수 있다.  
 * 비동기적인 처리 등의 구현이 간편하다.  
-
----
----
----
 
 ##<a href="#" name="basic">기본문법</a>  
 
@@ -630,10 +624,6 @@ function CompareForSort(first, second)
 }
 ```
 
----
----
----
-
 ##<a href="#" name="function_object">함수, 객체</a>  
 
 * 자바스크립트에서 함수는 객체이다.  
@@ -1136,10 +1126,6 @@ f.a = 10;
 f.c = function(){};
 ```
 
----
----
----
-
 ##<a href="#" name="inheritance">상속</a>  
 		
 ```javascript
@@ -1174,10 +1160,6 @@ boy.run();  // Syntax Error
 console.log(boy.__proto__);
 console.log(sol.__proto__);
 ```
-
----
----
----
 
 ##<a href="#" name="event">이벤트</a>  
 
@@ -1234,7 +1216,3 @@ $('.event').addEventListener('click', function(){});
 	two
 	three
 	-->
-
----
----
----
