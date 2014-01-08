@@ -597,6 +597,9 @@ document.write(aFruit+'<br>');  //orange
 aFruit.push('apple', 'banana');
 aFruit.splice(1,0,'aaa','bbb');  //1:첫번째 배열 이후, 0:삭제 없음
 document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
+
+var items = ['a', 'b', 'c', 'd'];
+var randomItems = items[Math.floor(Math.random() * items.length)];
 ```
 
 ---
