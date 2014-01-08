@@ -339,6 +339,11 @@ console.log(c);  // null
 정규 표현식에서 괄호로 묶인 부분 표현식은 왼쪽에서 오른쪽으로 번호가 매겨지고,
 각 부분 표현식과 매치된 텍스트를 기억한다.
 */
+
+// trim 함수 생성
+String.prototype.trim = function(){
+	return this.replace(/^\s+|\s+$/g, "");
+};
 ```
 
 ###<a href="#" name="boolean">불리언</a>
@@ -605,6 +610,24 @@ document.write(aFruit+'<br>');  //orange,aaa,bbb,apple,banana
 
 var items = ['a', 'b', 'c', 'd'];
 var randomItems = items[Math.floor(Math.random() * items.length)];
+
+// 배열의 숫자를 랜덤으로 정렬하고자 할 때
+// sort 메서내 내의 함수는 선택사항이며, 생략하면 오름차순, 아스키 문자 순서로 정령된다.
+var numbers = [10, 333, 2, 345, 85674, 23];
+numbers = numbers.sort(function(){return Math.random() - 0.5});
+
+var a = [5, 3, 6, 1, 2, 10];
+var b = a.sort();  //  1, 10, 2, 3, 5, 6
+b = a.sort(CompareForSort);  // 1, 2, 3, 5, 6, 10
+function CompareForSort(first, second)
+{
+    if (first == second)
+        return 0;
+    if (first < second)
+        return -1;
+    else
+        return 1; 
+}
 ```
 
 ---
@@ -702,6 +725,19 @@ function f(){
 
 var result = f()(5);  // 5*4*3*2*1 = 120
 ``` 
+arguments를 배열의 객체로 변환하기
+		
+```javascript
+var argArray = Array.prototype.slice.call(arguments);
+```
+
+arguments가 숫자인지 판별하기
+		
+```javascript
+function isNumber(n){
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+```
 
 ###<a href="#" name="function_literal">함수 리터럴 이용</a>
 * 인자로 전달 가능  
