@@ -98,15 +98,15 @@ alert(nNum);  // 1
 함수명과 동일한 이름의 변수를 만들고 이 변수를 실행 코드가 담긴 함수에 대한 참조로 초기화 한다.  
 		
 ```javascript
-alert(f(10));  // 100
-var f = 0;
+alert(foo(10));  // 100
+var foo = 0;
 
-// 파싱 단계에서 변수 f와 이름이 같아 메모리에 저장될 때 덮어쓰게 된다.  
-// 최종적으로는 함수를 가리키는 f만 남게 된다.
-function f(x){
+// 파싱 단계에서 변수 foo와 이름이 같아 메모리에 저장될 때 덮어쓰게 된다.  
+// 최종적으로는 함수를 가리키는 foo만 남게 된다.
+function foo(x){
 	return x*x;
 }
-alert(f);  // 0
+alert(foo);  // 0
 ```
 
 > 파싱 단계에서 변수와 함수명의 이름이 같은 경우 동일한 메모리에 저장되는데  
@@ -184,8 +184,8 @@ var h = Math.floor(Math.random() * 10);  // 0초과 10미만의 숫자중 소수
 ```
 
 ####Number
-> 데이터 타입의 숫자를 객체로 만들 수 있다.  
-> [w3schools](http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")
+데이터 타입의 숫자를 객체로 만들 수 있다.  
+[w3schools](http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")  
 		
 ```javascript
 var a = new Number(15);
@@ -653,11 +653,11 @@ function CompareForSort(first, second)
 * 함수를 다른 변수에 할당할 수 있다.  
 		
 ```javascript
-function f(){
+function foo(){
 	alert('function');
 }
-f.prop = 'property';
-f.method = function(){};
+foo.prop = 'property';
+foo.method = function(){};
 
 function add(x,y){
 	alert(add.Des);  // Hello
@@ -672,11 +672,50 @@ var r = f2(3,3);  // 6
 
 // 렉시컬 특성
 var x = 'global';
-function f(){
+function foo(){
 	alert(x);  // undefined
 	var x = 'local';
 	alert(x);  // local
 }
+```
+
+apply와 call
+		
+```javascript
+// apply, call
+function foo(){
+	return this.nNum;
+}
+
+var obj = {
+	nNum : 12
+};
+
+foo.apply(obj);  // 12
+
+var obj2 = {
+	nNum : 10
+};
+
+foo.call(obj2);  // 10
+```
+
+apply, call 인자 넘겨주기
+		
+```javascript
+var name = 'sol';
+function foo(msg, msg2){
+	return this.name + ' ' + msg + ' ' + msg2;
+}
+
+foo('hello', 'world');
+
+var obj = {
+	name : 'smilesol'
+};
+
+foo.apply(obj,['a', 'b']);  // 배열 형태
+foo.call(obj, 'c', 'd');
 ```
 
 ####arguments
@@ -688,22 +727,22 @@ function f(){
 * arguments는 `length`, `callee` 라는 속성 사용이 가능하다.  
 		
 ```javascript
-function f(){
+function foo(){
 	var total = 0;
 	for(var i = 0; i < arguments.length; i++){
 		total += arguments[i];
 	}
 	return total;
 }
-// f(2,3,4);  // 9
-// f(8,7);  // 15
+// foo(2,3,4);  // 9
+// foo(8,7);  // 15
 ```
 ####arguments.callee
 * this와 유사하나 arguments.callee는 함수를 가르키고, this는 객체를 가르킨다.  
 * 재귀 호출 함수와 같이 구현할 때 유용하다.  
 		
 ```javascript
-function f(){
+function foo(){
 	return function(x){
 		if(x <= 1){
 			return 1;
@@ -712,7 +751,7 @@ function f(){
 	}
 }
 
-var result = f()(5);  // 5*4*3*2*1 = 120
+var result = foo()(5);  // 5*4*3*2*1 = 120
 ``` 
 arguments를 배열의 객체로 변환하기
 		
@@ -814,13 +853,13 @@ var f = new Function('x','y','return x+y');
 
 		
 ```javascript
-// f라는 함수 인스턴스를 생성하는 표현이다.
+// foo라는 함수 인스턴스를 생성하는 표현이다.
 // 마지막을 제외한 앞의 인자는 함수를 호출하는데 사용되는 인자다.
-var f = new Function('x','y','return x+y');
+var foo = new Function('x','y','return x+y');
 
 // 위의 코드와 동일하다.
-// f라는 인스턴스가 생성된다.
-function f(x,y){
+// foo라는 인스턴스가 생성된다.
+function foo(x,y){
 	return x+y;
 }
 ```
@@ -924,11 +963,11 @@ f();  // 4
 		
 ```javascript
 var x = 'g';
-function f(){
+function foo(){
 	var x = '1';
 	return new Function('return x');
 }
-var global = f();
+var global = foo();
 alert(global());  // g
 ```
 
@@ -1051,7 +1090,7 @@ var food = {
 ####비공개 멤버
 		
 ```javascript
-function f(){
+function foo(){
 	// 비공개 속성
 	var nNum = 0;
 
@@ -1063,7 +1102,7 @@ function f(){
 ####인스턴스 멤버
 		
 ```javascript
-function f(name, age){
+function foo(name, age){
 	// 인스턴스 속성
 	this.name = name;
 	this.age = age;
@@ -1074,7 +1113,7 @@ function f(name, age){
 	};
 }
 
-var F = new f('sol', '30');
+var F = new foo('sol', '30');
 
 // F.name = 'smilesol85';
 // F.age = '29';
@@ -1084,12 +1123,12 @@ F.profile();
 ####프로토타입 멤버
 		
 ```javascript
-function f(a, b){
+function foo(a, b){
 	this.a = 10;
 	this.b = 20;
 }
 
-f.prototype = {
+foo.prototype = {
 	// 프로토타입 속성
 	c : 40,
 
@@ -1103,8 +1142,8 @@ f.prototype = {
 	}
 };
 
-f.prototype.c;  // 40
-f.prototype.sum();  // 40
+foo.prototype.c;  // 40
+foo.prototype.sum();  // 40
 
 var sum = new f();
 
@@ -1117,12 +1156,12 @@ A.prototype = null;
 ####생성자 멤버  
 		
 ```javascript
-function f(){
+function foo(){
 		
 }
 
-f.a = 10;
-f.c = function(){};
+foo.a = 10;
+foo.c = function(){};
 ```
 
 ##<a href="#" name="inheritance">상속</a>  
