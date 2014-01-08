@@ -182,6 +182,11 @@ var d = Math.ceil(1.4);  // 2 (근접한 정수로 올림한 값 반환)
 var e = Math.randow();  // 0초과 1미만의 숫자를 랜덤으로 생성
 var f = Math.floor(1.4);  // 1 (소수점 버림)
 var g = Math.random() * 10;  // 0초과 10미만의 숫자를 랜덤으로 생성
+
+var max = 10;
+var min = 5;
+var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;  // 5 ~ 10 사이의 랜덤 추출
+
 var h = Math.floor(Math.random() * 10);  // 0초과 10미만의 숫자중 소수점 버리고 랜덤으로 생성
 ```
 
