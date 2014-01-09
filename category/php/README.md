@@ -4,7 +4,8 @@
 1. [숫자와 문자](#number-string)  
 1. [연산자](#operator)  
 1. [변수와 상수](#variable)  
-1. [데이터 형 검사 및 변경](#data-type)
+1. [데이터 형 검사 및 변경](#data-type)  
+1. [get 그리고 post](#get_post)  
 
 ##<a href="#" name="php">개요</a>  
 서버 사이드 언어이다.  
@@ -146,4 +147,39 @@
 	echo gettype($a);  // double
 	?>
 
-##
+##<a href="#" name="get_post">get 그리고 post</a>  
+데이터 전송시 get방식과 post방식의 차이는 대부분 알고 있을 것으로 생각한다.  
+get방식은 url에 데이터를 포함하고 post방식은 url에 노출하지 않고 전송할 수 있다.  
+
+php 예시
+		
+	<?php
+	// url : http://www.........php?id=abcde
+	$getId = $_GET['id'];
+	echo $getId;  // abcde
+
+	// url : http://www.........php?id=abcde&password=12345
+	$getId = $_GET['id'];
+	$getPassword = $_GET['password'];
+	echo $getId.','.$getPassword;  // abcde,12345
+	?>
+
+post방식으로 id, password 전송
+
+	<html>
+	<body>
+		<form method="POST" action="info.php">
+		id :  <input type="text" name="id" />
+		password :  <input type="text" name="password" />
+		<input type="submit" />
+		</form>
+	</body>
+	</html>
+
+post방식으로 id, paddword 받기
+		
+	<?php
+	echo $_POST['id'].','.$_POST['password'];
+	?>
+
+##<a href="#" name=""></a>
