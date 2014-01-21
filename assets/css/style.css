@@ -114,3 +114,13 @@ footer {
     left: inherit;
     right: 0px;
 }
+
+@media (min-width:767px){
+    .hidden-xs{display:none !important}
+    .visible-xs{display:block !important}
+}
+
+@media (min-width:768px){   
+    .col-sm-offset-3{margin-left:0px;}
+    .col-sm-9{width:100%;}
+}
