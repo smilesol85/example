@@ -1,13 +1,13 @@
 ---
 layout: post
-title: github+jekyll로 블로그 셋팅하기
+title: github+jekyll 조합으로 블로그 셋팅하기
 categories: [etc]
 tags: [github, jekyll]
 fullview: false
 ---
 
 많은 개발자들이 경력이 쌓이면서 블로그 운영에 관심을 갖게 되는 것을 본다.  
-여러 서비스를 경험하면서 개발자의 조건을 충족하지 못하고 불편함을 느껴 중간에 운영을 그만 두는 모습을 많이 보게된다.  
+여러 블로그 서비스를 경험하면서 개발자의 조건을 충족하지 못하고 불편함을 느껴 중간에 운영을 그만 두는 모습을 많이 보게된다.  
 
 나 또한 마찬가지이다.  
 여러 서비스를 경험하면서 정착하지 못하고 떠돌아 다니다가 포스트를 중지하는 일이 많았다.  
@@ -30,11 +30,11 @@ fullview: false
 - [RubyGems](http://rubygems.org/ "RubyGems") 설치 (리눅스 배포버전에 대부분 포함되어 있다.)  
 - `sudo gem install jekyll`  
 - `jekyll new folder_name`  
-- folder_name으로 생성된된 폴더를 push  
+- folder_name으로 생성된 폴더를 push  
 
 push하게 되면 셋팅은 끝난다.  
-나는 [jekyll theme](http://jekyllthemes.org/ "jekyll theme")를 이용해서 원하는 스타일만 변경 후 포스팅 하고있다.  
-기존에 수북히 쌓여 있던 파일들은 새로 생성된 폴더내의 `_post` 폴더로 옮기기만 하면 기존 코드들도 전부 살리면서 포스팅 할 수 있겠다.  
+[jekyll theme](http://jekyllthemes.org/ "jekyll theme")의 테마 파일을 이용해서 원하는 스타일만 변경 후 포스팅 하는 방법도 있다.  
+github에 수북히 쌓여 있는 파일들은 새로 생성된 폴더(folder_name)의 `_post` 폴더로 옮기기만 하면 기존 코드들도 전부 살리면서 포스팅 할 수 있겠다.  
 
 참고로 `_post` 폴더 내에는 포스트를 원하는 파일을 추가하면 되며,  
 파일 이름은 `년도-월-일-포스트명.md` 형식으로 추가하면 된다.  
