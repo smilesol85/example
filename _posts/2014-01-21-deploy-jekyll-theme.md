@@ -1,8 +1,8 @@
 ---
 layout: post
 title: post. markdown
-categories: [sample]
-tags: [sample]
+categories: [markdown]
+tags: [markdown]
 fullview: true
 ---
 
