@@ -1,6 +1,8 @@
 smilesol85's ordinary Front-end  
 ====  
-  
+
+
+
 Theme License.  
 dbyll  
 =====  
