@@ -1,3 +1,7 @@
+[smilesol85's ordinary Front-end](smilesol85.github.com)
+====
+
+Theme License.
 dbyll
 =====
 
