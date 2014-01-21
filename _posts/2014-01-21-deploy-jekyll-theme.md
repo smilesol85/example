@@ -6,7 +6,7 @@ tags: [sample]
 fullview: true
 ---
 
-**Heading**  
+##Heading
     
     #H1
     ##H2
@@ -22,23 +22,23 @@ fullview: true
 #####H5
 ######H6
 
-**description & font**  
+##description & font
     
     > descript
     `text`
     *italic*
     **bold**
-    _underscores_**
-    *Scratch*
+    _underscores_
+    *scratch*
 
 > description  
 `text`  
 *italic*  
 **bold**  
-_underscores_**  
-*Scratch*  
+_underscores_  
+*scratch*  
 
-**horizontal rule**  
+##horizontal rule
     
     ---
     ***
@@ -46,7 +46,7 @@ _underscores_**
 ---
 ***
 
-**link**  
+##link
     
     [link](http://www.google.com/ "google")
     <a class="btn btn-default" href="https://github.com/dbtek/dbyll">Grab your copy now!</a>
@@ -54,13 +54,13 @@ _underscores_**
 [link](http://www.google.com/ "google")  
 <a class="btn btn-default" href="http://www.google.com/">google</a>  
 
-**image**  
+##image
     
     ![alt text](../images/images.jpg "logo")
     
 ![alt text](../images/images.jpg "logo")  
 
-**list**  
+##list
     
     * list  
         * list  
@@ -76,7 +76,7 @@ _underscores_**
     + list
     + `list`
     
-**number**  
+##number
     
     1. number
     1. number
@@ -86,7 +86,7 @@ _underscores_**
 1. number
 1. number
 
-**table**  
+##table
     
     | Table         | Are           | Cool  |
     | ------------- |:-------------:| -----:|
@@ -100,12 +100,16 @@ _underscores_**
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
-| zebra stripes | are neat      |    $1 |
+| zebra stripes | are neat      |    $1 |  
 
-**code**  
-    
+
+##code
 ```javascript
 var n = 1;
+
+function clickBtn(){
+    alert('test');
+}
 ```
 
 {% highlight ruby %}
@@ -114,7 +118,7 @@ def foo
 end
 {% endhighlight %}
 
-**youtube videos**  
+##youtube videos
     
     <a href="#" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
         
