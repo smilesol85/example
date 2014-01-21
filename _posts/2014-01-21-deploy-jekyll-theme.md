@@ -1,24 +1,112 @@
 ---
 layout: post
-title: post. sample
+title: post. markdown
 categories: [sample]
 tags: [sample]
 fullview: true
 ---
 
-##sample  
+**Heading**  
+    
+    #H1
+    ##H2
+    ###H3
+    ####H4
+    #####H5
+    ######H6
+    
+#H1
+##H2
+###H3
+####H4
+#####H5
+######H6
 
-**dbyll** is minimalist, stylish theme for jekyll. Supports gravatar, account links (github, twitter, e-mail, pinterest, résume file) and a bio.  
+**description & font**  
+    
+    > descript
+    `text`
+    *italic*
+    **bold**
+    _underscores_**
+    *Scratch*
 
-**dbyll** is brought to you by **[dbtek](http://ismaildemirbilek.com)**. Open sourced under [MIT](http://opensource.org/licenses/MIT) license.
-  
-#### dbyll is on GitHub
-<a class="btn btn-default" href="https://github.com/dbtek/dbyll">Grab your copy now!</a>
+> description  
+`text`  
+*italic*  
+**bold**  
+_underscores_**  
+*Scratch*  
 
-##sample  
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**horizontal rule**  
+    
+    ---
+    ***
+    
+---
+***
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**link**  
+    
+    [link](http://www.google.com/ "google")
+    <a class="btn btn-default" href="https://github.com/dbtek/dbyll">Grab your copy now!</a>
+    
+[link](http://www.google.com/ "google")  
+<a class="btn btn-default" href="http://www.google.com/">google</a>  
+
+**image**  
+    
+    ![alt text](../images/images.jpg "logo")
+    
+![alt text](../images/images.jpg "logo")  
+
+**list**  
+    
+    * list  
+        * list  
+    
+    - list
+        + list
+        + `list`
+        
+* list  
+    * list  
+
+- list
+    + list
+    + `list`
+    
+**number**  
+    
+    1. number
+    1. number
+    1. number
+    
+1. number
+1. number
+1. number
+
+**table**  
+    
+    | Table         | Are           | Cool  |
+    | ------------- |:-------------:| -----:|
+    | col 3 is      | right-aligned | $1600 |
+    | col 2 is      | centered      |   $12 |
+    | zebra stripes | are neat      |    $1 |
+    | zebra stripes | are neat      |    $1 |
+    
+| Table         | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+| zebra stripes | are neat      |    $1 |
+
+**code**  
+    
+```javascript
+var n = 1;
+```
 
 {% highlight ruby %}
 def foo
@@ -26,7 +114,8 @@ def foo
 end
 {% endhighlight %}
 
-##sample  
-Lorem ipsum dolor sit amet,  consectetur adipisicing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,  sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet,  consectetur adipisicing elit,  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,  sunt in culpa qui officia deserunt mollit anim id est laborum.
+**youtube videos**  
+    
+    <a href="#" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+        
+<a href="#" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
