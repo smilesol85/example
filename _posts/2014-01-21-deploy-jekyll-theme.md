@@ -104,13 +104,17 @@ _underscores_
 
 
 ##code
-```javascript
+{% highlight html %}
+<div>div</div>
+{% endhighlight %}
+
+{% highlight javascript %}
 var n = 1;
 
 function clickBtn(){
     alert('test');
 }
-```
+{% endhighlight %}
 
 {% highlight ruby %}
 def foo
