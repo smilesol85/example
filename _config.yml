@@ -5,17 +5,16 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 pygments: true
 
-title: dbyll
-description: Stylish Jekyll Theme
+title: smilesol85's ordinary Front-end
+description: 
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
-  twitter: asd123
-  pinterest: asd123
-  linkedin: asd123
-  bio: Your stylish, minimalist theme!
-  email_md5: 726351295ec82e145928582f595aa3aa
+  name: smilesol85
+  email: smilesol85@gmail.com
+  github: smilesol85
+  twitter: smilesol85
+  linkedin: smilesol85
+  bio: 
+  email_md5: 
 
 rss_path: feed.xml
 categories_path: categories.html
