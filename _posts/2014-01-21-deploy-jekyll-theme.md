@@ -1,6 +1,6 @@
 ---
 layout: post
-title: {{ page.title }}
+title: post. sample
 categories: [sample]
 tags: [sample]
 fullview: true
