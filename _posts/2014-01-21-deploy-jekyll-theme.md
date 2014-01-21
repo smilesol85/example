@@ -104,9 +104,14 @@ _underscores_
 
 
 ##code
-{% highlight html %}
-<div>div</div>
-{% endhighlight %}
+    
+```javascript
+var n = 1;
+
+function clickBtn(){
+    alert('test');
+}
+```
 
 {% highlight javascript %}
 var n = 1;
@@ -114,6 +119,11 @@ var n = 1;
 function clickBtn(){
     alert('test');
 }
+{% endhighlight %}
+
+
+{% highlight html %}
+<div>div</div>
 {% endhighlight %}
 
 {% highlight ruby %}
