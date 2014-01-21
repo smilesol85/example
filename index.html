@@ -24,20 +24,6 @@ tagline: true
                 <a href="{{ site.BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
             </h2>
 
-            <div>
-                {% if post.fullview %}
-                  {{ post.content }}
-                
-                    
-                        {{ post.shortinfo }}
-                    
-                        {{ post.description }}
-                    
-                        {{ post.excerpt }}
-                    
-                {% endif %}
-            </div>
-
         </article>
 {% endfor %}
 <hr/>
