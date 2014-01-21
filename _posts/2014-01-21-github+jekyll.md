@@ -16,7 +16,7 @@ fullview: false
 바쁜 일들이 지나가면 [github](https://github.com/ "github")의 코드들을 정리하고 블로그 운영을 위한 셋팅을 해보기로 마음먹은 것이  
 새해를 넘기고 이제서야 셋팅하게 되었다.  
 
-기존에 코드 및 마크다운 파일을 잘 정리해 놓은 사용자라면 [jekyll](https://github.com/jekyll/jekyll "jekyll")을 이용하여 쉽게 블로그를 생성하고 운영할 수 있다. 설치 후 원하는 스타일로 수정 가능하며 이미 멋지게 디자인 된 테마를 적용하여 바로 포스팅이 가능하다.  
+기존에 코드 및 마크다운 파일을 잘 정리해 놓은 사용자라면 [jekyll](https://github.com/jekyll/jekyll "jekyll")을 이용하여 블로그를 쉽게 생성하고 운영할 수 있다. 설치 후 원하는 스타일로 수정 가능하며 이미 멋지게 디자인 된 테마를 적용하여 바로 포스팅이 가능하다.  
 
 ##jekyll 특징  
 - Linux, Unix, Mac OS X 3가지 운영체제만 지원한다.  
