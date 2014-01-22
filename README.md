@@ -1,10 +1,7 @@
-smilesol85's ordinary Front-end  
+[Blog : smilesol85's ordinary Front-end](smilesol85.github.io)
 ====  
 
-
-
-Theme License.  
-dbyll  
+Theme. dbyll  
 =====  
 
 Open source stylish, minimalistic theme for jekyll.  
