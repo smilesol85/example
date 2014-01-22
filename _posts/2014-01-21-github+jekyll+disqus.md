@@ -1,8 +1,8 @@
 ---
 layout: post
-title: github+jekyll 조합으로 블로그 셋팅하기
+title: github+jekyll+disqus 조합으로 블로그 셋팅하기
 categories: [etc]
-tags: [github, jekyll]
+tags: [github, jekyll, blog]
 fullview: false
 ---
 
@@ -29,7 +29,7 @@ fullview: false
 - 정적인 페이지를 만드는 도구이다.  
 - 동적인 페이지가 없기 때문에 DB가 필요없다.  
 - 도구가 단순하여 확장이 쉽다.  
-- 덧글 기능은 [disqus](http://disqus.com/ "disqus")나 [Facebook Comments](https://developers.facebook.com/docs/plugins/comments "Facebook Comments")를 이용하면 된다.  
+- 코멘트 기능은 [disqus](http://disqus.com/ "disqus")나 [Facebook Comments](https://developers.facebook.com/docs/plugins/comments "Facebook Comments")를 이용하면 된다.  
 
 ##jekyll 설치  
 - [RubyGems](http://rubygems.org/ "RubyGems") 설치 (리눅스 배포버전에 대부분 포함되어 있다.)  
@@ -43,4 +43,23 @@ github에 수북히 쌓여 있는 파일들은 새로 생성된 폴더(folder_na
 
 참고로 `_post` 폴더 내에는 포스트를 원하는 파일을 추가하면 되며,  
 파일 이름은 `년도-월-일-포스트명.md` 형식으로 추가하면 된다.  
-확장자는 꼭 마크다운이 아닌 html도 상관없다.  
+확장자는 꼭 .md가 아닌 .html도 상관없다.  
+
+##disqus를 활용하여 코멘트 기능 달기  
+위에서 언급했듯이 코멘트 기능으로 disqus를 활용하는 방법이 있어 알아보도록 하겠다.  
+방법은 매우 간단하다.  
+
+- [disqus](http://disqus.com/ "disqus")로 이동  
+- 회원가입  
+- Add Disqus to Your Site 버튼 클릭  
+- Dashboard > setting 에서 입력하고자 하는 정보 저장  
+- Dashboard > setting > Install > Universal Code 선택 후 생성되는 코드 복사  
+- 복사한 코드를 내 블로그에서 코멘트 기능을 달고자 하는 부분에 추가  
+- 끝!  
+
+##disqus의 장점  
+소셜 코멘트로 도구로 방대한 블로거들이 사용하고 있으며,  
+사용자들은 disqus 계정이 없이도 코멘트를 남길 수 있다.  
+기존에는 어느 포스트에 어느 코멘트를 남겼는지 잊어버리고 지나가는 경우가 많았다면,  
+어느 포스트에 어떠한 코멘트가 남겨졌는지 확인이 가능하며, 소셜 네트워크 서비스로 공유가 가능하여  
+풍부한 상호작용을 할 수 있는 강력한 코멘트 도구이다.  
