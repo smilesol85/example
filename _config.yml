@@ -22,6 +22,20 @@ tags_path: tags.html
 
 BASE_PATH: http://smilesol85.github.com
 
+comments :
+  provider : facebook #FIXME
+  disqus :
+    short_name : abc  #FIXME
+  livefyre :
+    site_id : abc #FIXME
+  intensedebate :
+    account : abc #FIXME
+  facebook :
+    appid : smilesol85   #FIXME
+    num_posts: 5
+    width: 640
+    colorscheme: light
+
 # All links will be namespaced by BASE_PATH if defined.
 # Links in your website should always be prefixed with {{ site.BASE_PATH }}
 # Do not put a "/" at the end of the url.
