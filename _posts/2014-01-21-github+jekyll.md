@@ -3,6 +3,7 @@ layout: post
 title: github+jekyll 조합으로 블로그 셋팅하기
 categories: [etc]
 tags: [github, jekyll]
+comments: true
 fullview: false
 ---
 
