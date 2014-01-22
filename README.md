@@ -1,4 +1,4 @@
-[Blog : smilesol85's ordinary Front-end](smilesol85.github.io)
+<a href="http://smilesol85.github.io/" class="btn btn-default">Blog : smilesol85's ordinary Front-end</a>
 ====  
 
 Theme. dbyll  
