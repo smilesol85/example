@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>tablebox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
+<style>
+div{width:100%;text-align:center}
+.boxes{display:table}
+.boxes div{padding:20px 0}
+.oneBox{background:red;display:table-footer-group;line-height:40px}
+.twoBox{background:green;display:table-caption}
+.threeBox{background:white;display:table-header-group;line-height:40px}
+.fourBox{background:gray}
+</style>
+</head>
+<body>
+<div id="wrap">
+    <script>var titHeader = 'tablebox';</script>
+    <script src="http://smilesol85.github.io/common/header.js"></script>
+    <section>
+        <div class="boxes">
+            <div class="oneBox">one => display:table-footer-group<p>table-footer-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+            <div class="twoBox">two => display:table-caption</div>
+            <div class="threeBox">three => display:table-header-group<p>table-header-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+            <div class="fourBox">four</div>
+        </div>
+    </section>
+    <script src="http://smilesol85.github.io/common/footer.js"></script>
+</div>
+</body>
+</html>

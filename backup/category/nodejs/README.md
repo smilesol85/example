@@ -1,0 +1,41 @@
+#Node.js  
+[http://www.nodejs.org/](http://www.nodejs.org/)  
+
+nodejs 특징
+* 브라우저가 아닌 서버 환경에서 자바스크립트를 사용하려고 노력했으며, 대규모 네트워크 애플리케이션을 개발하고자 했다고 한다.  
+* 대규모 네트워크 프로그램 개발에 적합한 이벤트 기반의 비동기 방식이다. (기존 웹 서버는 대부분 스레드 기반의 동기 방식이다.)  
+* 속도면에서 뛰어난 편이다.  
+* 프로그램 진행시 문제가 발생하는 순간 프로그램 전체에 영향을 준다.  
+
+1. [nodejs 설치](#setup)  
+1. [nodejs 맛보기](#practice)  
+
+##<a href="#" name="setup">nodejs 설치</a>  
+1. [nodejs 설치](http://www.nodejs.org/download/ "nodejs 설치")  
+1. 커멘드 창에서 `> node` 입력 후 `>` 가 표시된다.  
+1. `> console.log('Hello World');` 입력 후 엔터!  
+1. Hello World가 출력된 것을 확인할 수 있다.  
+
+##<a href="#" name="practice">nodejs 맛보기</a>  
+1. node.test.js 라는 파일 생성 및 실행
+	node.js 파일에 `console.log('Hello World');` 입력  
+	콘솔창에서 `> node node.test.js` 실행  
+	`Hello World` 출력  
+1. 웹 서버 파일 생성 및 실행
+	node.server.js 파일 생성 및 코드 입력  
+
+		```javascript
+		// 모듈 추출
+		var http = require('http');
+
+		// 웹 서버 생성 및 실행
+		http.createServer(function(request, response){
+			response.writeHead(200, {'Content-Type':'text/html'});
+			response.end('<h1>Hello World2</h1>');
+		}).listen(52273, function(){
+			console.log('Server running at http://127.0.0.1:52273/');
+		});
+		```
+
+	콘솔창에서 `> node node.server.js` 입력 후웹브라우저에서 `http://127.0.0.1:52273` 입력 후 Hello World2 출력된 것 확인  
+

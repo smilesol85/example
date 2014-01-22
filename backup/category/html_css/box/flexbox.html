@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>flexbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
+<style>
+.oBox{display:box;display:-webkit-box;height:40px;background:#aaa}
+.oBox .oBoxE{display:block;margin:5px;background:#fff}
+.oBox2{-webkit-box-orient:vertical;-webkit-flex-direction:column;height:100px}
+.oBox3{-webkit-box-pack:start}
+.oBox4{-webkit-box-pack:end}
+.oBox5{-webkit-box-pack:justify}
+.oBox6{-webkit-box-pack:center}
+.oBox7{-webkit-box-align:start}
+.oBox8{-webkit-box-align:end}
+.oBox9{-webkit-box-align:center}
+.oBox10{-webkit-box-align:baseline}
+.oBox11{-webkit-box-align:stretch}
+</style>
+</head>
+<body>
+<div id="wrap">
+    <script>var titHeader = 'flexbox';</script>
+    <script src="http://smilesol85.github.io/common/header.js"></script>
+    <section>
+        <p>box안의 block 요소들의 정렬을 유연하게 표현할 수 있다.</p>
+        <article>
+            <h2>display:-webkit-box</h2>
+            <div class="oBox">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>orientation</h2>
+            <div class="oBox oBox2">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment - start</h2>
+            <div class="oBox oBox3">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment - end</h2>
+            <div class="oBox oBox4">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment - justify</h2>
+            <div class="oBox oBox5">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment - center</h2>
+            <div class="oBox oBox6">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment on the cross - start</h2>
+            <div class="oBox oBox7">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment on the cross - end</h2>
+            <div class="oBox oBox8">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment on the cross - center</h2>
+            <div class="oBox oBox9">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment on the cross - baseline</h2>
+            <div class="oBox oBox10">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>alignment on the cross - stretch</h2>
+            <div class="oBox oBox11">
+                <span class="oBoxE">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>flex</h2>
+            <div class="oBox oBox12">
+                <span class="oBoxE" style="-webkit-box-flex:1">box1</span>
+                <span class="oBoxE" style="-webkit-box-flex:1">box2</span>
+                <span class="oBoxE" style="-webkit-box-flex:1">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>flex</h2>
+            <div class="oBox oBox12">
+                <span class="oBoxE" style="-webkit-box-flex:1">box1</span>
+                <span class="oBoxE" style="-webkit-box-flex:2">box2</span>
+                <span class="oBoxE" style="-webkit-box-flex:1">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>flex</h2>
+            <div class="oBox oBox12">
+                <span class="oBoxE" style="-webkit-box-flex:1">box1</span>
+                <span class="oBoxE" style="-webkit-box-flex:20">box2</span>
+                <span class="oBoxE" style="-webkit-box-flex:1">box3</span>
+            </div>
+        </article>
+        <article>
+            <h2>ordering</h2>
+            <div class="oBox oBox13">
+                <span class="oBoxE" style="-webkit-box-ordinal-group:2">box1</span>
+                <span class="oBoxE">box2</span>
+                <span class="oBoxE" style="-webkit-box-ordinal-group:3">box3</span>
+            </div>
+        </article>
+    </section>
+    <script src="http://smilesol85.github.io/common/footer.js"></script>
+</div>
+</body>
+</html>

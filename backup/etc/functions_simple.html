@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>functions</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+        <link rel="stylesheet" type="text/css" href="../vCommon/vCommon.css">
+    </head>
+    <body>
+        <div id="wrap">
+            <script>var titHeader = 'functions';</script>
+            <script src="../vCommon/header.js"></script>
+            <div id="content">
+                <section>
+                    <script>
+                    // 문서의 디버깅 영역에 메시지를 출력한다.
+                    // 만약 디버깅 영역이 존재하지 않으면 생성한다.
+                    function debug(msg){
+                        var log = document.getElementById('dubugLog');
+                        if(!log){
+                            log = document.createElement('div');
+                            log.id = 'debugLog';
+                            log.innerHTML = '<h1>h1 tag</h1>';
+                            document.body.appendChild(log);
+                        }
+                        var pre = document.createElement('pre');
+                        var text = document.createTextNode(msg);
+
+                        pre.appendChild(text);
+                        log.appendChild(pre);
+                    }
+
+                    window.onload = function(){
+                        var images = document.getElementsByTagName('img');
+
+                        for(var i = 0; i < images.length; i++){
+                            var image = images[i];
+                            if(image.addEventListener)  // 핸들러 등록하는 또 다른 방법
+                                image.addEventListener('click', hide, false);
+                            else
+                                image.attachEvent('onclick', hide);  // IE8이하 버전용
+                        }
+                        function hide(event){event.target.style.visibility = 'hidden';}
+                    };
+                    </script>
+                </section>
+            </div>
+            <script src="../vCommon/footer.js"></script>
+        </div>
+    </body>
+</html>
