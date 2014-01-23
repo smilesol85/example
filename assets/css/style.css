@@ -121,7 +121,7 @@ footer {
 
 .tab-content{margin-top:20px;}
 .col-xs-6{width:100%;}
-.col-sm-9{padding:0 40px;}
+.col-sm-9{padding:0 10px;}
 
 @media (min-width:767px){
     .hidden-xs{display:none !important}
@@ -133,5 +133,5 @@ footer {
     .navbar-header{float:right;}
     .navbar-toggle{display:block;}
     .col-sm-offset-3{margin-left:0px;}
-    .col-sm-9{width:100%;padding:0 10px;}
+    .col-sm-9{width:100%;padding:0 40px;}
 }
