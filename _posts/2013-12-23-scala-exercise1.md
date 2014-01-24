@@ -1,6 +1,14 @@
-#기본기  
+---
+layout: post
+title: scala 1장+연습문제 (쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 스터디)
+categories: [scala]
+tags: [scala]
+fullview: false
+---
 
-##스칼라 인터프리터  
+##기본기  
+
+###스칼라 인터프리터  
 	
 	scala> 8 * 5 + 2
 	res0: Int = 42
@@ -40,16 +48,16 @@ val로 선언된 값은 상수며, 내용을 변경할 수 없다.
 	scala> val xmax, ymax = 100
 	scala> var greeting, message: String = null
 
-##자주 사용되는 타입  
+###자주 사용되는 타입  
 Byte(8비트 정수형), Short(16비트 정수형), Char(16비트 문자형), Int(32비트 정수형), Long, Float(32비트 부동소수점형), Double(64비트) 7개의 숫자 타입과 Boolean 타입을 가진다.  
 이 타입들은 `클래스`다.  
 
-##산술과 연산자 오버로딩  
+###산술과 연산자 오버로딩  
 a + b는 a.+(b)와 동일하다.  
 +는 메소드 이름이다.  
 어느쪽이든 읽기 편한 방법으로 사용하면 된다.  
 
-##함수와 메소드 호출  
+###함수와 메소드 호출  
 수학 함수 사용을 위해서는 import 할 수 있다.  
 
 > import scala.math._ // import math._ 와 동일하다.  
@@ -59,7 +67,7 @@ a + b는 a.+(b)와 동일하다.
 	scala> "hello"(4)  // 'o' 출력
 	scala> "hello".apply(4)  // "hello"(4) 의 축약형이다.
 
-##스칼라독(scaladoc)  
+###스칼라독(scaladoc)  
 자바에서 API를 열람하기 위해서는 자바독을 사용하듯,  
 스칼라에서는 스칼라독을 사용한다.  
 
@@ -68,7 +76,7 @@ a + b는 a.+(b)와 동일하다.
 
 > BigInt, BigDecimal 클래스는 임의의 유한한 자리 숫자를 계산하기 위해 사용된다.  
 
-##연습문제  
+###연습문제  
 1. 스칼라 REPL에서 3을 입력하고 탭 키를 눌러라. 어떤 메소드를 부를 수 있나?  
 		
 		scala> 3.
