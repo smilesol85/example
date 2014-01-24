@@ -23,7 +23,7 @@ fullview: false
 기존에 코드 및 마크다운 파일을 잘 정리해 놓은 사용자라면 [jekyll](https://github.com/jekyll/jekyll "jekyll")을 이용하여 블로그를 쉽게 생성하고 운영할 수 있다.  
 설치 후 원하는 스타일로 수정 가능하며 이미 멋지게 디자인 된 테마를 적용하여 바로 포스팅이 가능하다.  
 
-##jekyll 특징  
+## jekyll 특징  
 - Linux, Unix, Mac OS X 3가지 운영체제만 지원한다.  
 - 루비 언어로 만들어진 도구이다.
 - 정적인 페이지를 만드는 도구이다.  
@@ -31,7 +31,7 @@ fullview: false
 - 도구가 단순하여 확장이 쉽다.  
 - 코멘트 기능은 [disqus](http://disqus.com/ "disqus")나 [Facebook Comments](https://developers.facebook.com/docs/plugins/comments "Facebook Comments")를 이용하면 된다.  
 
-##jekyll 설치  
+## jekyll 설치  
 - [RubyGems](http://rubygems.org/ "RubyGems") 설치 (리눅스 배포버전에 대부분 포함되어 있다.)  
 - `sudo gem install jekyll`  
 - `jekyll new folder_name`  
@@ -45,14 +45,14 @@ github에 수북히 쌓여 있는 파일들은 새로 생성된 폴더(folder_na
 파일 이름은 `년도-월-일-포스트명.md` 형식으로 추가하면 된다.  
 확장자는 꼭 .md가 아닌 .html도 상관없다.  
 
-##소셜 코멘트 도구인 disqus의 장점  
+## 소셜 코멘트 도구인 disqus의 장점  
 소셜 코멘트로 도구로 방대한 블로거들이 사용하고 있으며,  
 사용자들은 disqus 계정이 없이도 코멘트를 남길 수 있다.  
 기존에는 어느 포스트에 어느 코멘트를 남겼는지 잊어버리고 지나가는 경우가 많았다면,  
 어느 포스트에 어떠한 코멘트가 남겨졌는지 확인이 가능하며, 소셜 네트워크 서비스로 공유가 가능하여  
 풍부한 상호작용을 할 수 있는 강력한 코멘트 도구이다.  
 
-##disqus를 활용하여 코멘트 기능 달기  
+## disqus를 활용하여 코멘트 기능 달기  
 위에서 언급했듯이 코멘트 기능으로 disqus를 활용하는 방법이 있어 알아보도록 하겠다.  
 방법은 매우 간단하다.  
 

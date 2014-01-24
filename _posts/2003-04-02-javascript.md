@@ -6,14 +6,14 @@ tags: [javascript]
 fullview: false
 ---
 
-##자바스크립트  
+## 자바스크립트  
 1. [자바스크립트 특징](#javascript)  
 1. [기본문법](#basic)  
 1. [함수, 객체](#function_object)  
 1. [상속](#inheritance)  
 1. [이벤트](#event)  
 
-###<a href="#" name="javascript">자바스크립트 특징</a>  
+### <a href="#" name="javascript">자바스크립트 특징</a>  
 
 - function 중심의 절차적 프로그래밍(producedural programing)이다.  
 - object 중심의 객체 지향 프로그래밍(object-oriented programing)이다.  
@@ -30,7 +30,7 @@ fullview: false
 - 반환값이 될 수 있다.  
 - 비동기적인 처리 등의 구현이 간편하다.  
 
-###<a href="#" name="basic">기본문법</a>  
+### <a href="#" name="basic">기본문법</a>  
 
 - 공백은 문자를 구분하는 형태이다.  
 - 주석도 공백으로 취급한다.  
@@ -57,7 +57,7 @@ fullview: false
 1. [continue](#continue)  
 1. [배열](#array) 
 
-####<a href="#" name="literal">리터럴</a>  
+#### <a href="#" name="literal">리터럴</a>  
 특별한 생성자 없이 코드 상에서 데이터 값을 표현하는 방식이다.  
 
 {% highlight javascript %}
@@ -76,7 +76,7 @@ function(){}  // 함수 리터럴
 ```
 {% endhighlight %}
 
-####<a href="#" name="variable">변수</a>  
+#### <a href="#" name="variable">변수</a>  
 - 특정 값을 임시로 저장할 수 있는 공간이다.  
 - 메모리에 공간을 차지한다.(테이터 타입에 따라 차지하는 공간이 결정된다.)    
 - 변수 선언시 var를 사용한다.  
@@ -106,7 +106,7 @@ alert(nNum);  // 1
 ```
 {% endhighlight %}
 
-####<a href="#" name="program_process">프로그램 실행 단계</a>  
+#### <a href="#" name="program_process">프로그램 실행 단계</a>  
 > 프로그램 -> 파싱 -> 변수, 함수 정의 -> 실행 -> 함수 코드 파싱 -> 실행  
 
 어떤 함수에도 포함하지 않은 변수, 어떤 함수에도 포함하지 않는 이름 있는 함수에 대해  
@@ -130,12 +130,12 @@ alert(foo);  // 0
 > 저장될 때 앞에서 선언된 변수 메모리에 덮어쓰게 된다.  
 > 따라서 `네임스페이스`가 필요하다.  
 
-####<a href="#" name="data-type">데이터 타입</a>  
+#### <a href="#" name="data-type">데이터 타입</a>  
 - 데이터 타입으로는 number, string, boolean, null, undefined 가 있다.  
 - 객체, 배열 함수 테이터 타입을 지원한다.  
 - 날짜, 정규식 등의 데이터 타입을 지원한다.  
 
-####<a href="#" name="number">숫자</a>  
+#### <a href="#" name="number">숫자</a>  
 - 모든 숫자는 실수 값으로 해석된다.  
 - 자바스크립트 해석기는 우선 실제 값으로 계산한 다음 변수에 저장한다.  
 - 표현 가능 범위 : 최대 ±1.7976931348623157 x 10308 / 최소 ±5 x 10-324  
@@ -182,7 +182,7 @@ console.log(parseInt(a, 10));  // 5 - 10진수로 반환
 ```
 {% endhighlight %}
 
-#####Math  
+##### Math  
 > 복잡한 수학 연산을 위해 제공되는 객체이다.  
 > [w3schools](http://www.w3schools.com/jsref/jsref_obj_math.asp "Math")  
 		
@@ -204,7 +204,7 @@ var h = Math.floor(Math.random() * 10);  // 0초과 10미만의 숫자중 소수
 ```
 {% endhighlight %}
 
-#####Number  
+##### Number  
 데이터 타입의 숫자를 객체로 만들 수 있다.  
 [w3schools](http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")  
 		
@@ -238,7 +238,7 @@ document.write(testNum.toFixed(3));  //소수점 이하 세 자리까지 표시�
 ```
 {% endhighlight %}
 
-####<a href="#" name="string">문자열</a>  
+#### <a href="#" name="string">문자열</a>  
 - 작은 따옴표(' '), 큰 따옴표(" ")로 묶어서 표현한다.  
 - 자바스크립트 내에서 모든 문자는 16비트 유니코드(UTF-16) 이다.  
 - 자신의 길이를 나타내는 length라는 속성을 갖는다.  
@@ -375,7 +375,7 @@ console.log(true > false);  // true
 ```
 {% endhighlight %}
 
-####<a href="#" name="undefined">undefined</a>  
+#### <a href="#" name="undefined">undefined</a>  
 값이 할당되지 않음을 나타낸다.  
 		
 {% highlight javascript %}
@@ -387,7 +387,7 @@ console.log(null === undefined)  // false
 ```
 {% endhighlight %}
 
-####<a href="#" name="null">null</a>  
+#### <a href="#" name="null">null</a>  
 - 객체가 없음을 나타낸다.  
 - 아무런 값도 나타내지 않는다.  
 - 어떠한 유효한 값도 아니다. (값 자체가 없다는 의미는 아니다.)  
@@ -399,8 +399,8 @@ var foo2 = null + 6;  // 6
 ```
 {% endhighlight %}
 
-####<a href="#" name="operator">연산자</a>  
-#####증가, 감소 연산자  
+#### <a href="#" name="operator">연산자</a>  
+##### 증가, 감소 연산자  
 - ++변수 이면 먼저 증가 후 최종값으로 평가한다.  
 - 변수++ 이면 평가 끝난 후 증가한다.  
 		
@@ -416,7 +416,7 @@ console.log(i);  // 2
 ```
 {% endhighlight %}
 
-#####비교 연산자  
+##### 비교 연산자  
 - '=='(equal)은 타입이 다른 경우 타입을 일치 시킨 후 비교한다.  
 - '==='(identical)은 타입 비교까지 한다.  
 		
@@ -437,14 +437,14 @@ console.log(undefined == null);  // true
 ```
 {% endhighlight %}
 
-#####OR 연산자(||)  
+##### OR 연산자(||)  
 좌측 || 우측 연산시 좌측이 참이면 우측은 평가하지 않는다. 즉, 좌측 값만 반환한다.  
 
-#####AND 연산자(&&)  
+##### AND 연산자(&&)  
 좌측 && 우측 연산시 좌측이 거짓이면 우측은 평가하지 않고 좌측 값만 반환한다.  
 좌측이 참이면 우측 값을 반환한다.  
 
-#####부정 연산자(!)  
+##### 부정 연산자(!)  
 항상 true, false만 반환된다.  
 		
 {% highlight javascript %}
@@ -453,7 +453,7 @@ var booleans != false;  // true
 ```
 {% endhighlight %}
 
-####<a href="#" name="if">조건문 if</a>  
+#### <a href="#" name="if">조건문 if</a>  
 		
 {% highlight javascript %}
 ```javascript
@@ -479,7 +479,7 @@ location.assign(sURL);
 ```
 {% endhighlight %}
 
-####<a href="#" name="switch">조건문 switch</a>  
+#### <a href="#" name="switch">조건문 switch</a>  
 너무 많은 else if문을 사용하게 된다면 switch 문으로 코드를 줄일 수 있을 것이다.  
 		
 {% highlight javascript %}
@@ -499,7 +499,7 @@ switch(nAge){
 ```
 {% endhighlight %}
 
-####<a href="#" name="for">반복문 for / for in</a>  
+#### <a href="#" name="for">반복문 for / for in</a>  
 for문 안에서 사용된 변수 i는 for 밖에서도 사용 가능하다.  
 변수 스코프는 함수 단위로 결정된다.  
 		
@@ -534,7 +534,7 @@ for(arrAge[i++] in oAge);  // arrAge = ['a', 'b'];
 ```
 {% endhighlight %}
 
-####<a href="#" name="while">반복문 while / do while</a>  
+#### <a href="#" name="while">반복문 while / do while</a>  
 		
 {% highlight javascript %}
 ```javascript
@@ -552,7 +552,7 @@ do {
 ```
 {% endhighlight %}
 
-####<a href="#" name="try">예외 처리 try / catch / finally / throw</a>  
+#### <a href="#" name="try">예외 처리 try / catch / finally / throw</a>  
 		
 {% highlight javascript %}
 ```javascript
@@ -592,10 +592,10 @@ try{
 ```
 {% endhighlight %}
 
-####<a href="#" name="break">break</a>  
+#### <a href="#" name="break">break</a>  
 `조건문`, `반복문`에서 벗어날 때 사용한다.  
 
-####<a href="#" name="continue">continue</a>  
+#### <a href="#" name="continue">continue</a>  
 `반복문`에서 현재 반복을 중지하고 다음 반복을 수행한다.  
 
 		
@@ -618,7 +618,7 @@ alert(output);
 ```
 {% endhighlight %}
 
-####<a href="#" name="array">배열</a>  
+#### <a href="#" name="array">배열</a>  
 		
 {% highlight javascript %}
 ```javascript
@@ -674,7 +674,7 @@ function CompareForSort(first, second)
 ```
 {% endhighlight %}
 
-###<a href="#" name="function_object">함수, 객체</a>  
+### <a href="#" name="function_object">함수, 객체</a>  
 
 - 자바스크립트에서 함수는 객체이다.  
 - 변수에 할당될 수 있고, 다른 함수의 인자로 전달 되거나 함수의 결과로써 반환될 수도 있는 `일급 객체(first-class object)`로서의 특징을 가지고 있다.  
@@ -695,7 +695,7 @@ function CompareForSort(first, second)
 1. [객체 멤버 관리](#member_object)  
 
 
-####<a href="#" name="function">함수 정의</a>  
+#### <a href="#" name="function">함수 정의</a>  
 - 함수를 정의하는 것만으로 함수 객체가 생성된다.  
 - 일반 객체와 다르게 `실행 코드 블록`을 가지고 있다.  
 - 일반 객체와 같이 동적으로 멤버를 가질 수 있다.
@@ -775,7 +775,7 @@ foo.call(obj, 'c', 'd');
 ```
 {% endhighlight %}
 
-#####arguments  
+##### arguments  
 함수를 호출할 때 정의된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 달라도 된다.  
 매개변수(oarameter) 개수보다 넘어온 인자(argument)의 개수가 적으면 차례로 값이 채워지고 나머지는 `undefined`가 된다.  
 
@@ -797,7 +797,7 @@ function foo(){
 ```
 {% endhighlight %}
 
-#####arguments.callee  
+##### arguments.callee  
 - this와 유사하나 arguments.callee는 함수를 가르키고, this는 객체를 가르킨다.  
 - 재귀 호출 함수와 같이 구현할 때 유용하다.  
 		
@@ -834,7 +834,7 @@ function isNumber(n){
 ```
 {% endhighlight %}
 
-####<a href="#" name="function_literal">함수 리터럴 이용</a>  
+#### <a href="#" name="function_literal">함수 리터럴 이용</a>  
 - 인자로 전달 가능  
 - 변수에 할당  
 - 다른 함수의 반환값으로 사용  
@@ -886,7 +886,7 @@ var Cont = new cont(10, 20);
 ```
 {% endhighlight %}
 
-####<a href="#" name="prototype">프로토타입</a>  
+#### <a href="#" name="prototype">프로토타입</a>  
 
 **프로토타입 기반 프로그래밍** 
 
@@ -901,7 +901,7 @@ var Cont = new cont(10, 20);
 - 모든 객체는 속성을 참조할 때 해당 객체에서 우선 검색하고, 존재하지 않는다면 참조하고 있는 prototype에서 찾는다. 
     프로토타입 체인을 계속 따라 올라가도 속성이 존재하지 않는다면 `undefined`를 반환한다.  
 
-####<a href="#" name="new_function">Function 생성자 사용</a>  
+#### <a href="#" name="new_function">Function 생성자 사용</a>  
 - new와 함께 사용된다.  
 - 다른 인스턴스를 생성할 수 있는 요소이다.  
 - `메모리 사용이 비효율적`이다.  
@@ -912,7 +912,7 @@ var f = new Function('x','y','return x+y');
 ```
 {% endhighlight %}
 
-####<a href="#" name="Function">Function</a>  
+#### <a href="#" name="Function">Function</a>  
 - Function 이라는 함수는 `함수 인스턴스(instance)를 생성하는 함수`이다.  
 - Object, Array도 Function의 인스턴스이다.  
 - 모든 함수는 Function 멤버를 공유한다.  
@@ -940,7 +940,7 @@ function foo(x,y){
 
 ![Alt text](http://smilesol85.github.io/_posts/images/function_prototype.png "Function prototype")  
 
-####<a href="#" name="self-invoking">자기 호출 함수</a>  
+#### <a href="#" name="self-invoking">자기 호출 함수</a>  
 		
 {% highlight javascript %}
 ```javascript
@@ -971,7 +971,7 @@ function foo(x,y){
 ```
 {% endhighlight %}
 
-####<a href="#" name="callback">콜백 함수</a>  
+#### <a href="#" name="callback">콜백 함수</a>  
 > 호출 함수 ->(호출) 라이브러리 함수 ->(콜백 호출) 콜백 함수  
 		
 {% highlight javascript %}
@@ -1015,7 +1015,7 @@ function LibrayFunction(arg, callback){
 ```
 {% endhighlight %}
 
-####<a href="#" name="closer">클로저</a>  
+#### <a href="#" name="closer">클로저</a>  
 - 클로저를 사용하는 이유는 대부분 함수 상태를 기억하기 위해서이다.  
 - jQuery와 같은 대형 라이브러리에서 흔히 채용되는 패턴이다.  
 - 내부 함수에서 외부 함수의 변수에 접근할 수 있는 것을 클로저라고 한다.  
@@ -1053,7 +1053,7 @@ alert(global());  // g
 ```
 {% endhighlight %}
 
-#####클로저 인스턴스  
+##### 클로저 인스턴스  
 클로저를 호출하는 것은 `클로저 인스턴스를 생성`하는 것이다.  
 		
 {% highlight javascript %}
@@ -1075,11 +1075,11 @@ g();  // 4
 ```
 {% endhighlight %}
 
-####<a href="#" name="class_object">클래스 기반의 객체지향</a>  
+#### <a href="#" name="class_object">클래스 기반의 객체지향</a>  
 객체 : 세상의 모든 것은 객체로 객체지향 언어느는 이러한 객체를 표현할 수 있다.  
 클래스 : 비슷한 객체끼리 그룹핑 한 것을 말한다.  
 
-####<a href="#" name="object_constructor">객체 구성</a>  
+#### <a href="#" name="object_constructor">객체 구성</a>  
 - 자바스크립트 내장 객체(Built-in Object)  
 	자바스크립트 엔진이 구동되는 시점에 제공된다.  
 	`Object`, `String`, `Number`, `Boolean`, `Date`, `Array`, `Math` 등 내장 객체들이 많다.  
@@ -1097,7 +1097,7 @@ g();  // 4
 
 > 모든 객체는 내장 객체의 최상위 레벨인 Object 객체에서 파생된 것이다.  
 
-####<a href="#" name="create_object">객체 생성하기</a>  
+#### <a href="#" name="create_object">객체 생성하기</a>  
 **constructor 이용 - 동일한 구성을 가진 여러 객체 생성 가능**  
 		
 {% highlight javascript %}
@@ -1147,9 +1147,9 @@ delete oObject.name;
 ```
 {% endhighlight %}
 
-####<a href="#" name="member_object">객체 멤버 관리</a>  
+#### <a href="#" name="member_object">객체 멤버 관리</a>  
 
-#####hasOwnProperty 메서드  
+##### hasOwnProperty 메서드  
 Object 객체에 멤버가 있는지 확인할 수 있다.  
 단, toString과 같이 원래 멤버에 대해서는 작동하지 않는다.  
 		
@@ -1163,7 +1163,7 @@ hasProperty2 = food.hasOwnProperty('toString');  // false
 ```
 {% endhighlight %}
 
-####in 연산자  
+#### in 연산자  
 Object 객체에 멤버가 있는지 확인할 수 있다.  
 단, toString과 같이 원래 멤버에 대해서는 작동한다.  
 		
@@ -1181,7 +1181,7 @@ var food = {
 ```
 {% endhighlight %}
 
-#####비공개 멤버  
+##### 비공개 멤버  
 		
 {% highlight javascript %}
 ```javascript
@@ -1195,7 +1195,7 @@ function foo(){
 ```
 {% endhighlight %}
 
-#####인스턴스 멤버  
+##### 인스턴스 멤버  
 		
 {% highlight javascript %}
 ```javascript
@@ -1218,7 +1218,7 @@ F.profile();
 ```
 {% endhighlight %}
 
-#####프로토타입 멤버  
+##### 프로토타입 멤버  
 		
 {% highlight javascript %}
 ```javascript
@@ -1253,7 +1253,7 @@ A.prototype = null;
 ```
 {% endhighlight %}
 
-#####생성자 멤버  
+##### 생성자 멤버  
 		
 {% highlight javascript %}
 ```javascript
@@ -1266,7 +1266,7 @@ foo.c = function(){};
 ```
 {% endhighlight %}
 
-###<a href="#" name="inheritance">상속</a>  
+### <a href="#" name="inheritance">상속</a>  
 		
 {% highlight javascript %}
 ```javascript
@@ -1303,9 +1303,9 @@ console.log(sol.__proto__);
 ```
 {% endhighlight %}
 
-###<a href="#" name="event">이벤트</a>  
+### <a href="#" name="event">이벤트</a>  
 
-####이벤트 핸들러 등록 방법  
+#### 이벤트 핸들러 등록 방법  
 		
 - html 문서에서 직접 작성  
 - 간단하지만 화면을 구성하는 마크업과 분리되지 않아 권장하지 않는다.  
@@ -1346,7 +1346,7 @@ $('.event').addEventListener('click', function(){});
 ```
 {% endhighlight %}
 
-####이벤트  
+#### 이벤트  
 		
     {% highlight html %}
 	<body onload="console.log('one');">
