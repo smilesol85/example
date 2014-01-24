@@ -938,7 +938,7 @@ function foo(x,y){
 
 > Function ->(생성) Object(Function 인스턴스) ->(생성) Object 객체(Object 인스턴스)  
 
-![Alt text](http://smilesol85.github.io/_posts/images/function_prototype.png "Function prototype")  
+![Alt text](http://smilesol85.github.io/dev/test-page/images/function_prototype.png "Function prototype")  
 
 #### <a href="#" name="self-invoking">자기 호출 함수</a>  
 		
