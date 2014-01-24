@@ -1,8 +1,27 @@
-<a href="http://smilesol85.github.io/" class="btn btn-default">Blog : smilesol85's ordinary Front-end</a>
-====  
 
-Theme. dbyll  
-=====  
+<a href="http://smilesol85.github.io/" class="btn btn-default">Blog : ordinary Front-end</a>
+
+**theme**  
+- _includes  
+- _layouts  
+- _posts  
+- assets  
+- 404.html  
+- LICENSE  
+- _config.yml  
+- categories.html  
+- feed.xml  
+- index.html  
+- tags.html  
+
+**blog backup**  
+- backup  
+
+**push 예정**  
+- appointed  
+
+
+#Theme. dbyll  
 
 Open source stylish, minimalistic theme for jekyll.  
 Demo: http://dbtek.github.io/dbyll/
