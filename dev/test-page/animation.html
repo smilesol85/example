@@ -1,80 +1,59 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>animation</title>
+<title>shadow</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
 <link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
 <style>
-.box{position:relative;top:0;left:0;width:100px;height:100px;line-height:100px;border-radius:50px;text-align:center;background:orange;
-    -webkit-animation-name:ani;
-    -webkit-animation-duration:2s;
-    -webkit-animation-timing-function:linear;
-    animation-name:ani;
-    animation-duration:2s;
-    animation-timing-function:linear;
-}
-.box_v2{
-    -webkit-animation-iteration-count:infinite;
-    animation-iteration-count:infinite;
-}
-.box_v3{
-    -webkit-animation-iteration-count:infinite;
-    -webkit-animation-direction:alternate; /* normal 은 from 에서 to */
-    animation-iteration-count:infinite;
-    animation-direction:alternate; /* normal from 에서 to */
-}
-.box_v4:hover{
-    -webkit-animation-play-state:paused; /* running */
-    animation-play-state:paused; /* running */
-}
-@-webkit-keyframes ani{
-    from{left:0;-webkit-transform:rotate(0deg);}
-    50%{left:500px;}
-    to{left:500px;-webkit-transform:rotate(360deg);}
-}
-@keyframes ani{
-    from{left:0;transform:rotate(0deg);}
-    50%{left:500px;}
-    to{left:500px;transform:rotate(360deg);}
-}
+p{background-color:#aaa}
+.shadow1{box-shadow:5px 5px 10px red;text-shadow:5px 5px 10px blue}
+.shadow2{box-shadow:0 0 10px red;text-shadow:0 0 10px blue}
+.shadow3{box-shadow:0 0 0 1px red}
+.shadow4{box-shadow:0 10px 10px -5px red}
+.shadow5{box-shadow:inset 0 -10px 10px -8px red}
+.shadow6{box-shadow:inset 0 0 5px red}
+.shadow7{box-shadow:inset 0 -4px 10px red,inset -8px 0 10px red,inset 0 1px 10px red,inset 20px 0 10px red}
+.shadow8{box-shadow:0 0 1px 2px purple,0 0 1px 4px blue,0 0 1px 6px green,0 0 1px 8px yellow,0 0 1px 10px orange,0 0 1px 12px red}
 </style>
-<script src="http://smilesol85.github.io/common/prefixfree.min.js"></script>
 </head>
 <body>
 <div id="wrap">
-    <script>var titHeader = 'animation';</script>
+    <script>var titHeader = 'shadow';</script>
     <script src="http://smilesol85.github.io/common/header.js"></script>
     <section>
-        <article>
-            <h2>animation-name</h2>
-            <div class="box box_v1">
-                rotation
-            </div>
+        <article class="dsc">
+            <h2>.shadow1{box-shadow:5px 5px 10px red;text-shadow:5px 5px 10px blue}</h2>
+            <p class="shadow1">shadow</p>
         </article>
-        <article>
-            <h2>animation-iteration-count</h2>
-            <div class="box box_v2">
-                repeat
-            </div>
+        <article class="dsc">
+            <h2>.shadow2{box-shadow:0 0 10px red;text-shadow:0 0 10px blue}</h2>
+            <p class="shadow2">shadow</p>
         </article>
-        <article>
-            <h2>animation-direction</h2>
-            <div class="box box_v3">
-                repeat
-            </div>
+        <article class="dsc">
+            <h2>.shadow3{box-shadow:0 0 0 1px red;text-shadow:0 0 0 1px blue}</h2>
+            <p class="shadow3">shadow</p>
         </article>
-        <article>
-            <h2>animation-play-state</h2>
-            <div class="box box_v4">
-               stop and play 
-            </div>
-            <p>stop and play to mouseover!</p>
+        <article class="dsc">
+            <h2>.shadow4{box-shadow:0 10px 10px -5px red}</h2>
+            <p class="shadow4">shadow</p>
         </article>
-        <article>
-            animation 속성 한 줄로 입력하기<br>
-            animation:|animation-name|animation-duration|animation-timing-function|animation-delay|animation-iteration-count|animation-play-state
+        <article class="dsc">
+            <h2>.shadow5{box-shadow:inset 0 -10px 10px -8px red}</h2>
+            <p class="shadow5">shadow</p>
+        </article>
+        <article class="dsc">
+            <h2>.shadow6{box-shadow:inset 0 0 5px red}</h2>
+            <p class="shadow6">shadow</p>
+        </article>
+        <article class="dsc">
+            <h2>.shadow7{box-shadow:inset 0 -4px 10px red,inset -8px 0 10px red,inset 0 1px 10px red,inset 20px 0 10px red}</h2>
+            <p class="shadow7">shadow</p>
+        </article>
+        <article class="dsc">
+            <h2>.shadow8{box-shadow:0 0 1px 2px purple,0 0 1px 4px blue,0 0 1px 6px green,0 0 1px 8px yellow,0 0 1px 10px orange,0 0 1px 12px red}</h2>
+            <p class="shadow8">shadow</p>
         </article>
     </section>
     <script src="http://smilesol85.github.io/common/footer.js"></script>
