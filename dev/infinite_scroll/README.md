@@ -1,5 +1,5 @@
 # infinite scroll
-<a href="http://smilesol85.github.io/dev/useragent/infinite_scroll.html">infinite scroll page</a>  
+<a href="http://smilesol85.github.io/dev/infinite_scroll/infinite_scroll.html">infinite scroll page</a>  
 
 - TYPE A - jQuery  
 
