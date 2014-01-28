@@ -1,4 +1,6 @@
-# infinite scroll
+# infinite scroll  
+- 단순 무한 스크롤  
+
 <a href="http://smilesol85.github.io/dev/infinite_scroll/infinite_scroll.html">infinite scroll page</a>  
 
 - TYPE A - jQuery  
