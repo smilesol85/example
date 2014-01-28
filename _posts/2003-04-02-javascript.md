@@ -1370,7 +1370,9 @@ $('.event').addEventListener('click', function(){});
 
 ## <a href="#" name="appendix">부록</a>  
 1. [location](#location)  
+1. [resize](#resize)  
 
+### <a href="#" name="location">location</a>  
         
 {% highlight javascript %}
 ```javascript
@@ -1409,4 +1411,23 @@ document.location.reload();   // 캐시에서 먼저 검색 후 없을 경우 �
 document.location.reload(true);   // 서버에서 무조건 재호출
  */
  ```
+{% endhighlight %}
+
+### <a href="#" name="resize">resize</a>  
+- resizeTo 와 resizeBy 는 윈도우의 크기를 변경한다.  
+- resizeTo는 절대좌표에 해당한다.  
+- resizeBy는 상대좌표에 해당된다.  
+        
+{% highlight javascript %}
+```javascript
+// width="50",height="100"
+function reSize(){
+	window.resizeTo('50','100');
+}
+
+// width="150",height="250"
+function reSize(){
+	window.resizeBy('50','100');
+}
+```
 {% endhighlight %}
