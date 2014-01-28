@@ -12,6 +12,7 @@ orient.check.prototype = {
     },
     
     checkOrient : function(){
+        var oThis = this;
         var sWrite = '';
         $(window).bind('orientationchange', function(e){
             switch(window.orientation){
@@ -28,7 +29,7 @@ orient.check.prototype = {
                     sWrite = '+90';
                     break;
             }
-            this.elContent.html(sWrite);
+            oThis.elContent.html(sWrite);
         });
     }
 };
