@@ -16,18 +16,15 @@ orient.check.prototype = {
             switch(window.orientation){
                 case 0: 
                     // document.getElementById("orient_css").href = "css/iphone_portrait.css";
-                    // this.elContent.html += '0 <br>';
-                    alert('0');
+                    this.elContent.html += '0 <br>';
                     break;
                 case -90: 
                     // document.getElementById("orient_css").href = "css/iphone_landscape.css";
-                    // this.elContent.html += '-90 <br>';
-                    alert('-90');
+                    this.elContent.html += '-90 <br>';
                     break;
                 case 90: 
                     // document.getElementById("orient_css").href = "css/iphone_landscape.css";
-                    // this.elContent.html += '+90 <br>';
-                    alert('+90');
+                    this.elContent.html += '+90 <br>';
                     break;
             }
         });
