@@ -1,5 +1,5 @@
 # spinbox  
-<a href="http://smilesol85.github.io/dev/spinbox/spinbox.html">spinbox page</a>  
+<a href="http://smilesol85.github.io/dev/spinbox/spinbox.html">spinbox page</a>, <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/spinbox">spinbox github</a>  
 
 ## 명세  
 1. 100이상 300이하의 숫자만 spin되며 그 외의 숫자는 200으로 초기화 된다.  
