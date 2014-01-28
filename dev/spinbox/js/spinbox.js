@@ -1,9 +1,6 @@
-// name space
 var spinbox = spinbox || {};
 
-// spinbox class
 spinbox = function(){
-	// this.init.apply(this, arguments);
 	this.init();
 };
 
@@ -14,12 +11,8 @@ spinbox.prototype = {
 	nDelaySpin : 500,
 
 	init : function(options){
-		// this.nSpin = options.nSpin || null;
-		
-		this.nSpin = null;
 		this.elInterval = null;
 		this.sGetValue = null;
-		this.regInput = null;
 
 		this._setElement();
 		this._setNumber();
@@ -42,7 +35,6 @@ spinbox.prototype = {
 	},
 
 	_regGetNum : function(getValue){
-		// TODO 음수값 처리, (^[+-])?[0-9]+
 		this.regValue = /[^0-9]/gi;
 		this.nDefault = parseInt(getValue.replace(this.regValue,''), 10);
 		this._counter();
@@ -50,9 +42,11 @@ spinbox.prototype = {
 
 	_counter : function(){
 		if(this.nMax === this.nDefault || this.nDefault > this.nMax){
-			this.nDefault = this.nMax;
+//			this.nDefault = this.nMax;
+            this.nDefault = 200;
 		}else if(this.nMin === this.nDefault || this.nDefault < this.nMin){
-			this.nDefault = this.nMin;
+//			this.nDefault = this.nMin;
+            this.nDefault = 200;
 		}else if(isNaN(this.nDefault) === true){
 			this.nDefault = 200;
 		}
@@ -97,7 +91,6 @@ spinbox.prototype = {
 		this.elSpin.on('blur', $.proxy(this._blur, this));
 		this.elUp.on('mousedown', $.proxy(this._setUp, this));
 		this.elDown.on('mousedown', $.proxy(this._setDown, this));
-		// TODO 특정 요소에서만 적용
 		$(document).on('mouseup', $.proxy(this._stopSpin, this));
 	}
 };
