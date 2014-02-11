@@ -1372,7 +1372,7 @@ $('.event').addEventListener('click', function(){});
 1. [자주 사용하는 정규식](#regexp)  
 1. [location](#location)  
 1. [resize](#resize)  
-1. [selectbox with jquery](#selectbox with jquery)  
+1. [selectbox with jquery](#selectbox_with_jquery)  
 
 ### <a href="#" name="regexp">regexp</a>  
 - `[]` : 안에 들어가는 것은 모두 or  
@@ -1468,11 +1468,10 @@ function reSize(){
 ```
 {% endhighlight %}
 
-### <a href="#" name="selectbox with jquery">selectbox with jquery</a>  
+### <a href="#" name="selectbox_with_jquery">selectbox with jquery</a>  
 		
     {% highlight html %}
-	<select id="selectBox" name="selectBox">
-        </select>
+	<select id="selectBox" name="selectBox"></select>
     <button type="submit" class="getVal">선택</button>
     
     <script>
