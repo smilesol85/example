@@ -1370,6 +1370,7 @@ $('.event').addEventListener('click', function(){});
 
 ## <a href="#" name="appendix">부록</a>  
 1. [자주 사용하는 정규식](#regexp)  
+1. [cdata](#cdata)  
 1. [location](#location)  
 1. [resize](#resize)  
 1. [selectbox with jquery](#selectbox_with_jquery)  
@@ -1406,6 +1407,17 @@ var nPhone2 = 010-123-5678;
 -([0-9]{3})-  // 3
 -([0-9]{3,4})-  // 1234, 123
 ```
+{% endhighlight %}
+
+### <a href="#" name="cdata">cdata</a>  
+
+{% highlight javascript %}
+```javascript
+// CDATA 는 DOCTYPE이 XHTML 일 경우 사용한다. 앞에 주석은 스크립트 문법에 맞지 않기 때문에 사용한 것이다
+//<![CDATA[
+alert(jQuery('#alert_test').text());
+//]]>
+ ```
 {% endhighlight %}
 
 ### <a href="#" name="location">location</a>  
