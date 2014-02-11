@@ -30,8 +30,12 @@ selectBox.control.prototype = {
     },
     
     actOption : function(){
+        var oThis = this;
         this.welSelect.change(function(){
-            alert($(this).val());
+            oThis.getVal = $(this).val();
+        });
+        $('.getVal').on('click',function(){
+            alert(oThis.getVal);
         });
     }
 };

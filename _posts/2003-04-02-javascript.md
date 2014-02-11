@@ -1369,9 +1369,44 @@ $('.event').addEventListener('click', function(){});
     {% endhighlight %}
 
 ## <a href="#" name="appendix">부록</a>  
+1. [자주 사용하는 정규식](#regexp)  
 1. [location](#location)  
 1. [resize](#resize)  
-1. [자주 사용하는 정규식](#regexp)  
+1. [selectbox with jquery](#selectbox with jquery)  
+
+### <a href="#" name="regexp">regexp</a>  
+- `[]` : 안에 들어가는 것은 모두 or  
+- `.` : 은 임의의 문자 +1 이상 선택  
+- `*` : 모두 선택  
+- `{1,3}` : 1개 글자, 3개 글자  
+- `[a-z]` : 알파벳 문자 매칭  
+- `[0-9]` : 숫자 매칭  
+- `^`01.* : 01로 시작하는 모든 글자 선택  
+- 08`$` : 08로 끝나는 글자 선택  
+- `<.*>` : 특정 태그 전부 선택  
+- `</?[a-z0-9]*>` : 특정 태그 전부 선택  
+- `/\s/g` : 공백 선택  
+- `/^(\s|\d)+$/` : 숫자 선택  
+- `/^[a-z0-9_]+$/` : 사용자 ID 선택  
+- `/^[a-z0-9_]{4,20}$/` : 사용자ID나 비밀번호 선택  
+- `/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/` : 날짜 (mm-dd-yyyy, mm/dd/yyyy) 선택  
+- `/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/` : 이메일 선택  
+- `/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i` : 이메일 선택  
+- `/^[0-9-+]+$/` : 전화번호 선택  
+- `/^\d{2,3}-\d{3,4}-\d{4}$/` : 전화번호 선택  
+- `/^\d{3}-\d{3,4}-\d{4}$/` : 핸드폰 번호 선택  
+- `/^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/` : 핸드폰 번호 선택  
+		
+{% highlight javascript %}
+```javascript
+var nPhone = 010-1234-5678;
+var nPhone2 = 010-123-5678;
+
+// 가운데 번호 중 3번째 숫자 찾기
+-([0-9]{3})-  // 3
+-([0-9]{3,4})-  // 1234, 123
+```
+{% endhighlight %}
 
 ### <a href="#" name="location">location</a>  
         
@@ -1433,36 +1468,56 @@ function reSize(){
 ```
 {% endhighlight %}
 
-### <a href="#" name="regexp">regexp</a>  
-- `[]` : 안에 들어가는 것은 모두 or  
-- `.` : 은 임의의 문자 +1 이상 선택  
-- `*` : 모두 선택  
-- `{1,3}` : 1개 글자, 3개 글자  
-- `[a-z]` : 알파벳 문자 매칭  
-- `[0-9]` : 숫자 매칭  
-- `^`01.* : 01로 시작하는 모든 글자 선택  
-- 08`$` : 08로 끝나는 글자 선택  
-- `<.*>` : 특정 태그 전부 선택  
-- `</?[a-z0-9]*>` : 특정 태그 전부 선택  
-- `/\s/g` : 공백 선택  
-- `/^(\s|\d)+$/` : 숫자 선택  
-- `/^[a-z0-9_]+$/` : 사용자 ID 선택  
-- `/^[a-z0-9_]{4,20}$/` : 사용자ID나 비밀번호 선택  
-- `/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{4}\b/` : 날짜 (mm-dd-yyyy, mm/dd/yyyy) 선택  
-- `/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/` : 이메일 선택  
-- `/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i` : 이메일 선택  
-- `/^[0-9-+]+$/` : 전화번호 선택  
-- `/^\d{2,3}-\d{3,4}-\d{4}$/` : 전화번호 선택  
-- `/^\d{3}-\d{3,4}-\d{4}$/` : 핸드폰 번호 선택  
-- `/^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/` : 핸드폰 번호 선택  
+### <a href="#" name="selectbox with jquery">selectbox with jquery</a>  
 		
-{% highlight javascript %}
-```javascript
-var nPhone = 010-1234-5678;
-var nPhone2 = 010-123-5678;
-
-// 가운데 번호 중 3번째 숫자 찾기
--([0-9]{3})-  // 3
--([0-9]{3,4})-  // 1234, 123
-```
-{% endhighlight %}
+    {% highlight html %}
+	<select id="selectBox" name="selectBox">
+        </select>
+    <button type="submit" class="getVal">선택</button>
+    
+    <script>
+    var selectBox = selectBox || {};
+    
+    selectBox.control = function(){
+        this.init();
+    };
+    
+    selectBox.control.prototype = {
+        init : function(){
+            this.getWelSelect();
+            this.setOption();
+            this.addOption();
+            this.actOption();
+        },
+        
+        getWelSelect : function(){
+            this.welSelect = $('#selectBox');
+        },
+        
+        setOption : function(){
+            this.arrOption = [];
+            this.arrOption.push('option1');
+            this.arrOption.push('option2');
+            this.arrOption.push('option3');
+        },
+        
+        addOption : function(){
+           for(var nOption = 0; nOption < this.arrOption.length; nOption++){
+               this.welSelect.append('<option value="'+nOption+'">'+this.arrOption[nOption]+'</option>');
+           }
+        },
+        
+        actOption : function(){
+            var oThis = this;
+            this.welSelect.change(function(){
+                oThis.getVal = $(this).val();
+            });
+            $('.getVal').on('click',function(){
+                alert(oThis.getVal);
+            });
+        }
+    };
+    
+    var oSelectBox = new selectBox.control();
+    </script>
+    {% endhighlight %}
