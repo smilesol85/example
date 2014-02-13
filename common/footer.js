@@ -1,3 +1,6 @@
-document.write('<footer>');
-document.write('smilesol85@gmail.com');
-document.write('</footer>');
+var sFooter = '';
+sFooter += '<footer class="footer">';
+sFooter += '<section class="container">';
+sFooter += 'smilesol85@gmail.com';
+sFooter += '</section>';
+sFooter += '</footer>';

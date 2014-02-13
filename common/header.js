@@ -22,7 +22,7 @@ var sHeader = '';
 sHeader += '<div class="navbar navbar-inverse navbar-fixed-top">';
 sHeader += '<div class="navbar-inner">';
 sHeader += '<div class="container">';
-sHeader += '<h1 class="brand">image-load</h1>';
+sHeader += '<h1 class="brand">'+sTitle+'</h1>';
 sHeader += '</div>';
 sHeader += '</div>';
 sHeader += '</div>';
