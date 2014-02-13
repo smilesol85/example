@@ -19,11 +19,5 @@ if(isie8 || isie7 || isie6){
 }
 
 var sHeader = '';
-sHeader += '<div class="navbar navbar-inverse">';
-sHeader += '<div class="navbar-inner">';
-sHeader += '<div class="container">';
-sHeader += '<h1 class="brand">'+sTitle+'</h1>';
-sHeader += '</div>';
-sHeader += '</div>';
-sHeader += '</div>';
+sHeader += '<h1>'+sTitle+'</h1>';
 document.write(sHeader);
