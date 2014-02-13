@@ -26,4 +26,4 @@ sHeader += '<h1 class="brand">'+sTitle+'</h1>';
 sHeader += '</div>';
 sHeader += '</div>';
 sHeader += '</div>';
-$('#wrap').prepend(sHeader);
+document.write(sHeader);
