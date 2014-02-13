@@ -7,6 +7,7 @@ imageLoad = function(){
 imageLoad.prototype = {
     init : function(){
         this.imageList();
+        this._setEvents();
     },
     
     imageList : function(){
@@ -21,6 +22,10 @@ imageLoad.prototype = {
         for(var i = 0; i < this.nImages; i++){
             $('.listPhoto').append('<li><img src="'+this.arrImages[i]+'"></li>');
         }        
+    },
+    
+    _setEvents : function(){
+        $('.addImage').on('click', $.proxy(this.addImage, this));
     }
 };
 
