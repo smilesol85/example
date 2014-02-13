@@ -18,6 +18,12 @@ if(isie8 || isie7 || isie6){
 	document.body.innerHTML = 'Download borwser<br>' + lnkIE + '<br>' + lnkCHROME + '<br>' + lnkFIREFOX;
 }
 
-document.write('<header>');
-document.write('<h1>:) '+titHeader+'</h1>');
-document.write('</header>');
+var sHeader = '';
+sHeader += '<div class="navbar navbar-inverse navbar-fixed-top">';
+sHeader += '<div class="navbar-inner">';
+sHeader += '<div class="container">';
+sHeader += '<h1 class="brand">image-load</h1>';
+sHeader += '</div>';
+sHeader += '</div>';
+sHeader += '</div>';
+$('#wrap').prepend(sHeader);
