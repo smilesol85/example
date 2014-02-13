@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>jquery mobile test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+<link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
+<style>
+#content{background-color:yellow}
+li{padding:10px 0;border:1px solid red}
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <script>var titHeader = 'jquery mobile test';</script>
+    <script src="http://smilesol85.github.io/common/header.js"></script>
+	
+    <section class="test1">
+        <h2>swipe</h2>
+        <div id="content">
+            <div id="txtSwipe">swipe 0</div>
+            <div id="txtSwipeLeft">swipeleft 0</div>
+            <div id="txtSwipeRight">swiperight 0</div>
+        </div>
+    </section>
+    
+    <section class="test2">
+        <h2>taphold</h2>
+        <ul data-role="listview" id="myList">
+        <li><a href="#">List Item 1 hold?</a></li>
+        <li><a href="#">List Item 2 hold?</a></li>
+        <li><a href="#">List Item 3 hold?</a></li>
+        <li><a href="#">List Item 4 hold?</a></li>
+        <li><a href="#">List Item 5 hold?</a></li>
+        </ul>
+        <div class="ui-block-b"><span id="eventLog"></span></div>
+    </section>
+</div>
+</body>
+<script>
+$(document).ready(init);
+    
+var nSwipeCount = 0;
+var nSwipeLeftCount = 0;
+var nSwipeRightCount = 0;
+    
+function init(){
+    $('#content').bind('swipe', function (event){
+        $('#txtSwipe').text('swipe ' + ++nSwipeCount);
+    });
+
+    $('#content').bind('swipeleft', function (event){
+        $('#txtSwipeLeft').text('swipeleft ' + ++nSwipeLeftCount);
+    });
+
+    $('#content').bind('swiperight', function (event){
+        $('#txtSwipeRight').text('swiperight ' + ++nSwipeRightCount);
+    });
+    
+    $('li').each(function(idx){
+        $(this).bind('taphold', function(event){
+            $('#eventLog').append('taphold:'+event.currentTarget.innerText+'<br/>');
+        });
+    });
+}
+</script>
+</html>
