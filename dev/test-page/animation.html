@@ -2,82 +2,91 @@
 <html lang="ko">
 <head>
 <title>animation</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="Content-Script-Type" content="text/javascript">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-<link rel="stylesheet" type="text/css" href="http://smilesol85.github.io/common/common.css">
-<style>
-.box{position:relative;top:0;left:0;width:100px;height:100px;line-height:100px;border-radius:50px;text-align:center;background:orange;
-    -webkit-animation-name:ani;
-    -webkit-animation-duration:2s;
-    -webkit-animation-timing-function:linear;
-    animation-name:ani;
-    animation-duration:2s;
-    animation-timing-function:linear;
-}
-.box_v2{
-    -webkit-animation-iteration-count:infinite;
-    animation-iteration-count:infinite;
-}
-.box_v3{
-    -webkit-animation-iteration-count:infinite;
-    -webkit-animation-direction:alternate; /* normal 은 from 에서 to */
-    animation-iteration-count:infinite;
-    animation-direction:alternate; /* normal from 에서 to */
-}
-.box_v4:hover{
-    -webkit-animation-play-state:paused; /* running */
-    animation-play-state:paused; /* running */
-}
-@-webkit-keyframes ani{
-    from{left:0;-webkit-transform:rotate(0deg);}
-    50%{left:500px;}
-    to{left:500px;-webkit-transform:rotate(360deg);}
-}
-@keyframes ani{
-    from{left:0;transform:rotate(0deg);}
-    50%{left:500px;}
-    to{left:500px;transform:rotate(360deg);}
-}
-</style>
-<script src="http://smilesol85.github.io/common/prefixfree.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/common/common.css">
+    <style>
+        .box{position:relative;top:0;left:0;width:100px;height:100px;line-height:100px;border-radius:50px;text-align:center;background:orange;
+            -webkit-animation-name:ani;
+            -webkit-animation-duration:2s;
+            -webkit-animation-timing-function:linear;
+            animation-name:ani;
+            animation-duration:2s;
+            animation-timing-function:linear;
+        }
+        .box_v2{
+            -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+        }
+        .box_v3{
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:alternate; /* normal 은 from 에서 to */
+            animation-iteration-count:infinite;
+            animation-direction:alternate; /* normal from 에서 to */
+        }
+        .box_v4:hover{
+            -webkit-animation-play-state:paused; /* running */
+            animation-play-state:paused; /* running */
+        }
+        @-webkit-keyframes ani{
+            from{left:0;-webkit-transform:rotate(0deg);}
+            50%{left:500px;}
+            to{left:500px;-webkit-transform:rotate(360deg);}
+        }
+        @keyframes ani{
+            from{left:0;transform:rotate(0deg);}
+            50%{left:500px;}
+            to{left:500px;transform:rotate(360deg);}
+        }
+    </style>
+    <script src="http://smilesol85.github.com/common/jquery.js"></script>
+    <script src="http://smilesol85.github.com/assets/js/bootstrap.js"></script>
+    <script src="http://smilesol85.github.com/common/common.js"></script>
 </head>
 <body>
-<div id="wrap">
-    <script>var titHeader = 'animation';</script>
-    <script src="http://smilesol85.github.io/common/header.js"></script>
-    <section>
-        <article>
-            <h2>animation-name</h2>
-            <div class="box box_v1">
-                rotation
+    <div id="wrap">
+        <div class="container">
+            <div class="page-header">
+                <script>var sTitle = 'animation';</script>
+                <script src="http://smilesol85.github.com/common/header.js"></script>
             </div>
-        </article>
-        <article>
-            <h2>animation-iteration-count</h2>
-            <div class="box box_v2">
-                repeat
+            <div class="lead">
             </div>
-        </article>
-        <article>
-            <h2>animation-direction</h2>
-            <div class="box box_v3">
-                repeat
-            </div>
-        </article>
-        <article>
-            <h2>animation-play-state</h2>
-            <div class="box box_v4">
-               stop and play 
-            </div>
-            <p>stop and play to mouseover!</p>
-        </article>
-        <article>
-            animation 속성 한 줄로 입력하기<br>
-            animation:|animation-name|animation-duration|animation-timing-function|animation-delay|animation-iteration-count|animation-play-state
-        </article>
-    </section>
-    <script src="http://smilesol85.github.io/common/footer.js"></script>
-</div>
+            <section>
+                <article>
+                    <h2>animation-name</h2>
+                    <div class="box box_v1">
+                        rotation
+                    </div>
+                </article>
+                <article>
+                    <h2>animation-iteration-count</h2>
+                    <div class="box box_v2">
+                        repeat
+                    </div>
+                </article>
+                <article>
+                    <h2>animation-direction</h2>
+                    <div class="box box_v3">
+                        repeat
+                    </div>
+                </article>
+                <article>
+                    <h2>animation-play-state</h2>
+                    <div class="box box_v4">
+                       stop and play 
+                    </div>
+                    <p>stop and play to mouseover!</p>
+                </article>
+                <article>
+                    animation 속성 한 줄로 입력하기<br>
+                    animation:|animation-name|animation-duration|animation-timing-function|animation-delay|animation-iteration-count|animation-play-state
+                </article>
+            </section>
+        </div>
+    </div>
+    <script src="http://smilesol85.github.com/common/footer.js"></script>
 </body>
 </html>
