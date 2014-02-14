@@ -24,8 +24,16 @@ imageLoad.prototype = {
         }        
     },
     
+    checkSize : function(){
+        $('.listPhoto img').each(function(){
+            this.sizeImage = $(this).width();
+            $(this).next().html(this.sizeImage);
+        });
+    },
+    
     _setEvents : function(){
         $('.addImage').on('click', $.proxy(this.addImage, this));
+        $('.checkSize').on('click', $.proxy(this.checkSize, this));
     }
 };
 
