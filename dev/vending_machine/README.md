@@ -1,7 +1,7 @@
 #MVC 패턴으로 vending_machine 개발하기!
 **[github.io](http://smilesol85.github.io/dev/vending_machine/vending_machine.html "vending_machine")**
 
-##명세  
+###명세  
 1. 현재 금액 상태를 볼 수 있다.  
 1. 100원, 500원, 1,000원을 넣을 수 있다.  
 1. 동전을 넣으면 현재 금액 상태가 바뀐다.  
