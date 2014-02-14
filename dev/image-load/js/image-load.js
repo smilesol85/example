@@ -26,8 +26,10 @@ imageLoad.prototype = {
     
     checkSize : function(){
         $('.listPhoto img').each(function(){
-            this.sizeImage = $(this).width();
-            $(this).next().html(this.sizeImage);
+            this.widthImage = $(this).width();
+            this.heightImage = $(this).height();
+            $(this).parent().append(this.widthImage+'x');
+            $(this).parent().append(this.heightImage);
         });
     },
     
