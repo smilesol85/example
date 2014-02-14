@@ -13,14 +13,14 @@ actionScroll.unlimitScroll.prototype = {
     },
     
     _setHeight : function(nVal){
-        $('section').height(nVal);
+        $('#wrap').height(nVal);
     },
     
     scroll : function(){
         var oThis = this;
         $(window).scroll(function(){
             if($(window).scrollTop() == $(document).height() - $(window).height()){
-                var nHeightSection = $('section').height() + oThis.nExpand;
+                var nHeightSection = $('#wrap').height() + oThis.nExpand;
                 oThis._setHeight(nHeightSection);
             }
         });
