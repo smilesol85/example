@@ -1374,7 +1374,7 @@ $('.event').addEventListener('click', function(){});
 1. [location](#location)  
 1. [resize](#resize)  
 1. [selectbox with jquery](#selectbox_with_jquery)  
-1. [encodeURI(), decodeURI()](encodeURI_decodeURI)  
+1. [encodeURI(), decodeURI()](#encodeURI_decodeURI)  
 
 ###<a href="#" name="regexp">regexp</a>  
 - `[]` : 안에 들어가는 것은 모두 or  
