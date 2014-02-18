@@ -1374,6 +1374,7 @@ $('.event').addEventListener('click', function(){});
 1. [location](#location)  
 1. [resize](#resize)  
 1. [selectbox with jquery](#selectbox_with_jquery)  
+1. [encodeURI(), decodeURI()](encodeURI_decodeURI)  
 
 ###<a href="#" name="regexp">regexp</a>  
 - `[]` : 안에 들어가는 것은 모두 or  
@@ -1532,3 +1533,18 @@ function reSize(){
     var oSelectBox = new selectBox.control();
     </script>
     {% endhighlight %}
+    
+###<a href="#" name="">encodeURI(), decodeURI()</a>  
+
+- 최소한의 문자  
+        
+        encodeURI('ABC가나다http://www.naver.com');  // ABC%EA%B0%80%EB%82%98%EB%8B%A4http://www.naver.com <-> decodeURI
+        
+- 특수문자 포함  
+        
+        encodeURIComponent('ABC가나다http://www.naver.com');  // ABC%EA%B0%80%EB%82%98%EB%8B%A4http%3A%2F%2Fwww.naver.com <-> decodeURIComponent
+        
+- 한글은 유니코드 형태로 변환하며 특수문자도 변환  
+        
+        escape('ABC가나다http://www.naver.com');  // ABC%uAC00%uB098%uB2E4http%3A//www.naver.com <-> unescape()
+        
