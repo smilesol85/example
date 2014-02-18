@@ -1534,7 +1534,7 @@ function reSize(){
     </script>
     {% endhighlight %}
     
-###<a href="#" name="">encodeURI(), decodeURI()</a>  
+###<a href="#" name="encodeURI_decodeURI">encodeURI(), decodeURI()</a>  
 
 - 최소한의 문자  
         
