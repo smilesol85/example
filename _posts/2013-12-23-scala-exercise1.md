@@ -1,10 +1,14 @@
 ---
 layout: post
-title: scala 1장+연습문제 (쉽게 배워서 빨리 써먹는 스칼라 프로그래밍 스터디)
+title: (study)쉽게 배워서 빨리 써먹는 스칼라 프로그래밍(1장+연습문제)
 categories: [scala]
 tags: [scala]
 fullview: false
 ---
+
+> study book : 쉽게 배워서 빨리 써먹는 스칼라 프로그래밍  
+> 저자 : 케이 호스트만  
+> 역자 : 서광열  
 
 ## 기본기  
 
