@@ -19,3 +19,13 @@ for(var i = 0; i <= 10; i++){
 }
 console.log('Result : ', output);
 console.timeEnd('checkTime');
+
+// 현재 운영체제 또는 프로그램과 관련된 정보를 표시하는 속성과 메서드
+console.log('- process.env: ', process.env);
+console.log('- process.version: ', process.version);
+console.log('- process.versions: ', process.versions);
+console.log('- process.arch: ', process.arch);
+console.log('- process.platform: ', process.platform);
+
+console.log('- process.memoryUsage(): ', process.memoryUsage());
+console.log('- process.uptime(): ', process.uptime());
