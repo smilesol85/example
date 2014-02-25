@@ -1376,7 +1376,7 @@ $('.event').addEventListener('click', function(){});
 1. [selectbox with jquery](#selectbox_with_jquery)  
 1. [encodeURI(), decodeURI()](#encodeURI_decodeURI)  
 1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/infinite_scroll">infinite_scroll</a>  
-1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/orientation"orientation></a>  
+1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/orientation">orientation</a>  
 1. <a href="http://smilesol85.github.io/dev/resolution/resolution.html">resolution</a>  
 1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/touch">touch</a>  
 1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/useragent">useragent</a>  
