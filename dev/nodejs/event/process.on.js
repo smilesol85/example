@@ -20,3 +20,5 @@ var id = setInterval(function () {
     // 예외를 강제로 발생시킵니다.
     error.error.error();
 }, 2000);
+
+// TODO : 이벤트 개수 제한
