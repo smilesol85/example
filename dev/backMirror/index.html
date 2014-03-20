@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>backMirror</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/common/common.css">
+    <link rel="stylesheet" href="css/backMirror.css">
+    <script src="http://smilesol85.github.com/common/jquery.js"></script>
+    <script src="http://smilesol85.github.com/assets/js/bootstrap.js"></script>
+    <script src="http://smilesol85.github.com/common/common.js"></script>
+    <script>
+    $(document).ready(function(){
+        var oBackMirror = new backMirror.controlUi();  
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="page-header">
+                <script>var sTitle = 'backMirror';</script>
+                <script src="http://smilesol85.github.com/common/header.js"></script>
+            </div>
+            <div class="lead">
+            </div>
+            <div id="back_mirror">
+                <img src="">
+            </div>
+            <div id="control_back_mirror">
+                <input type="file" accept="image/jpeg, image/png, image/gif" id="file_upload">
+                <br>
+                <span class="title"><label for="width">width : </label></span><input type="number" id="width"> px
+                <br>
+                <span class="title"><label for="height">height : </label></span><input type="text" id="height" value="auto" disabled="disabled"> px
+                <br>
+                <span class="title"><label for="top">top : </label></span><input type="number" id="top"> px
+                <br>
+                <span class="title"><label for="left">left : </label></span><input type="number" id="left"> px
+                <br>
+                <span class="title"><label for="opacity">opacity : </label></span><input type="range" id="opacity">
+                <br>
+                <span class="title">display : </span>
+                <input type="checkbox" id="block_none"><label for="block_none">block/none</label>
+            </div>
+        </div>
+    </div>
+    <script src="http://smilesol85.github.com/common/footer.js"></script>
+    <script src="js/backMirror.js"></script>
+</body>
+</html>
