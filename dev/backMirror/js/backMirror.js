@@ -6,19 +6,31 @@ backMirror.controlUi = function(){
 
 backMirror.controlUi.prototype = {
     init : function(){
-        this.el();
+        this._setElement();
         this._setValue();
         this.changeValue();
     },
     
-    el : function(){
-        this.elFileUpload = $('#control_back_mirror #file_upload');
-        this.elMirror = $('#back_mirror');
-        this.elWidth = $('#control_back_mirror #width');
-        this.elTop = $('#control_back_mirror #top');
-        this.elLeft = $('#control_back_mirror #left');
-        this.elOpacity = $('#control_back_mirror #opacity');
-        this.elBlockNone = $('#control_back_mirror #block_none');
+    _setElement : function(){
+        $('body').append('<div id="backMirrorWrap"><div id="backMirror"><img src=""></div><div id="backMirrorControl"></div></div>');
+        $('#backMirrorControl').html(
+            '<input type="file" accept="image/jpeg, image/png, image/gif" id="file_upload"><br>' +
+            '<span class="title"><label for="width">width : </label></span><input type="number" id="width"> px <br>' +
+            '<span class="title"><label for="height">height : </label></span><input type="text" id="height" value="auto" disabled="disabled"> px <br>' +
+            '<span class="title"><label for="top">top : </label></span><input type="number" id="top"> px <br>' +
+            '<span class="title"><label for="left">left : </label></span><input type="number" id="left"> px <br>' +
+            '<span class="title"><label for="opacity">opacity : </label></span><input type="range" id="opacity"> <br>' +
+            '<span class="title">display : </span> <br>' +
+            '<input type="checkbox" id="block_none"><label for="block_none">block/none</label> <br>'
+        );
+
+        this.elFileUpload = $('#backMirrorControl #file_upload');
+        this.elMirror = $('#backMirror');
+        this.elWidth = $('#backMirrorControl #width');
+        this.elTop = $('#backMirrorControl #top');
+        this.elLeft = $('#backMirrorControl #left');
+        this.elOpacity = $('#backMirrorControl #opacity');
+        this.elBlockNone = $('#backMirrorControl #block_none');
     },
     
     _setValue : function(){
@@ -38,7 +50,7 @@ backMirror.controlUi.prototype = {
         if(preview.files && preview.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e){
-                $('#back_mirror img').attr('src', e.target.result);
+                $('#backMirror img').attr('src', e.target.result);
             }
             reader.readAsDataURL(preview.files[0]);
         }

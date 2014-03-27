@@ -1,8 +1,8 @@
-#back_mirror {
+#backMirror {
   z-index: 100;
   position: absolute;
 }
-#control_back_mirror {
+#backMirrorControl {
   z-index: 100;
   position: absolute;
   top: 10px;
@@ -13,12 +13,12 @@
   border: 1px solid #aaa;
   border-radius: 4px;
 }
-#control_back_mirror .title {
+#backMirrorControl .title {
   display: inline-block;
   width: 80px;
 }
-#control_back_mirror input[type="number"],
-#control_back_mirror input[type="text"] {
+#backMirrorControl input[type="number"],
+#backMirrorControl input[type="text"] {
   width: 100px;
   min-width: 0;
   text-align: right;
