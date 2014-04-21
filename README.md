@@ -1,25 +1,8 @@
 
 <a href="http://smilesol85.github.io/" class="btn btn-default">Blog : ordinary Front-end</a>
 
-**theme**  
-- _includes  
-- _layouts  
-- _posts  
-- assets  
-- 404.html  
-- LICENSE  
-- _config.yml  
-- categories.html  
-- feed.xml  
-- index.html  
-- tags.html  
-
-**blog backup**  
-- backup  
-
-**push 예정**  
-- appointed  
-
+- _posts : post lists  
+- dev : dev lists  
 
 ## Theme. dbyll  
 
