@@ -1016,6 +1016,33 @@ function LibrayFunction(arg, callback){
 ```
 {% endhighlight %}
 
+{% highlight javascript %}
+```javascript
+var numbers = [20, 10, 9, 4, 30];
+var sortFunc = function(a, b){
+	console.log(a, b);
+	if(a > b){
+		return 1;
+	}else if(a < b){
+		return -1;
+	}else{
+		return 0;
+	}
+};
+console.log(numbers.sort(sortFunc));
+```
+{% endhighlight %}
+
+{% highlight javascript %}
+```javascript
+//jquery를 이용한 비동기 콜백
+//json {"a":"aa", "b":"bb"}
+$.get('*.json.js', function(result){
+	console.log(result);
+}, 'json');
+```
+{% endhighlight %}
+
 ####<a href="#" name="closer">클로저</a>  
 - 클로저를 사용하는 이유는 대부분 함수 상태를 기억하기 위해서이다.  
 - jQuery와 같은 대형 라이브러리에서 흔히 채용되는 패턴이다.  
