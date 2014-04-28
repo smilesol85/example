@@ -10,7 +10,7 @@ calculator.active.prototype = {
         this.addition();
         this._setEvent();
     },
-    
+
     elInput : function(){
         this.nInput = document.querySelector('input');
         this.btnAddition = document.querySelector('#addition');
@@ -19,27 +19,27 @@ calculator.active.prototype = {
         this.btnDivision = document.querySelector('#division');
         this.btnRoot = document.querySelector('#root');
     },
-    
+
     addition : function(){
-        
+
     },
-    
+
     subtraction : function(){
-        
+
     },
-    
+
     multiplication : function(){
-    
+
     },
-    
+
     division : function(){
-    
+
     },
-    
+
     root : function(){
-    
+
     },
-    
+
     _setEvent : function(){
         this.btnAddition.addEventListener('click', function(){
             alert(this.nInput);

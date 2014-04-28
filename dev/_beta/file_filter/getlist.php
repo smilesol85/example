@@ -65,7 +65,7 @@ class GetFile{
 		$jsonFiles = json_encode($arrFile);
 		echo "<script>var jsonFiles = $jsonFiles;</script>";
 	}
-	
+
 	// 폴더내 php 파일만 JSON으로 할당
 	function changeJsonPhpFiles($arrPhpFiles){
 		$jsonPhpFiles = json_encode($arrPhpFiles);

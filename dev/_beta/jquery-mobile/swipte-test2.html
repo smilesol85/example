@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="euc-kr">
@@ -15,14 +15,14 @@ $(function(){
 	$('#orangeDiv').bind('swiperight', function(event){
 		$.mobile.changePage('#greenPage', {transition:'slide',reverse:true});
 	});
-	
+
 	$('#blueDiv').bind('swipeleft', function(event){
 		$.mobile.changePage('#greenPage', {transition:'slide'});
 	});
 	$('#blueDiv').bind('swiperight', function(event){
 		$.mobile.changePage('#orangePage', {transition:'slide',reverse:true});
 	});
-	
+
 	$('#greenDiv').bind('swipeleft', function(event){
 		$.mobile.changePage('#orangePage', {transition:'slide'});
 	});

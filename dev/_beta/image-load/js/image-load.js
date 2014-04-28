@@ -9,7 +9,7 @@ imageLoad.prototype = {
         this.imageList();
         this._setEvents();
     },
-    
+
     imageList : function(){
         this.arrImages = [];
         this.arrImages.push('images/test1.jpg');
@@ -17,13 +17,13 @@ imageLoad.prototype = {
         this.arrImages.push('images/test3.jpg');
         this.nImages = this.arrImages.length;
     },
-    
+
     addImage : function(){
         for(var i = 0; i < this.nImages; i++){
             $('.listPhoto').append('<li><img src="'+this.arrImages[i]+'"></li>');
-        }        
+        }
     },
-    
+
     checkSize : function(){
         $('.listPhoto img').each(function(){
             this.widthImage = $(this).width();
@@ -32,7 +32,7 @@ imageLoad.prototype = {
             $(this).parent().append(this.heightImage);
         });
     },
-    
+
     _setEvents : function(){
         $('.addImage').on('click', $.proxy(this.addImage, this));
         $('.checkSize').on('click', $.proxy(this.checkSize, this));

@@ -1,5 +1,4 @@
 ##calculator  
-<a href="http://smilesol85.github.io/dev/calculator/calculator.html">github</a>
 
 ###명세  
 - 더하기  
