@@ -1,10 +1,10 @@
 var calculator = calculator || {};
 
-calculator.active = function(){
+calculator = function(){
     this.init();
 };
 
-calculator.active.prototype = {
+calculator.prototype = {
     init : function(){
         this.elInput();
         this.addition();
@@ -13,11 +13,6 @@ calculator.active.prototype = {
 
     elInput : function(){
         this.nInput = document.querySelector('input');
-        this.btnAddition = document.querySelector('#addition');
-        this.btnSubtraction = document.querySelector('#subtraction');
-        this.btnMultiplication = document.querySelector('#multiplication');
-        this.btnDivision = document.querySelector('#division');
-        this.btnRoot = document.querySelector('#root');
     },
 
     addition : function(){
@@ -40,11 +35,8 @@ calculator.active.prototype = {
 
     },
 
-    _setEvent : function(){
-        this.btnAddition.addEventListener('click', function(){
-            alert(this.nInput);
-        });
+    setEvent : function(){
     }
 };
 
-var oCalculator = new calculator.active();
+var oCalculator = new calculator();

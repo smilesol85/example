@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap.css">
     <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap-responsive.css">
     <link rel="stylesheet" href="http://smilesol85.github.com/common/common.css">
-    <link rel="stylesheet" href="css/calculator.css">
+	<style>
+		.calculator{position:relative;width:400px;height:500px;border:1px solid #eee;}
+		.calculator .enter input{padding:10px 0;border:0;border-radius:0;width:100%;text-align:right;background-color:#eee;}
+		.calculator .number{}
+		.calculator .number li{float:left;width:25%;height:25%;text-align:center;}
+		.calculator .control li{float:left;text-align:center;}
+	</style>
     <script src="http://smilesol85.github.com/common/jquery.js"></script>
     <script src="http://smilesol85.github.com/assets/js/bootstrap.js"></script>
     <script src="http://smilesol85.github.com/common/common.js"></script>
@@ -19,18 +25,33 @@
                 <script>var sTitle = 'calculator';</script>
                 <script src="http://smilesol85.github.com/common/header.js"></script>
             </div>
-            <div class="number">
-                <input type="number" value="0">
-            </div>
-            <ul class="calculator btn-group">
-                <li class="btnText btn">MC(Memory Clear)</li>
-                <li class="btnText btn">Back space (←)</li>
-                <li id="addition" class="btn">＋</li>
-                <li id="subtraction" class="btn">－</li>
-                <li id="multiplication" class="btn">×</li>
-                <li id="division" class="btn">÷</li>
-                <li id="root" class="btn">√</li>
-            </ul>
+			<div class="calculator">
+				<div class="enter">
+					<input type="number" value="0" disabled="disablied">
+				</div>
+				<ul class="number">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+
+					<li>0</li>
+				</ul>
+				<ul class="control">
+					<li>clear</li>
+					<li>←</li>
+					<li>＋</li>
+					<li>－</li>
+					<li>×</li>
+					<li>÷</li>
+					<li>=</li>
+				</ul>
+			</div>
         </div>
     </div>
     <script src="http://smilesol85.github.com/common/footer.js"></script>
