@@ -8,7 +8,7 @@ calculator.prototype = {
     init : function(){
         this.elInput();
         this.addition();
-        this._setEvent();
+        this.setEvent();
     },
 
     elInput : function(){
