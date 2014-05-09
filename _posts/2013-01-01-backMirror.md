@@ -3,7 +3,7 @@ layout: post
 title: backMirror
 categories: []
 tags: []
-fullview: false
+fullview: true
 ---
 
 ## backMirror  
