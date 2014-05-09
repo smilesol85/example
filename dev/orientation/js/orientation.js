@@ -5,14 +5,18 @@ orient.check = function(){
 };
 
 orient.check.prototype = {
-    elContent : $('#content'),
-    
     init : function(){
+		this.setElement();
         this.checkOrient();
     },
+
+	setElement : function(){
+		this.elContent = $('#content');
+	},
     
     checkOrient : function(){
         var oThis = this;
+		var sGetUrl = document.location.href;
         var sWrite = '';
         $(window).bind('orientationchange', function(e){
             switch(window.orientation){
@@ -29,7 +33,9 @@ orient.check.prototype = {
                     sWrite = '+90';
                     break;
             }
-            oThis.elContent.html(sWrite);
+			sGetUrl += '?orient'+sWrite+'';
+			document.location.href = sGetUrl;
+//            oThis.elContent.html(sWrite);
         });
     }
 };
