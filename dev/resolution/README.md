@@ -1,5 +1,4 @@
-# resolution
-<a href="http://smilesol85.github.io/dev/resolution/resolution.html">resolution page</a>  
+##resolution  
+inner, outer 해상도 체크하는 단순한 코드  
 
-## 명세  
-- monitor, inner and outer browser resolution check!
+- <a href="http://smilesol85.github.io/dev/resolution/resolution.html" taget="_blank">index</a>  
