@@ -1,5 +1,5 @@
 
-<a href="http://smilesol85.github.io/" class="btn btn-default">Blog : ordinary Front-end</a>
+#이전에 블로그로 운영하였으나, 블로그는 운영하지 않습니다.  
 
 - _posts : post lists  
 - dev : dev lists  
