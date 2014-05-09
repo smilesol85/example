@@ -1,16 +1,14 @@
 ##infinite scroll  
-- 단순 무한 스크롤  
+단순 무한 스크롤입니다.  
 
-<a href="http://smilesol85.github.io/dev/infinite_scroll/infinite_scroll.html">infinite scroll page</a>  
+- <a href="http://smilesol85.github.io/dev/infinite_scroll/infinite_scroll.html">infinite scroll page</a>  
 
-- TYPE A - jQuery  
+> TYPE A - jQuery  
 
         $(document).height();  /* return height of html document */
         $(window).height();  /* return height of browser height */
 
-
-
-- TYPE B - DOM  
+> TYPE B - DOM  
     **element.offsetWidth / element.offsetHeight**  
     > border, padding 전부 포함한 사이즈  
     > W3C 권고안이 아님 (MSIE’s DHTML Object Moldel)  
