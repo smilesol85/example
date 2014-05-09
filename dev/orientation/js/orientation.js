@@ -34,7 +34,7 @@ orient.check.prototype = {
                     break;
             }
 			sGetUrl += '?orient'+sWrite+'';
-			document.location.href = sGetUrl;
+			alert(sGetUrl);
 //            oThis.elContent.html(sWrite);
         });
     }
