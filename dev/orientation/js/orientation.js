@@ -34,7 +34,7 @@ orient.check.prototype = {
                     sWrite = '+90';
                     break;
             }
-			sGetUrl += '?orient='+sWrite+'';
+			sGetUrl = sGetUrl + '?orient='+sWrite+'';
 			alert(sGetUrl);
 //            oThis.elContent.html(sWrite);
         });
