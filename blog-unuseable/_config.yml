@@ -7,15 +7,15 @@ pygments: true
 markdown: kramdown
 
 title: ordinary Front-End
-description: 
+description:
 author:
   name: smilesol85
   email: smilesol85@gmail.com
   github: smilesol85
   twitter: smilesol85
   linkedin: pub/han-sol-park/69/134/b64
-  bio: 
-  email_md5: 
+  bio:
+  email_md5:
 
 rss_path: feed.xml
 categories_path: categories.html
@@ -28,11 +28,11 @@ BASE_PATH: http://smilesol85.github.io
 # Do not put a "/" at the end of the url.
 #
 # CNAME (http://yourcustomdomain.com)
-#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK 
+#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK
 #   (urls will be prefixed with "/" and work relatively)
 #
 # GitHub Pages (http://username.github.io)
-#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK 
+#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK
 #   (urls will be prefixed with "/" and work relatively)
 #
 # GitHub Project Pages (http://username.github.io/project-name)
