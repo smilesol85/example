@@ -10,7 +10,7 @@ backMirror.controlUi.prototype = {
         this._setValue();
         this.changeValue();
     },
-    
+
     _setElement : function(){
         $('body').append('<div id="backMirrorWrap"><div id="backMirror"><img src=""></div><div id="backMirrorControl"></div></div>');
         $('#backMirrorControl').html(
@@ -32,20 +32,20 @@ backMirror.controlUi.prototype = {
         this.elOpacity = $('#backMirrorControl #opacity');
         this.elBlockNone = $('#backMirrorControl #block_none');
     },
-    
+
     _setValue : function(){
         this.elWidth.val(480);
-        this.elTop.val(47);
-        this.elLeft.val(12);
+        this.elTop.val(0);
+        this.elLeft.val(-1000);
         this.elOpacity.val(50);
         this.elBlockNone.attr('checked', true);
-        
+
         this._setWidth(this.elWidth.val());
         this._setTop(this.elTop.val());
         this._setLeft(this.elLeft.val());
         this._setOpacity(this.elOpacity.val() / 100);
     },
-    
+
     _setPreview : function(preview){
         if(preview.files && preview.files[0]) {
             var reader = new FileReader();
@@ -54,24 +54,26 @@ backMirror.controlUi.prototype = {
             }
             reader.readAsDataURL(preview.files[0]);
         }
+		this.elLeft.val(0);
+		this._setLeft(0);
     },
-    
+
     _setWidth : function(widthValue){
         this.elMirror.find('img').attr('style', 'width:'+widthValue+'px');
     },
-    
+
     _setTop : function(topValue){
         this.elMirror.css('top', topValue+'px');
     },
-    
+
     _setLeft : function(leftValue){
         this.elMirror.css('left', leftValue+'px');
     },
-    
+
     _setOpacity : function(opacityValue){
         this.elMirror.css('opacity', opacityValue);
     },
-    
+
     _setDisplay : function(displayValue){
         if(displayValue == true){
             displayValue = 'block';
@@ -80,7 +82,7 @@ backMirror.controlUi.prototype = {
         }
         this.elMirror.css('display', displayValue);
     },
-    
+
     changeValue : function(){
         oThis = this;
         this.elWidth.on('change', function(){
