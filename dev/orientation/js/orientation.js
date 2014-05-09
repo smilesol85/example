@@ -19,6 +19,7 @@ orient.check.prototype = {
 		var sGetUrl = document.location.href;
         var sWrite = '';
         $(window).bind('orientationchange', function(e){
+			alert(sGetUrl);
             switch(window.orientation){
                 case 0: 
                     // document.getElementById("orient_css").href = "css/iphone_portrait.css";
@@ -33,7 +34,6 @@ orient.check.prototype = {
                     sWrite = '+90';
                     break;
             }
-			alert(sGetUrl);
 //            oThis.elContent.html(sWrite);
         });
     }
