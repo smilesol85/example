@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>before after selector width data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/common/common.css">
+    <style>
+        span::before{content:'Before section';color:red;}
+        span::after{content:'After section';color:blue;}
+        p{counter-increment:nSmilesol;}
+        p::before{content:counter(nSmilesol)'. ';}
+        p::after{content:' -' attr(data-page) "page";}
+    </style>
+    <script src="http://smilesol85.github.com/common/jquery.js"></script>
+    <script src="http://smilesol85.github.com/assets/js/bootstrap.js"></script>
+    <script src="http://smilesol85.github.com/common/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="page-header">
+                <script>var sTitle = 'before after selector width data';</script>
+                <script src="http://smilesol85.github.com/common/header.js"></script>
+            </div>
+            <div class="lead">
+            </div>
+            <section>
+                <span>view style</span>
+                <p data-page="100">texttexttexttexttexttexttexttexttexttexttexttexttext</p>
+                <p data-page="200">countercountercountercounter</p>
+                <article class="dsc">
+                    <h2>data 속성</h2>
+                    웹 표준에 준수하기 위해서는 태그에 지정된 속성 이외에는 사용할 수 없다. 하지만 data-를 사용하면 <em class="highlight">사용자 지정 속성</em>으로 인정해 준다.
+                </article>
+            </section>
+        </div>
+    </div>
+    <script src="http://smilesol85.github.com/common/footer.js"></script>
+</body>
+</html>

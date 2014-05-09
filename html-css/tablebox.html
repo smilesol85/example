@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>tablebox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/common/common.css">
+    <style>
+        div{width:100%;text-align:center}
+        .boxes{display:table}
+        .boxes div{padding:20px 0}
+        .oneBox{background:red;display:table-footer-group;line-height:40px}
+        .twoBox{background:green;display:table-caption}
+        .threeBox{background:white;display:table-header-group;line-height:40px}
+        .fourBox{background:gray}
+    </style>
+    <script src="http://smilesol85.github.com/common/jquery.js"></script>
+    <script src="http://smilesol85.github.com/assets/js/bootstrap.js"></script>
+    <script src="http://smilesol85.github.com/common/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="page-header">
+                <script>var sTitle = 'tablebox';</script>
+                <script src="http://smilesol85.github.com/common/header.js"></script>
+            </div>
+            <div class="lead">
+            </div>
+            <section>
+                <div class="boxes">
+                    <div class="oneBox">one => display:table-footer-group<p>table-footer-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+                    <div class="twoBox">two => display:table-caption</div>
+                    <div class="threeBox">three => display:table-header-group<p>table-header-group은 inline으로 height값이 적용되지 않으며, line-height로 사용</p></div>
+                    <div class="fourBox">four</div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="http://smilesol85.github.com/common/footer.js"></script>
+</body>
+</html>
