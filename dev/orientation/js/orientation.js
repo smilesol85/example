@@ -19,7 +19,7 @@ orient.check.prototype = {
 		var sGetUrl = document.location.href;
         var sWrite = '';
         $(window).bind('orientationchange', function(e){
-			alert(sGetUrl);
+			alert(window.orientation);
             switch(window.orientation){
                 case 0: 
                     // document.getElementById("orient_css").href = "css/iphone_portrait.css";
