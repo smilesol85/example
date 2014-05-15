@@ -11,3 +11,6 @@ process.emit('exit');
 
 // 프로그램 실행 중
 console.log('프로그램 실행 중');
+
+// 프로그램 종료
+//process.exit();
