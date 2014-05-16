@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="euc-kr">
+<title>jQuery Mobile Web App</title>
+<link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$('#orangeDiv').bind('swipeleft', function(event){
+		$.mobile.changePage('#bluePage', {transition:'slide'});
+	});
+	$('#orangeDiv').bind('swiperight', function(event){
+		$.mobile.changePage('#greenPage', {transition:'slide',reverse:true});
+	});
+
+	$('#blueDiv').bind('swipeleft', function(event){
+		$.mobile.changePage('#greenPage', {transition:'slide'});
+	});
+	$('#blueDiv').bind('swiperight', function(event){
+		$.mobile.changePage('#orangePage', {transition:'slide',reverse:true});
+	});
+
+	$('#greenDiv').bind('swipeleft', function(event){
+		$.mobile.changePage('#orangePage', {transition:'slide'});
+	});
+	$('#greenDiv').bind('swiperight', function(event){
+		$.mobile.changePage('#orangePage', {transition:'slide',reverse:true});
+	});
+});
+</script>
+</head>
+<body>
+<div id="orangePage" data-role="page">
+	<div data-role="header">
+		<h1>page1</h1>
+	</div>
+	<div id="orangeDiv" data-role="content" style="background:orange; height:50px;"></div>
+</div>
+<div id="bluePage" data-role="page">
+	<div data-role="header">
+		<h1>page2</h1>
+	</div>
+	<div id="blueDiv" data-role="content" style="background:blue; height:50px;"></div>
+</div>
+<div id="greenPage" data-role="page">
+	<div data-role="header">
+		<h1>page3</h1>
+	</div>
+	<div id="greenDiv" data-role="content" style="background:green; height:50px;"></div>
+</div>
+</body>
+</html>

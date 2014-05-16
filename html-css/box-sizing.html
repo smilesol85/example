@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>box-sizing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://smilesol85.github.com/common/common.css">
+    <style>
+        .box{width:100px;height:100px;margin:20px;border:10px solid #eee;background:#aaa;}
+        .box2{box-sizing:border-box;}
+        .box3{box-sizing:content-box;}
+    </style>
+    <script src="http://smilesol85.github.com/common/jquery.js"></script>
+    <script src="http://smilesol85.github.com/assets/js/bootstrap.js"></script>
+    <script src="http://smilesol85.github.com/common/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="page-header">
+                <script>var sTitle = 'box-sizing';</script>
+                <script src="http://smilesol85.github.com/common/header.js"></script>
+            </div>
+            <div class="lead">
+            </div>
+            <section>
+                <article>
+                    <div class="box box2">box-sizing:border-box</div>
+                </article>
+                <article>
+                    <div class="box box3">box-sizing:content-box</div>
+                </article>
+            </section>
+        </div>
+    </div>
+    <script src="http://smilesol85.github.com/common/footer.js"></script>
+</body>
+</html>
