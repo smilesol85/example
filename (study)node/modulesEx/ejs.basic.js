@@ -9,7 +9,10 @@ http.createServer(function (request, response) {
     fs.readFile('EJSPage.ejs', 'utf8', function (error, data) {
         response.writeHead(200, { 'Content-Type': 'text/html' });
 		// EJS 페이지를 HTML 페이지로 변환할 때는 render() 메서드를 사용
-        response.end(ejs.render(data));
+        response.end(ejs.render(data, {
+			name: 'test',
+			description: 'description test'
+		}));
     });
 }).listen(52273, function () {
     console.log('Server Running at http://127.0.0.1:52273');
