@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>module</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-animate.js"></script>
+</head>
+<body ng-app="myApp">
+	<div>{{test}}</div>
+	<script>
+		var module1 = angular.module('module1', []);
+
+		var module2 = angular.module('module2', []);
+
+		var myModule = angular.module('myApp', ['module1', 'module2']);
+		myModule.run(function($rootScope){
+			$rootScope.test = new Date();
+		});
+	</script>
+</body>
+</html>

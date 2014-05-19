@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>helloAngular</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="ClockController">
+		<h2>{{time}}</h2>
+	</div>
+	<script>
+		function ClockController($scope, $interval){
+			var getTime = function(){
+				$scope.time = new Date();
+			};
+			$interval(getTime, 1000);
+		}
+	</script>
+</body>
+</html>

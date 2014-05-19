@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>scope</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body ng-app="scopeExApp">
+	<div ng-controller="Controller1">
+		{{greeting}}
+	</div>
+	<div ng-controller="Controller2">
+		{{greeting}}
+	</div>
+	<script>
+		var app = angular.module('scopeExApp', []);
+		app.controller('Controller1', function($scope){
+			$scope.greeting = 'aaa';
+		});
+		app.controller('Controller2', function($scope){
+			$scope.greeting = 'bbb';
+		});
+	</script>
+</body>
+</html>
