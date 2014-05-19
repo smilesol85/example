@@ -10,6 +10,46 @@
     <script src="http://smilesol85.github.com/common/jquery.js"></script>
     <script src="http://smilesol85.github.com/assets/js/bootstrap.js"></script>
     <script src="http://smilesol85.github.com/common/common.js"></script>
+	<style>
+		.circle{
+			width:140px;
+			height:140px;
+			background-color:red;
+			border-radius:50%;
+		}
+
+		.triangleUp{
+			width:0;
+			height:0;
+			border-bottom:120px solid green;
+			border-left:60px solid transparent;
+			border-right:60px solid transparent;
+		}
+
+		.triangleDown{
+			width:0;
+			height:0;
+			border-top:120px solid pink;
+			border-left:60px solid transparent;
+			border-right:60px solid transparent;
+		}
+
+		.triangleLeft{
+			width:0;
+			height:0;
+			border-left:120px solid red;
+			border-top:60px solid transparent;
+			border-bottom:60px solid transparent;
+		}
+
+		.triangleRight{
+			width:0;
+			height:0;
+			border-right:120px solid red;
+			border-top:60px solid transparent;
+			border-bottom:60px solid transparent;
+		}
+	</style>
 </head>
 <body>
     <div id="wrap">
@@ -23,6 +63,21 @@
             <section>
                 <article>
                     <h2>shape</h2>
+
+					<h3>circle</h3>
+					<div class="circle"></div>
+
+					<h3>triangle-up</h3>
+					<div class="triangleUp"></div>
+
+					<h3>triangle-down</h3>
+					<div class="triangleDown"></div>
+
+					<h3>triangle-left</h3>
+					<div class="triangleLeft"></div>
+
+					<h3>triangle-right</h3>
+					<div class="triangleRight"></div>
                 </article>
             </section>
         </div>
