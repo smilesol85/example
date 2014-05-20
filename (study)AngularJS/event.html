@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>event</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js"></script>
+</head>
+<body ng-app="gradeApp">
+	<div ng-controller="GradeController">
+		<button onclick="testDOM()">DOM Event BUTTON</button>
+		<br>
+		<button ng-click="testAngular($event)">Angular BUTTON</button>
+	</div>
+	<script>
+		function testDOM(){
+			console.log('DOM....');
+			console.log(event);
+		}
+
+		var grade = angular.module('gradeApp', []);
+		grade.controller('GradeController', function($scope){
+			$scope.testAngular = function($event){
+				console.log('AngularJS....');
+				console.log($event);
+			};
+		});
+	</script>
+</body>
+</html>
