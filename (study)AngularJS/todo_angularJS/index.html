@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app>
+<head>
+	<title>todo</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<!--<body ng-init="appName='todo width angularJS'">-->
+<body ng-controller="todoCtrl">
+	<!--
+		#NOTE todo
+		- 할 일 목록
+		- 할 일 등록
+		- 완료한 일 보관
+	-->
+	<h1>{{appName}}</h1>
+	<p>전체 할 일 <string>{{todoList.length}}</string>개 / 남은 할 일 <strong>{{remain()}}</strong>개</p>
+	<p>[<a href="#" ng-click="archive()">보관하기</a>]</p>
+	<ul>
+		<li ng-repeat="todo in todoList">
+			<input type="checkbox" ng-model="todo.done">{{todo.title}}</input>
+		</li>
+	</ul>
+	<ul>
+		<li><input type="checkbox">test1</li>
+		<li><input type="checkbox">test2</li>
+	</ul>
+	<form name="newItem" action="">
+		<div>
+			<label for="newItem">새로운 할 일</label>
+			<input type="text" name="newItemText" placeholder="새로운 할 일" ng-model="newTitle">
+		</div>
+		<button type="submit" ng-click="addNewTodo(newTitle)">추가</button>
+	</form>
+</body>
+</html>
