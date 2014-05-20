@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app>
+<head>
+	<title>input</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+	<form name="sampleForm" ng-init="value1 = true; value2 = '좋다';">
+		선택 1 : <input type="checkbox" name="check1" ng-model="value1">
+		<br>
+		산택 2 : <input type="checkbox" name="check2" ng-model="value2" ng-true-value="좋디" ng-false-value="싫다">
+		<br>
+		<p>선택1 바인딩된 값 : {{value1}}</p>
+		<p>선택2 바인딩된 값 : {{value2}}</p>
+	</form>
+</body>
+</html>
