@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app>
+<head>
+	<title>ng-if</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+	약관에 동의 : <input type="checkbox" ng-model="checked" ng-init="checked=false"><br>
+	동의하면 다음으로 진행됩니다.
+	<button ng-if="checked">다음</button>
+</body>
+</html>
