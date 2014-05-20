@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>filter</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="Ctrl">
+		<p>{{content}}</p>
+		필터링 : <input type="text" ng-model="keyword">
+		<p ng-repeat="str in content|filter:keyword">{{str}}</p>
+	</div>
+	<script>
+		function Ctrl($scope){
+			$scope.content = [
+				"HTML",
+				"Javascript",
+				"Java",
+				"Python",
+				"C",
+				".NET"
+			];
+		}
+	</script>
+</body>
+</html>
