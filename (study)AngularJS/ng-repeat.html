@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app>
+<head>
+	<title>ng-repeat</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body>
+	<div ng-init="customerList = [{name:'영희', age:25}, {name:'순희', age:28}]">
+		고객 목록
+		<ul>
+			<li ng-repeat="customer in customerList">
+				[{{$first}}/{{$last}}][{{$index + 1}}] 고객 이름 : {{customer.name}}, 고객 나이 : {{customer.age}}
+			</li>
+		</ul>
+	</div>
+	<div ng-init="myFriend = {name:'철수', age:25, hobby:'축구'}">
+		내 친구 소개
+		<ul>
+			<li ng-repeat="(attr, value) in myFriend">
+				<p>[{{$even}} / {{$odd}}] {{attr}} : {{value}}</p>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
