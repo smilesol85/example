@@ -9,7 +9,10 @@
 	<div ng-controller="Ctrl">
 		<p>{{content}}</p>
 		필터링 : <input type="text" ng-model="keyword">
+<!--		필터링 : <input type="text" ng-model="subkeyword">-->
 		<p ng-repeat="str in content|filter:keyword">{{str}}</p>
+<!--		연속적인 검색은 성능상 좋은 방법이 아니므로 잘 사용하지 않는다.-->
+<!--		<p ng-repeat="str in content|filter:keyword|filter:subkeyword">{{str}}</p>-->
 	</div>
 	<script>
 		function Ctrl($scope){
