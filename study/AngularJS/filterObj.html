@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>filter</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+</head>
+<body ng-app>
+	<div ng-controller="Ctrl">
+		<div>조선 왕들의 재위 기간</div>
+		<div>
+			<input type="text" ng-model="search.$">
+			<table>
+				<tr>
+					<th ng-click="criteria='id'">아이디</th>
+					<th ng-click="criteria='name'">임금</th>
+					<th ng-click="criteria='years'">재위기간</th>
+				</tr>
+				<tr ng-repeat="member in members|filter:search|orderBy:criteria">
+					<td>{{member.id}}</td>
+					<td>{{member.name}}</td>
+					<td>{{member.years}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script>
+		function Ctrl($scope){
+			$scope.members = [
+				{"id" : "user00", "name":"A", "years":"50"},
+				{"id" : "user01", "name":"B", "years":"10"},
+				{"id" : "user02", "name":"C", "years":"70"},
+				{"id" : "user03", "name":"D", "years":"40"},
+				{"id" : "user04", "name":"E", "years":"30"}
+			];
+			$scope.criteria = $scope.criteria|"id";
+		}
+	</script>
+</body>
+</html>
