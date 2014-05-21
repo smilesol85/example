@@ -5,6 +5,34 @@
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 </head>
+<body ng-app="kings">
+	<div ng-controller="Ctrl">
+		<input type="text" ng-model="search.$">
+		<table>
+			<tr>
+				<th ng-click="sOrder='id'">aaa</th>
+				<th ng-click="sOrder='name'">bbb</th>
+				<th ng-click="sOrder='age'">ccc</th>
+			</tr>
+			<tr ng-repeat="member in members|filter:search|orderBy:sOrder">
+				<td>{{member.id}}</td>
+				<td>{{member.name}}</td>
+				<td>{{member.age}}</td>
+			</tr>
+		</table>
+	</div>
+	<script>
+		var kings = angular.module("kings", []);
+		kings.controller("Ctrl", function($scope){
+			$scope.members = [
+				{"id":"idA", "name":"nameA", "age":"30"},
+				{"id":"idB", "name":"nameB", "age":"35"},
+				{"id":"idC", "name":"nameC", "age":"32"}
+			];
+		});
+	</script>
+</body>
+<!--
 <body ng-app>
 	<div ng-controller="Ctrl">
 		<div>조선 왕들의 재위 기간</div>
@@ -37,4 +65,5 @@
 		}
 	</script>
 </body>
+-->
 </html>
