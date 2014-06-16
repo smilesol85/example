@@ -21,5 +21,21 @@
 		<p>sampleForm.$valid = {{sampleForm.$valid}}</p>
 		<p>sampleForm.$error.required = {{!!sampleForm.$error.required}}</p>
 	</form>
+	
+	<div ng-init="countryList = [{name: 'KO', code: 'KR', continent: 'ASIA'},
+				  {name: 'JP', code: 'JR', continent: 'ASIA'},
+				  {name: 'US', code: 'EN', continent: 'NA'}
+				  ]">
+		<form name="myRouteForm">
+			출발국가 : 
+			<select ng-model="depCountry" ng-options="country.name for country in countryList" ng-required="true">
+				<option value="">선택해 주세요.</option>
+			</select>
+			선택한 value : <span>{{depCountry}}</span>
+		</form>
+		<div ng-show="myRouteForm.$invalid">
+			필히 선택해 주세요.
+		</div>
+	</div>
 </body>
 </html>
