@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app>
+<head>
+	<title>notice</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script>
+		function mainCtrl($scope){
+			$scope.broadcast = function(noticeMsg){
+				$scope.$broadcast('chat:noticeMsg', noticeMsg);
+				$scope.noticeMsg = '';
+			};
+		}
+		
+		function chatMsgListCtrl($scope, $rootScope){
+			$scope.msgList = [];
+			$rootScope.$on('chat:newMsg', function(e, newMsg){
+				$scope.msgList.push(newMsg);
+			});
+			
+			$scope.$on('chat:noticeMsg', function(e, noticeMsg){
+				$scope.msgList.push('[공지] '+noticeMsg);
+			});
+		}
+		
+		function chatMsgInputCtrl($scope){
+			$scope.submit = function(newMsg){
+				$scope.$emit('chat:newMsg', newMsg);
+				$scope.newMsg = '';
+			};
+		}
+	</script>
+</head>
+<body ng-controller="mainCtrl">
+	<input type="text" ng-model="noticeMsg">
+	<input type="button" value="공지 전송" ng-click="broadcast(noticeMsg)">
+	<div class="msg-list-area" ng-controller="chatMsgListCtrl">
+		<ul>
+			<li ng-repeat="msg in msgList track by $index">{{msg}}</li>
+		</ul>
+	</div>
+	<div ng-controller="chatMsgInputCtrl">
+		<input type="text" ng-model="newMsg">
+		<input type="button" value="전송" ng-click="submit(newMsg)">
+	</div>
+</body>
+</html>
