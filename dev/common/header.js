@@ -19,5 +19,4 @@ if(isie8 || isie7 || isie6){
 }
 
 var sHeader = '';
-sHeader += '<h1>'+sTitle+'</h1>';
-document.write(sHeader);
+console.log(sHeader);
