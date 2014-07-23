@@ -56,9 +56,12 @@ $font-base: 'Helvetica Neue', Helvetica, Roboto, Sans-serif;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
 	-webkit-focus-ring-color: rgba(0,0,0,0);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	font-family: $font-base;
 	font-size: 14px;
-	outline: none;
+	outline: none !important;
 }
 
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select {
@@ -77,7 +80,7 @@ em,address{
 body {
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
-//	-webkit-user-select: none;
+	-webkit-user-select: none;
 	background: {
 		color: $color-bg-a;
 	}
@@ -106,6 +109,9 @@ input,select,textarea,button {
 	border: 0;
 	border-radius: 0;
 	box-shadow: none;
+	&:focus {
+		-webkit-user-modify: read-write-plaintext-only;
+	}
 }
 
 input {
