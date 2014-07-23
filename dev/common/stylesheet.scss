@@ -1,4 +1,6 @@
 $font-base: 'Helvetica Neue', Helvetica, Roboto, Sans-serif;
+$background-form: #fff;
+$border-form: #eee;
 
 @mixin ellipsis() {
 	overflow: hidden;
@@ -102,15 +104,24 @@ a {
 input,select,textarea,button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background-color: transparent;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	border: 0;
+	background-color: $background-form;
+	border: {
+		width: 1px;
+		style: solid;
+		color: $border-form;
+	}
 	border-radius: 0;
 	box-shadow: none;
 	&:focus {
 		-webkit-user-modify: read-write-plaintext-only;
+		border: {
+			width: 1px;
+			style: solid;
+			color: $border-form;
+		}
 	}
 }
 
@@ -118,14 +129,6 @@ input {
 	width: 100%;
 	height: 45px;
 	padding: 0 12px;
-	border: {
-		width: 1px;
-		style: solid;
-		color: #d0d0d1;
-	}
-	background: {
-		color: #fff;
-	}
 	font: {
 		size: 21px;
 	}
@@ -169,4 +172,11 @@ textarea {
 		vertical-align: middle;
 		text-align: center;
 	}
+}
+
+.hidden {
+	position: absolute;
+	top: 0;
+	left: -500em;
+	font-size: 1px;
 }
