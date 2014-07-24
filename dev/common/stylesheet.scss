@@ -54,6 +54,17 @@ $border-form: #eee;
 	-o-transition-timing-function: $type;
 }
 
+@mixin loading() {
+	-webkit-animation: spin 1s infinite linear;
+    -moz-animation: spin 1s infinite linear;
+    -o-animation: spin 1s infinite linear;
+    animation: spin 1s infinite linear;
+}
+
+.icon-loading:beroe {
+     content: ‘\f29d’;
+}
+
 * {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
