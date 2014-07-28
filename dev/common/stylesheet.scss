@@ -61,8 +61,25 @@ $border-form: #eee;
     animation: spin 1s infinite linear;
 }
 
-.icon-loading:beroe {
-     content: ‘\f29d’;
+.loading{
+	position:relative;
+	width:30px;
+	height:30px;
+	border-width: 5px;
+	border-style:solid;
+	border-color:#eeeeee #eeeeee rgba(255,255,255,.5) rgba(255,255,255,.5);
+	opacity:.9;
+	border-radius:20px;
+	-webkit-animation:rotate 1s linear infinite;
+	-ms-animation:rotate 1s linear infinite;
+}
+@-webkit-keyframes rotate{
+	0%{-webkit-transform:rotate(0deg)}
+	100%{-webkit-transform:rotate(360deg)}
+}
+@-ms-keyframes rotate{
+	0%{-ms-transform:rotate(0deg)}
+	100%{-ms-transform:rotate(360deg)}
 }
 
 * {
