@@ -91,6 +91,7 @@ $border-form: #eee;
 	box-sizing: border-box;
 	font-family: $font-base;
 	font-size: 14px;
+//	-webkit-user-modify: read-write-plaintext-only;
 	outline: none !important;
 }
 
@@ -144,7 +145,6 @@ input,select,textarea,button {
 	border-radius: 0;
 	box-shadow: none;
 	&:focus {
-		-webkit-user-modify: read-write-plaintext-only;
 		border: {
 			width: 1px;
 			style: solid;
