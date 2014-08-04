@@ -1,0 +1,33 @@
+<div class="full-height" data-ui-body infinite-scroll="getStickerItems(listName, true)" infinite-scroll-distance="1" infinite-scroll-disabled="busy">
+	<div id="search_wrap" class="search_wrap">
+		<input type="search" placeholder="이름으로 검색" data-ng-model="category.title">
+	</div>
+
+	<ul class="tab_nav">
+		<li data-ng-click="getStickerItems('top', null)" data-ng-class="{'active' : listName == 'top'}"><button type="button">TOP</button></li>
+		<li data-ng-click="getStickerItems('new', null)" data-ng-class="{'active' : listName == 'new'}"><button type="button">NEW</button></li>
+		<li data-ng-click="getStickerItems('new_creators', null)" data-ng-class="{'active' : listName == 'new_creators'}"><button type="button">Free</button></li>
+		<li class="more"><button type="button">more list</button></li>
+	</ul>
+
+	<div ng-repeat="list in lists" ng-show="listName === list.type" data-name="{{list.type}}" data-aaa="{{listName}}">
+		<div class="banner">
+			<img src="img/tmp/tmp_01.png" class="banner" alt="스티커 배너" data-ng-hide="searchSticker.title.length">
+		</div>
+
+		<ol class="listSticker">
+			<li data-ng-repeat="sticker in list.items|filter:category" data-ng-class="{'new': sticker.isNew == true}" data-ng-click="viewSticker(sticker.lid)">
+				<div class="thumb"><img data-ng-src="{{sticker.image}}" alt="{{sticker.title}}"></div>
+				<div class="info">
+					<span class="author">{{sticker.author}}</span>
+					<span class="title">{{$index+1}}. {{sticker.title}}</span>
+					<span class="price">{{sticker.price}}</span>
+				</div>
+			</li>
+		</ol>
+
+		<div class="loading-list" data-ng-show="list.hasNext && !loading">
+			<div class="loading"></div>
+		</div>
+	</div>
+</div>

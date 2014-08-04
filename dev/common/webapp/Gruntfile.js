@@ -97,6 +97,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-ngmin');
 
-	grunt.registerTask('default', ['compass:dev', 'cssmin', 'ngmin', 'uglify', 'watch']);
+	grunt.registerTask('default', ['compass:dev', 'cssmin', 'watch']);
 	grunt.registerTask('build', ['compass:dev', 'cssmin', 'ngmin', 'uglify']);
 };

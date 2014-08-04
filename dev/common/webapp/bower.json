@@ -1,8 +1,8 @@
 {
-  "name": "globe",
+  "name": "stickerShop",
   "version": "0.0.0",
   "authors": [
-    ""
+    "Hansol Park <hansol.park@linecorp.com>"
   ],
   "license": "MIT",
   "ignore": [
