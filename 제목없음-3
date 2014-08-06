@@ -1,0 +1,35 @@
+<p>서버 세팅을 위해 apm(apach, php, mysql) 은 꼭 필요하다.<br />기본적으로 Mac 에서는 apach, php 모듈을 탑재하고 있다.<br />내용 정리는 Mac 기준으로 하려고 한다.</p>
+<p>1. apach</p>
+<blockquote>
+<p>브라우저 주소창에 localhost 라고 입력하게 되면<br />It Works! 라는 텍스트가 노출된다.<br />apach가 실행중이라는 것을 알 수 있다.<br />텍스트가 노출되지 않고 페이지를 찾지 못한다면,<br />Terminal 에서 apach를 실행하라는 명령을 해줘야 한다.</p>
+<p>#&nbsp;apachectl -k start</p>
+<p>노출되는 It Works! 텍스트는 아래의 경로로 이동하면<br />index.html.en 파일이라는 것을 확인할 수 있다.<br /><br /># cd /Library/WebServer/Documents</p>
+</blockquote>
+<p>apach 웹서버 조절 인터페이스<br />http://httpd.apache.org/docs/2.2/programs/apachectl.html</p>
+<p>2. php</p>
+<p>이제 php가 동작할 수 있도록&nbsp;httpd.conf 파일을 수정해야 한다.</p>
+<blockquote>
+<p># sudo vi&nbsp;/etc/apache2/httpd.conf</p>
+<p>루트 권한으로 httpd.conf 파일을 편집하겠다는 명령이다.<br />해당 파일에서&nbsp;<span>#LoadModule php5_module libexec/apache2/libphp5.so<br />라인을 찾은 후 주석(#)을 제거해 줘야 한다.</span></p>
+<p><span>/ 을 누르면 검색이 가능하며,<br /><span>php5_module 을 검색하면 위의 라인을 검색할 수 있다.<br /></span>검색 후 i 를 누르면 insert 모드로 전환되며,<br />주석을 제거할 수 있다.<br />esc 를 누른 후 :wq 를 입력하게 되면 수정된 내용이 저장되고 빠져나올 수 있다.&nbsp;</span></p>
+<p><span>이제 apach 를 재구동 후 정상적으로 php를 사용할 수 있는 환경이 되었는지 확인해야 한다.</span></p>
+<p><span>#&nbsp;sudo apachectl restart</span></p>
+<p>아래와 같이 php 파일을 생성 후 해당 php 파일을 실행하게 되면 각종 정보들을 확인할 수 있는 페이지를 볼 수 있다.</p>
+<p>'http://localhost/phpinfo.php'<br />&lt;?php<br />phpinfo();<br />?&gt;</p>
+</blockquote>
+<p><span>3. mysql</span></p>
+<p><span>이제 database 활용을 위해 mysql을 설치해야 한다.</span></p>
+<blockquote>
+<p><span><span>mysql download: http://www.mysql.com</span></span></p>
+</blockquote>
+<p>download 후 dmg 파일을 실행하면 3가지 파일이 보인다.</p>
+<blockquote>
+<p>mysql-5.5.16-osx10.6-x86_64.pkg (mysql 설치파일)<br />MySQLStartupItem.pkg (mysql 구동을 위한 파일)<br />MySQL.prefPane (시스템 환경에서 mysql을 구동, 정지를 쉽게 할 수 있는 파일)</p>
+</blockquote>
+<p>설치 파일로 설치 후&nbsp;<span>prefPane파일은 /Library/PreferencePanes 위치에 복사해 주면 된다.</span></p>
+<p><span>mysql 구동을 위해서 2가지 방법이 있다.<br /></span></p>
+<ul>
+<li><span># sudo /Library/StartupItems/MySQLCOM/MySQLCOM start</span></li>
+<li><span><span>시스템환경에서 mysql 항목 이용</span></span></li>
+</ul>
+<p><span>이제 apm 셋팅이 완료되었다.</span></p>
