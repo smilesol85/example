@@ -260,6 +260,10 @@ new 라는 branch를 생성해 보자.
 	
 	# git branch new  
 
+branch 이름 변경  
+	
+	# git branch -m 기존이름브랜치 변경이름브랜치
+
 생성된 new branch로 이동해 보자.  
 	
 	# git checkout new  
