@@ -88,15 +88,19 @@ SVN과 같은 버전 관리 시스템(Version Control System, VCS)을 사용하�
 
 ###<a href="#" name="setting">환경 설정</a>  
 현재 설정 정보 조회. (--global옵션은 전역설정에 대한 옵션이며 현재 프로젝트에만 적용시 옵션에서 제외해 주면 된다.)  
+	
 	# git config --global --list
 
 사용자명 등록 (필수)  
+	
 	# git config --global user.name "사용자명"  
 
 이메일 주소 등록 (필수)  
+	
 	# git config --global user.email "이메일주소"  
 
 터미널에 노출되는 텍스트에 칼라 표시  
+	
 	# git config --global color.ui “auto”
 
 ###<a href="#" name="setup_window">git for window</a>  
