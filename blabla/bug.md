@@ -16,7 +16,7 @@ fullview: false
 1. [pc](#pc)  
 
 ### <a href="#" name="firefox">firefox</a>  
-**background-position-x / background-position-y 속성은 firefox에서 렌더링 되지 않는다.**
+**background-position-x / background-position-y 속성은 firefox에서 렌더링 되지 않는다.**  
 ---
 
 ### <a href="#" name="ios">ios</a>  
@@ -40,6 +40,7 @@ fullview: false
 
 ### <a href="#" name="android">android</a>  
 **animation, transtion 적용시 이미지가 흐리게 렌더링되는 현상이 있다면 아래와 같이 적용해 보자.**  
+---
 빈 요소에 공백 문자 추가  
 
 		<span>&nbsp;</span>
@@ -48,24 +49,31 @@ fullview: false
 빈 요소가 생기지 않게 텍스트에 color:transparent 적용하는 방법도 있겠다.  
 
 **이미지에 text-indent 사용시 이미지 퀄리티가 저하되는 현상이 있다. 해결 방법은?**  
+---
 **column 속성 사용시 정상 노출 되지 않고 비정상적으로 렌더링이 되는 현상이 있다.**  
+---
 **placeholder 사용시 line-height, text-align 적용 되지 않는다.**  
+---
 font color 및 font size만 적용된다.  
 
 ### <a href="#" name="android_2_x">android_2_x</a>  
 **영어 외의 다른 언어 사용시 jQuery keyup, keydown 버그가 있다.**  
+---
 영어가 아닌 타 언어를 사용하게 되면,  
 jQuery keyup, keydown 이벤트가 발생하지 않는다.  
 (아직 눈으로 확인해 보지 못했다.^^;)  
 
 **overflow의 scroll이 적용되지 않는다.**  
+---
 **position: fixed 속성 버그가 있다.**  
+---
 	
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translate3d(0,0,0);
 
 ### <a href="#" name="android_4_x">android_4_x</a>  
 **animation시 깜박임을 해결하기 위해서 아래와 같은 방법을 적용해 보자.**  
+---
 	
 	animation-fill-mode:none || both || forwards || backwards
 
@@ -82,17 +90,20 @@ jQuery keyup, keydown 이벤트가 발생하지 않는다.
 
 ### <a href="#" name="mobile">mobile</a>  
 **한글 텍스트 사용시 좌, 우측 끝에 의문의 공백이 발생 한다면 아래와 같이 적용해 보자.**  
+---
 텍스트 양쪽 끝에 공백을 추가해 주면 말끔히 해결된다.  
 	
 	<!-- 텍스트 양쪽 끝에 공백 추가 -->
 	<span> 가나다라마바사 </span>
 
 **-webkit-line-clamp과 padding 의 부조화**  
+---
 height의 영향을 받아 padding과 조화롭지 못하는 경우가 있다.  
 padding을 margin으로 대체하거나, 부모 요소에 padding을 활용하면 되겠다.  
 
 ### <a href="#" name="pc">pc</a>  
 **CSS에서 zoom 요소는 각종 요소들을 돋보기 기능처럼 사용할 수 있다.**  
+---
 	
 	/* 2, 3, 4 ~ */
 	zoom:1;
@@ -104,11 +115,13 @@ padding을 margin으로 대체하거나, 부모 요소에 padding을 활용하�
 - float:left 때문에 깨진 부모 요소도 바로 잡을 수 있다.  
 
 **min-height 속성은 ie6에서 적용되지 않는다.**  
+---
 아래와 같은 방법으로 해결할 수 있다.  
 	
 	div{min-height:500px; height:auto !important; height:500px}
 
 **jquery와 png는 안친한가봐요.**  
+---
 png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지는 버그가 있다.  
 이런 경우 css로 해결하는 방법이 있다.  
 	
@@ -122,11 +135,13 @@ png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지
 	}
 
 **IE10 input text 기본 삭제버튼 겹침 현상**  
+---
 -ms- prefix를 사용하여 숨길 수 있다.  
 	
 	input::-ms-clear{display:none}
 
 **chorme 에서 배경이미지 가운데 정렬과 margin: 0 auto; 로 가운데 정렬이 어긋나는 경우**  
+---
 	
 	.background {
 	   background: url("image.png") no-repeat 50% 100%;
