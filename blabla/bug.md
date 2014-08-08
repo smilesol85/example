@@ -84,6 +84,10 @@ fullview: false
 		<!-- 텍스트 양쪽 끝에 공백 추가 -->
 		<span> 가나다라마바사 </span>
 
+- -webkit-line-clamp과 padding 의 부조화  
+	height의 영향을 받아 padding과 조화롭지 못하는 경우가 있다.  
+	padding을 margin으로 대체하거나, 부모 요소에 padding을 활용하면 되겠다.  
+
 ### <a href="#" name="pc">pc</a>  
 - CSS에서 zoom 요소는 각종 요소들을 돋보기 기능처럼 사용할 수 있다.  
 		
