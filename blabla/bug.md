@@ -20,6 +20,7 @@ fullview: false
 
 ### <a href="#" name="ios">ios</a>  
 - 가로 전환시 폰트가 bold 스타일로 적용된 것 처럼 렌더링 되면 아래와 같이 적용해 보자.  
+	(하드웨어 가속을 통해 렌더링 될 수 있도록..)
 		
 		div{-webkit-text-size-adjust:none || auto || n%}
 		div{-webkit-backface-visibility:hidden || visibility}
