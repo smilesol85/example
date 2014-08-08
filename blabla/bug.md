@@ -104,3 +104,17 @@ fullview: false
     아래와 같은 방법으로 해결할 수 있다.  
 		
 		div{min-height:500px; height:auto !important; height:500px}
+
+- jquery와 png는 안친한가봐요.  
+	png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지는 버그가 있다.  
+	이런 경우 css로 해결하는 방법이 있다.  
+			
+			
+		pngImg {
+			background:transparent;
+			-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+			/* IE8 */
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
+			/* IE6 & 7 */
+			zoom:1;
+		}
