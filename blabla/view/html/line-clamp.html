@@ -5,8 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .line-clamp{display:-webkit-box;overflow:hidden;text-overflow:ellipsis;-webkit-line-clamp:3;-webkit-box-orient:vertical;word-wrap:break-word;}
-        .after:after{display:inline-block;width:0px;height:0px;content:''}
+        .line-clamp{
+			display: -webkit-box;
+			overflow:hidden;
+			width:100px;
+			background:yellow;
+			text-overflow:ellipsis;
+			-webkit-line-clamp:3;
+			-webkit-box-orient:vertical;
+			word-wrap:break-word;
+		}
+        .after:after{
+			display:inline-block;
+			width:0px;
+			height:0px;
+			content:'';
+		}
     </style>
     <script src="http://smilesol85.github.io/blabla/common/jquery.min.js"></script>
 </head>
@@ -16,32 +30,34 @@
             <div class="lead">
             </div>
             <section>
-                <div class="line-clamp" style="width:100px;background:yellow">
-                    가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하
+				<h2>block element</h2>
+                <div class="line-clamp">
+                    가나다라마바사아자 차카타파하가나다라마 바사아자차카타파하가나다라마바사아자차카타파하 가나다라마바사아자차카타파하가나다라마바사아자차카타파 하가나다라마바사아자차카타파하
                 </div>
-                <br>
-                <div class="line-clamp" style="width:100px;background:yellow">
-                    <span><strong>[inline]</strong> 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+                <hr>
+                <h2>block > inline element</h2>
+                <div class="line-clamp">
+                    <span>가나다라마바사아자차카타파하가 나다라마바사아자차카타파하가나다라 마바사아자차카타파하가나다 라마바사아자차카타파하가나다라마바사 아자차카타파하가나다라마바사아자차카타파하</span>
                 </div>
-                <br>
-                <div class="line-clamp" style="width:100px;background:yellow">
-                    <a href="#"><strong>[a tag]</strong> 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
+                <hr>
+                <h2>block > inline a element</h2>
+                <div class="line-clamp">
+                    <a href="#">가나다라마바사아자차카타파하가나 다라마바사아자차카타파하가나다라마바사아자 차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사 아자차카타파하가나다라마 바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
                 </div>
-                <br>
-                <div class="line-clamp" style="width:100px;background:yellow">
-                    <a href="#"><strong>[a tag]</strong> 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
+                <hr>
+                <h2>block > inline a:after element</h2>
+                <div class="line-clamp after">
+                    <a href="#">가나다라마바사아자차카타파하가나 다라마바사아자차카타파하가나다라마바사아자 차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사 아자차카타파하가나다라마 바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
                 </div>
-                <br>
-                <div class="line-clamp after" style="width:100px;background:yellow">
-                    <a href="#"><strong>[a tag :after]</strong> 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
+                <hr>
+				<h2>block > inline a(display:block) element</h2>
+                <div class="line-clamp">
+                    <a href="#" style="display:block">가나다라마바사아자차카타파하가나 다라마바사아자차카타파하가나다라마바사아자 차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사 아자차카타파하가나다라마 바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
                 </div>
-                <br>
-                <div class="line-clamp" style="width:100px;background:yellow">
-                    <a href="#" style="display:block"><strong>[a tag block]</strong> 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
-                </div>
-                <br>
-                <div class="line-clamp" style="width:100px;background:yellow">
-                    <a href="#" style="display:inline-block"><strong>[a tag inline-block]</strong> 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
+                <hr>
+                <h2>block > inline a(display:inline-block) element</h2>
+                <div class="line-clamp">
+                    <a href="#" style="display:inline-block">가나다라마바사아자차카타파하가나 다라마바사아자차카타파하가나다라마바사아자 차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사 아자차카타파하가나다라마 바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</a>
                 </div>
             </section>
         </div>

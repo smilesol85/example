@@ -6,5 +6,3 @@
 5. rollActionTime:'3500'//set action time  
 6. 자동 롤인 경우 무한 반복 됩니다.  
 7. 수동 롤링 경우 처음과 끝으로 이동시 이전으로만 롤이 가능합니다.  
-
-- <a href="http://smilesol85.github.io/roll/roll.html" taget="_blank">index</a>  

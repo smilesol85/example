@@ -4,6 +4,3 @@
 **업데이트 예정**
 * 들여쓰기 기능 추가  
 * 파일 업로드 및 url 입력으로 기능 수행  
-* grunt로 개발 예정  
-
-- <a href="http://smilesol85.github.io/reset_code/reset_code.html" taget="_blank">index</a>  

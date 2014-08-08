@@ -1,8 +1,6 @@
 ##infinite scroll  
 단순 무한 스크롤입니다.  
 
-- <a href="http://smilesol85.github.io/infinite_scroll/infinite_scroll.html" target="_blank">infinite scroll page</a>  
-
 > TYPE A - jQuery  
 
         $(document).height();  /* return height of html document */

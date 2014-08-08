@@ -6,5 +6,3 @@
 1. 음료를 뽑을 시 잔액 확인 및 잔액 부족을 확인할 수 있다.  
 1. 음료 금액보다 현재 금액이 클때 음료를 뽑을 수 있다.  
 1. 돈은 5만원까지 넣을 수 있다.  
-
-- <a href="http://smilesol85.github.io/vending_machine/vending_machine.html" taget="_blank">index</a>  
