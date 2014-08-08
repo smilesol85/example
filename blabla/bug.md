@@ -119,3 +119,9 @@ fullview: false
 			/* IE6 & 7 */
 			zoom:1;
 		}
+
+- IE10 input text 기본 삭제버튼 겹침 현상  
+	-ms- prefix를 사용하여 숨길 수 있다.  
+		
+		input::-ms-clear{display:none}
+
