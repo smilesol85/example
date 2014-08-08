@@ -887,10 +887,9 @@ em을 활용하여 scaleable한 UI를 구성할 수도 있습니다.
 
 
 **단위별 폰트의 특징**  
-
 - pt : 포인트(points) - 1포인트는 0.72인치  
-- px : 픽셀(pixels) - 화면 해상도에 대한 상대크기  
-- %, em : 지정되거나 상속받은 (또는 상위 엘리먼트)에 대한 백분율 상대 크기  
+- px : 픽셀(pixels) - 화면 해상도에 대한 상대크기! 즉, body 요소의 기본 크기를 무시하고 직접 지정한 px로 재설정  
+- %, em : 지정되거나 상속받은 (또는 상위 엘리먼트)에 대한 백분율 상대 크기! 즉, body 요소의 크기를 기준으로 설정  
 
 **em 사용 예**
 
@@ -907,12 +906,11 @@ em의 단점인 부모 요소의 영향을 받는 단점을 보안하기 위해�
 CSS3에서 갠찮은 단위를 소개 했는데 그 중 rem(root em) 단위는 꽤 유용하게 쓰일 것 같다.  
 rem 단위는 대부분의 브라우저를 지원하나 아직 전부 지원하지는 않는다.  
 rem 지원 여부 : http://caniuse.com/#search=rem  
-모드 브라우저 대응을 위해 아래와 같이 활용할 수 있겠다.
-
-아래 코드는 부모인 p 태그에 1.4rem이 선언되어 있고,  
-자식 요소인 span 태그에 부모에 종속되지 않은 1.2rem을 선언할 수 있다.
+모드 브라우저 대응을 위해 아래와 같이 활용할 수 있겠다.  
 	
-	p { font-size: 1.4rem; } p span { font-size: 1.2rem; }
+	html {font-size: 62.5%}
+	body {font-size: 14px; font-size: 1.4rem}  /* 14px */
+	h1 {font-size: 24px; font-size: 2.4rem}  /* 24px */
 
 ## <a href="#" name="background">background</a>  
 	
