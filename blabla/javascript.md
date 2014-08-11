@@ -1299,11 +1299,12 @@ $('.event').addEventListener('click', function(){});
 1. [resize](#resize)  
 1. [selectbox with jquery](#selectbox_with_jquery)  
 1. [encodeURI(), decodeURI()](#encodeURI_decodeURI)  
-1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/infinite_scroll">infinite_scroll</a>  
-1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/orientation">orientation</a>  
-1. <a href="http://smilesol85.github.io/dev/resolution/resolution.html">resolution</a>  
-1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/touch">touch</a>  
-1. <a href="https://github.com/smilesol85/smilesol85.github.com/tree/master/dev/useragent">useragent</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/complete/complete.html">image load complete</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/infinite_scroll/infinite_scroll.html">infinite_scroll</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/orientation/orientation.html">orientation</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/resolution/resolution.html">resolution</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/touch/touch.html">touch</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/useragent/check_device_browser.html">useragent</a>  
 
 ###<a href="#" name="regexp">regexp</a>  
 - `[]` : 안에 들어가는 것은 모두 or  
