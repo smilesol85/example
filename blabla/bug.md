@@ -38,6 +38,12 @@ fullview: false
 - -webkit-transform:translateZ(0)  
 	3D 렌더링 할때 Z축을 표현하기 위해 사용한다.  
 
+**전화번호 자동 연결 이슈**  
+아래와 같이 meta tag로 해결 가능하다.  
+(또는, 각각의 숫자를 태그로 감싸주면 해결된다.)  
+	
+	<meta name="format-detection"content="telephone=no">
+
 ### <a href="#" name="android">android</a>  
 **animation, transtion 적용시 이미지가 흐리게 렌더링되는 현상이 있다면 아래와 같이 적용해 보자.**  
 ---
