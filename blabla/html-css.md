@@ -1256,3 +1256,11 @@ javascript에서 처리하단 링크 차단을 css 에서 처리 가능하다.
 <a href="http://caniuse.com/#search=pointer-events">caniuse</a>  
 		
 	a {pointer-events: none}
+
+### blur  
+		
+	/* simple filter */
+	.myElement{-webkit-filter: blur(2px);}
+	
+	/* advanced filter */
+	.myElement{-webkit-filter: blur(2px) grayscale(.5) opacity(0.8) hue-rotate(120deg);}
