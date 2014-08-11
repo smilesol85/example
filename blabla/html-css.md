@@ -1050,11 +1050,9 @@ firefox가 버튼 내부에 focus가 갔을때 사용하기 위한 내부 여백
 firefox에서도 padding, border가 style 적용한 값으로 노출하고자 할때는  
 `::-moz-focus-inner` 라는 선택자를 사용한다.  
 
-    
-    {% highlight css %}
+	
 	button{padding:0;border:0;background:none}
 	button::-moz-focus-inner{padding:0;border:0}
-    {% endhighlight %}
 
 
 ## <a href="#" name="media_query">media_query</a>  

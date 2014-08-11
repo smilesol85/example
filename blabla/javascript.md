@@ -1079,7 +1079,6 @@ function.call(oObject);
 
 **객체 리터럴 이용 - 단일 객체로만 활용**  
 		
-{% highlight javascript %}
 ```javascript
 var oObject = {
 	name : 'smilesol'
