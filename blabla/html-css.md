@@ -1249,3 +1249,10 @@ animation 속성은 아래와 같다.
 - -webkit-transform: scaleZ(n)
 - -webkit-transform: scale3d(n,n,n)
 - -webkit-transform: perspective(n)
+
+### anchor prevent  
+javascript에서 처리하단 링크 차단을 css 에서 처리 가능하다.  
+대부분의 브라우저를 지원하며, IE10 이하는 지원하지 않는다.  
+<a href="http://caniuse.com/#search=pointer-events">caniuse</a>  
+		
+	a {pointer-events: none}
