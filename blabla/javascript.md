@@ -1299,11 +1299,12 @@ $('.event').addEventListener('click', function(){});
 1. [selectbox with jquery](#selectbox_with_jquery)  
 1. [encodeURI(), decodeURI()](#encodeURI_decodeURI)  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/complete/complete.html">image load complete</a>  
-1. <a href="http://smilesol85.github.io/blabla/view/javascript/infinite_scroll/infinite_scroll.html">infinite_scroll</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/infinite_scroll/infinite_scroll.html">infinite scroll</a>  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/orientation/orientation.html">orientation</a>  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/resolution/resolution.html">resolution</a>  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/touch/touch.html">touch</a>  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/useragent/check_device_browser.html">useragent</a>  
+1. [web(local,session) storage](#storage)  
 
 ###<a href="#" name="regexp">regexp</a>  
 - `[]` : 안에 들어가는 것은 모두 or  
@@ -1468,3 +1469,48 @@ function reSize(){
         
         escape('ABC가나다http://www.naver.com');  // ABC%uAC00%uB098%uB2E4http%3A//www.naver.com <-> unescape()
         
+### <a href="#" name="storage">web(local, session) storage</a>  
+<a href="http://smilesol85.github.io/blabla/view/javascript/localStorage/localStorage.html">web(local,session) storage</a>  
+<a href="http://caniuse.com/#search=web storage">caniuse</a>
+`local storage` 는 영구적으로 정보를 브라우저에 보관할 수 있으며, 용량에 제한이 없다.  
+`session storage` 는 브라우저 종료시 데이터가 삭제된다.  
+
+**데이터 등록**  
+		
+```javascript
+localStorage.setItem(key, value);
+localStorage["key"] = value;
+localStorage.key = value;
+
+sessionStorage.setItem(key, value);
+sessionStorage["key"] = value;
+sessionStorage.key = value;
+```
+
+**데이터 조회**  
+		
+```javascript
+value = localStorage.getItem(key);
+value = localStorage["key"]; 
+value = localStorage.key;
+
+value = sessionStorage.getItem(key);
+value = sessionStorage["key"];
+value = sessionStorage.key;
+
+keyName = localStorage.key(index);
+keyName = sessionStorage.key(index); 
+
+totalLength = localStorage.length;
+totalLength = sessionStorage.length; 
+```
+
+**데이터 삭제** 
+		
+```javascript
+localStorage.removeItem(key); // key 별 삭제
+localStorage.clear(); // 로컬스토리지 전체 삭제
+
+sessionStorage.removeItem(key); // key 별 삭제
+sessionStorage.clear(); // 세션스토리지 전체 삭제
+```
