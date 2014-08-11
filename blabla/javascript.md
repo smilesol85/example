@@ -711,11 +711,9 @@ var obj2 = {
 
 foo.call(obj2);  // 10
 ```
-{% endhighlight %}
 
 apply, call 인자 넘겨주기  
 		
-{% highlight javascript %}
 ```javascript
 var name = 'sol';
 function foo(msg, msg2){
@@ -1078,7 +1076,6 @@ oObject.__proto__ = function.prototype;
 // 세번째
 function.call(oObject);
 ```  
-{% endhighlight %}
 
 **객체 리터럴 이용 - 단일 객체로만 활용**  
 		
