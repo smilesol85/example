@@ -83,7 +83,6 @@ function(){}  // 함수 리터럴
 - 세미콜론(;)으로 마무리 짓는 것은 오류를 줄이는데 아주 좋은 습관이다.  
 - 변수에 값을 할당하는 이유는 나중에 다시 사용하기 위해서다.  
 	
-{% highlight javascript %}
 ```javascript
 var nNum = 1;
 var sString1 = 'string1', sString2 = 'string2';
@@ -92,27 +91,23 @@ console.log(window.nNum);  // 1
 console.log(nNum);  // 1, window 생략 가능
 console.log(this === window);  // true
 ```
-{% endhighlight %}
 
 > 파싱 단계에서 var로 선언된 변수는  
-	`호이스팅`(제일 상단으로 올라가는 undefined로 정의 되는것을 말한다.) 되어  
+	`호이스팅(hoisting)`(제일 상단으로 올라가는 undefined로 정의 되는것을 말한다.) 되어  
 	undefined 상태에서 변수 선언된 곳을 만나게 되면 그 때 초기값이 할당된다.  
-	
-{% highlight javascript %}
+
 ```javascript
 alert(nNum);  // undefined
 var nNum = 1;
 alert(nNum);  // 1
 ```
-{% endhighlight %}
 
 ####<a href="#" name="program_process">프로그램 실행 단계</a>  
 > 프로그램 -> 파싱 -> 변수, 함수 정의 -> 실행 -> 함수 코드 파싱 -> 실행  
 
 어떤 함수에도 포함하지 않은 변수, 어떤 함수에도 포함하지 않는 이름 있는 함수에 대해  
 함수명과 동일한 이름의 변수를 만들고 이 변수를 실행 코드가 담긴 함수에 대한 참조로 초기화 한다.  
-		
-{% highlight javascript %}
+
 ```javascript
 alert(foo(10));  // 100
 var foo = 0;
@@ -124,7 +119,6 @@ function foo(x){
 }
 alert(foo);  // 0
 ```
-{% endhighlight %}
 
 > 파싱 단계에서 변수와 함수명의 이름이 같은 경우 동일한 메모리에 저장되는데  
 > 저장될 때 앞에서 선언된 변수 메모리에 덮어쓰게 된다.  
