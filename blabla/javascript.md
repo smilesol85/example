@@ -1471,7 +1471,7 @@ function reSize(){
         
 ### <a href="#" name="storage">web(local, session) storage</a>  
 <a href="http://smilesol85.github.io/blabla/view/javascript/localStorage/localStorage.html">web(local,session) storage</a>  
-<a href="http://caniuse.com/#search=webstorage">caniuse</a>
+<a href="http://caniuse.com/#search=webstorage">caniuse</a>  
 `local storage` 는 영구적으로 정보를 브라우저에 보관할 수 있으며, 용량에 제한이 없다.  
 `session storage` 는 브라우저 종료시 데이터가 삭제된다.  
 
