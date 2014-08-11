@@ -42,6 +42,7 @@ fullview: false
 1. [transition](#transition)  
 1. [transform](#transform)  
 1. [animation](#animation)  
+1. [부록](#appendix)  
 
 ---  
 **example**  
@@ -1239,3 +1240,14 @@ animation 속성은 아래와 같다.
 
 **animation 속성 한 줄로 입력하기**  
 > animation:|animation-name|animation-duration|animation-timing-function|animation-delay|animation-iteration-count|animation-play-state  
+
+## <a href="#" name="appindex">부록</a>  
+### 하드웨어 가속  
+- -webkit-transform: translate3d(n,n,n)
+- -webkit-transform: translateZ(n)
+- -webkit-transform: rotateX(angle)
+- -webkit-trnasform: rotateY(angle)
+- -webkit-transform: rotate3d(n,n,n,angle)
+- -webkit-transform: scaleZ(n)
+- -webkit-transform: scale3d(n,n,n)
+- -webkit-transform: perspective(n)

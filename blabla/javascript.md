@@ -12,7 +12,7 @@ fullview: false
 1. [함수, 객체](#function_object)  
 1. [상속](#inheritance)  
 1. [이벤트](#event)  
-1. [부록](#appendix)
+1. [부록](#appendix)  
 
 ###<a href="#" name="javascript">자바스크립트 특징</a>  
 
