@@ -295,6 +295,12 @@ merge와 비슷하나 merge는 두개의 branch의 결과를 병합하지만,
 `rebase`는 하나의 branch를 다른 하나의 branch로 차례대로 적용시킨다.  
 `공동 작업시 히스토리를 깔끔하게 관리`할 수 있다.  
 
+> remote 저장소에 있는 branch를 로컬 저장소로 pull 받고 싶다면 아래와 같이 수행하면 된다.  
+
+branch를 새로 생성하고 해당 branch로 변경된다.  
+		
+	# git checkout -b 로컬저장소이름 origin/원격저장소이름
+
 ###<a href="#" name="github">소셜 코딩을 위한 github에 빠져 볼까요??</a>  
 <a href="https://github.com/">github</a>는 git으로 작업된 파일을 서버에서 호스팅 해주는 서비스이다.  
 <a href="https://github.com/">github</a>의 무료 사용자는 public한 레파지토리를 만들어 전체공개로 사용할 수 있으며,  
