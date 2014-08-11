@@ -120,9 +120,9 @@ function foo(x){
 alert(foo);  // 0
 ```
 
-> 파싱 단계에서 변수와 함수명의 이름이 같은 경우 동일한 메모리에 저장되는데  
-> 저장될 때 앞에서 선언된 변수 메모리에 덮어쓰게 된다.  
-> 따라서 `네임스페이스`가 필요하다.  
+파싱 단계에서 변수와 함수명의 이름이 같은 경우 동일한 메모리에 저장되는데  
+저장될 때 앞에서 선언된 변수 메모리에 덮어쓰게 된다.  
+따라서 `네임스페이스`가 필요하다.  
 
 ####<a href="#" name="data-type">데이터 타입</a>  
 - 데이터 타입으로는 number, string, boolean, null, undefined 가 있다.  
@@ -139,7 +139,6 @@ alert(foo);  // 0
 - NaN은 어떤 숫자와도 비교 연산을 할 수 없다. (자신과도 비교 연산이 되지 않는다.)  
 - 숫자값이 NaN인지 확인이 필요하다면 isNaN() 함수를 사용하면 된다.  
 		
-{% highlight javascript %}
 ```javascript
 var n1 = 255;  // 정수 표현
 var n2 = 255.0;  // 실수 표현
@@ -174,13 +173,11 @@ isNaN(NaN);  // true
 var a = '5a';
 console.log(parseInt(a, 10));  // 5 - 10진수로 반환
 ```
-{% endhighlight %}
 
 #####Math  
 > 복잡한 수학 연산을 위해 제공되는 객체이다.  
 > [w3schools](http://www.w3schools.com/jsref/jsref_obj_math.asp "Math")  
 		
-{% highlight javascript %}
 ```javascript
 var a = Math.PI;  // 3.141592653589793 (원주율값 : 약 3.14)
 var b = Math.SQRT2;  // 1.4142135623730951 (2의 제곱근값 : 약 1.414)
@@ -196,13 +193,11 @@ var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;  // 5 ~ 10 �
 
 var h = Math.floor(Math.random() * 10);  // 0초과 10미만의 숫자중 소수점 버리고 랜덤으로 생성
 ```
-{% endhighlight %}
 
 #####Number  
 데이터 타입의 숫자를 객체로 만들 수 있다.  
 [w3schools](http://www.w3schools.com/jsref/jsref_obj_number.asp "Number")  
 		
-{% highlight javascript %}
 ```javascript
 var a = new Number(15);
 a.toString();  // 15 (10 진수로 출력)
@@ -230,7 +225,6 @@ document.write(testNum.toPrecision(3));  //총 세 자리 표시! 이하의 자�
 document.write('<br/>');
 document.write(testNum.toFixed(3));  //소수점 이하 세 자리까지 표시하고 그 이하의 자리수에서 반올림
 ```
-{% endhighlight %}
 
 ####<a href="#" name="string">문자열</a>  
 - 작은 따옴표(' '), 큰 따옴표(" ")로 묶어서 표현한다.  
@@ -239,7 +233,6 @@ document.write(testNum.toFixed(3));  //소수점 이하 세 자리까지 표시�
 - 이스케이프로는 백슬러쉬를 사용한다.  
 - 문자열은 `+`를 사용해서 결합 할 수 있다.  
 		
-{% highlight javascript %}
 ```javascript
 // new String()으로 반환된 값은 문자열이 아니라 객체이다.
 // new 없이 String()만 사용하면 toString()과 같이 문자열로 변환하는데 사용된다.
@@ -356,49 +349,41 @@ String.prototype.trim = function(){
 	return this.replace(/^\s+|\s+$/g, "");
 };
 ```
-{% endhighlight %}
 
 ####<a href="#" name="boolean">불리언</a>  
 - true(참), false(거짓) 로 값을 표현할 때 사용한다.  
 - true는 1, false는 0을 반환한다.  
 - 0, null, ""(빈 문자열), false, undefined, NaN 외의 값으로 평가되면 항상 true이다.  
 		
-{% highlight javascript %}
 ```javascript
 console.log(true > false);  // true
 ```
-{% endhighlight %}
 
 ####<a href="#" name="undefined">undefined</a>  
 값이 할당되지 않음을 나타낸다.  
 		
-{% highlight javascript %}
 ```javascript
 var foo;  // undefined
 
 console.log(null == undefined)  // true
 console.log(null === undefined)  // false
 ```
-{% endhighlight %}
 
 ####<a href="#" name="null">null</a>  
 - 객체가 없음을 나타낸다.  
 - 아무런 값도 나타내지 않는다.  
 - 어떠한 유효한 값도 아니다. (값 자체가 없다는 의미는 아니다.)  
 		
-{% highlight javascript %}
 ```javascript
 var foo = null;  // null
 var foo2 = null + 6;  // 6
 ```
-{% endhighlight %}
 
 ####<a href="#" name="operator">연산자</a>  
 #####증가, 감소 연산자  
 - ++변수 이면 먼저 증가 후 최종값으로 평가한다.  
 - 변수++ 이면 평가 끝난 후 증가한다.  
 		
-{% highlight javascript %}
 ```javascript
 i = 1;
 j = ++i;  // 2
@@ -408,13 +393,11 @@ j = i++;
 console.log(j);  // 1
 console.log(i);  // 2
 ```
-{% endhighlight %}
 
 #####비교 연산자  
 - '=='(equal)은 타입이 다른 경우 타입을 일치 시킨 후 비교한다.  
 - '==='(identical)은 타입 비교까지 한다.  
 		
-{% highlight javascript %}
 ```javascript
 console.log(1 == '1');  // true
 console.log(1 === '1');  // false
@@ -429,10 +412,10 @@ console.log(o1 == o2);  // false
 
 console.log(undefined == null);  // true
 ```
-{% endhighlight %}
 
 #####OR 연산자(||)  
 좌측 || 우측 연산시 좌측이 참이면 우측은 평가하지 않는다. 즉, 좌측 값만 반환한다.  
+좌측이 거짓이면 우측은 평가한다.  
 
 #####AND 연산자(&&)  
 좌측 && 우측 연산시 좌측이 거짓이면 우측은 평가하지 않고 좌측 값만 반환한다.  
@@ -441,15 +424,12 @@ console.log(undefined == null);  // true
 #####부정 연산자(!)  
 항상 true, false만 반환된다.  
 		
-{% highlight javascript %}
 ```javascript
 var booleans != false;  // true
 ```
-{% endhighlight %}
 
 ####<a href="#" name="if">조건문 if</a>  
 		
-{% highlight javascript %}
 ```javascript
 if(a > 2){
 	alert('a');
@@ -471,12 +451,10 @@ var sURL = nAge > 20 ? (
 );
 location.assign(sURL);
 ```
-{% endhighlight %}
 
 ####<a href="#" name="switch">조건문 switch</a>  
 너무 많은 else if문을 사용하게 된다면 switch 문으로 코드를 줄일 수 있을 것이다.  
 		
-{% highlight javascript %}
 ```javascript
 var nNum = '', nAge = '20';
 switch(nAge){
@@ -491,13 +469,11 @@ switch(nAge){
 		break;
 }
 ```
-{% endhighlight %}
 
 ####<a href="#" name="for">반복문 for / for in</a>  
 for문 안에서 사용된 변수 i는 for 밖에서도 사용 가능하다.  
 변수 스코프는 함수 단위로 결정된다.  
 		
-{% highlight javascript %}
 ```javascript
 for(var i = 0; i < 10; i++){
 	
@@ -526,11 +502,9 @@ var arrAge = [];
 var i = 0;
 for(arrAge[i++] in oAge);  // arrAge = ['a', 'b'];
 ```
-{% endhighlight %}
 
 ####<a href="#" name="while">반복문 while / do while</a>  
 		
-{% highlight javascript %}
 ```javascript
 // while
 var i = 0;
@@ -544,11 +518,9 @@ do {
 	i++;
 }while(i < 10);
 ```
-{% endhighlight %}
 
 ####<a href="#" name="try">예외 처리 try / catch / finally / throw</a>  
 		
-{% highlight javascript %}
 ```javascript
 try{
 	// 실행 코드
@@ -584,7 +556,6 @@ try{
 }
 // => a1 경고창이 실행된다.
 ```
-{% endhighlight %}
 
 ####<a href="#" name="break">break</a>  
 `조건문`, `반복문`에서 벗어날 때 사용한다.  
@@ -593,7 +564,6 @@ try{
 `반복문`에서 현재 반복을 중지하고 다음 반복을 수행한다.  
 
 		
-{% highlight javascript %}
 ```javascript
 for(var i = 0; i < 10; i++){
 	continue;
@@ -610,11 +580,9 @@ for(var i = 0; i < 10; i++){
 }
 alert(output);
 ```
-{% endhighlight %}
 
 ####<a href="#" name="array">배열</a>  
 		
-{% highlight javascript %}
 ```javascript
 /*
 push() 배열 맨 뒤 요소 추가
@@ -666,7 +634,6 @@ function CompareForSort(first, second)
         return 1; 
 }
 ```
-{% endhighlight %}
 
 ###<a href="#" name="function_object">함수, 객체</a>  
 
@@ -697,7 +664,6 @@ function CompareForSort(first, second)
 - 함수를 호출하면 런타임에 함수 내부가 실행된다.  
 - 함수를 다른 변수에 할당할 수 있다.  
 		
-{% highlight javascript %}
 ```javascript
 function foo(){
 	alert('function');
@@ -724,11 +690,9 @@ function foo(){
 	alert(x);  // local
 }
 ```
-{% endhighlight %}
 
 apply와 call  
 		
-{% highlight javascript %}
 ```javascript
 // apply, call
 function foo(){
@@ -767,7 +731,6 @@ var obj = {
 foo.apply(obj,['a', 'b']);  // 배열 형태
 foo.call(obj, 'c', 'd');
 ```
-{% endhighlight %}
 
 #####arguments  
 함수를 호출할 때 정의된 매개변수(parameter)의 개수와 함수로 넘겨주는 인자(argument)의 개수가 달라도 된다.  
@@ -777,7 +740,6 @@ foo.call(obj, 'c', 'd');
 - arguments 객체는 배열이 아니지만, 배열과 유사하다.  
 - arguments는 `length`, `callee` 라는 속성 사용이 가능하다.  
 		
-{% highlight javascript %}
 ```javascript
 function foo(){
 	var total = 0;
@@ -789,13 +751,11 @@ function foo(){
 // foo(2,3,4);  // 9
 // foo(8,7);  // 15
 ```
-{% endhighlight %}
 
 #####arguments.callee  
 - this와 유사하나 arguments.callee는 함수를 가르키고, this는 객체를 가르킨다.  
 - 재귀 호출 함수와 같이 구현할 때 유용하다.  
 		
-{% highlight javascript %}
 ```javascript
 function foo(){
 	return function(x){
@@ -808,32 +768,26 @@ function foo(){
 
 var result = foo()(5);  // 5*4*3*2*1 = 120
 ``` 
-{% endhighlight %}
 
 arguments를 배열의 객체로 변환하기  
 		
-{% highlight javascript %}
 ```javascript
 var argArray = Array.prototype.slice.call(arguments);
 ```
-{% endhighlight %}
 
 arguments가 숫자인지 판별하기  
 		
-{% highlight javascript %}
 ```javascript
 function isNumber(n){
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 ```
-{% endhighlight %}
 
 ####<a href="#" name="function_literal">함수 리터럴 이용</a>  
 - 인자로 전달 가능  
 - 변수에 할당  
 - 다른 함수의 반환값으로 사용  
 		
-{% highlight javascript %}
 ```javascript
 var f = function(x,y){
 	return x + y;
@@ -878,7 +832,6 @@ cont.prototype = {
 
 var Cont = new cont(10, 20);
 ```
-{% endhighlight %}
 
 ####<a href="#" name="prototype">프로토타입</a>  
 
@@ -900,11 +853,9 @@ var Cont = new cont(10, 20);
 - 다른 인스턴스를 생성할 수 있는 요소이다.  
 - `메모리 사용이 비효율적`이다.  
 		
-{% highlight javascript %}
 ```javascript
 var f = new Function('x','y','return x+y');
 ```
-{% endhighlight %}
 
 ####<a href="#" name="Function">Function</a>  
 - Function 이라는 함수는 `함수 인스턴스(instance)를 생성하는 함수`이다.  
@@ -916,7 +867,6 @@ var f = new Function('x','y','return x+y');
 - 인스턴스(instance)를 생성하는 데 사용된 함수를 생성자(constructor)라고 한다.  
 
 		
-{% highlight javascript %}
 ```javascript
 // foo라는 함수 인스턴스를 생성하는 표현이다.
 // 마지막을 제외한 앞의 인자는 함수를 호출하는데 사용되는 인자다.
@@ -928,15 +878,13 @@ function foo(x,y){
 	return x+y;
 }
 ```
-{% endhighlight %}
 
 > Function ->(생성) Object(Function 인스턴스) ->(생성) Object 객체(Object 인스턴스)  
 
-![Alt text](http://smilesol85.github.io/dev/test-page/images/function_prototype.png "Function prototype")  
+![Alt text](http://smilesol85.github.io/blabla/view/html/images/function_prototype.png "Function prototype")  
 
 ####<a href="#" name="self-invoking">자기 호출 함수</a>  
 		
-{% highlight javascript %}
 ```javascript
 // 자기 호출 함수
 /*
@@ -963,12 +911,10 @@ function foo(x,y){
     alert('function');
 }();
 ```
-{% endhighlight %}
 
 ####<a href="#" name="callback">콜백 함수</a>  
 > 호출 함수 ->(호출) 라이브러리 함수 ->(콜백 호출) 콜백 함수  
 		
-{% highlight javascript %}
 ```javascript
 // 메인 함수
 function Main(){
@@ -987,11 +933,9 @@ function LibrayFunction(arg, callback){
 	callback(data)
 }
 ```
-{% endhighlight %}
 
 **위의 코드를 익명 함수를 이용하여 표현할 수 있다**  
 		
-{% highlight javascript %}
 ```javascript
 // 메인 함수
 function Main(){
@@ -1007,9 +951,7 @@ function LibrayFunction(arg, callback){
 	callback(data);
 }
 ```
-{% endhighlight %}
 
-{% highlight javascript %}
 ```javascript
 var numbers = [20, 10, 9, 4, 30];
 var sortFunc = function(a, b){
@@ -1024,9 +966,7 @@ var sortFunc = function(a, b){
 };
 console.log(numbers.sort(sortFunc));
 ```
-{% endhighlight %}
 
-{% highlight javascript %}
 ```javascript
 //jquery를 이용한 비동기 콜백
 //json {"a":"aa", "b":"bb"}
@@ -1034,7 +974,6 @@ $.get('*.json.js', function(result){
 	console.log(result);
 }, 'json');
 ```
-{% endhighlight %}
 
 ####<a href="#" name="closer">클로저</a>  
 - 클로저를 사용하는 이유는 대부분 함수 상태를 기억하기 위해서이다.  
@@ -1042,7 +981,6 @@ $.get('*.json.js', function(result){
 - 내부 함수에서 외부 함수의 변수에 접근할 수 있는 것을 클로저라고 한다.  
 - 내부 함수가 외부 함수의 메모리를 참조하고 있기 때문에 가비지 컬렉터는 외부 함수 생명 주기가 다 되었음에도 메모리를 해제하지 않는다. 따라서 클로저에로 인한 메모리 누수가 생길 수 있다.  
 		
-{% highlight javascript %}
 ```javascript
 function out(){
 	var x = 0;
@@ -1058,11 +996,9 @@ f();  // 2
 f();  // 3
 f();  // 4
 ```
-{% endhighlight %}
 
 **Function으로 생성한 함수는 클로저를 만들지 못한다. 전역 영역에 생선된 것처럼 컴파일 되기 때문이다.**  
 		
-{% highlight javascript %}
 ```javascript
 var x = 'g';
 function foo(){
@@ -1072,12 +1008,10 @@ function foo(){
 var global = foo();
 alert(global());  // g
 ```
-{% endhighlight %}
 
 #####클로저 인스턴스  
 클로저를 호출하는 것은 `클로저 인스턴스를 생성`하는 것이다.  
 		
-{% highlight javascript %}
 ```javascript
 function out(){
 	var x = 0;
@@ -1094,7 +1028,6 @@ var g = out();
 g();  // 3
 g();  // 4
 ```
-{% endhighlight %}
 
 ####<a href="#" name="class_object">클래스 기반의 객체지향</a>  
 객체 : 세상의 모든 것은 객체로 객체지향 언어느는 이러한 객체를 표현할 수 있다.  
@@ -1121,7 +1054,6 @@ g();  // 4
 ####<a href="#" name="create_object">객체 생성하기</a>  
 **constructor 이용 - 동일한 구성을 가진 여러 객체 생성 가능**  
 		
-{% highlight javascript %}
 ```javascript
 // new와 Object 생성자 이용
 new Object();
@@ -1156,17 +1088,14 @@ var oObject = {
 	name : 'smilesol'
 };
 ```
-{% endhighlight %}
 
 **객체의 속성을 삭제하고자 할 때 `delete` 연산자를 사용한다.**  
 		
-{% highlight javascript %}
 ```javascript
 var oObject = new object();
 oObject.name = 'sol';
 delete oObject.name;
 ```
-{% endhighlight %}
 
 ####<a href="#" name="member_object">객체 멤버 관리</a>  
 
@@ -1174,7 +1103,6 @@ delete oObject.name;
 Object 객체에 멤버가 있는지 확인할 수 있다.  
 단, toString과 같이 원래 멤버에 대해서는 작동하지 않는다.  
 		
-{% highlight javascript %}
 ```javascript
 var food = {
 	apple : 5
@@ -1182,13 +1110,11 @@ var food = {
 hasProperty = food.hasOwnProperty('apple');  // true
 hasProperty2 = food.hasOwnProperty('toString');  // false
 ```
-{% endhighlight %}
 
 ####in 연산자  
 Object 객체에 멤버가 있는지 확인할 수 있다.  
 단, toString과 같이 원래 멤버에 대해서는 작동한다.  
 		
-{% highlight javascript %}
 ```javascript
 var food = {
 	banana : 10
@@ -1200,11 +1126,9 @@ var food = {
 1 in food;  // false
 'toString' in food;  // true
 ```
-{% endhighlight %}
 
 #####비공개 멤버  
 		
-{% highlight javascript %}
 ```javascript
 function foo(){
 	// 비공개 속성
@@ -1214,11 +1138,9 @@ function foo(){
 	function getProfile(){}
 }
 ```
-{% endhighlight %}
 
 #####인스턴스 멤버  
 		
-{% highlight javascript %}
 ```javascript
 function foo(name, age){
 	// 인스턴스 속성
@@ -1237,11 +1159,9 @@ var F = new foo('sol', '30');
 // F.age = '29';
 F.profile();
 ```
-{% endhighlight %}
 
 #####프로토타입 멤버  
 		
-{% highlight javascript %}
 ```javascript
 function foo(a, b){
 	this.a = 10;
@@ -1272,11 +1192,9 @@ sum.sum2();  // 30
 // 프로토타입 체인 끊기
 A.prototype = null;
 ```
-{% endhighlight %}
 
 #####생성자 멤버  
 		
-{% highlight javascript %}
 ```javascript
 function foo(){
 		
@@ -1285,11 +1203,9 @@ function foo(){
 foo.a = 10;
 foo.c = function(){};
 ```
-{% endhighlight %}
 
 ###<a href="#" name="inheritance">상속</a>  
 		
-{% highlight javascript %}
 ```javascript
 function human(name, age){
 	this.name = name;
@@ -1322,7 +1238,6 @@ boy.run();  // Syntax Error
 console.log(boy.__proto__);
 console.log(sol.__proto__);
 ```
-{% endhighlight %}
 
 ###<a href="#" name="event">이벤트</a>  
 
@@ -1331,30 +1246,25 @@ console.log(sol.__proto__);
 - html 문서에서 직접 작성  
 - 간단하지만 화면을 구성하는 마크업과 분리되지 않아 권장하지 않는다.  
 		
-{% highlight javascript %}
 ```javascript
 /*
 <div onclick="f();">클릭!</div>
 */
 ```
-{% endhighlight %}
 
 - 프로퍼티 지정을 통해 작성  
 - 다른 곳에서 등록한 이벤트 핸들러를 덮어 쓸 수 있기 때문에 잘 사용하지 않는다.  
 		
-{% highlight javascript %}
 ```javascript	
 /*
 <div id="event">클릭!</div>
 */
 $('.event').onclick = function(){};
 ```
-{% endhighlight %}
 
 - 이벤트 핸들러를 목록에 추가하고 제거하는 방법  
 - 여러가지 이벤트를 등록할 수 있어 가장 많이 사용된다.  
 		
-{% highlight javascript %}
 ```javascript
 /*
 <div id="event">클릭!</div>
@@ -1365,11 +1275,9 @@ $('.event').addEventListener('click', function(){});
 $('.event').addEventListener('click', function(){});
 $('.event').addEventListener('click', function(){});
 ```
-{% endhighlight %}
 
 ####이벤트  
 		
-    {% highlight html %}
 	<body onload="console.log('one');">
 		<script>
 			window.onload = function(){
@@ -1386,7 +1294,6 @@ $('.event').addEventListener('click', function(){});
 	two
 	three
 	-->
-    {% endhighlight %}
 
 ##<a href="#" name="appendix">부록</a>  
 1. [자주 사용하는 정규식](#regexp)  
@@ -1424,7 +1331,6 @@ $('.event').addEventListener('click', function(){});
 - `/^\d{3}-\d{3,4}-\d{4}$/` : 핸드폰 번호 선택  
 - `/^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/` : 핸드폰 번호 선택  
 		
-{% highlight javascript %}
 ```javascript
 var nPhone = 010-1234-5678;
 var nPhone2 = 010-123-5678;
@@ -1433,22 +1339,18 @@ var nPhone2 = 010-123-5678;
 -([0-9]{3})-  // 3
 -([0-9]{3,4})-  // 1234, 123
 ```
-{% endhighlight %}
 
 ###<a href="#" name="cdata">cdata</a>  
 
-{% highlight javascript %}
 ```javascript
 // CDATA 는 DOCTYPE이 XHTML 일 경우 사용한다. 앞에 주석은 스크립트 문법에 맞지 않기 때문에 사용한 것이다
 //<![CDATA[
 alert(jQuery('#alert_test').text());
 //]]>
  ```
-{% endhighlight %}
 
 ###<a href="#" name="location">location</a>  
         
-{% highlight javascript %}
 ```javascript
 // 문서의 전체 url 주소
 document.write(document.location.href+'<br>');
@@ -1485,14 +1387,12 @@ document.location.reload();   // 캐시에서 먼저 검색 후 없을 경우 �
 document.location.reload(true);   // 서버에서 무조건 재호출
  */
  ```
-{% endhighlight %}
 
 ###<a href="#" name="resize">resize</a>  
 - resizeTo 와 resizeBy 는 윈도우의 크기를 변경한다.  
 - resizeTo는 절대좌표에 해당한다.  
 - resizeBy는 상대좌표에 해당된다.  
         
-{% highlight javascript %}
 ```javascript
 // width="50",height="100"
 function reSize(){
@@ -1504,60 +1404,58 @@ function reSize(){
 	window.resizeBy('50','100');
 }
 ```
-{% endhighlight %}
 
 ###<a href="#" name="selectbox_with_jquery">selectbox with jquery</a>  
 		
-    {% highlight html %}
 	<select id="selectBox" name="selectBox"></select>
-    <button type="submit" class="getVal">선택</button>
-    
-    <script>
-    var selectBox = selectBox || {};
-    
-    selectBox.control = function(){
-        this.init();
-    };
-    
-    selectBox.control.prototype = {
-        init : function(){
-            this.getWelSelect();
-            this.setOption();
-            this.addOption();
-            this.actOption();
-        },
-        
-        getWelSelect : function(){
-            this.welSelect = $('#selectBox');
-        },
-        
-        setOption : function(){
-            this.arrOption = [];
-            this.arrOption.push('option1');
-            this.arrOption.push('option2');
-            this.arrOption.push('option3');
-        },
-        
-        addOption : function(){
-           for(var nOption = 0; nOption < this.arrOption.length; nOption++){
-               this.welSelect.append('<option value="'+nOption+'">'+this.arrOption[nOption]+'</option>');
-           }
-        },
-        
-        actOption : function(){
-            var oThis = this;
-            this.welSelect.change(function(){
-                oThis.getVal = $(this).val();
-            });
-            $('.getVal').on('click',function(){
-                alert(oThis.getVal);
-            });
-        }
-    };
-    
-    var oSelectBox = new selectBox.control();
-    </script>
-    {% endhighlight %}
+	<button type="submit" class="getVal">선택</button>
+
+	<script>
+	var selectBox = selectBox || {};
+
+	selectBox.control = function(){
+		this.init();
+	};
+
+	selectBox.control.prototype = {
+		init : function(){
+			this.getWelSelect();
+			this.setOption();
+			this.addOption();
+			this.actOption();
+		},
+
+		getWelSelect : function(){
+			this.welSelect = $('#selectBox');
+		},
+
+		setOption : function(){
+			this.arrOption = [];
+			this.arrOption.push('option1');
+			this.arrOption.push('option2');
+			this.arrOption.push('option3');
+		},
+
+		addOption : function(){
+		   for(var nOption = 0; nOption < this.arrOption.length; nOption++){
+			   this.welSelect.append('<option value="'+nOption+'">'+this.arrOption[nOption]+'</option>');
+		   }
+		},
+
+		actOption : function(){
+			var oThis = this;
+			this.welSelect.change(function(){
+				oThis.getVal = $(this).val();
+			});
+			$('.getVal').on('click',function(){
+				alert(oThis.getVal);
+			});
+		}
+	};
+
+	var oSelectBox = new selectBox.control();
+	</script>
+   
     
 ###<a href="#" name="encodeURI_decodeURI">encodeURI(), decodeURI()</a>  
 
