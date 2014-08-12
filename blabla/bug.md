@@ -172,3 +172,7 @@ border-radius: 3.1px 로 적용하면 부자연스러운 스타일은 해소되�
 -ms- prefix를 사용하여 숨길 수 있다.  
 	
 	input::-ms-clear{display:none}
+
+**IE10 table border 미노출 이슈**  
+IE10에서 table tag에서 td 요소에 colspan 또는 rowspan 적용하면 border 노출되지 않는다.  
+해결은은 border-collapse: separate; border-spacing: 0; 을 적용해 주면 된다.  
