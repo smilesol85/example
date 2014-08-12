@@ -162,6 +162,10 @@ png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지
 `:before` 선택자를 넣어서 원하는 스타일을 적용해 주면 된다.  
 :after 선택자로는 적용이 되지 않는데 이유는 앞쪽(?) 요소의 스타일 따라가는 듯 하다.  
 
+#### <a href="#" name="ie9">IE9</a>  
+**border-radius: 3px 일 경우 라운딩의 부자연스러움**  
+border-radius: 3.1px 로 적용하면 부자연스러운 스타일은 해소되는 듯 하나 원인 파악이 힘듬.  
+
 #### <a href="#" name="ie10">IE10</a>  
 **IE10 input text 기본 삭제버튼 겹침 현상**  
 ---
