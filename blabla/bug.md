@@ -161,3 +161,7 @@ png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지
 		.min2000 .background { background-position: 50.001% 100%;}
 	   }
 	}
+
+**IE8~9 text-overflow: ellisis; 사용시 말줄임 표시 칼라값값 다르게 적용될 때**  
+`:before` 선택자를 넣어서 원하는 스타일을 적용해 주면 된다.  
+:after 선택자로는 적용이 되지 않는데 이유는 앞쪽(?) 요소의 스타일 따라가는 듯 하다.  
