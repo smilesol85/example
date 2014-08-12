@@ -94,6 +94,9 @@ jQuery keyup, keydown 이벤트가 발생하지 않는다.
 - animation-delay : 속성에 정의된 지연 시간 동안 속성 값에 영향을 주지 않는다.  
 - animation-duration : 속성에 정의된 시간이 경과한 후에는 기본적으로 애니메이션이 속성 값에 영향을 주지 않는다.  
 
+**이미지가 흐려지는 현상**  
+`text node`를 추가해 준다.  
+
 ### <a href="#" name="mobile">mobile</a>  
 **한글 텍스트 사용시 좌, 우측 끝에 의문의 공백이 발생 한다면 아래와 같이 적용해 보자.**  
 ---
