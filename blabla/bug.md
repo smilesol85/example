@@ -123,12 +123,6 @@ padding을 margin으로 대체하거나, 부모 요소에 padding을 활용하�
 - zoom:1을 적용하면 display:inline-block 과 같이 된다.  
 - float:left 때문에 깨진 부모 요소도 바로 잡을 수 있다.  
 
-**min-height 속성은 ie6에서 적용되지 않는다.**  
----
-아래와 같은 방법으로 해결할 수 있다.  
-	
-	div{min-height:500px; height:auto !important; height:500px}
-
 **jquery와 png는 안친한가봐요.**  
 ---
 png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지는 버그가 있다.  
@@ -143,12 +137,6 @@ png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지
 		zoom:1;
 	}
 
-**IE10 input text 기본 삭제버튼 겹침 현상**  
----
--ms- prefix를 사용하여 숨길 수 있다.  
-	
-	input::-ms-clear{display:none}
-
 **chorme 에서 배경이미지 가운데 정렬과 margin: 0 auto; 로 가운데 정렬이 어긋나는 경우**  
 ---
 	
@@ -162,6 +150,21 @@ png 파일을 jquery animate와 함께 사용하게 되면, png 파일이 깨지
 	   }
 	}
 
+#### <a href="#" name="ie6">IE6</a>  
+**min-height 속성은 IE6에서 적용되지 않는다.**  
+---
+아래와 같은 방법으로 해결할 수 있다.  
+	
+	div{min-height:500px; height:auto !important; height:500px}
+
+#### <a href="#" name="ie8-9">IE8~9</a>  
 **IE8~9 text-overflow: ellisis; 사용시 말줄임 표시 칼라값값 다르게 적용될 때**  
 `:before` 선택자를 넣어서 원하는 스타일을 적용해 주면 된다.  
 :after 선택자로는 적용이 되지 않는데 이유는 앞쪽(?) 요소의 스타일 따라가는 듯 하다.  
+
+#### <a href="#" name="ie10">IE10</a>  
+**IE10 input text 기본 삭제버튼 겹침 현상**  
+---
+-ms- prefix를 사용하여 숨길 수 있다.  
+	
+	input::-ms-clear{display:none}
