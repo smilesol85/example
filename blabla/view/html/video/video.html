@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>video</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+		#article-video {
+			background-color: #000;
+			overflow:hidden;
+			position:relative;
+			display:inline-block;
+			width: 640px;
+			height: 480px;
+		}
+
+		#article-video #view-video {
+			width:100%;
+			height:100%;
+		}
+
+		#article-video #control-video {
+/*			display: none;*/
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 20px 5px 4px;
+			font-size: 0;
+		}
+
+		#article-video:hover #control-video {
+			display: block;
+		}
+
+		#article-video button {
+			display: inline-block;
+			height: 32px;
+			background-color: #fff;
+			border: 0;
+			color: #111;
+			font-size: 12px;
+			-webkit-border-radius: 3.1px;
+			-moz-border-radius: 3.1px;
+			-o-border-radius: 3.1px;
+			border-radius: 3.1px;
+		}
+
+		#article-video button:hover {
+			cursor: pointer;
+		}
+
+		#article-video #btn-pause {
+			display: none;
+		}
+
+		#article-video #btn-seekBar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+
+		#article-video #btn-volume {
+			display: none;
+			position: relative;
+			top: 3px;
+			width: 100px;
+		}
+
+		#article-video #btn-fullScreen {
+			position: absolute;
+			right: 5px;
+		}
+	</style>
+    <script src="http://smilesol85.github.io/blabla/common/jquery.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <div class="lead">
+            </div>
+            <section>
+            	<div id="article-video">
+            		<video id="view-video" preload loop poster="../images/poster.png">
+						<source src="http://smilesol85.github.io/blabla/view/html/vod/sky.mp4" type="video/mp4" />
+					</video>
+					<div id="control-video" class="control-video">
+<!--						<input type="range" id="btn-seekBar" value="0">-->
+						<button type="button" id="btn-play">Play</button>
+						<button type="button" id="btn-pause">pause</button>
+<!--
+						<span class="article-volume">
+							<button type="button" id="btn-mute">volume</button>
+							<input type="range" id="btn-volume" min="0" max="1" step="0.1" value="0.1">
+						</span>
+						<button type="button" id="btn-fullScreen">Full-Screen</button>
+-->
+					</div>
+            	</div>
+            </section>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/video.js"></script>
+</body>
+</html>
