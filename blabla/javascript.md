@@ -1304,6 +1304,7 @@ $('.event').addEventListener('click', function(){});
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/resolution/resolution.html">resolution</a>  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/touch/touch.html">touch</a>  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/useragent/check_device_browser.html">useragent</a>  
+1. <a href="http://smilesol85.github.io/blabla/view/javascript/video/video.html">video controls</a>  
 1. <a href="http://smilesol85.github.io/blabla/view/javascript/webNotification/webNotification.html">web notification</a>  
 1. [web(local,session) storage](#storage)  
 
