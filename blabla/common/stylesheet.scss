@@ -73,9 +73,10 @@ $placeholder-text: #b3b8be;
 	overflow-y: visible !important;
 }
 
-@mixin tableCellCenter() {
-	display: table-cell;
-	vertical-align: middle;
+@mixin border-box() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
