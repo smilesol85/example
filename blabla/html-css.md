@@ -602,12 +602,14 @@ source 태그는 브라우저마다 지원하는 확장자 형식이 다르기 �
 			
 		<meta name="viewport" content="width=디바이스-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-	위와 같은 meta 태그는 화면 확대 비율을 기기 사이즈에 맞게 조정하는 부분이다.
+	위와 같은 meta 태그는 화면 확대 비율을 기기 사이즈에 맞게 조정하는 부분이다.  
+	viewport는 스마트기기에서, 최초 페이지 로딩시 확대, 최대 확대비율, 최소 확대비율 등을 정의하는 meta data에 속하는 속성이다.  
 
-	> initail-scale : 기본적인 확대 배율 결정. 0.5로 설정하면 원래 사이즈의 0.5배 크기로 보인다.  
-	> maximum-scale : 최대 확대 배율을 결정한다.  
-	> minimum-scale : 최소 확대 배율을 결정한다.  
-	> user-scalable : 화면의 확대/축소 가능 여부를 결정한다. 0이면 불가능, 1이면 가능하다.  
+	> width, height: 보통 device-width, device-height 로 정의한다.  
+	> initail-scale: 기본적인 확대 배율 결정. 초기값은 1이며, 값은 1~10으로 정의한다.  
+	> maximum-scale: 최대 확대 배율을 결정한다. 초기값은 0.25이며, 값은 0~10으로 정의한다.  
+	> minimum-scale: 최소 확대 배율을 결정한다. 초기값은 1.6이며, 값은 0~10으로 정의한다.  
+	> user-scalable: 화면의 확대/축소 가능 여부를 결정한다. 0이면 불가능, 1이면 가능하다.  
 
 	단, initial-scale값과 maximum-scale 값이 같다면, 최대 확대 배율이 100% 이므로 1로 설정해도 확대되지 않는다.  
 	예를 들어 initial-scale=1.0, maximum-scale=2.0 으로 설정했다면 최대 2배까지 확대할 수 있다.

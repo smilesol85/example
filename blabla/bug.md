@@ -22,11 +22,10 @@ fullview: false
 ### <a href="#" name="ios">ios</a>  
 **가로 전환시 폰트가 bold 스타일로 적용된 것 처럼 렌더링 되면 아래와 같이 적용해 보자.**  
 ---
-(하드웨어 가속을 통해 렌더링 될 수 있도록..)
-
-	div{-webkit-text-size-adjust:none || auto || n%}
+	
+	div{-webkit-text-size-adjust:none || auto || n%}  // none: 폰트 사이즈 늘어나지 않게 한다. / auto: 기본값. / n% 사용자 지정.
 	div{-webkit-backface-visibility:hidden || visibility}
-	div{-webkit-transform:translateZ(0)}
+	div{-webkit-transform:translateZ(0)}  // 하드웨어 가속을 통해 렌더링 될 수 있도록..
 
 - -webkit-text-size-adjudst  
 	해상도에 따라 텍스트 크기를 자동으로 조절할 때 사용한다.  
