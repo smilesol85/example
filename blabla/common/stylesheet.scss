@@ -80,12 +80,10 @@ $placeholder-text: #b3b8be;
 }
 
 * {
+	@include border-box();
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
 	-webkit-focus-ring-color: rgba(0,0,0,0);
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 //	-webkit-user-modify: read-write-plaintext-only;
 	outline: none !important;
 
@@ -130,9 +128,6 @@ a {
 input,select,textarea,button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
 	background-color: $background-common;
 	border: {
 		width: 1px;
