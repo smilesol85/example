@@ -22,7 +22,7 @@ javascript를 프론트엔드를 벗어나 백엔드 웹 서버 개발로 확장
 javascript로 개발된 코드로 자동화하고 싶을 때 활용 가능하다.  
 
 ### Angular(http://angularjs.org/)  
-MVC `framework`이다.  
+MV* `framework`이다.  
 
 ### D3.js(http://d3js.org/)  
 SVG를 활용한 시각화 도구로 JSON 형태로 실시간 렌더링이 가능한 `framework`이다.  
