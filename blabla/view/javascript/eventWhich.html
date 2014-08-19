@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>event which</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://smilesol85.github.io/blabla/common/jquery.min.js"></script>
+</head>
+<body
+onkeypress="showKeyPress(event);"
+onkeydown="keyDown(event);"
+>
+
+<p>Please press any key.</p>
+
+<div class="description"></div>
+
+<script type="text/javascript">
+function showKeyPress(evt) {
+	$('.description').append(
+		"onkeypress handler: <br>"
+		+ "keyCode property: " + evt.keyCode + "<br>"
+		+ "which property: " + evt.which + "<br>"
+		+ "charCode property: " + evt.charCode + "<br>"
+		+ "Character Key Pressed: "
+		+ String.fromCharCode(evt.charCode) + "<br><hr>"
+	);
+}
+
+function keyDown(evt) {
+	$('.description').append(
+		"onkeydown handler: <br>"
+		+ "keyCode property: " + evt.keyCode + "<br>"
+		+ "which property: " + evt.which + "<br><hr>"
+	);
+}
+</script>
+
+</body>
+</html>
