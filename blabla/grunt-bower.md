@@ -15,6 +15,7 @@ grunt 사용을 위해 node가 설치되어 있어야 한다.
 
 설치되어 있다면 version을 확인할 수 있다.  
 	
+	// CLI(Command Line Interface)
 	# npm install -g grunt-cli
 	# npm install -g grunt-init
 	
