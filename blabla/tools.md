@@ -33,6 +33,13 @@ SVG, Canvas, WebGL을 활용하여 2차원의 도형을 그릴 수 있다.
 ### Meteor.js(https://www.meteor.com/)  
 웹 앱 개발시 조금 더 편한게 개발 가능한 오픈 소스 `framework`이다.  
 
+### jQuery(http://jquery.com/)  
+다양한 유틸리티와 애플리케이션 컴포턴트 개발용 API 함수를 제공하는 `library`이다.  
+
+### Zepto(http://zeptojs.com/)  
+jQuery를 대체할 수 있는 가벼운 `library`이다.  
+모바일 기기를 위해 개발되었다.  
+
 ### Underscore.js(http://underscorejs.org/)  
 생산성을 높여주는 많은 API를 포괄하는 `library`이다.  
 
