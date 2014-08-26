@@ -39,6 +39,7 @@ SVG, Canvas, WebGL을 활용하여 2차원의 도형을 그릴 수 있다.
 ### Zepto(http://zeptojs.com/)  
 jQuery를 대체할 수 있는 가벼운 `library`이다.  
 모바일 기기를 위해 개발되었다.  
+`ie를 지원하지 않는다.`  
 
 ### Underscore.js(http://underscorejs.org/)  
 생산성을 높여주는 많은 API를 포괄하는 `library`이다.  
