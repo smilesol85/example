@@ -61,6 +61,10 @@ CSS3의 3D 전환 효과를 이용하여, Prezi와 유사한 동적이고 3차�
 ### scrolldeck(http://johnpolacek.github.io/scrolldeck.js/)  
 스크롤 프리젠테이션을 만들기 위한 jQuery 플러그인이다.  
 
+### QUnit(http://qunitjs.com/)  
+자바스크립트 테스트 `프레임워크`이다.  
+단위 테스트에서 사용하기 쉽고 풍부한 기능을 제공한다.  
+
 ### etc
 http://superherojs.com/
 http://cubiq.org/iscroll-4
