@@ -51,6 +51,13 @@ css에서 사용 가능한 속성을 클래스로 html 태그에 추가해 준�
 html5 요소를 사용할 수 있도록 해준다.  
 많은 스크립트와 프레임워크에는 HTML5 Shiv를 포함하니 중복하지 않도록 한다.  
 
+### HTML5 boilerplate(http://html5boilerplate.com/)  
+필요에 따라 커스터마이징 할 수 있는 템플릿이다.  
+구글 CDN을 통해 사용하는 jQuery와 Modernizr과 HTML5 Shiv도 포함한다.  
+모든 브라우저에서 동일한 CSS로 재설정하기 위한 Normalize.css도 제공한다.  
+초기값을 원하는데로 변경 가능하고 스타일을 쉽게 바꿀 수 있다.  
+아파치, 노드 기타 개발 환경에서 성능 향상을 위한 서버 설정도 제공한다.  
+
 ### Underscore.js(http://underscorejs.org/)  
 생산성을 높여주는 많은 API를 포괄하는 `library`이다.  
 
