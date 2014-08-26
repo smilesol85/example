@@ -41,6 +41,9 @@ jQuery를 대체할 수 있는 가벼운 `library`이다.
 모바일 기기를 위해 개발되었다.  
 `ie를 지원하지 않는다.`  
 
+### microJS(http://microjs.com/)  
+내가 원하는 부분만 선택해서 외부 유틸리티를 추가할 수 있다.  
+
 ### Underscore.js(http://underscorejs.org/)  
 생산성을 높여주는 많은 API를 포괄하는 `library`이다.  
 
