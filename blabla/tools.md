@@ -15,11 +15,32 @@ fullview: false
 
 ---
 
+### microJS(http://microjs.com/)  
+내가 원하는 부분만 선택해서 외부 유틸리티를 추가할 수 있다.  
+
+### modernizr(http://modernizr.com/)  
+css에서 사용 가능한 속성을 클래스로 html 태그에 추가해 준다.  
+
+### HTML5 Shiv(https://code.google.com/p/html5shiv/)  
+html5 요소를 사용할 수 있도록 해준다.  
+많은 스크립트와 프레임워크에는 HTML5 Shiv를 포함하니 중복하지 않도록 한다.  
+
+### HTML5 boilerplate(http://html5boilerplate.com/)  
+필요에 따라 커스터마이징 할 수 있는 템플릿이다.  
+구글 CDN을 통해 사용하는 jQuery와 Modernizr과 HTML5 Shiv도 포함한다.  
+모든 브라우저에서 동일한 CSS로 재설정하기 위한 Normalize.css도 제공한다.  
+초기값을 원하는데로 변경 가능하고 스타일을 쉽게 바꿀 수 있다.  
+아파치, 노드 기타 개발 환경에서 성능 향상을 위한 서버 설정도 제공한다.  
+
 ### NodeJS(http://nodejs.org/)  
 javascript를 프론트엔드를 벗어나 백엔드 웹 서버 개발로 확장하여 활용 가능하다.  
 
 ### Grunt(http://gruntjs.com/)  
 javascript로 개발된 코드로 자동화하고 싶을 때 활용 가능하다.  
+
+### backbone(http://backbonejs.org/)  
+데이터를 저장하고 사용자 화면으로 전달하기에 적합한 MVC `framework`이다.  
+데이터베이스 또는 로컬 저장소와의 동기화를 관리한다.  
 
 ### Angular(http://angularjs.org/)  
 MV* `framework`이다.  
@@ -40,23 +61,6 @@ SVG, Canvas, WebGL을 활용하여 2차원의 도형을 그릴 수 있다.
 jQuery를 대체할 수 있는 가벼운 `library`이다.  
 모바일 기기를 위해 개발되었다.  
 `ie를 지원하지 않는다.`  
-
-### microJS(http://microjs.com/)  
-내가 원하는 부분만 선택해서 외부 유틸리티를 추가할 수 있다.  
-
-### modernizr(http://modernizr.com/)  
-css에서 사용 가능한 속성을 클래스로 html 태그에 추가해 준다.  
-
-### HTML5 Shiv(https://code.google.com/p/html5shiv/)  
-html5 요소를 사용할 수 있도록 해준다.  
-많은 스크립트와 프레임워크에는 HTML5 Shiv를 포함하니 중복하지 않도록 한다.  
-
-### HTML5 boilerplate(http://html5boilerplate.com/)  
-필요에 따라 커스터마이징 할 수 있는 템플릿이다.  
-구글 CDN을 통해 사용하는 jQuery와 Modernizr과 HTML5 Shiv도 포함한다.  
-모든 브라우저에서 동일한 CSS로 재설정하기 위한 Normalize.css도 제공한다.  
-초기값을 원하는데로 변경 가능하고 스타일을 쉽게 바꿀 수 있다.  
-아파치, 노드 기타 개발 환경에서 성능 향상을 위한 서버 설정도 제공한다.  
 
 ### Underscore.js(http://underscorejs.org/)  
 생산성을 높여주는 많은 API를 포괄하는 `library`이다.  
