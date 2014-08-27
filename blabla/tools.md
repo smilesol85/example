@@ -15,6 +15,17 @@ fullview: false
 
 ---
 
+### weinre로 디버깅  
+	
+	// weinre 설치
+	$ npm -g install weinre
+	
+	// weinre 서버 실행
+	$ weinre --boundHost -all-
+	
+	// 원하는 페이지에 스크립트 추가
+	<script src="http://10.70.14.155:8080/target/target-script-min.js"></script>
+
 ### microJS(http://microjs.com/)  
 내가 원하는 부분만 선택해서 외부 유틸리티를 추가할 수 있다.  
 
