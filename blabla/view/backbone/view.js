@@ -15,6 +15,7 @@ var UserView = Backbone.View.extend({
 		this.render();
 	},
 
+	// 스파게티 코드
 	render: function() {
 		var $card = $('<a href="/users/' + this.model.get('username') + '">');
 		var $name = $('<h1>' + this.model.get('displayName') + '</h1>').appendTo($card);
