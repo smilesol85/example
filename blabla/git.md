@@ -28,6 +28,7 @@ SVN과 같은 버전 관리 시스템(Version Control System, VCS)을 사용하�
 1. [로컬에서 새로운 branch 생성 후 작업하기](#branch)  
 1. [소셜 코딩을 위한 github에 빠져 볼까요??](#github)  
 1. [github를 활용한 정적인 페이지 만들기](#githubio)  
+1. [git generating ssh key](#gitssh)
 1. [큰 용량을 원격 저장소로 올릴 때](#bigsize)  
 
 ###<a href="#" name="svn-git">SVN과 GIT의 차이</a>  
@@ -382,6 +383,13 @@ html을 푸시하면 http://{account}.github.com/test로 접속할 경우 gh-pag
 {account}.github.com 저장소를 생성해 gh-pages를 사용하지 않아도 github 시스템이 자동으로  
 {account}.github.com 이라는 도메인으로 해당 저장소에 있는 정적 html을 웹페이지 서비스를 제공해 준다.  
 단어 그대로 사용자 즉, 개인이 페이지를 만들어 사용하는 목적이다.  
+
+### <a href="#" name="gitssh">git generating ssh key</a>  
+	
+	$ ssh-keygen
+	$ cd ~/.ssh
+	$ ls
+	$ vi id_dsa.pub
 
 ### <a href="#" name="bigsize">큰 용량을 원격 저장소로 올릴 때</a>  
 큰 용량을 원격 저장소로 올릴 때 아래와 같은 오류가 발생할 수 있다.  
