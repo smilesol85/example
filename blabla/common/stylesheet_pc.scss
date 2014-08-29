@@ -1,4 +1,7 @@
-$font-family: '나눔고딕',NanumGothic,'돋움',Dotum,AppleGothic,sans-serif;
+$font-family-mobile: 'Helvetica Neue', Helvetica, 'Hiragino Kaku Gothic Pro', 'Apple SD Gothic Neo', 'Droid Sans', AppleGothic, sans-serif;
+$font-family-global-pc: Arial, 'Helvetica Neue', Helvetica, 'Droid Sans';
+$font-family-japn-pc: 'MS PGothic', 'Hiragino Kaku Gothic Pro', 'Droid Sans';
+$font-family-korea-pc: NanumGothic, '나눔고딕', 'Apple SD Gothic Neo', 'Droid Sans', ng,  Dotum, '돋움', Gulim, '굴림';
 $font-size: 12px;
 $border-form: #eee;
 $input-height: 30px;
@@ -65,7 +68,7 @@ body,input,textarea,select,button,table {
 	line-height: 16px;
 
 	font:{
-		family: $font-family;
+		family: $font-family-mobile;
 		size: $font-size;
 		weight: normal;
 	}
