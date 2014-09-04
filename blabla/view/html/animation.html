@@ -2,43 +2,43 @@
 <html lang="ko">
 <head>
 <title>animation</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .box{position:relative;top:0;left:0;width:100px;height:100px;line-height:100px;border-radius:50px;text-align:center;background:orange;
-            -webkit-animation-name:ani;
-            -webkit-animation-duration:2s;
-            -webkit-animation-timing-function:linear;
-            animation-name:ani;
-            animation-duration:2s;
-            animation-timing-function:linear;
-        }
-        .box_v2{
-            -webkit-animation-iteration-count:infinite;
-            animation-iteration-count:infinite;
-        }
-        .box_v3{
-            -webkit-animation-iteration-count:infinite;
-            -webkit-animation-direction:alternate; /* normal 은 from 에서 to */
-            animation-iteration-count:infinite;
-            animation-direction:alternate; /* normal from 에서 to */
-        }
-        .box_v4:hover{
-            -webkit-animation-play-state:paused; /* running */
-            animation-play-state:paused; /* running */
-        }
-        @-webkit-keyframes ani{
-            from{left:0;-webkit-transform:rotate(0deg);}
-            50%{left:500px;}
-            to{left:500px;-webkit-transform:rotate(360deg);}
-        }
-        @keyframes ani{
-            from{left:0;transform:rotate(0deg);}
-            50%{left:500px;}
-            to{left:500px;transform:rotate(360deg);}
-        }
-    </style>
-    <script src="http://smilesol85.github.io/blabla/common/jquery.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	.box{position:relative;top:0;left:0;width:100px;height:100px;line-height:100px;border-radius:50px;text-align:center;background:orange;
+		-webkit-animation-name:ani;
+		-webkit-animation-duration:2s;
+		-webkit-animation-timing-function:linear;
+		animation-name:ani;
+		animation-duration:2s;
+		animation-timing-function:linear;
+	}
+	.box_v2{
+		-webkit-animation-iteration-count:infinite;
+		animation-iteration-count:infinite;
+	}
+	.box_v3{
+		-webkit-animation-iteration-count:infinite;
+		-webkit-animation-direction:alternate; /* normal 은 from 에서 to */
+		animation-iteration-count:infinite;
+		animation-direction:alternate; /* normal from 에서 to */
+	}
+	.box_v4:hover{
+		-webkit-animation-play-state:paused; /* running */
+		animation-play-state:paused; /* running */
+	}
+	@-webkit-keyframes ani{
+		from{left:0;-webkit-transform:rotate(0deg);}
+		50%{left:500px;}
+		to{left:500px;-webkit-transform:rotate(360deg);}
+	}
+	@keyframes ani{
+		from{left:0;transform:rotate(0deg);}
+		50%{left:500px;}
+		to{left:500px;transform:rotate(360deg);}
+	}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
     <div id="wrap">

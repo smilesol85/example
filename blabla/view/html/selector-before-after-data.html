@@ -2,16 +2,16 @@
 <html lang="ko">
 <head>
 <title>before after selector width data</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        span::before{content:'Before section';color:red;}
-        span::after{content:'After section';color:blue;}
-        p{counter-increment:nSmilesol;}
-        p::before{content:counter(nSmilesol)'. ';}
-        p::after{content:' -' attr(data-page) "page";}
-    </style>
-    <script src="http://smilesol85.github.io/blabla/common/jquery.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	span::before{content:'Before section';color:red;}
+	span::after{content:'After section';color:blue;}
+	p{counter-increment:nSmilesol;}
+	p::before{content:counter(nSmilesol)'. ';}
+	p::after{content:' -' attr(data-page) "page";}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
     <div id="wrap">

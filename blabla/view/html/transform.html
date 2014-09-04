@@ -2,61 +2,61 @@
 <html lang="ko">
 <head>
 <title>transform</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .box{width:100px;height:100px;border:2px solid red;}
-        .innerBox{width:100px;height:100px;background:orange;}
-        .innerBox_v1{
-            transform:rotate(60deg);
-        }
-        .innerBox_v2{
-            transform:rotate(45deg) scale(0.1) skew(10deg);
-        }
-        .innerBox_v3{
-            transform:rotate(60deg);
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	.box{width:100px;height:100px;border:2px solid red;}
+	.innerBox{width:100px;height:100px;background:orange;}
+	.innerBox_v1{
+		transform:rotate(60deg);
+	}
+	.innerBox_v2{
+		transform:rotate(45deg) scale(0.1) skew(10deg);
+	}
+	.innerBox_v3{
+		transform:rotate(60deg);
 
-            transform-origin:100% 100%;
-        }
-        article.transform3d{position:relative;width:200px;height:200px;
-            animation:ani 3s linear 0s infinite;
-            transform-style:preserve-3d;  /*  기본값은 flat */
-        }
-        article.transform3d div{position:absolute;top:0;left:0;width:200px;height:200px;opacity:0.3;
-            backface-visibility:visible;
-        }  /* hidden */
+		transform-origin:100% 100%;
+	}
+	article.transform3d{position:relative;width:200px;height:200px;
+		animation:ani 3s linear 0s infinite;
+		transform-style:preserve-3d;  /*  기본값은 flat */
+	}
+	article.transform3d div{position:absolute;top:0;left:0;width:200px;height:200px;opacity:0.3;
+		backface-visibility:visible;
+	}  /* hidden */
 
-        /* 옆면 */
-        article.transform3d div:nth-child(1){
-            transform:rotateY(0deg) translate3d(0px,0px,100px); background:red;
-        }
-        article.transform3d div:nth-child(2){
-            transform:rotateY(90deg) translate3d(0px,0px,100px); background:green;
-        }
-        article.transform3d div:nth-child(3){
-            transform:rotateY(180deg) translate3d(0px,0px,100px); background:blue;
-        }
-        article.transform3d div:nth-child(4){
-            transform:rotateY(270deg) translate3d(0px,0px,100px); background:yellow;
-        }
+	/* 옆면 */
+	article.transform3d div:nth-child(1){
+		transform:rotateY(0deg) translate3d(0px,0px,100px); background:red;
+	}
+	article.transform3d div:nth-child(2){
+		transform:rotateY(90deg) translate3d(0px,0px,100px); background:green;
+	}
+	article.transform3d div:nth-child(3){
+		transform:rotateY(180deg) translate3d(0px,0px,100px); background:blue;
+	}
+	article.transform3d div:nth-child(4){
+		transform:rotateY(270deg) translate3d(0px,0px,100px); background:yellow;
+	}
 
-        /* 윗면과 아랫면 */
-        article.transform3d div:nth-child(5){
-            transform:rotateX(90deg) translate3d(0px,0px,100px); background:brown;
-        }
-        article.transform3d div:nth-child(6){
-            transform:rotateX(270deg) translate3d(0px,0px,100px); background:pink;
-        }
-        @keyframes ani{
-            from{
-                transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-            }
-            to{
-                transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-            }
-        }
-    </style>
-    <script src="http://smilesol85.github.io/blabla/common/jquery.min.js"></script>
+	/* 윗면과 아랫면 */
+	article.transform3d div:nth-child(5){
+		transform:rotateX(90deg) translate3d(0px,0px,100px); background:brown;
+	}
+	article.transform3d div:nth-child(6){
+		transform:rotateX(270deg) translate3d(0px,0px,100px); background:pink;
+	}
+	@keyframes ani{
+		from{
+			transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+		}
+		to{
+			transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+		}
+	}
+</style>
+<script src="http://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
     <div id="wrap">
