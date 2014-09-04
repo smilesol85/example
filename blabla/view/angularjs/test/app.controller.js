@@ -119,7 +119,7 @@ angular.module('app.controller', [])
 		return false;
 	}
 
-	
+
 })
 
 
@@ -175,7 +175,7 @@ angular.module('app.controller', [])
 				$scope.tabDirection = 'left';
 			} else if($scope.listName == 'new_creators' && (type == 'new' || type == 'top') || $scope.listName == 'new' && type == 'top') {
 				$scope.tabDirection = 'right';
-			}			
+			}
 		}
 
 		if(!new RegExp('app.sticker').test($state.current.name)) return false;
@@ -332,7 +332,7 @@ angular.module('app.controller', [])
 				click: function() {
 					$cookieStore.remove('auth');
 					$rootScope.auth = false;
-					$state.transitionTo('app.auth');					
+					$state.transitionTo('app.auth');
 				}
 			},
 			center: {
@@ -399,7 +399,7 @@ angular.module('app.controller', [])
 						}
 					});
 				}
-				
+
 				break;
 		}
 
@@ -520,11 +520,11 @@ angular.module('app.controller', [])
 		if($scope.items[lid]) {
 			$scope.item = $scope.items[lid];
 			$rootScope.loading = false;
-		}		
+		}
 	}, true);
 
 	$scope.$on('$destroy', function() {
 		delete $scope.item;
 	})
-	
+
 })

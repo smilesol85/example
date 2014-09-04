@@ -38,7 +38,7 @@ angular.module('app.service', [])
 				return false;
 
 			var options = angular.extend({}, options);
-			var url = urls.stickerItems 
+			var url = urls.stickerItems
 				+ (options.page ? '&page=' + options.page : '')
 				+ (options.type ? '&type=' + options.type : '');
 
@@ -140,7 +140,7 @@ angular.module('app.service', [])
 			state:     $state.current.name
 		}
 		return {
-			args: angular.extend(args, options),		
+			args: angular.extend(args, options),
 			report: function(options) {
 				if(options) this.args = angular.extend(this.args, options);
 				this.args.endTime = options.endTime || new Date().getTime();

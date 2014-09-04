@@ -1,16 +1,18 @@
-$font-family: '나눔고딕',NanumGothic,'Apple SD Gothic Neo',AppleGothic,'Droid Sans','Helvetica Neue',Helvetica,Roboto,'돋움',Dotum,Gulim,'굴림',sans-serif;
-$font-size: 14px;
-$background-common: #fff;
+$font-family-base: '나눔고딕',NanumGothic,'Apple SD Gothic Neo',AppleGothic,'Droid Sans','Helvetica Neue',Helvetica,Roboto,'돋움',Dotum,Gulim,'굴림',sans-serif;
+$font-size-base: 14px;
+$background-color-base: #fff;
 $border-form: #eee;
 $input-height: 45px;
-$placeholder-text: #b3b8be;
+$placeholder-text-color: #b3b8be;
 
+// @include ellipsis()
 @mixin ellipsis() {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
+// @include ellipsis-multiline(2)
 @mixin ellipsis-multiline($line) {
 	overflow: hidden;
 	display: -webkit-box;
@@ -19,6 +21,7 @@ $placeholder-text: #b3b8be;
 	word-break: break-all;
 }
 
+// @include border-top-radius(2px)
 @mixin border-top-radius($radius) {
 	-webkit-border-top-left-radius: $radius;
 	-webkit-border-top-right-radius: $radius;
@@ -28,6 +31,7 @@ $placeholder-text: #b3b8be;
 	border-top-right-radius: $radius;
 }
 
+// @include border-bottom-radius(2px)
 @mixin border-bottom-radius($radius) {
 	-webkit-border-bottom-left-radius: $radius;
 	-webkit-border-bottom-right-radius: $radius;
@@ -57,6 +61,7 @@ $placeholder-text: #b3b8be;
 	-o-transition-timing-function: $type;
 }
 
+// @include loading()
 @mixin loading() {
 	-webkit-animation: spin 1s infinite linear;
     -moz-animation: spin 1s infinite linear;
@@ -64,7 +69,8 @@ $placeholder-text: #b3b8be;
     animation: spin 1s infinite linear;
 }
 
-@mixin positionFixed() {
+// @include position-fixed()
+@mixin position-fixed() {
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translate3d(0,0,0);
 	-webkit-user-select: none;
@@ -73,44 +79,11 @@ $placeholder-text: #b3b8be;
 	overflow-y: visible !important;
 }
 
+// @include border-box()
 @mixin border-box() {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-}
-
-// variables
-$sp_mo: sprite-map("sprites_mobile/*.png", $spacing: 1px, $layout: smart);
-$sp_mo2x: sprite-map("sprites_mobile@2x/*.png", $spacing: 2px, $layout: smart);
-$sp_mohr: sprite-map("sprites_mobile_hr/*.png", $spacing: 1px, $layout: vertical);
-$sp_mohr2x: sprite-map("sprites_mobile_hr@2x/*.png", $spacing: 2px, $layout: vertical);
-$sp_pc: sprite-map("sprites_pc/*.png", $spacing: 1px, $layout: smart);
-
-$media_pc: "only screen and (min-width : 800px)";
-$media_hidpi: "only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width : 800px)";
-
-//hidden text > @extend %visuallyhidden;
-%visuallyhidden {
-	margin: -1px;
-	padding: 0;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	clip: rect(0, 0, 0, 0);
-	position: absolute;
-}
-
-// mixin clear > @extend %clearfix;
-%clearfix {
-	*zoom: 1;
-	&:before, &:after {
-		content: " ";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
 }
 
 // mixin:opacity > @include opacity(0.8);
@@ -164,14 +137,14 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,inpu
 body,input,textarea,select,button,table {
 	@include border-box();
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	-webkit-tap-highlight-color: transparent;
+//	-webkit-tap-highlight-color: transparent;
 	-webkit-focus-ring-color: rgba(0,0,0,0);
-	//	-webkit-user-modify: read-write-plaintext-only;
+//	-webkit-user-modify: read-write-plaintext-only;
 	outline: none !important;
 
 	font:{
-		family: $font-family-mobile;
-		size: $font-size;
+		family: $font-family-base;
+		size: $font-size-base;
 		weight: normal;
 	}
 }
@@ -181,7 +154,7 @@ body {
 	-webkit-overflow-scrolling: touch;
 	-webkit-user-select: none;
 	background: {
-		color: $background-common;
+		color: $background-color-base;
 	}
 }
 
@@ -205,7 +178,7 @@ a {
 input,select,textarea,button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background-color: $background-common;
+	background-color: $background-color-base;
 	border: {
 		width: 1px;
 		style: solid;
@@ -230,7 +203,7 @@ input {
 	height: $input-height;
 	padding: 0 12px;
 	font: {
-		size: $font-size;
+		size: $font-size-base;
 	}
 }
 
@@ -244,12 +217,12 @@ input {
 
 textarea {
 	width: 100%;
-	font-size: $font-size;
+	font-size: $font-size-base;
 }
 
 ::-webkit-input-placeholder{
-	font-size: $font-size;
-	color: $placeholder-text;
+	font-size: $font-size-base;
+	color: $placeholder-text-color;
 }
 
 .loading{
@@ -275,24 +248,6 @@ textarea {
 	100%{-ms-transform:rotate(360deg)}
 }
 
-.full-height {
-	background: {
-		color: $background-common;
-	}
-}
-
-.full-loading {
-	z-index: 10;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: {
-		color: rgba(255,255,255,0.5);
-	}
-}
-
 .table {
 	display: table;
 	table-layout:fixed;
@@ -312,8 +267,12 @@ textarea {
 }
 
 .hidden {
+	display: inline-block;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
+	width: 0px;
+	height: 0px;
 	left: -500em;
 	font-size: 1px;
 }

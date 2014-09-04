@@ -1,6 +1,6 @@
 navigator.console = console;
-var is = getPlatformDetect(), 
-	ready = false, 
+var is = getPlatformDetect(),
+	ready = false,
 	loading = false;
 
 document.addEventListener((is.has('mobile') ? 'deviceready' : 'DOMContentLoaded'), ONREADY, false);

@@ -10,15 +10,19 @@ module.exports = function(grunt) {
 		compass: {
 			dev: {
 				options: {
-					sassDir: ['app/scss'],
-					cssDir: ['app/css'],
+//					sassDir: ['app/scss'],
+//					cssDir: ['app/css'],
+					sassDir: ['common'],
+					cssDir: ['common'],
 					environment: 'development'
 				}
 			},
 			prod: {
 				options: {
-					sassDir: ['app/scss'],
-					cssDir: ['app/css'],
+//					sassDir: ['app/scss'],
+//					cssDir: ['app/css'],
+					sassDir: ['common'],
+					cssDir: ['common'],
 					environment: 'production'
 				}
 			}
@@ -26,8 +30,8 @@ module.exports = function(grunt) {
 		cssmin: {
 			minify: {
 				files: {
-					'app/css/stylesheet.min.css': [
-						'app/css/stylesheet.css'
+					'common/stylesheet.min.css': [
+						'common/stylesheet.css'
 					]
 				}
 			}
