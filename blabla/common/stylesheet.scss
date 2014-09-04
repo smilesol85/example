@@ -79,6 +79,80 @@ $placeholder-text: #b3b8be;
 	box-sizing: border-box;
 }
 
+// variables
+$sp_mo: sprite-map("sprites_mobile/*.png", $spacing: 1px, $layout: smart);
+$sp_mo2x: sprite-map("sprites_mobile@2x/*.png", $spacing: 2px, $layout: smart);
+$sp_mohr: sprite-map("sprites_mobile_hr/*.png", $spacing: 1px, $layout: vertical);
+$sp_mohr2x: sprite-map("sprites_mobile_hr@2x/*.png", $spacing: 2px, $layout: vertical);
+$sp_pc: sprite-map("sprites_pc/*.png", $spacing: 1px, $layout: smart);
+
+$media_pc: "only screen and (min-width : 800px)";
+$media_hidpi: "only screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width : 800px)";
+
+//hidden text > @extend %visuallyhidden;
+%visuallyhidden {
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
+
+// mixin clear > @extend %clearfix;
+%clearfix {
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// mixin:opacity > @include opacity(0.8);
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity = $opacity-ie);
+}
+
+// mixin:fonts > @include fonts(14,18,200);
+@mixin fonts($size: 14px, $lineHeight: 18px, $bold: false) {
+	@if unitless($size) {
+		// @warn "Assuming #{$size} to be in pixels";
+		$size: 1px * $size;
+	}
+	@if unitless($lineHeight) {
+		// @warn "Assuming #{$size} to be in pixels";
+		$lineHeight: 1px * $lineHeight;
+	}
+	$pow: pow(10, 2);
+	$lh: round($size / $lineHeight * $pow) / $pow;
+	font-size: $size;
+	line-height: (1 + $lh) * 1em;
+	@if $bold {
+		@if $bold == "thin" {
+			font-weight: 100;
+		}
+		@else if $bold == "light" {
+			font-weight: 300;
+		}
+		@else if $bold == "normal" {
+			font-weight: 400;
+		}
+		@else if $bold == "bold" {
+			font-weight: 700;
+		}
+		@else {
+			font-weight: $bold;
+		}
+	}
+}
+
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select {
 	margin:0;
 	padding:0;
