@@ -5,7 +5,11 @@ module.exports = function(grunt) {
 			compass: {
 				files: ['**/*.scss'],
 				tasks: ['compass:dev', 'cssmin:minify']
-			}
+			},
+			scripts: {
+                files: ['common/smilesol.js'],
+                tasks: ['uglify']
+            }
 		},
 		compass: {
 			dev: {
@@ -39,57 +43,63 @@ module.exports = function(grunt) {
 		ngmin: {
 			apps: {
 				src: [
-					'app/js/app.js',
-					'app/js/app.controller.js',
-					'app/js/app.service.js',
-					'app/js/app.factory.js'
+//					'app/js/app.js',
+//					'app/js/app.controller.js',
+//					'app/js/app.service.js',
+//					'app/js/app.factory.js'
+					'common/smilesol.js'
 				],
-				dest: 'app/js/app.min.js'
+				dest: 'common/smilesol.min.js'
 			}
 		},
 		uglify: {
-			all: {
+			dist: {
 				files: {
-					'app/js/jquery.min.js': [
-						'bower_components/jquery/dist/jquery.js'
-					],
-					'app/js/angular.min.js': [
-						'bower_components/angular/angular.js',
-						'bower_components/angular-animate/angular-animate.js',
-						'bower_components/angular-cookies/angular-cookies.js',
-						'bower_components/angular-route/angular-route.js',
-						'bower_components/angular-sanitize/angular-sanitize.js',
-						'bower_components/angular-touch/angular-touch.js',
-						'bower_components/angular-websql/angular-websql.js',
-						'bower_components/angular-local-storage/angular-local-storage.js',
-						'bower_components/angular-ui-router/release/angular-ui-router.js',
-						'bower_components/angular-ui-router.stateHelper/statehelper.js',
-						'bower_components/angular-ui-utils/ui-utils.js',
-						'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js'
-					],
-					'app/js/fastclick.min.js': [
-						'bower_components/fastclick/lib/fastclick.js'
-					],
-					'app/js/package.min.js': [
-						'app/js/jquery.min.js',
-						'app/js/angular.min.js',
-						'app/js/fastclick.min.js'
-					]
+					'common/smilesol.min.js': 'common/smilesol.js'
 				}
 			}
+//			all: {
+//				files: {
+//					'app/js/jquery.min.js': [
+//						'bower_components/jquery/dist/jquery.js'
+//					],
+//					'app/js/angular.min.js': [
+//						'bower_components/angular/angular.js',
+//						'bower_components/angular-animate/angular-animate.js',
+//						'bower_components/angular-cookies/angular-cookies.js',
+//						'bower_components/angular-route/angular-route.js',
+//						'bower_components/angular-sanitize/angular-sanitize.js',
+//						'bower_components/angular-touch/angular-touch.js',
+//						'bower_components/angular-websql/angular-websql.js',
+//						'bower_components/angular-local-storage/angular-local-storage.js',
+//						'bower_components/angular-ui-router/release/angular-ui-router.js',
+//						'bower_components/angular-ui-router.stateHelper/statehelper.js',
+//						'bower_components/angular-ui-utils/ui-utils.js',
+//						'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js'
+//					],
+//					'app/js/fastclick.min.js': [
+//						'bower_components/fastclick/lib/fastclick.js'
+//					],
+//					'app/js/package.min.js': [
+//						'app/js/jquery.min.js',
+//						'app/js/angular.min.js',
+//						'app/js/fastclick.min.js'
+//					]
+//				}
+//			}
 		},
 		compress: {
 			main: {
-				options: {
-					mode: 'gzip'
-				},
-				files: [{
-					expand: true,
-					cwd: 'app/js',
-					src: ['**/*.min.js'],
-					dest: 'app/js/',
-					ext: '.min.js.gz'
-				}]
+//				options: {
+//					mode: 'gzip'
+//				},
+//				files: [{
+//					expand: true,
+//					cwd: 'app/js',
+//					src: ['**/*.min.js'],
+//					dest: 'app/js/',
+//					ext: '.min.js.gz'
+//				}]
 			}
 		}
 	});
@@ -101,6 +111,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-ngmin');
 
-	grunt.registerTask('default', ['compass:dev', 'cssmin', 'watch']);
-	grunt.registerTask('build', ['compass:dev', 'cssmin', 'ngmin', 'uglify']);
+	grunt.registerTask('default', ['compass:dev', 'cssmin', 'uglify', 'watch']);
+	grunt.registerTask('build', ['compass:dev', 'cssmin', 'uglify']);
 };
