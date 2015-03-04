@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		watch: {
+		watch: {	// 특정 파일들 감시하다가, 변경되면 지정한 작업 수행
 			compass: {
 				files: ['**/*.scss'],
 				tasks: ['compass:dev', 'cssmin:minify']
@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                 tasks: ['uglify']
             }
 		},
-		compass: {
+		compass: {	// sass/scss를 지원
 			dev: {
 				options: {
 //					sassDir: ['app/scss'],
