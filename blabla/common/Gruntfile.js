@@ -1,7 +1,17 @@
+/*
+	grunt-contrib-compress
+	grunt-contrib-watch  // 특정 파일들 감시하다가, 변경되면 지정한 작업 수행
+	grunt-contrib-compass  // sass/scss를 지원
+	grunt-contrib-uglify
+	grunt-contrib-cssmin
+	grunt-ngmin
+	grunt-contrib-concat
+	grunt-encode-images  // 이미지 base64로 변환
+*/
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		watch: {	// 특정 파일들 감시하다가, 변경되면 지정한 작업 수행
+		watch: {
 			compass: {
 				files: ['**/*.scss'],
 				tasks: ['compass:dev', 'cssmin:minify']
@@ -11,7 +21,7 @@ module.exports = function(grunt) {
                 tasks: ['uglify']
             }
 		},
-		compass: {	// sass/scss를 지원
+		compass: {
 			dev: {
 				options: {
 //					sassDir: ['app/scss'],
