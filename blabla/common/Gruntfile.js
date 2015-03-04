@@ -43,21 +43,30 @@ module.exports = function(grunt) {
 		ngmin: {
 			apps: {
 				src: [
-//					'app/js/app.js',
-//					'app/js/app.controller.js',
-//					'app/js/app.service.js',
-//					'app/js/app.factory.js'
+					'app/js/app.js',
+					'app/js/app.controller.js',
+					'app/js/app.service.js',
+					'app/js/app.factory.js'
 					'common/smilesol.js'
 				],
 				dest: 'common/smilesol.min.js'
 			}
 		},
-		uglify: {
-			dist: {
-				files: {
-					'common/smilesol.min.js': 'common/smilesol.js'
-				}
+		 uglify: {
+			options: {
+				banner: '/* <%= grunt.template.today("yyyy-mm-dd") %> */ ' //파일의 맨처음 붙는 banner 설정
+			},
+			build: {
+				src: 'public/build/result.js', //uglify할 대상 설정
+				dest: 'public/build/result.min.js' //uglify 결과 파일 설정
 			}
+        },
+//		uglify: {
+//			dist: {
+//				files: {
+//					'common/smilesol.min.js': 'common/smilesol.js'
+//				}
+//			}
 //			all: {
 //				files: {
 //					'app/js/jquery.min.js': [
@@ -87,7 +96,13 @@ module.exports = function(grunt) {
 //					]
 //				}
 //			}
-		},
+//		},
+		concat:{
+            basic: {
+                src: ['public/js/common/util.js', 'public/js/app.js', 'public/js/lib/*.js', 'public/js/ctrl/*.js'], //concat 타겟 설정(앞에서부터 순서대로 합쳐진다.)
+                dest: 'public/build/result.js' //concat 결과 파일
+            }
+        },
 		compress: {
 			main: {
 //				options: {
@@ -110,7 +125,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-ngmin');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
-	grunt.registerTask('default', ['compass:dev', 'cssmin', 'uglify', 'watch']);
+	grunt.registerTask('default', ['concat', 'compass:dev', 'cssmin', 'uglify', 'watch']);
 	grunt.registerTask('build', ['compass:dev', 'cssmin', 'uglify']);
 };
