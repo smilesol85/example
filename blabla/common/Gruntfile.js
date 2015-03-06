@@ -8,7 +8,74 @@
 	grunt-contrib-concat
 	grunt-encode-images  // 이미지 base64로 변환
 	grunt-smushit  // 이미지 압축
+	grunt-contrib-imagemin  // 이미지 압축
 */
+
+module.exports = function(grunt) {
+
+	// 프로젝트 환경설정.
+	grunt.initConfig({
+	pkg: grunt.file.readJSON('package.json'),
+		uglify: {
+		//      options: {
+		//        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+		//      },
+		  build: {
+			src: 'js/*.js',
+			dest: 'js-min/uglify.min.js'
+		  }
+		},
+
+		smushit: {
+			mygroup: {
+			  src: 'img',
+			  dest: 'img-min'
+			}
+		},
+
+		// Imagemin
+		imagemin: {
+			files: {
+				expand: true,
+//				cwd: 'app/pc/',
+				src: ['img/*.{png, jpg, gif}'],
+				dest: 'img-min'
+			}
+
+//			pc: {
+//				files: [
+//					{
+//						expand: true,
+//						cwd: 'app/pc/',
+//						src: ['img/*.{png, jpg, gif}'],
+//						dest: 'dist/pc/'
+//					}
+//				]
+//			},
+//			mobile: {
+//				files: [
+//					{
+//						expand: true,
+//						cwd: 'app/mobile/',
+//						src: ['img/*.{png, jpg, gif}'],
+//						dest: 'dist/mobile/'
+//					}
+//				]
+//			}
+		}
+	});
+
+	// "uglify" task를 지원하는 플러그인 로드.
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-smushit');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
+
+	// Default task(s).
+	grunt.registerTask('js-min', ['uglify']);
+	grunt.registerTask('img-min', ['smushit']);
+	grunt.registerTask('img-min2', ['imagemin']);
+
+};
 
 module.exports = function(grunt) {
 	grunt.initConfig({
@@ -135,6 +202,37 @@ module.exports = function(grunt) {
 			  src: 'img',
 			  dest: 'img-min'
 			}
+		},
+
+		// Imagemin
+		imagemin: {
+			files: {
+				expand: true,
+//				cwd: 'app/pc/',
+				src: ['img/*.{png, jpg, gif}'],
+				dest: 'img-min'
+			}
+
+//			pc: {
+//				files: [
+//					{
+//						expand: true,
+//						cwd: 'app/pc/',
+//						src: ['img/*.{png, jpg, gif}'],
+//						dest: 'dist/pc/'
+//					}
+//				]
+//			},
+//			mobile: {
+//				files: [
+//					{
+//						expand: true,
+//						cwd: 'app/mobile/',
+//						src: ['img/*.{png, jpg, gif}'],
+//						dest: 'dist/mobile/'
+//					}
+//				]
+//			}
 		}
 	});
 
@@ -146,8 +244,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-ngmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-smushit');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	grunt.registerTask('default', ['concat', 'compass:dev', 'cssmin', 'uglify', 'watch']);
 	grunt.registerTask('build', ['compass:dev', 'cssmin', 'uglify']);
 	grunt.registerTask('img-min', ['smushit']);
+	grunt.registerTask('img-min2', ['imagemin']);
 };
