@@ -7,7 +7,9 @@
 	grunt-ngmin
 	grunt-contrib-concat
 	grunt-encode-images  // 이미지 base64로 변환
+	grunt-smushit  // 이미지 압축
 */
+
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -126,6 +128,13 @@ module.exports = function(grunt) {
 //					ext: '.min.js.gz'
 //				}]
 			}
+		},
+
+		smushit: {
+			mygroup: {
+			  src: 'img',
+			  dest: 'img-min'
+			}
 		}
 	});
 
@@ -136,7 +145,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-ngmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-smushit');
 
 	grunt.registerTask('default', ['concat', 'compass:dev', 'cssmin', 'uglify', 'watch']);
 	grunt.registerTask('build', ['compass:dev', 'cssmin', 'uglify']);
+	grunt.registerTask('img-min', ['smushit']);
 };
