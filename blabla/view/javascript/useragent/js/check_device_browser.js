@@ -19,14 +19,15 @@ checkUserAgent = function(){
 };
 
 checkUserAgent.prototype = {
-    sUserAgent : navigator.userAgent.toLowerCase(),
+    sUserAgent: navigator.userAgent.toLowerCase(),
 
-    init : function(){
+    init: function(){
         this.addArrUserAgent();
         this.checkUserAgent();
+		this.checkAndregi();
     },
 
-    addArrUserAgent : function(){
+    addArrUserAgent: function(){
         this.arrUserAgent = [];
 
         // window
@@ -51,14 +52,25 @@ checkUserAgent.prototype = {
         this.arrUserAgent.push('chrome', 'safari', 'applewebkit', 'firefox', 'msie', 'msie 6', 'msie 7', 'msie 8', 'msie 9', 'msie 10');
     },
 
-    checkUserAgent : function(){
+    checkUserAgent: function(){
         $('body').attr('data-useragent', this.sUserAgent);
         for(var nUserAgent in this.arrUserAgent){
             if(this.sUserAgent.match(this.arrUserAgent[nUserAgent])){
                 $('body').addClass(this.arrUserAgent[nUserAgent]);
             }
         }
-    }
+    },
+	
+	checkAndregi: function(){
+		if(this.sUserAgent.match(/android/)){
+			var index = this.sUserAgent.indexOf('android');
+			var and_v = eval(this.sUserAgent.substr(index+8,1));
+			if(and_v < 3){
+				$('body').addClass('andregi');
+			}
+		}
+	}
+
 };
 
 var oCheckUserAgent = new checkUserAgent();
