@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+@import "_lib";
+
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+  margin: 0;
+  padding: 0;
+}
+
+body, input, textarea, select, button, table {
+  outline: none !important;
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+  height: 100%;
+  font-size: $root-em * 1px;
+  line-height: $root-em * 1px;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -webkit-user-select: none;
+    height: 100%;
+    font-family: $font-family;
+    @include rfonts($initial-font-size, $initial-line-height, 400);
+    &.lylicSection {
+        overflow: hidden;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+em, address {
+  font-style: normal;
+}
+
+img, fieldset {
+  border: 0;
+}
+
+ul, ol, dl {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blind {
+  @extend %visuallyhidden;
+}
+
+.vt {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    content: '';
+    vertical-align: middle;
+}
+
+.table {
+	display: table;
+	table-layout:fixed;
+	width: 100%;
+	height: 100%;
+	.table-row {
+		display: table-row;
+		vertical-align: middle;
+	}
+	.table-cell {
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: middle;
+		text-align: center;
+	}
+}
+
+.pdcm {
+    clear: both;
+}
+
+/* Webkit */
+::-webkit-input-placeholder {
+  color: #d3d5d8;
+}
+
+/* Firefox 4-18 */
+:-moz-placeholder {
+  color: #d3d5d8;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+  color: #d3d5d8;
+}
+
+/* IE10+ */
+:-ms-input-placeholder {
+  color: #d3d5d8;
+}

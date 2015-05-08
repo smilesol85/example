@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import "_lib";
+
+.wrap {
+    position: relative;
+    width: 100%;
+    min-width: $full-min-width;
+    height: 100%;
+}
+
+.container {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    padding-top: 0;
+}
+
+.content {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    min-width: $full-min-width;
+    margin-left: $nav_side;
+    padding-bottom: $player_static_h + 130;
+    padding-top: 0;
+    padding-right: 92px;
+    .article {
+        position: relative;
+        h2 {
+            @include rfonts(20, 24, 700);
+            margin-bottom: 23px;
+            color: #414141;
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

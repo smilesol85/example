@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+// config
+@import "compass/css3";
+@import "compass/utilities/sprites";
+
+$font-family: "Helvetica Neue", "Helvetica", Roboto, "HiraKakuProN-W3", "Apple SD Gothic Neo", Meiryo, "Droid Sans", sans-serif;
+
+// default rem unit
+// enable-IE8 속성은 IE8에서 rem을 지원하지 않기 때문에 일반 px unit로 폴백을 하기 위해 존재합니다.
+$root-em: 10;
+$enable-IE8: false !default;
+
+$initial-font-size: 15;
+$initial-line-height: 19;
+
+$line_green: #00c721;
+
+// for music
+$full-min-width: 970px;
+$full-max-width: 1106px;
+$nav_side: 218px;
+$header_static_h: 86px;
+$banner_static_h: 233px;
+$player_static_h: 78px;
+
+// 접근성을 위한 텍스트 숨김 > @extend %visuallyhidden;
+// common.scss에서 .blind로 지정되어 있습니다. <span class="blind">안보임</span> 등
+%visuallyhidden {
+  top: -100px;
+  left: -100px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// clear:both 대체 > @extend %clearfix;
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// 투명도 지정 > @include opacity(0.8);
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie);
+}
+
+// px, em fonts mixin > @include fonts(14,18,300); or @include fonts(14,18px,"normal");
+// font-size, line-height, font-weight를 지정하며 line-height는 font-size 대비 em으로 계산합니다.
+// 하지만 line-height를 px를 지정하면 em으로 계산하지 않고 px로 바로 지정합니다.
+// line-height, font-weight는 생략 가능
+@mixin fonts($size: $initial-font-size, $lineHeight: false, $bold: false) {
+  @if unitless($size) {
+    // @warn "Assuming #{$size} to be in pixels";
+    $size: 1px * $size;
+  }
+  font-size: $size;
+  $lhr: 0;
+  @if $lineHeight {
+    @if unitless($lineHeight) {
+      // @warn "Assuming #{$size} to be in pixels";
+      $lineHeight: 1px * $lineHeight;
+      // $pow: pow(10, 2);
+      $lh: round($lineHeight / $size * 100) / 100;
+      $lhr: $lh * 1em;
+    }
+    @else {
+      $lhr: $lineHeight;
+    }
+    line-height: $lhr;
+  }
+  @if $bold {
+    font-weight: setFontWeight($bold);
+  }
+}
+
+// rem unit fonts mixin > @include rfonts(14,18,300); or @include rfonts(14,18px,"normal");
+@mixin rfonts($size: $initial-font-size, $lineHeight: false, $bold: false) {
+  $lhr: 0;
+  font-size: $size * 1px;
+  font-size: setRem($size);
+  @if $lineHeight {
+    @if unitless($lineHeight) {
+      $lhr: setRem($lineHeight);
+      line-height: $lineHeight * 1px;
+      line-height: $lhr;
+    }
+    @else {
+      $lhr: $lineHeight;
+      line-height: $lhr;
+    }
+  }
+  @if $bold {
+    font-weight: setFontWeight($bold);
+  }
+}
+
+@function setRem($size) {
+  // $pow: pow(10, 2);
+  $remSize: round($size / $root-em * 100) / 100;
+  @return $remSize * 1rem;
+}
+
+@function setFontWeight($bold) {
+  @if $bold == "thin" {
+    @return 100;
+  }
+  @else if $bold == "light" {
+    @return 300;
+  }
+  @else if $bold == "normal" {
+    @return 400;
+  }
+  @else if $bold == "bold" {
+    @return 700;
+  }
+  @else {
+    @return $bold;
+  }
+}
+
+// sprites
+$player: sprite-map("player/*.png", $spacing: 10px ,$layout: smart);
+$navigation: sprite-map("navigation/*.png", $spacing: 10px ,$layout: smart);
+$search: sprite-map("search/*.png", $spacing: 10px ,$layout: smart);
+$login: sprite-map("login/*.png", $spacing: 10px ,$layout: smart);
+$playlist: sprite-map("playlist/*.png", $spacing: 10px ,$layout: smart);
+$btncm: sprite-map("btncm/*.png", $spacing: 10px ,$layout: smart);
+$layer: sprite-map("layer/*.png", $spacing: 10px ,$layout: smart);
+$sns: sprite-map("sns/*.png", $spacing: 10px ,$layout: smart);
+$banner: sprite-map("banner/*.png", $spacing: 10px ,$layout: smart);
+$etc: sprite-map("etc/*.png", $spacing: 10px ,$layout: smart);
+
+@mixin sprite-x($map, $original_img) {
+	background-image: sprite-url($map);
+	background-size: (image-width(sprite-path($map))) (image-height(sprite-path($map)));
+	background-position: round(nth(sprite-position($map, $original_img), 1)) round(nth(sprite-position($map, $original_img), 2));
+	height: image-height(sprite-file($map, $original_img));
+	width: image-width(sprite-file($map, $original_img));
+}
+
+// 말줄임
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 말줄임 multiline
+@mixin ellipsis-multiline($line) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+@mixin border-top-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin positionFixed {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-y: visible !important;
+}
+
+@mixin vertical-middle {
+  top: 50%;
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin border-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include border-box();
+    border: 1px solid rgba(0,0,0,0.1);
+    content: '';
+}
+
+// --------------------------------------- animation
+@mixin funAni($sec) {
+    transition: all ease $sec;
+    -webkit-transition: all ease $sec;
+    -moz-transition: all ease $sec;
+    -o-transition: all ease $sec;
+    -ms-transition: all ease $sec;
+}
+
+@mixin funGrad {
+    background-color: rgba(255,255,255,0.25);
+}
