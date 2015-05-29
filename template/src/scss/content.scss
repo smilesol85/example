@@ -1,34 +1,51 @@
 @charset "utf-8";
 @import "_lib";
 
+// NOTE heading
+h1 {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #000;
+	@include rfonts(24,28,700);
+}
+h2 {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #aaa;
+	color: #aaa;
+	@include rfonts(22,26,700);
+}
+
 // NOTE wrap
 .wrap {
-	position: relative;
-	width: 100%;
-	min-width: $full-min-width;
-	height: 100%;
 }
 
 // NOTE container
 .container {
-	clear: both;
-	z-index: 1;
-	position: relative;
-	float: left;
-	width: 100%;
 }
 
 
 // NOTE content
 .content {
-	float: left;
-	z-index: 1;
-	position: relative;
-	width: 970px;
-	margin-left: 144px;
-	padding-bottom: $player_static_h + 130;
-	padding-top: 54px;
-	.article {
-		position: relative;
+	padding: 20px;
+}
+
+// NOTE TABLE
+.table {
+	&.typeA {
+		.table-caption {
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 1px;
+			height: 1px;
+			font-size: 0;
+			color: transparent;
+		}
+		.table-cell {
+			border: 1px solid #aaa;
+			&:not(:last-child) {
+				border-right: 0;
+			}
+		}
 	}
 }
