@@ -13,7 +13,7 @@
 
 # OS or Editor folders
 .DS_Store
-# .sass_cache
+.sass_cache
 Thumbs.db
 .cache
 .project
