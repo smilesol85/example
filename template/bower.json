@@ -1,0 +1,11 @@
+{
+	"name": "LINE-Music",
+	"version": "1.0.0",
+	"ignore": [
+	],
+	"dependencies": {
+	},
+	"devDependencies": {
+		"jquery": "~2.1.3"
+	}
+}
