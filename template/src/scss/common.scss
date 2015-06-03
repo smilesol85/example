@@ -76,6 +76,11 @@ a {
   text-decoration: none;
 }
 
+hr {
+	margin: 60px 0;
+	border: none;
+}
+
 .blind {
   @extend %visuallyhidden;
 }

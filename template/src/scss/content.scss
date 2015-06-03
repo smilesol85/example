@@ -49,3 +49,109 @@ h2 {
 		}
 	}
 }
+
+// NOTE filter
+.ly-img {
+	float: left;
+	width: 250px;
+	margin-bottom: 20px;
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+.x-pro2 {
+	img {
+		filter: contrast(1.3) brightness(0.8) sepia(0.3) saturate(1.5) hue-rotate(-20deg);
+	}
+}
+.willow {
+	img {
+		filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02);
+	}
+}
+.waldon {
+	img {
+		filter: sepia(0.35) contrast(0.9) brightness(1.1) hue-rotate(-10deg) saturate(1.5);
+	}
+}
+.valencia {
+	img {
+		filter: sepia(0.15) saturate(1.5) contrast(0.9);
+	}
+}
+.toaster {
+	img {
+		filter:sepia(0.4) saturate(2.5) hue-rotate(-30deg) contrast(0.67);
+	}
+}
+.sutro {
+	img {
+		filter: brightness(0.75) contrast(1.3) sepia(0.5) hue-rotate(-25deg);
+	}
+}
+.sierra {
+	img {
+		filter: contrast(0.8) saturate(1.2) sepia(0.15);
+	}
+}
+.rise {
+	img {
+		filter: saturate(1.4) sepia(0.25) hue-rotate(-15deg) contrast(0.8) brightness(1.1);
+	}
+}
+.nashville {
+	img {
+		filter: sepia(0.4) saturate(1.5) contrast(0.9) brightness(1.1) hue-rotate(-15deg);
+	}
+}
+.mayfair {
+	img {
+		filter: saturate(1.4) contrast(1.1);
+	}
+}
+.Lo-Fi {
+	img {
+		filter: contrast(1.4) brightness(0.9) sepia(0.05);
+	}
+}
+.kelvin {
+	img {
+		filter: sepia(0.4) saturate(2.4) brightness(1.3) contrast(1);
+	}
+}
+.inkwell {
+	img {
+		filter: grayscale(1) brightness(1.2) contrast(1.05);
+	}
+}
+.hudson {
+	img {
+		filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+	}
+}
+.hefe {
+	img {
+		filter: contrast(1.3) sepia(0.3) saturate(1.3) hue-rotate(-10deg) brightness(0.95);
+	}
+}
+.earlybird {
+	img {
+		filter: sepia(0.4) saturate(1.6) contrast(1.1) brightness(0.9) hue-rotate(-10deg);
+	}
+}
+.brannan {
+	img {
+		filter: sepia(0.5) contrast(1.4);
+	}
+}
+.amaro {
+	img {
+		filter: hue-rotate(-10deg) contrast(0.9) brightness(1.1) saturate(1.5);
+	}
+}
+.i1977 {
+	img {
+		filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
+	}
+}
