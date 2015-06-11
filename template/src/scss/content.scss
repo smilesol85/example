@@ -14,6 +14,10 @@ h2 {
 	@include rfonts(22,26,700);
 }
 
+.article {
+	overflow: hidden;
+}
+
 // NOTE wrap
 .wrap {
 }
@@ -153,5 +157,83 @@ h2 {
 .i1977 {
 	img {
 		filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
+	}
+}
+
+// NOTE book flip
+.bookFlipWrap {
+	$page-color: #eee;
+	$book-border: 2px;
+	$book-border-color: #aaa;
+	$book-width: 200px;
+	$book-height: 100px;
+	
+	position: relative;
+	
+	.bookFlip {
+		position: relative;
+		width: $book-width;
+		height: $book-height;
+		border: $book-border solid $book-border-color;
+	}
+	.page {
+		position: absolute;
+		top: -$book-border;
+		left: 50%;
+		width: $book-width / 2;
+		height: $book-height;
+		border-top: $book-border solid $book-border-color;
+		border-bottom: $book-border solid $book-border-color;
+		border-right: $book-border solid $book-border-color;
+		background:$page-color;
+		transform-origin:0% 50%;
+		animation:flip 1.2s infinite linear;
+		animation-fill-mode:forwards;
+
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) { 
+				z-index:-$i;
+				animation-delay:1.4s*$i;
+			}
+		}
+	}
+
+	@keyframes flip {
+		0%{
+			transform: perspective( 600px )
+			rotateY( -0deg );
+		}
+
+		20%{
+			background:darken($page-color,10%);
+		}
+
+		29.9%{
+			background:darken($page-color,10%);
+		}
+		30%{
+			transform: perspective( 200px )
+			rotateY( -90deg );
+			background:$page-color;
+		}
+
+		54.999%{
+			opacity:1;
+		}
+		55%{
+			opacity:0;
+		}
+
+		60%{
+			transform: perspective( 200px )
+			rotateY( -180deg );
+			background:$page-color;
+		}
+
+		100%{
+			transform: perspective( 200px )
+			rotateY( -180deg );
+			background:$page-color;
+		}
 	}
 }
