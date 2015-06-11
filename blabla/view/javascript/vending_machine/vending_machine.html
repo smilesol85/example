@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>vending_machine</title>
+<title>vending machine</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="css/vending_machine.css">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--<link rel="stylesheet" type="text/css" href="css/vending_machine.css">-->
 <script src="http://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
-    <div id="wrap">
-        <div class="container">
-            <div class="lead">
-            </div>
-            <div id="content">
-                <section>
-                    <div class="vending_machine">
-                        <div><label for="balance">잔액</label> <input type="text" id="balance" disabled="disabled"> 원</div>
-                        <ul class="product"></ul>
-                        <div class="console"></div>
-                    </div>
-                    <div class="person">
-                        <div class="message">
-                            <div class="name">Steve Jobs :)</div>
-                            <strong>I am rich! Eat freely!</strong>
-                        </div>
-                        <div class="wallet"></div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="js/namespace.js"></script>
-    <script type="text/javascript" src="js/model.Operate.js"></script>
-    <script type="text/javascript" src="js/view.Items.js"></script>
-    <script type="text/javascript" src="js/controller.VendingMachine.js"></script>
-    <script>
-    var oVendingMachine = new controller.VendingMachine();
-    </script>
+
+	<div class="vending_machine">
+		<div><label for="balance">잔액</label> <input type="text" id="balance" disabled="disabled"> 원</div>
+		<ul class="product"></ul>
+		<div class="console"></div>
+	</div>
+	
+	<div class="person">
+		<div class="message">
+			<div class="name">Steve Jobs :)</div>
+			<strong>I am rich! Eat freely!</strong>
+		</div>
+		<div class="wallet"></div>
+	</div>
+
+	<script type="text/javascript" src="js/namespace.js"></script>
+	<script type="text/javascript" src="js/model.Operate.js"></script>
+	<script type="text/javascript" src="js/view.Items.js"></script>
+	<script type="text/javascript" src="js/controller.VendingMachine.js"></script>
+	<script>
+	var oVendingMachine = new controller.VendingMachine();
+	</script>
+	
 </body>
 </html>
