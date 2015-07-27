@@ -167,9 +167,9 @@ h2 {
 	$book-border-color: #aaa;
 	$book-width: 200px;
 	$book-height: 100px;
-	
+
 	position: relative;
-	
+
 	.bookFlip {
 		position: relative;
 		width: $book-width;
@@ -191,7 +191,7 @@ h2 {
 		animation-fill-mode:forwards;
 
 		@for $i from 1 through 3 {
-			&:nth-child(#{$i}) { 
+			&:nth-child(#{$i}) {
 				z-index:-$i;
 				animation-delay:1.4s*$i;
 			}

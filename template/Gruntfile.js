@@ -1,51 +1,72 @@
 module.exports = function(grunt) {
-    var appConfig = {
-        app: 'src',
-        dist: 'dist'
-    },
-    packageConfig = grunt.file.readJSON('package.json');
+
+    // Load grunt tasks automatically
+    // Time how long tasks take. Can help when optimizing build times
+    require('load-grunt-tasks')(grunt);
+    require('time-grunt')(grunt);
+
+	var appConfig = {
+		src: 'src',
+		build: 'build',
+		imgMin: 'imgMin'
+	},
+
+	packageConfig = grunt.file.readJSON('package.json');
+
 	grunt.initConfig({
 
-        prj: appConfig,
-        pkg: packageConfig,
+		prj: appConfig,
+		pkg: packageConfig,
 
 		watch: {
 			compass: {
-				files: ['**/*.scss'],
-				tasks: ['compass:dev', 'cssmin:minify', 'autoprefixer', 'clean:dev']
+				files: [
+                    '**/*.scss'
+                ],
+				tasks: [
+                    'compass:dev',
+                    'cssmin:dev',
+                    'autoprefixer',
+                    'clean:dev'
+                ]
 			},
 			includes: {
-				files: ['<%= prj.app %>/html/tpls/*.html', '<%= prj.app %>/html/include/*.html'],
-				tasks: ['includes']
-			},
-            jsc: {
-                files: ['<%= prj.app %>/js/*.js', '!<%= prj.app %>/js/*.min.js'],
-                tasks: ['clean:dev', 'uglify']
-            }
+				files: [
+                    '<%= prj.src %>/html/tpls/*.html',
+                    '<%= prj.src %>/html/tpls/includes/*.html'
+                ],
+				tasks: [
+                    'includereplace'
+                ]
+			}
 		},
 
-        compass: {
+		compass: {
 			dev: {
 				options: {
 					noLineComments: true,
-					sassDir: ['<%= prj.app %>/scss'],
-					cssDir: ['<%= prj.app %>/scss'],
+					sassDir: [
+                        '<%= prj.src %>/scss'
+                    ],
+					cssDir: [
+                        '<%= prj.src %>/scss'
+                    ],
 					environment: 'development',
-					imagesDir: '<%= prj.app %>/img-sprites-src',
-					generatedImagesPath: '<%= prj.app %>/img',
-					httpGeneratedImagesPath: '../img'
+					imagesDir: '<%= prj.src %>/img-sprites-src',
+					generatedImagesPath: '<%= prj.src %>/img/sp',
+					httpGeneratedImagesPath: '../img/sp'
 				}
 			}
 		},
 
-        cssmin: {
-            option: {
-                shorthandCompacting: false
-            },
-			minify: {
+		cssmin: {
+			option: {
+				shorthandCompacting: false
+			},
+			dev: {
 				files: {
-					'<%= prj.app %>/css/all.min.css': [
-						'<%= prj.app %>/scss/*.css'
+					'<%= prj.src %>/css/all.min.css': [
+						'<%= prj.src %>/scss/*.css'
 					]
 				}
 			}
@@ -54,60 +75,105 @@ module.exports = function(grunt) {
 		autoprefixer: {
 			options: {
 				browsers: [
-					'Android 2.3',
-					'Android >= 4',
-					'Chrome >= 20',
-					'Firefox >= 24', // Firefox 24 is the latest ESR
-					'Explorer >= 6',
-					'iOS >= 5',
-					'Opera >= 12',
-					'Safari >= 6'
-				]
+                    '> 1%',
+                    'last 2 versions',
+                    'iOS 5',
+                    'Android 2.3',
+                    'FF 20',
+                    'Opera 10',
+                    'IE 8'
+                ], // display:box 지원
+                remove: false
 			},
 			dev: {
-				src: '<%= prj.app %>/css/all.min.css',
-				dest: '<%= prj.app %>/css/stylesheet.min.css'
+				src: '<%= prj.src %>/css/all.min.css',
+				dest: '<%= prj.src %>/css/stylesheet.min.css'
 			}
 		},
 
-        includes: {
-            dev: {
-				cwd: '<%= prj.app %>/html/tpls',
-				src: ['*.html'],
-				dest: '<%= prj.app %>/html/',
-				options: {
-					flatten: true,
-					includePath: '<%= prj.app %>/html/include/'
-				}
+		// includes: {
+		// 	dev: {
+		// 		cwd: '<%= prj.src %>/html/tpls',
+		// 		src: ['*.html'],
+		// 		dest: '<%= prj.src %>/html/',
+		// 		options: {
+		// 			flatten: true,
+		// 			includePath: '<%= prj.src %>/html/includes/'
+		// 		}
+		// 	}
+		// },
+
+		includereplace: {
+			dev: {
+				cwd: '<%= prj.src %>/html/tpls',
+				src: '*.html',
+				dest: '<%= prj.src %>/html/',
+				expand: true
 			}
 		},
 
-        clean: {
-            options: {
-                force: true,
-                dot: true
-            },
-            dev: ['<%= prj.app %>/js/*.min.js', '<%= prj.app %>/scss/*.css'],
-			build: ['<%= prj.dist %>/'],
+		clean: {
+			options: {
+				force: true,
+				dot: true
+			},
+			dev: [
+                '<%= prj.src %>/scss/*.css'
+            ],
+			build: [
+                '<%= prj.build %>/',
+                '<%= prj.imgMin %>/'
+            ],
 		},
 
-        imagemin: {
+		imagemin: {
 			build: {
-                expand: true,
-                cwd: '<%= prj.app %>/img/',
-                src: ['**/*.{png, jpg, gif}'],
-                dest: '<%= prj.dist %>/img'
-            }
+				expand: true,
+				cwd: '<%= prj.src %>/img/',
+				src: [
+                    '**/*.{png, jpg, gif}'
+                ],
+				dest: '<%= prj.build %>/img'
+			}
 		},
 
 		encodeImages: {
 			build: {
 				files: [{
 					expand: true,
-					cwd: '<%= prj.dist %>/css/',
+					cwd: '<%= prj.build %>/css/',
 					src: '**/giftshop.css',
-					dest: '<%= prj.dist %>/css/'
+					dest: '<%= prj.build %>/css/'
 				}]
+			}
+		},
+
+		validation: {
+			options: {
+				reset: grunt.option('reset') || false,
+				stoponerror: false,
+				relaxerror: ['Bad value X-UA-Compatible for attribute http-equiv on element meta.']
+			},
+			files: {
+				src: ['<%= prj.src %>/html/*.html']
+			}
+		},
+
+		copy: {
+			build: {
+				files: [
+					{
+						expand:true,
+						cwd: '<%= prj.src %>/',
+						src: [
+							'html/*.html',
+							'css/stylesheet.min.css',
+							'img/**/*.jpg',
+							'img/**/*.gif'
+						],
+						dest: '<%= prj.build %>/'
+					}
+				]
 			}
 		},
 
@@ -128,64 +194,71 @@ module.exports = function(grunt) {
 			},
 			files: {
 				expand: true,
-				cwd: '<%= prj.dist %>/',
-				src: ['html/*.html'],
-				dest: '<%= prj.dist %>/'
+				cwd: '<%= prj.build %>/',
+				src: [
+                    'html/*.html'
+                ],
+				dest: '<%= prj.build %>/'
 			}
 		},
 
-		validation: {
-			options: {
-				reset: grunt.option('reset') || false,
-				stoponerror: false,
-				relaxerror: ['Bad value X-UA-Compatible for attribute http-equiv on element meta.']
+		image: {
+			static: {
+				options: {
+					pngquant: true,
+					optipng: true,
+					advpng: true,
+					zopflipng: true,
+					pngcrush: true,
+					pngout: true,
+					mozjpeg: true,
+					jpegRecompress: true,
+					jpegoptim: true,
+					gifsicle: true,
+					svgo: true
+				},
+				// files: {
+				// 	'dist/img.png': '<%= prj.src %>/img/img.png',
+				// 	'dist/img.jpg': '<%= prj.src %>/img/img.jpg',
+				// 	'dist/img.gif': '<%= prj.src %>/img/img.gif',
+				// 	'dist/img.svg': '<%= prj.src %>/img/img.svg'
+				// }
 			},
-			files: {
-				src: ['<%= prj.app %>/html/*.html']
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: '<%= prj.src %>/img/',
+					src: [
+                        '**/*.{png,jpg,gif,svg}'
+                    ],
+					dest: '<%= prj.imgMin %>/'
+				}]
 			}
-		},
-
-		copy: {
-			build: {
-				files: [
-					{
-						expand:true,
-						cwd: '<%= prj.app %>/',
-						src: [
-                            'html/*.html',
-                            'css/stylesheet.min.css',
-                            'js/*.js',
-                            'img/**/*.jpg',
-                            'img/**/*.gif'
-                        ],
-						dest: '<%= prj.dist %>/'
-					}
-				]
-			}
-		},
-
-		uglify: {
-            dev: {
-                src: '<%= prj.app %>/js/*.js',
-                dest: '<%= prj.app %>/js/uglify.min.js'
-            }
 		}
 	});
-	grunt.loadNpmTasks('grunt-contrib-compress');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-encode-images');
-	grunt.loadNpmTasks('grunt-pngmin');
-	grunt.loadNpmTasks('grunt-prettify');
-	grunt.loadNpmTasks('grunt-includes');
-	grunt.loadNpmTasks('grunt-html-validation');
-    grunt.loadNpmTasks('grunt-autoprefixer');
+	// grunt.loadNpmTasks('grunt-contrib-compress');
+	// grunt.loadNpmTasks('grunt-contrib-watch');
+	// grunt.loadNpmTasks('grunt-contrib-compass');
+	// grunt.loadNpmTasks('grunt-contrib-cssmin');
+	// grunt.loadNpmTasks('grunt-contrib-imagemin');
+	// grunt.loadNpmTasks('grunt-contrib-copy');
+	// grunt.loadNpmTasks('grunt-contrib-clean');
+	// grunt.loadNpmTasks('grunt-encode-images');
+	// grunt.loadNpmTasks('grunt-prettify');
+	// grunt.loadNpmTasks('grunt-includes');
+	// grunt.loadNpmTasks('grunt-include-replace');
+	// grunt.loadNpmTasks('grunt-html-validation');
+    // grunt.loadNpmTasks('grunt-autoprefixer');
+	// grunt.loadNpmTasks('grunt-image');
 
-	grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['clean:build', 'imagemin', 'copy:build', 'prettify']);
+	grunt.registerTask('default', [
+        'watch'
+    ]);
+	grunt.registerTask('build', [
+        'clean:build',
+        'imagemin',
+        'copy:build',
+        'prettify',
+        'image'
+    ]);
 };
