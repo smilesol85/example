@@ -1,0 +1,20 @@
+@charset "utf-8";
+@import "_lib";
+
+#wrap {
+}
+
+.section {
+	width: 100%;
+}
+
+.thumb {
+	background-color: #eee;
+}
+
+.photoList {
+	padding: 10px;
+	.table-cell {
+		padding: 10px;
+	}
+}
