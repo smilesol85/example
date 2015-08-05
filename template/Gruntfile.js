@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 			includes: {
 				files: [
                     '<%= prj.src %>/html/tpls/*.html',
-                    '<%= prj.src %>/html/tpls/includes/*.html'
+                    '<%= prj.src %>/html/tpls/include/*.html'
                 ],
 				tasks: [
                     'includereplace'

@@ -1,18 +1,22 @@
-include "../include/@head.html"
+@@include('include/@head.html')
 <div class="wrap">
 
 <!-- container -->
 <div class="container">
     <div class="content">
 		<h2>TABLE</h2>
-		include "../include/@table.html"
+        @@include('include/@table.html')
 		<hr>
 		<h2>FILTER</h2>
-		include "../include/@filter.html"
+        @@include('include/@filter.html')
 		<hr>
     </div>
 </div>
 <!-- //container -->
 </div>
+<!--[if lt IE 9]>
+<script src="../../bower_components/es5-shim/es5-shim.js"></script>
+<script src="../../bower_components/html5shiv/dist/html5shiv.js"></script>
+<![endif]-->
 </body>
 </html>
