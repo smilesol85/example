@@ -14,19 +14,31 @@
 <meta property="og:description" content="LINE MUSIC is a music streaming service with an expansive collection of music available for unlimited play and sharing with friends on LINE. ">
 -->
 <!-- <link rel="shortcut icon" type="image/x-icon" href="../img/favicon64.png"> -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../css/stylesheet.min.css" />
 <script src="../../bower_components/jquery/dist/jquery.js"></script>
-
 </head>
 <body>
-
+<!--
+- web worker: ie10 이상, and4.4 이상 지원
+-->
 <div id="wrap">
-	<div id="container">
-		<div class="section">
-			<div class="photoList">
-				photo
-			</div>
-			test
+	<div class="header">
+		<h1>JungHoYoung</h1>
+		<span class="countUpload">upload: 11403</span>
+	</div>
+	<div class="section">
+		<div class="upload">
+			<!-- <span class="result"></span>
+			<input type="file"><br>
+			<input type="text"><br>
+			<button type="button">UPLOAD</button> -->
+
+			<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
 		</div>
 	</div>
 </div>
