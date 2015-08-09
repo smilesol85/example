@@ -20,7 +20,7 @@
 </head>
 <body>
 <?php
-<!-- include 'info.php';
+include 'info.php';
 $dbname = "photo-house";
 
 // Create connection
@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-$conn->close(); -->
+$conn->close();
 ?>
 <div id="wrap">
 	<div id="container">

@@ -14,44 +14,30 @@
 <meta property="og:description" content="LINE MUSIC is a music streaming service with an expansive collection of music available for unlimited play and sharing with friends on LINE. ">
 -->
 <!-- <link rel="shortcut icon" type="image/x-icon" href="../img/favicon64.png"> -->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="../css/stylesheet.min.css" />
 <script src="../../bower_components/jquery/dist/jquery.js"></script>
-
 </head>
 <body>
-<?php
-<!-- include 'info.php';
-$dbname = "photo-house";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT id, name, tag, meta FROM info";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["tag"]. " " . $row["meta"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-$conn->close(); -->
-?>
 <div id="wrap">
-	<div id="container">
-		<div class="section">
-			<div class="photoList">
-				photo
-			</div>
-			test
+	<div class="header">
+		<h1>JungHoYoung</h1>
+		<span class="countUpload">upload: 11403</span>
+	</div>
+	<div class="section">
+		<div class="upload">
+	        <input type="file" id="file" />
+	        <input type="submit" value="get result" id="btnSend" />
+            <!-- <form action="send.php" method="POST" enctype="multipart/form-data" />
+                <input type="file" id="file" name="file" required />
+                <input type="submit" value="UPLOAD" />
+            </form> -->
 		</div>
 	</div>
 </div>
+<script src="../js/controller.js"></script>
+<script>
+var oController = new controller.upload();
+</script>
 </body>
 </html>
