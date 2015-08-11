@@ -26,7 +26,7 @@ controller.upload.prototype = {
     xhr: function(val) {
         console.log(val);
         $.ajax({
-            url: 'send.php',
+            url: 'upload.php',
             dataType: 'json',
             type: 'POST',
             data: {
